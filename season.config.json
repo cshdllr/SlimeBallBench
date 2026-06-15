@@ -52,6 +52,18 @@
       "output_cost_per_1m": 25.0,
       "request_timeout_seconds": 30,
       "max_tokens": 32
+    },
+    {
+      "name": "Gemini 2.5 Flash",
+      "abbrev": "GMF",
+      "model": "gemini-2.5-flash",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "api_key_env": "GEMINI_API_KEY",
+      "color": "#DB4437",
+      "input_cost_per_1m": 0.30,
+      "output_cost_per_1m": 2.50,
+      "request_timeout_seconds": 60,
+      "max_tokens": 512
     }
   ]
 }

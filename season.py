@@ -27,6 +27,11 @@ from datetime import datetime, timezone
 
 import simulate as sim
 
+# If a model's API fails on more than this fraction of its decisions in a match
+# (e.g. a budget cap or sustained rate-limit), the match is treated as failed:
+# it is NOT recorded, and the season stops so it can be retried after a fix.
+FAIL_ERROR_RATE = 0.25
+
 
 # ---------------------------------------------------------------------------
 def provider_of(base_url: str) -> str:
@@ -125,6 +130,17 @@ def play_fixture(home: dict, away: dict, settings: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
+def match_failure_reason(record: dict):
+    """Return a human reason if a model's API failed on too many decisions
+    (budget cap / quota / sustained outage), else None."""
+    for name, st in record["summary"]["players"].items():
+        decisions = st.get("decisions", 0) or 0
+        errors = st.get("api_errors", 0) or 0
+        if decisions and errors / decisions > FAIL_ERROR_RATE:
+            return f"{name}: {errors}/{decisions} API calls failed ({100*errors//decisions}%)"
+    return None
+
+
 def compute_standings(models, matches):
     rows = {m["id"]: dict(id=m["id"], name=m["name"], color=m.get("color", "#888"),
                           abbrev=m["abbrev"], provider=m["provider"],
@@ -283,6 +299,20 @@ def main() -> None:
     for i, (home, away) in enumerate(to_play, 1):
         print(f"  [{i}/{len(to_play)}] {home['name']} (home) vs {away['name']} (away) ...", flush=True)
         record = play_fixture(home, away, cfg)
+
+        # Budget cap / quota / outage guard: if a model failed most of its calls,
+        # this result is garbage — discard it (don't record) and stop the season
+        # so it can be fixed and retried. Completed matches are already saved.
+        reason = match_failure_reason(record)
+        if reason:
+            os.remove(record["log"]) if os.path.exists(record["log"]) else None
+            print(f"\n  ✗ MATCH FAILED — {reason}", file=sys.stderr)
+            print(f"  This usually means an API budget cap or rate limit was hit. "
+                  f"The match was NOT recorded.\n  Fix the provider (billing/quota), then re-run "
+                  f"`python season.py` — it resumes: completed matches are skipped and this one "
+                  f"(plus any remaining) will play.", file=sys.stderr)
+            break
+
         matches.append(record)
         write_season(args.out, cfg, models, matches)  # incremental save -> resumable
         hg, ag = record["score"]
