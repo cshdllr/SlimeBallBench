@@ -1,4 +1,4 @@
-# ⚽ AI Slime Soccer Simulator
+# ⚽ SlimeBallBench Simulator
 
 Two AI models compete head-to-head at 2D "slime soccer." The match runs as a
 **headless physics simulation** — every few frames it pauses, asks each model for
