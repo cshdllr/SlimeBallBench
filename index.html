@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Slime Soccer — League Table</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <span class="title">⚽ AI Slime Soccer League</span>
+    <nav>
+      <a href="index.html" class="active">Standings</a>
+      <a href="stats.html">Statistics</a>
+    </nav>
+  </header>
+
+  <h1 id="seasonName">League Table</h1>
+  <p class="sub" id="seasonSub"></p>
+
+  <div id="content"></div>
+</div>
+
+<script>
+async function load() {
+  let season;
+  try {
+    season = await (await fetch("season.json")).json();
+  } catch (e) {
+    document.getElementById("content").innerHTML =
+      `<div class="notice">Couldn't load <code>season.json</code>.
+       ${location.protocol === "file:"
+         ? "This page is open as a <code>file://</code> — browsers block loading data that way. "
+         : ""}
+       Serve this folder over HTTP and open it through the server:<br><br>
+       <code>cd slime-soccer &amp;&amp; python3 -m http.server 8000</code><br>
+       then visit <code>http://localhost:8000/index.html</code>.
+       <br><br>(If you haven't run a season yet: <code>python season.py</code> first.)</div>`;
+    return;
+  }
+
+  document.getElementById("seasonName").textContent = season.season_name;
+  const s = season.settings;
+  document.getElementById("seasonSub").textContent =
+    `${season.models.length} teams · ${season.matches.length} matches played · ` +
+    `${s.match_duration_seconds}s games · format: ${s.format}`;
+
+  const rows = season.standings.map(r => `
+    <tr class="clickable" onclick="location.href='model.html?id=${r.id}'">
+      <td class="pos">${r.rank}</td>
+      <td class="team-cell">
+        <span class="swatch" style="background:${r.color}"></span>
+        <span class="name">${r.name}</span>
+        <span class="meta">&nbsp;${r.abbrev} · ${r.provider}</span>
+      </td>
+      <td>${r.played}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
+      <td>${r.gf}</td><td>${r.ga}</td><td>${r.gd >= 0 ? "+" + r.gd : r.gd}</td>
+      <td class="pts">${r.points}</td>
+    </tr>`).join("");
+
+  document.getElementById("content").innerHTML = `
+    <table>
+      <thead><tr>
+        <th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th>
+        <th>GF</th><th>GA</th><th>GD</th><th>Pts</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <p class="sub" style="margin-top:14px">Tap a team to see its schedule and stats.
+       Points: win 3, draw 1. Ties broken by goal difference, then goals for.</p>`;
+}
+load();
+</script>
+</body>
+</html>

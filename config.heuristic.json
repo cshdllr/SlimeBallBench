@@ -1,0 +1,15 @@
+{
+  "match_duration_seconds": 60,
+  "decision_every_n_frames": 6,
+  "fps": 30,
+  "player1": {
+    "name": "Heuristic Blue",
+    "policy": "heuristic",
+    "color": "#00BFFF"
+  },
+  "player2": {
+    "name": "Random Red",
+    "policy": "random",
+    "color": "#FF4444"
+  }
+}

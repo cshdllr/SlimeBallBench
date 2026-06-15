@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Slime Soccer — Team</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <span class="title">⚽ AI Slime Soccer League</span>
+    <nav>
+      <a href="index.html">Standings</a>
+      <a href="stats.html">Statistics</a>
+    </nav>
+  </header>
+  <div id="content"></div>
+</div>
+
+<script>
+function qs(name) { return new URLSearchParams(location.search).get(name); }
+
+async function load() {
+  const id = qs("id");
+  let season;
+  try {
+    season = await (await fetch("season.json")).json();
+  } catch (e) {
+    document.getElementById("content").innerHTML =
+      `<div class="notice">Couldn't load <code>season.json</code>. Serve over HTTP and try again.</div>`;
+    return;
+  }
+
+  const team = season.standings.find(r => r.id === id);
+  const model = season.models.find(m => m.id === id);
+  const agg = (season.aggregate_stats || {})[id];
+  if (!team || !model) {
+    document.getElementById("content").innerHTML =
+      `<div class="notice">Unknown team. <a href="index.html">Back to standings</a>.</div>`;
+    return;
+  }
+
+  // fixtures involving this team, from its own perspective
+  const games = season.matches
+    .filter(m => m.home === id || m.away === id)
+    .map(m => {
+      const isHome = m.home === id;
+      const oppId = isHome ? m.away : m.home;
+      const oppName = isHome ? m.away_name : m.home_name;
+      const myG = isHome ? m.score[0] : m.score[1];
+      const opG = isHome ? m.score[1] : m.score[0];
+      const res = myG > opG ? "W" : myG < opG ? "L" : "D";
+      return { isHome, oppId, oppName, myG, opG, res, log: m.log };
+    });
+
+  const card = (k, v) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+  const aggCards = agg ? `
+    <div class="cards">
+      ${card("Goals for", agg.goals_for)}
+      ${card("Goals against", agg.goals_against)}
+      ${card("Goal diff", (agg.goal_diff >= 0 ? "+" : "") + agg.goal_diff)}
+      ${card("Ball touches", agg.ball_touches)}
+      ${card("Goals / touch", agg.goals_per_touch)}
+      ${card("Saves", agg.saves)}
+      ${card("Own goals", agg.own_goals)}
+      ${card("Jumps", agg.jumps)}
+      ${card("Possession", agg.avg_possession_pct + "%")}
+      ${card("Avg latency", agg.avg_latency_ms != null ? agg.avg_latency_ms + " ms" : "—")}
+      ${card("Total cost", "$" + (agg.total_cost_usd ?? 0).toFixed(4))}
+    </div>` : "";
+
+  const fixtureRows = games.map(g => `
+    <tr>
+      <td class="team-cell">${g.isHome ? "vs" : "@"}
+        <a href="model.html?id=${g.oppId}">${g.oppName}</a></td>
+      <td>${g.isHome ? "Home" : "Away"}</td>
+      <td>${g.myG} – ${g.opG}</td>
+      <td><span class="result ${g.res}">${g.res}</span></td>
+      <td style="text-align:right"><a href="replay.html?log=${encodeURIComponent(g.log)}">▶ replay</a></td>
+    </tr>`).join("");
+
+  document.getElementById("content").innerHTML = `
+    <h1><span class="swatch" style="background:${model.color}"></span>${team.name}</h1>
+    <p class="sub">${model.provider} · <code>${model.model}</code> · Rank #${team.rank} ·
+       ${team.w}W ${team.d}D ${team.l}L · ${team.points} pts</p>
+    ${aggCards}
+    <h1 style="font-size:18px">Schedule</h1>
+    <table>
+      <thead><tr><th>Opponent</th><th>Venue</th><th>Score</th><th>Result</th><th>Replay</th></tr></thead>
+      <tbody>${fixtureRows || '<tr><td colspan="5">No games yet.</td></tr>'}</tbody>
+    </table>
+    <p class="sub" style="margin-top:14px"><a href="index.html">← Back to standings</a></p>`;
+}
+load();
+</script>
+</body>
+</html>

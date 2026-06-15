@@ -1,0 +1,45 @@
+{
+  "season_name": "Budget League — Test Season",
+  "match_duration_seconds": 60,
+  "decision_every_n_frames": 10,
+  "fps": 30,
+  "format": "round_robin",
+  "models": [
+    {
+      "name": "Claude Haiku 4.5",
+      "abbrev": "HAI",
+      "model": "claude-haiku-4-5",
+      "base_url": "https://api.anthropic.com/v1/",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "color": "#D97757",
+      "input_cost_per_1m": 1.0,
+      "output_cost_per_1m": 5.0,
+      "request_timeout_seconds": 30,
+      "max_tokens": 32
+    },
+    {
+      "name": "GPT-4o mini",
+      "abbrev": "GPT",
+      "model": "gpt-4o-mini",
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "color": "#10A37F",
+      "input_cost_per_1m": 0.15,
+      "output_cost_per_1m": 0.60,
+      "request_timeout_seconds": 30,
+      "max_tokens": 32
+    },
+    {
+      "name": "Gemini 2.5 Flash-Lite",
+      "abbrev": "GEM",
+      "model": "gemini-2.5-flash-lite",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "api_key_env": "GEMINI_API_KEY",
+      "color": "#4285F4",
+      "input_cost_per_1m": 0.10,
+      "output_cost_per_1m": 0.40,
+      "request_timeout_seconds": 30,
+      "max_tokens": 32
+    }
+  ]
+}

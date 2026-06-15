@@ -1,0 +1,27 @@
+{
+  "match_duration_seconds": 60,
+  "decision_every_n_frames": 10,
+  "fps": 30,
+  "player1": {
+    "name": "Claude Haiku 4.5",
+    "model": "claude-haiku-4-5",
+    "api_key": "",
+    "base_url": "https://api.anthropic.com/v1/",
+    "color": "#00BFFF",
+    "input_cost_per_1m": 1.0,
+    "output_cost_per_1m": 5.0,
+    "request_timeout_seconds": 20,
+    "max_tokens": 32
+  },
+  "player2": {
+    "name": "Claude Sonnet 4.6",
+    "model": "claude-sonnet-4-6",
+    "api_key": "",
+    "base_url": "https://api.anthropic.com/v1/",
+    "color": "#FF4444",
+    "input_cost_per_1m": 3.0,
+    "output_cost_per_1m": 15.0,
+    "request_timeout_seconds": 20,
+    "max_tokens": 32
+  }
+}

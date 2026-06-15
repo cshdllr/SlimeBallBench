@@ -1,0 +1,3 @@
+# Only needed for model-backed players (policy "model").
+# The built-in "heuristic" and "random" policies require no dependencies.
+openai>=1.40.0

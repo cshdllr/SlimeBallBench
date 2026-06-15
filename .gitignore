@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Match logs ARE the site's content (replays), so they're committed and served
+# by GitHub Pages. Put throwaway/scratch runs under logs/scratch/ to keep them
+# out of git.
+logs/scratch/
+.DS_Store

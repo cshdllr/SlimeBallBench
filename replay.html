@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Slime Soccer — Replay</title>
+<style>
+  :root {
+    --bg: #0e1116; --panel: #171c24; --line: #2a313c; --text: #e6edf3;
+    --muted: #8b949e; --sky: #1b2a3a; --pitch: #2f7d32; --pitch2: #357a38;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex; flex-direction: column; align-items: center; padding: 16px;
+  }
+  h1 { font-size: 18px; font-weight: 600; margin: 4px 0 12px; letter-spacing: .3px; }
+  #wrap { width: 100%; max-width: 1000px; }
+  #scoreboard {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 16px; margin-bottom: 10px;
+  }
+  .team { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .team.right { flex-direction: row-reverse; text-align: right; }
+  .swatch { width: 16px; height: 16px; border-radius: 4px; flex: 0 0 auto; }
+  .team .meta { display: flex; flex-direction: column; min-width: 0; }
+  .team .name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .team .model { font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .team .action { font-size: 11px; color: var(--muted); font-family: ui-monospace, monospace; }
+  #center { text-align: center; }
+  #score { font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  #timer { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  canvas { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; display: block; background: var(--sky); }
+  #controls {
+    display: flex; align-items: center; gap: 12px; margin-top: 10px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px;
+  }
+  button {
+    background: #21262d; color: var(--text); border: 1px solid var(--line);
+    border-radius: 8px; padding: 7px 14px; font-size: 14px; cursor: pointer;
+  }
+  button:hover { background: #2a313c; }
+  button.active { background: #2f6feb; border-color: #2f6feb; }
+  #speeds { display: flex; gap: 6px; }
+  #speeds button { padding: 6px 10px; font-size: 12px; }
+  #scrub { flex: 1; cursor: pointer; }
+  #frameLabel { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; min-width: 110px; text-align: right; }
+  #metrics { margin-top: 10px; }
+  .metrics-title { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 6px 2px; }
+  .match-line {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 14px; font-size: 13px; color: var(--text); display: flex; flex-wrap: wrap; gap: 6px 18px;
+  }
+  .match-line b { color: #fff; font-variant-numeric: tabular-nums; }
+  .mcards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .mcard { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; border-top: 3px solid #888; }
+  .mcard h3 { margin: 0 0 4px; font-size: 14px; }
+  .mcard .sub { font-size: 11px; color: var(--muted); margin-bottom: 10px; font-family: ui-monospace, monospace; }
+  .stat { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .stat:last-child { border-bottom: none; }
+  .stat .k { color: var(--muted); }
+  .stat .v { font-variant-numeric: tabular-nums; font-weight: 600; }
+  @media (max-width: 620px) { .mcards { grid-template-columns: 1fr; } }
+  #loader {
+    margin-top: 14px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px;
+    color: var(--muted); font-size: 14px; text-align: center;
+  }
+  #loader input { color: var(--text); }
+  .hidden { display: none; }
+  a { color: #58a6ff; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <h1>⚽ AI Slime Soccer — Replay</h1>
+
+  <div id="scoreboard">
+    <div class="team left">
+      <div class="swatch" id="sw1"></div>
+      <div class="meta">
+        <span class="name" id="name1">Player 1</span>
+        <span class="model" id="model1"></span>
+        <span class="action" id="act1"></span>
+      </div>
+    </div>
+    <div id="center">
+      <div id="score">0 – 0</div>
+      <div id="timer">00:00 / 00:00</div>
+    </div>
+    <div class="team right">
+      <div class="swatch" id="sw2"></div>
+      <div class="meta">
+        <span class="name" id="name2">Player 2</span>
+        <span class="model" id="model2"></span>
+        <span class="action" id="act2"></span>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="pitch" width="1000" height="500"></canvas>
+
+  <div id="controls">
+    <button id="playBtn">▶ Play</button>
+    <div id="speeds">
+      <button data-speed="0.5">0.5×</button>
+      <button data-speed="1" class="active">1×</button>
+      <button data-speed="2">2×</button>
+      <button data-speed="4">4×</button>
+    </div>
+    <input type="range" id="scrub" min="0" max="0" value="0">
+    <span id="frameLabel">0 / 0</span>
+  </div>
+
+  <div id="metrics" class="hidden">
+    <div class="metrics-title">Final match metrics</div>
+    <div class="match-line" id="matchLine"></div>
+    <div class="mcards">
+      <div class="mcard" id="mcard1"></div>
+      <div class="mcard" id="mcard2"></div>
+    </div>
+  </div>
+
+  <div id="loader">
+    Load a match log:
+    <input type="file" id="file" accept="application/json,.json">
+    &nbsp;or append <code>?log=logs/yourfile.json</code> to the URL (when served over http).
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById("pitch");
+const ctx = canvas.getContext("2d");
+
+let log = null;        // full log object
+let field = null;      // field dimensions
+let frames = [];
+let fps = 30;
+let cur = 0;
+let playing = false;
+let speed = 1;
+let lastTs = 0;
+let frameAcc = 0;
+
+// ---- coordinate transform: sim y is up, canvas y is down ----
+const tx = x => x;
+const ty = y => field.height - y;
+
+function fmtTime(sec) {
+  sec = Math.max(0, Math.floor(sec));
+  const m = String(Math.floor(sec / 60)).padStart(2, "0");
+  const s = String(sec % 60).padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+// ---- load a parsed log object ----
+function loadLog(obj) {
+  log = obj;
+  field = log.field;
+  frames = log.frames;
+  fps = log.fps || 30;
+  cur = 0;
+
+  canvas.width = field.width;
+  canvas.height = field.height;
+
+  const p1 = log.players.p1, p2 = log.players.p2;
+  document.getElementById("name1").textContent = p1.name;
+  document.getElementById("name2").textContent = p2.name;
+  document.getElementById("model1").textContent = p1.model || p1.policy || "";
+  document.getElementById("model2").textContent = p2.model || p2.policy || "";
+  document.getElementById("sw1").style.background = p1.color;
+  document.getElementById("sw2").style.background = p2.color;
+
+  const scrub = document.getElementById("scrub");
+  scrub.max = frames.length - 1;
+  scrub.value = 0;
+
+  document.getElementById("loader").classList.add("hidden");
+  renderMetrics();
+  pause();
+  drawFrame(0);
+}
+
+// ---- final-match metrics panel (from log.summary) ----
+function renderMetrics() {
+  const s = log.summary;
+  const panel = document.getElementById("metrics");
+  if (!s) { panel.classList.add("hidden"); return; }
+  panel.classList.remove("hidden");
+
+  const m = s.match_metrics || {};
+  const ttfg = m.time_to_first_goal_seconds;
+  document.getElementById("matchLine").innerHTML = [
+    `Winner: <b>${s.winner}</b>`,
+    `Time to first goal: <b>${ttfg != null ? ttfg + "s" : "—"}</b>${m.first_scorer ? " (" + m.first_scorer + ")" : ""}`,
+    `Total touches: <b>${m.total_ball_touches ?? 0}</b>`,
+    `Saves: <b>${m.total_saves ?? 0}</b>`,
+    `Own goals: <b>${m.total_own_goals ?? 0}</b>`,
+    `Lead changes: <b>${m.lead_changes ?? 0}</b>`,
+    `Largest lead: <b>${m.largest_lead ?? 0}</b>`,
+  ].join(" · ");
+
+  const players = s.players || {};
+  fillCard("mcard1", log.players.p1, players[log.players.p1.name]);
+  fillCard("mcard2", log.players.p2, players[log.players.p2.name]);
+}
+
+function fillCard(elId, meta, st) {
+  const el = document.getElementById(elId);
+  if (!st) { el.innerHTML = ""; return; }
+  el.style.borderTopColor = meta.color;
+
+  const row = (k, v) => `<div class="stat"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+  const rows = [
+    row("Goals (for – against)", `${st.goals_for} – ${st.goals_against}`),
+    row("Ball touches", st.ball_touches),
+    row("Goals / touch", st.goals_per_touch),
+    row("Saves", st.saves ?? 0),
+    row("Own goals", st.own_goals ?? 0),
+    row("Possession", `${st.possession_pct}%`),
+    row("Jumps", st.jumps),
+    row("Distance travelled", Math.round(st.distance_travelled)),
+    row("Time to first goal", st.time_to_first_goal_seconds != null ? st.time_to_first_goal_seconds + "s" : "—"),
+  ];
+  // model-only stats
+  if (st.decisions) {
+    rows.push(row("Decisions", st.decisions));
+    rows.push(row("Avg latency", st.avg_decision_latency_ms != null ? st.avg_decision_latency_ms + " ms" : "—"));
+    rows.push(row("API errors", st.api_errors ?? 0));
+    const tok = st.tokens || {};
+    rows.push(row("Tokens (in / out)", `${tok.prompt ?? 0} / ${tok.completion ?? 0}`));
+    rows.push(row("Est. cost", `$${(st.estimated_cost_usd ?? 0).toFixed(4)}`));
+  }
+
+  el.innerHTML =
+    `<h3 style="color:${meta.color}">${meta.name}</h3>` +
+    `<div class="sub">${meta.model || meta.policy || ""}</div>` +
+    rows.join("");
+}
+
+// ---- drawing ----
+function drawSlime(cx, baseY, r, color, facing) {
+  // semicircle: flat side on the ground, dome above
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(tx(cx), ty(baseY), r, Math.PI, 2 * Math.PI);
+  ctx.closePath();
+  ctx.fill();
+  // eye, looking toward the opponent
+  const ex = tx(cx) + facing * r * 0.45;
+  const ey = ty(baseY) - r * 0.45;
+  ctx.fillStyle = "#fff";
+  ctx.beginPath(); ctx.arc(ex, ey, r * 0.18, 0, 2 * Math.PI); ctx.fill();
+  ctx.fillStyle = "#111";
+  ctx.beginPath(); ctx.arc(ex + facing * r * 0.06, ey, r * 0.09, 0, 2 * Math.PI); ctx.fill();
+}
+
+function drawGoal(side) {
+  const gh = field.goal_height;
+  const x = side === "left" ? 0 : field.width;
+  const depth = 26;
+  const inner = side === "left" ? depth : -depth;
+
+  // net
+  ctx.fillStyle = "rgba(255,255,255,0.06)";
+  ctx.fillRect(side === "left" ? 0 : field.width - depth, ty(gh), depth, gh);
+  ctx.strokeStyle = "rgba(255,255,255,0.18)";
+  ctx.lineWidth = 1;
+  for (let yy = 0; yy <= gh; yy += 14) {
+    ctx.beginPath(); ctx.moveTo(tx(x), ty(yy)); ctx.lineTo(tx(x) + inner, ty(yy)); ctx.stroke();
+  }
+  for (let d = 0; Math.abs(d) <= depth; d += 9) {
+    const xx = tx(x) + (side === "left" ? d : -d);
+    ctx.beginPath(); ctx.moveTo(xx, ty(gh)); ctx.lineTo(xx, ty(0)); ctx.stroke();
+  }
+  // posts (crossbar + back)
+  ctx.strokeStyle = "#f0f0f0";
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(tx(x), ty(0));
+  ctx.lineTo(tx(x), ty(gh));
+  ctx.lineTo(tx(x) + inner, ty(gh));
+  ctx.stroke();
+}
+
+function drawField() {
+  // sky
+  ctx.fillStyle = "#1b2a3a";
+  ctx.fillRect(0, 0, field.width, field.height);
+  const groundY = ty(0);
+  // center line
+  ctx.strokeStyle = "rgba(255,255,255,0.12)";
+  ctx.lineWidth = 2;
+  ctx.setLineDash([6, 8]);
+  ctx.beginPath();
+  ctx.moveTo(tx(field.center_x), ty(field.height));
+  ctx.lineTo(tx(field.center_x), ty(0));
+  ctx.stroke();
+  ctx.setLineDash([]);
+  // ground line
+  ctx.strokeStyle = "#e6edf3";
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(0, groundY); ctx.lineTo(field.width, groundY); ctx.stroke();
+
+  drawGoal("left");
+  drawGoal("right");
+}
+
+function drawBall(x, y) {
+  const r = field.ball_radius;
+  ctx.fillStyle = "#fdfdfd";
+  ctx.beginPath(); ctx.arc(tx(x), ty(y), r, 0, 2 * Math.PI); ctx.fill();
+  ctx.strokeStyle = "#222"; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.arc(tx(x), ty(y), r, 0, 2 * Math.PI); ctx.stroke();
+  // simple pentagon dot for a soccer-ball look
+  ctx.fillStyle = "#222";
+  ctx.beginPath(); ctx.arc(tx(x), ty(y), r * 0.32, 0, 2 * Math.PI); ctx.fill();
+}
+
+function drawFrame(i) {
+  if (!field) return;
+  i = Math.max(0, Math.min(frames.length - 1, i));
+  cur = i;
+  const f = frames[i];
+
+  drawField();
+  drawSlime(f.p1[0], f.p1[1], field.slime_radius, log.players.p1.color, +1);
+  drawSlime(f.p2[0], f.p2[1], field.slime_radius, log.players.p2.color, -1);
+  drawBall(f.ball[0], f.ball[1]);
+
+  // HUD
+  document.getElementById("score").textContent = `${f.score[0]} – ${f.score[1]}`;
+  document.getElementById("timer").textContent =
+    `${fmtTime(f.t / fps)} / ${fmtTime(frames.length / fps)}`;
+  document.getElementById("act1").textContent = "▸ " + f.a1;
+  document.getElementById("act2").textContent = f.a2 + " ◂";
+  document.getElementById("scrub").value = i;
+  document.getElementById("frameLabel").textContent = `${i} / ${frames.length - 1}`;
+}
+
+// ---- playback loop ----
+function tick(ts) {
+  if (!playing) return;
+  if (!lastTs) lastTs = ts;
+  const dt = (ts - lastTs) / 1000;
+  lastTs = ts;
+  frameAcc += dt * fps * speed;
+  if (frameAcc >= 1) {
+    const advance = Math.floor(frameAcc);
+    frameAcc -= advance;
+    let next = cur + advance;
+    if (next >= frames.length - 1) { next = frames.length - 1; drawFrame(next); pause(); return; }
+    drawFrame(next);
+  }
+  requestAnimationFrame(tick);
+}
+
+function play() {
+  if (!frames.length) return;
+  if (cur >= frames.length - 1) cur = 0;  // restart from beginning
+  playing = true;
+  lastTs = 0; frameAcc = 0;
+  document.getElementById("playBtn").textContent = "⏸ Pause";
+  requestAnimationFrame(tick);
+}
+function pause() {
+  playing = false;
+  document.getElementById("playBtn").textContent = "▶ Play";
+}
+
+// ---- wiring ----
+document.getElementById("playBtn").addEventListener("click", () => playing ? pause() : play());
+
+document.querySelectorAll("#speeds button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    speed = parseFloat(btn.dataset.speed);
+    document.querySelectorAll("#speeds button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+document.getElementById("scrub").addEventListener("input", e => {
+  pause();
+  drawFrame(parseInt(e.target.value, 10));
+});
+
+document.getElementById("file").addEventListener("change", e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try { loadLog(JSON.parse(reader.result)); }
+    catch (err) { alert("Could not parse log file: " + err.message); }
+  };
+  reader.readAsText(file);
+});
+
+document.addEventListener("keydown", e => {
+  if (!frames.length) return;
+  if (e.code === "Space") { e.preventDefault(); playing ? pause() : play(); }
+  else if (e.code === "ArrowRight") { pause(); drawFrame(cur + 1); }
+  else if (e.code === "ArrowLeft") { pause(); drawFrame(cur - 1); }
+});
+
+// auto-load via ?log=path when served over http(s)
+(function () {
+  const params = new URLSearchParams(location.search);
+  const src = params.get("log");
+  if (src && location.protocol.startsWith("http")) {
+    fetch(src).then(r => r.json()).then(loadLog)
+      .catch(err => console.warn("Could not auto-load log:", err));
+  }
+})();
+</script>
+</body>
+</html>

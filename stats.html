@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Slime Soccer — Statistics</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <span class="title">⚽ AI Slime Soccer League</span>
+    <nav>
+      <a href="index.html">Standings</a>
+      <a href="stats.html" class="active">Statistics</a>
+    </nav>
+  </header>
+
+  <h1>Statistics</h1>
+  <p class="sub">Aggregate per-team metrics across all matches. Click a column header to sort.</p>
+  <div id="content"></div>
+</div>
+
+<script>
+// column definitions: [key, label, formatter]
+const COLS = [
+  ["name", "Team", null],
+  ["games", "GP", v => v],
+  ["goals_for", "GF", v => v],
+  ["goals_against", "GA", v => v],
+  ["goal_diff", "GD", v => (v >= 0 ? "+" + v : v)],
+  ["ball_touches", "Touches", v => v],
+  ["goals_per_touch", "G/Touch", v => v],
+  ["saves", "Saves", v => v],
+  ["own_goals", "OG", v => v],
+  ["jumps", "Jumps", v => v],
+  ["avg_possession_pct", "Poss%", v => v],
+  ["avg_latency_ms", "Latency", v => v == null ? "—" : v + "ms"],
+  ["total_cost_usd", "Cost", v => "$" + (v ?? 0).toFixed(4)],
+];
+
+let ROWS = [];
+let sortKey = "goal_diff", sortDir = -1;
+
+function render() {
+  ROWS.sort((a, b) => {
+    let x = a[sortKey], y = b[sortKey];
+    if (sortKey === "name") return sortDir * String(x).localeCompare(String(y));
+    x = x ?? -Infinity; y = y ?? -Infinity;
+    return sortDir * (x - y);
+  });
+  const head = COLS.map(([k, label]) =>
+    `<th class="sortable" data-key="${k}">${label}${sortKey === k ? (sortDir < 0 ? " ▾" : " ▴") : ""}</th>`
+  ).join("");
+  const body = ROWS.map(r => "<tr>" + COLS.map(([k, , fmt]) => {
+    if (k === "name") return `<td class="team-cell">
+        <span class="swatch" style="background:${r.color}"></span>
+        <a href="model.html?id=${r.id}">${r.name}</a></td>`;
+    return `<td>${fmt ? fmt(r[k]) : r[k]}</td>`;
+  }).join("") + "</tr>").join("");
+
+  document.getElementById("content").innerHTML =
+    `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+
+  document.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.key;
+    if (k === sortKey) sortDir = -sortDir;
+    else { sortKey = k; sortDir = k === "name" ? 1 : -1; }
+    render();
+  }));
+}
+
+async function load() {
+  let season;
+  try {
+    season = await (await fetch("season.json")).json();
+  } catch (e) {
+    document.getElementById("content").innerHTML =
+      `<div class="notice">Couldn't load <code>season.json</code>. Serve over HTTP and try again.</div>`;
+    return;
+  }
+  const byId = Object.fromEntries(season.models.map(m => [m.id, m]));
+  ROWS = Object.entries(season.aggregate_stats).map(([id, s]) => ({
+    id, name: byId[id].name, color: byId[id].color, ...s,
+  }));
+  render();
+}
+load();
+</script>
+</body>
+</html>

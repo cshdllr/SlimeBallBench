@@ -1,0 +1,27 @@
+{
+  "match_duration_seconds": 30,
+  "decision_every_n_frames": 10,
+  "fps": 30,
+  "player1": {
+    "name": "GPT-4o mini",
+    "model": "gpt-4o-mini",
+    "base_url": "https://api.openai.com/v1",
+    "api_key_env": "OPENAI_API_KEY",
+    "color": "#10A37F",
+    "input_cost_per_1m": 0.15,
+    "output_cost_per_1m": 0.60,
+    "request_timeout_seconds": 30,
+    "max_tokens": 32
+  },
+  "player2": {
+    "name": "Gemini 2.5 Flash-Lite",
+    "model": "gemini-2.5-flash-lite",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "api_key_env": "GEMINI_API_KEY",
+    "color": "#FBBC05",
+    "input_cost_per_1m": 0.10,
+    "output_cost_per_1m": 0.40,
+    "request_timeout_seconds": 30,
+    "max_tokens": 32
+  }
+}
