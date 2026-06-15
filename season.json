@@ -1,6 +1,6 @@
 {
-  "season_name": "Budget League \u2014 Test Season",
-  "generated_at": "2026-06-15T04:20:55.503326+00:00",
+  "season_name": "SlimeBallBench League \u2014 Season 1",
+  "generated_at": "2026-06-15T19:28:05.075552+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -31,6 +31,14 @@
       "abbrev": "GEM",
       "provider": "Gemini",
       "model": "gemini-2.5-flash-lite"
+    },
+    {
+      "id": "claude_opus_4_8",
+      "name": "Claude Opus 4.8",
+      "color": "#9B59B6",
+      "abbrev": "OPU",
+      "provider": "Anthropic",
+      "model": "claude-opus-4-8"
     }
   ],
   "matches": [
@@ -1043,6 +1051,936 @@
           }
         }
       }
+    },
+    {
+      "id": "claude_haiku_4_5__claude_opus_4_8",
+      "home": "claude_haiku_4_5",
+      "away": "claude_opus_4_8",
+      "home_name": "Claude Haiku 4.5",
+      "away_name": "Claude Opus 4.8",
+      "home_color": "#D97757",
+      "away_color": "#9B59B6",
+      "score": [
+        11,
+        10
+      ],
+      "winner": "Claude Haiku 4.5",
+      "winner_id": "claude_haiku_4_5",
+      "log": "logs/claude_haiku_4_5_v_claude_opus_4_8_20260615_130901.json",
+      "played_at": "2026-06-15T19:15:48.336983+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Haiku 4.5": 11,
+          "Claude Opus 4.8": 10
+        },
+        "winner": "Claude Haiku 4.5",
+        "goals": [
+          {
+            "frame": 28,
+            "time_seconds": 0.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 83,
+            "time_seconds": 2.8,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 197,
+            "time_seconds": 6.6,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 316,
+            "time_seconds": 10.5,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 346,
+            "time_seconds": 11.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 408,
+            "time_seconds": 13.6,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 451,
+            "time_seconds": 15.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 511,
+            "time_seconds": 17.0,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 655,
+            "time_seconds": 21.8,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 686,
+            "time_seconds": 22.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 748,
+            "time_seconds": 24.9,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 775,
+            "time_seconds": 25.8,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 883,
+            "time_seconds": 29.4,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1242,
+            "time_seconds": 41.4,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              8,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1334,
+            "time_seconds": 44.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1420,
+            "time_seconds": 47.3,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              9,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1484,
+            "time_seconds": 49.5,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              10,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1520,
+            "time_seconds": 50.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              10,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1629,
+            "time_seconds": 54.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              10,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1697,
+            "time_seconds": 56.6,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              11,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1737,
+            "time_seconds": 57.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              11,
+              10
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 21,
+          "total_ball_touches": 55,
+          "total_own_goals": 12,
+          "total_saves": 11,
+          "time_to_first_goal_seconds": 0.9,
+          "first_scorer": "Claude Opus 4.8",
+          "lead_changes": 1,
+          "largest_lead": 3
+        },
+        "players": {
+          "Claude Haiku 4.5": {
+            "model": "claude-haiku-4-5",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 10,
+            "ball_touches": 22,
+            "goals_per_touch": 0.5,
+            "saves": 5,
+            "own_goals": 4,
+            "possession_pct": 46.7,
+            "jumps": 42,
+            "distance_travelled": 14984.0,
+            "time_to_first_goal_seconds": 2.8,
+            "action_distribution": {
+              "move_left": 55,
+              "move_right": 41,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 64,
+              "idle": 14
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 710.6,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 158953,
+              "completion": 3586
+            },
+            "estimated_cost_usd": 0.176883
+          },
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 10,
+            "goals_against": 11,
+            "ball_touches": 33,
+            "goals_per_touch": 0.303,
+            "saves": 6,
+            "own_goals": 8,
+            "possession_pct": 53.3,
+            "jumps": 14,
+            "distance_travelled": 17046.0,
+            "time_to_first_goal_seconds": 0.9,
+            "action_distribution": {
+              "move_left": 104,
+              "move_right": 56,
+              "jump": 0,
+              "move_left_jump": 13,
+              "move_right_jump": 6,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1551.8,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204673,
+              "completion": 2518
+            },
+            "estimated_cost_usd": 1.086315
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_4o_mini__claude_opus_4_8",
+      "home": "gpt_4o_mini",
+      "away": "claude_opus_4_8",
+      "home_name": "GPT-4o mini",
+      "away_name": "Claude Opus 4.8",
+      "home_color": "#10A37F",
+      "away_color": "#9B59B6",
+      "score": [
+        9,
+        10
+      ],
+      "winner": "Claude Opus 4.8",
+      "winner_id": "claude_opus_4_8",
+      "log": "logs/gpt_4o_mini_v_claude_opus_4_8_20260615_131548.json",
+      "played_at": "2026-06-15T19:22:23.987960+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-4o mini": 9,
+          "Claude Opus 4.8": 10
+        },
+        "winner": "Claude Opus 4.8",
+        "goals": [
+          {
+            "frame": 70,
+            "time_seconds": 2.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 151,
+            "time_seconds": 5.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 255,
+            "time_seconds": 8.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 389,
+            "time_seconds": 13.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              0,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 434,
+            "time_seconds": 14.5,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              1,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 470,
+            "time_seconds": 15.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 638,
+            "time_seconds": 21.3,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 681,
+            "time_seconds": 22.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              2,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 788,
+            "time_seconds": 26.3,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              3,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 831,
+            "time_seconds": 27.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 959,
+            "time_seconds": 32.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1004,
+            "time_seconds": 33.5,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              4,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1040,
+            "time_seconds": 34.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1165,
+            "time_seconds": 38.8,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              5,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1311,
+            "time_seconds": 43.7,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              6,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1463,
+            "time_seconds": 48.8,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              7,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1609,
+            "time_seconds": 53.6,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1654,
+            "time_seconds": 55.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1690,
+            "time_seconds": 56.3,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              9,
+              10
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 19,
+          "total_ball_touches": 65,
+          "total_own_goals": 6,
+          "total_saves": 12,
+          "time_to_first_goal_seconds": 2.3,
+          "first_scorer": "Claude Opus 4.8",
+          "lead_changes": 0,
+          "largest_lead": 5
+        },
+        "players": {
+          "GPT-4o mini": {
+            "model": "gpt-4o-mini",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 10,
+            "ball_touches": 29,
+            "goals_per_touch": 0.31,
+            "saves": 3,
+            "own_goals": 3,
+            "possession_pct": 39.3,
+            "jumps": 2,
+            "distance_travelled": 14350.9,
+            "time_to_first_goal_seconds": 14.5,
+            "action_distribution": {
+              "move_left": 45,
+              "move_right": 133,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 2,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 607.3,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146529,
+              "completion": 362
+            },
+            "estimated_cost_usd": 0.022197
+          },
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 10,
+            "goals_against": 9,
+            "ball_touches": 36,
+            "goals_per_touch": 0.278,
+            "saves": 9,
+            "own_goals": 3,
+            "possession_pct": 60.7,
+            "jumps": 8,
+            "distance_travelled": 15539.4,
+            "time_to_first_goal_seconds": 2.3,
+            "action_distribution": {
+              "move_left": 119,
+              "move_right": 50,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 2,
+              "idle": 2
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1590.3,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204669,
+              "completion": 2291
+            },
+            "estimated_cost_usd": 1.08062
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash_lite__claude_opus_4_8",
+      "home": "gemini_2_5_flash_lite",
+      "away": "claude_opus_4_8",
+      "home_name": "Gemini 2.5 Flash-Lite",
+      "away_name": "Claude Opus 4.8",
+      "home_color": "#4285F4",
+      "away_color": "#9B59B6",
+      "score": [
+        11,
+        12
+      ],
+      "winner": "Claude Opus 4.8",
+      "winner_id": "claude_opus_4_8",
+      "log": "logs/gemini_2_5_flash_lite_v_claude_opus_4_8_20260615_132223.json",
+      "played_at": "2026-06-15T19:28:05.072079+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash-Lite": 11,
+          "Claude Opus 4.8": 12
+        },
+        "winner": "Claude Opus 4.8",
+        "goals": [
+          {
+            "frame": 132,
+            "time_seconds": 4.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 271,
+            "time_seconds": 9.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 331,
+            "time_seconds": 11.0,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 419,
+            "time_seconds": 14.0,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 455,
+            "time_seconds": 15.2,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              4,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 486,
+            "time_seconds": 16.2,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 580,
+            "time_seconds": 19.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 637,
+            "time_seconds": 21.2,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 677,
+            "time_seconds": 22.6,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              6,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 735,
+            "time_seconds": 24.5,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              7,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 766,
+            "time_seconds": 25.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 860,
+            "time_seconds": 28.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1040,
+            "time_seconds": 34.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1125,
+            "time_seconds": 37.5,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              8,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1156,
+            "time_seconds": 38.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1252,
+            "time_seconds": 41.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1371,
+            "time_seconds": 45.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              9,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1515,
+            "time_seconds": 50.5,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              10,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1584,
+            "time_seconds": 52.8,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              11,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1620,
+            "time_seconds": 54.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              11,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1669,
+            "time_seconds": 55.6,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              11,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1711,
+            "time_seconds": 57.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              11,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1796,
+            "time_seconds": 59.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              11,
+              12
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 23,
+          "total_ball_touches": 56,
+          "total_own_goals": 11,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 4.4,
+          "first_scorer": "Gemini 2.5 Flash-Lite",
+          "lead_changes": 1,
+          "largest_lead": 4
+        },
+        "players": {
+          "Gemini 2.5 Flash-Lite": {
+            "model": "gemini-2.5-flash-lite",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 12,
+            "ball_touches": 19,
+            "goals_per_touch": 0.579,
+            "saves": 2,
+            "own_goals": 4,
+            "possession_pct": 38.8,
+            "jumps": 81,
+            "distance_travelled": 18061.0,
+            "time_to_first_goal_seconds": 4.4,
+            "action_distribution": {
+              "move_left": 4,
+              "move_right": 0,
+              "jump": 7,
+              "move_left_jump": 61,
+              "move_right_jump": 108,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 337.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157880,
+              "completion": 864
+            },
+            "estimated_cost_usd": 0.016134
+          },
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 12,
+            "goals_against": 11,
+            "ball_touches": 37,
+            "goals_per_touch": 0.324,
+            "saves": 5,
+            "own_goals": 7,
+            "possession_pct": 61.2,
+            "jumps": 19,
+            "distance_travelled": 19549.0,
+            "time_to_first_goal_seconds": 9.0,
+            "action_distribution": {
+              "move_left": 96,
+              "move_right": 58,
+              "jump": 0,
+              "move_left_jump": 16,
+              "move_right_jump": 10,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1556.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204676,
+              "completion": 2634
+            },
+            "estimated_cost_usd": 1.08923
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -1052,15 +1990,31 @@
       "color": "#10A37F",
       "abbrev": "GPT",
       "provider": "OpenAI",
-      "played": 2,
+      "played": 3,
       "w": 2,
       "d": 0,
-      "l": 0,
-      "gf": 27,
-      "ga": 21,
-      "gd": 6,
+      "l": 1,
+      "gf": 36,
+      "ga": 31,
+      "gd": 5,
       "points": 6,
       "rank": 1
+    },
+    {
+      "id": "claude_opus_4_8",
+      "name": "Claude Opus 4.8",
+      "color": "#9B59B6",
+      "abbrev": "OPU",
+      "provider": "Anthropic",
+      "played": 3,
+      "w": 2,
+      "d": 0,
+      "l": 1,
+      "gf": 32,
+      "ga": 31,
+      "gd": 1,
+      "points": 6,
+      "rank": 2
     },
     {
       "id": "claude_haiku_4_5",
@@ -1068,15 +2022,15 @@
       "color": "#D97757",
       "abbrev": "HAI",
       "provider": "Anthropic",
-      "played": 2,
-      "w": 1,
+      "played": 3,
+      "w": 2,
       "d": 0,
       "l": 1,
-      "gf": 21,
-      "ga": 22,
-      "gd": -1,
-      "points": 3,
-      "rank": 2
+      "gf": 32,
+      "ga": 32,
+      "gd": 0,
+      "points": 6,
+      "rank": 3
     },
     {
       "id": "gemini_2_5_flash_lite",
@@ -1084,68 +2038,85 @@
       "color": "#4285F4",
       "abbrev": "GEM",
       "provider": "Gemini",
-      "played": 2,
+      "played": 3,
       "w": 0,
       "d": 0,
-      "l": 2,
-      "gf": 23,
-      "ga": 28,
-      "gd": -5,
+      "l": 3,
+      "gf": 34,
+      "ga": 40,
+      "gd": -6,
       "points": 0,
-      "rank": 3
+      "rank": 4
     }
   ],
   "aggregate_stats": {
     "claude_haiku_4_5": {
-      "games": 2,
-      "goals_for": 21,
-      "goals_against": 22,
-      "goal_diff": -1,
-      "ball_touches": 49,
-      "goals_per_touch": 0.429,
-      "saves": 17,
-      "own_goals": 5,
-      "jumps": 85,
-      "distance": 32731.0,
-      "avg_possession_pct": 42.2,
-      "avg_latency_ms": 699.0,
-      "tokens_in": 317894,
-      "tokens_out": 7394,
-      "total_cost_usd": 0.3549
+      "games": 3,
+      "goals_for": 32,
+      "goals_against": 32,
+      "goal_diff": 0,
+      "ball_touches": 71,
+      "goals_per_touch": 0.451,
+      "saves": 22,
+      "own_goals": 9,
+      "jumps": 127,
+      "distance": 47715.0,
+      "avg_possession_pct": 43.7,
+      "avg_latency_ms": 703.0,
+      "tokens_in": 476847,
+      "tokens_out": 10980,
+      "total_cost_usd": 0.5317
     },
     "gpt_4o_mini": {
-      "games": 2,
-      "goals_for": 27,
-      "goals_against": 21,
-      "goal_diff": 6,
-      "ball_touches": 66,
-      "goals_per_touch": 0.409,
-      "saves": 7,
-      "own_goals": 8,
-      "jumps": 17,
-      "distance": 36666.0,
-      "avg_possession_pct": 60.3,
-      "avg_latency_ms": 555.0,
-      "tokens_in": 293056,
-      "tokens_out": 737,
-      "total_cost_usd": 0.0444
+      "games": 3,
+      "goals_for": 36,
+      "goals_against": 31,
+      "goal_diff": 5,
+      "ball_touches": 95,
+      "goals_per_touch": 0.379,
+      "saves": 10,
+      "own_goals": 11,
+      "jumps": 19,
+      "distance": 51016.0,
+      "avg_possession_pct": 53.3,
+      "avg_latency_ms": 572.0,
+      "tokens_in": 439585,
+      "tokens_out": 1099,
+      "total_cost_usd": 0.0666
     },
     "gemini_2_5_flash_lite": {
-      "games": 2,
-      "goals_for": 23,
-      "goals_against": 28,
-      "goal_diff": -5,
-      "ball_touches": 63,
-      "goals_per_touch": 0.365,
-      "saves": 3,
-      "own_goals": 9,
-      "jumps": 152,
-      "distance": 34926.0,
-      "avg_possession_pct": 47.5,
-      "avg_latency_ms": 322.0,
-      "tokens_in": 315646,
-      "tokens_out": 1708,
-      "total_cost_usd": 0.0322
+      "games": 3,
+      "goals_for": 34,
+      "goals_against": 40,
+      "goal_diff": -6,
+      "ball_touches": 82,
+      "goals_per_touch": 0.415,
+      "saves": 5,
+      "own_goals": 13,
+      "jumps": 233,
+      "distance": 52987.0,
+      "avg_possession_pct": 44.6,
+      "avg_latency_ms": 327.0,
+      "tokens_in": 473526,
+      "tokens_out": 2572,
+      "total_cost_usd": 0.0484
+    },
+    "claude_opus_4_8": {
+      "games": 3,
+      "goals_for": 32,
+      "goals_against": 31,
+      "goal_diff": 1,
+      "ball_touches": 106,
+      "goals_per_touch": 0.302,
+      "saves": 20,
+      "own_goals": 18,
+      "jumps": 41,
+      "distance": 52134.0,
+      "avg_possession_pct": 58.4,
+      "avg_latency_ms": 1566.0,
+      "tokens_in": 614018,
+      "tokens_out": 7443,
+      "total_cost_usd": 3.2562
     }
   }
 }
