@@ -64,6 +64,19 @@
       "output_cost_per_1m": 2.50,
       "request_timeout_seconds": 60,
       "max_tokens": 512
+    },
+    {
+      "name": "GPT-5",
+      "abbrev": "GP5",
+      "model": "gpt-5",
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "color": "#E8A317",
+      "input_cost_per_1m": 1.25,
+      "output_cost_per_1m": 10.0,
+      "request_timeout_seconds": 30,
+      "max_completion_tokens": 512,
+      "reasoning_effort": "minimal"
     }
   ]
 }

@@ -480,6 +480,11 @@ class Player:
             return
         self._client = OpenAI(api_key=api_key, base_url=base_url, timeout=timeout)
         self._max_tokens = cfg.get("max_tokens", 16)
+        # For reasoning models (e.g. OpenAI gpt-5 family): they reject max_tokens
+        # and reason unless told not to. Set "max_completion_tokens" + a low
+        # "reasoning_effort" in the player config to keep them fast and cheap.
+        self._max_completion_tokens = cfg.get("max_completion_tokens")
+        self._reasoning_effort = cfg.get("reasoning_effort")
 
     @property
     def cost(self) -> float:
@@ -499,13 +504,18 @@ class Player:
         t0 = time.perf_counter()
         self.decision_count += 1
         try:
+            token_kwargs = ({"max_completion_tokens": self._max_completion_tokens}
+                            if self._max_completion_tokens is not None
+                            else {"max_tokens": self._max_tokens})
+            if self._reasoning_effort:
+                token_kwargs["reasoning_effort"] = self._reasoning_effort
             resp = self._client.chat.completions.create(
                 model=self.model,
-                max_tokens=self._max_tokens,
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": json.dumps(state)},
                 ],
+                **token_kwargs,
             )
             usage = getattr(resp, "usage", None)
             if usage is not None:

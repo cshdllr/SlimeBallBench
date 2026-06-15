@@ -81,9 +81,16 @@ def verify_models(models: list[dict]) -> None:
             bad.append(m["name"]); continue
         try:
             client = OpenAI(api_key=key, base_url=m.get("base_url") or None, timeout=30)
+            # Match the real per-player request shape: reasoning models reject
+            # max_tokens and need max_completion_tokens (+ reasoning_effort).
+            tk = ({"max_completion_tokens": m["max_completion_tokens"]}
+                  if m.get("max_completion_tokens") is not None else {"max_tokens": 8})
+            if m.get("reasoning_effort"):
+                tk["reasoning_effort"] = m["reasoning_effort"]
             client.chat.completions.create(
-                model=m["model"], max_tokens=8,
+                model=m["model"],
                 messages=[{"role": "user", "content": "Reply with one word: ok"}],
+                **tk,
             )
             print(f"  {m['name']:24} {m['model']:24} — ok")
         except Exception as exc:
