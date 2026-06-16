@@ -77,6 +77,31 @@
       "request_timeout_seconds": 30,
       "max_completion_tokens": 512,
       "reasoning_effort": "minimal"
+    },
+    {
+      "name": "Claude Sonnet 4.6",
+      "abbrev": "SON",
+      "model": "claude-sonnet-4-6",
+      "base_url": "https://api.anthropic.com/v1/",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "color": "#EC4899",
+      "input_cost_per_1m": 3.0,
+      "output_cost_per_1m": 15.0,
+      "request_timeout_seconds": 30,
+      "max_tokens": 32
+    },
+    {
+      "name": "GPT-5 mini",
+      "abbrev": "G5M",
+      "model": "gpt-5-mini",
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "color": "#2DD4BF",
+      "input_cost_per_1m": 0.25,
+      "output_cost_per_1m": 2.0,
+      "request_timeout_seconds": 30,
+      "max_completion_tokens": 512,
+      "reasoning_effort": "minimal"
     }
   ]
 }

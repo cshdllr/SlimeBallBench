@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-06-15T22:26:47.796492+00:00",
+  "generated_at": "2026-06-16T01:44:33.383065+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -55,6 +55,22 @@
       "abbrev": "GP5",
       "provider": "OpenAI",
       "model": "gpt-5"
+    },
+    {
+      "id": "claude_sonnet_4_6",
+      "name": "Claude Sonnet 4.6",
+      "color": "#EC4899",
+      "abbrev": "SON",
+      "provider": "Anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "id": "gpt_5_mini",
+      "name": "GPT-5 mini",
+      "color": "#2DD4BF",
+      "abbrev": "G5M",
+      "provider": "OpenAI",
+      "model": "gpt-5-mini"
     }
   ],
   "matches": [
@@ -4767,23 +4783,3353 @@
           }
         }
       }
+    },
+    {
+      "id": "claude_haiku_4_5__claude_sonnet_4_6",
+      "home": "claude_haiku_4_5",
+      "away": "claude_sonnet_4_6",
+      "home_name": "Claude Haiku 4.5",
+      "away_name": "Claude Sonnet 4.6",
+      "home_color": "#D97757",
+      "away_color": "#EC4899",
+      "score": [
+        9,
+        7
+      ],
+      "winner": "Claude Haiku 4.5",
+      "winner_id": "claude_haiku_4_5",
+      "log": "logs/claude_haiku_4_5_v_claude_sonnet_4_6_20260615_181454.json",
+      "played_at": "2026-06-16T00:22:01.998726+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Haiku 4.5": 9,
+          "Claude Sonnet 4.6": 7
+        },
+        "winner": "Claude Haiku 4.5",
+        "goals": [
+          {
+            "frame": 28,
+            "time_seconds": 0.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 83,
+            "time_seconds": 2.8,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 147,
+            "time_seconds": 4.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 220,
+            "time_seconds": 7.3,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 411,
+            "time_seconds": 13.7,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 814,
+            "time_seconds": 27.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 917,
+            "time_seconds": 30.6,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1146,
+            "time_seconds": 38.2,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1215,
+            "time_seconds": 40.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1318,
+            "time_seconds": 43.9,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              6,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1384,
+            "time_seconds": 46.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1452,
+            "time_seconds": 48.4,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              7,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1528,
+            "time_seconds": 50.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1626,
+            "time_seconds": 54.2,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              8,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1695,
+            "time_seconds": 56.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              8,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1798,
+            "time_seconds": 59.9,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              9,
+              7
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 16,
+          "total_ball_touches": 41,
+          "total_own_goals": 11,
+          "total_saves": 12,
+          "time_to_first_goal_seconds": 0.9,
+          "first_scorer": "Claude Sonnet 4.6",
+          "lead_changes": 1,
+          "largest_lead": 2
+        },
+        "players": {
+          "Claude Haiku 4.5": {
+            "model": "claude-haiku-4-5",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 7,
+            "ball_touches": 18,
+            "goals_per_touch": 0.5,
+            "saves": 3,
+            "own_goals": 4,
+            "possession_pct": 42.2,
+            "jumps": 51,
+            "distance_travelled": 15618.6,
+            "time_to_first_goal_seconds": 2.8,
+            "action_distribution": {
+              "move_left": 53,
+              "move_right": 33,
+              "jump": 0,
+              "move_left_jump": 5,
+              "move_right_jump": 74,
+              "idle": 15
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 768.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 158943,
+              "completion": 3264
+            },
+            "estimated_cost_usd": 0.175263
+          },
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 9,
+            "ball_touches": 23,
+            "goals_per_touch": 0.304,
+            "saves": 9,
+            "own_goals": 7,
+            "possession_pct": 57.8,
+            "jumps": 1,
+            "distance_travelled": 14090.6,
+            "time_to_first_goal_seconds": 0.9,
+            "action_distribution": {
+              "move_left": 80,
+              "move_right": 96,
+              "jump": 0,
+              "move_left_jump": 1,
+              "move_right_jump": 0,
+              "idle": 3
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1604.6,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159123,
+              "completion": 5632
+            },
+            "estimated_cost_usd": 0.561849
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_haiku_4_5__gpt_5_mini",
+      "home": "claude_haiku_4_5",
+      "away": "gpt_5_mini",
+      "home_name": "Claude Haiku 4.5",
+      "away_name": "GPT-5 mini",
+      "home_color": "#D97757",
+      "away_color": "#2DD4BF",
+      "score": [
+        2,
+        8
+      ],
+      "winner": "GPT-5 mini",
+      "winner_id": "gpt_5_mini",
+      "log": "logs/claude_haiku_4_5_v_gpt_5_mini_20260615_182202.json",
+      "played_at": "2026-06-16T00:26:41.902940+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Haiku 4.5": 2,
+          "GPT-5 mini": 8
+        },
+        "winner": "GPT-5 mini",
+        "goals": [
+          {
+            "frame": 113,
+            "time_seconds": 3.8,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 195,
+            "time_seconds": 6.5,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 521,
+            "time_seconds": 17.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 731,
+            "time_seconds": 24.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 920,
+            "time_seconds": 30.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 968,
+            "time_seconds": 32.3,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1057,
+            "time_seconds": 35.2,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1359,
+            "time_seconds": 45.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1413,
+            "time_seconds": 47.1,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1630,
+            "time_seconds": 54.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              8
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 10,
+          "total_ball_touches": 39,
+          "total_own_goals": 6,
+          "total_saves": 10,
+          "time_to_first_goal_seconds": 3.8,
+          "first_scorer": "GPT-5 mini",
+          "lead_changes": 0,
+          "largest_lead": 6
+        },
+        "players": {
+          "Claude Haiku 4.5": {
+            "model": "claude-haiku-4-5",
+            "policy": "model",
+            "goals_for": 2,
+            "goals_against": 8,
+            "ball_touches": 21,
+            "goals_per_touch": 0.095,
+            "saves": 3,
+            "own_goals": 5,
+            "possession_pct": 53.1,
+            "jumps": 43,
+            "distance_travelled": 14835.4,
+            "time_to_first_goal_seconds": 6.5,
+            "action_distribution": {
+              "move_left": 86,
+              "move_right": 18,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 56,
+              "idle": 14
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 741.8,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 158942,
+              "completion": 3570
+            },
+            "estimated_cost_usd": 0.176792
+          },
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 2,
+            "ball_touches": 18,
+            "goals_per_touch": 0.444,
+            "saves": 7,
+            "own_goals": 1,
+            "possession_pct": 46.9,
+            "jumps": 20,
+            "distance_travelled": 22715.4,
+            "time_to_first_goal_seconds": 3.8,
+            "action_distribution": {
+              "move_left": 89,
+              "move_right": 63,
+              "jump": 0,
+              "move_left_jump": 3,
+              "move_right_jump": 25,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 812.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146342,
+              "completion": 2008
+            },
+            "estimated_cost_usd": 0.040601
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_4o_mini__claude_sonnet_4_6",
+      "home": "gpt_4o_mini",
+      "away": "claude_sonnet_4_6",
+      "home_name": "GPT-4o mini",
+      "away_name": "Claude Sonnet 4.6",
+      "home_color": "#10A37F",
+      "away_color": "#EC4899",
+      "score": [
+        7,
+        14
+      ],
+      "winner": "Claude Sonnet 4.6",
+      "winner_id": "claude_sonnet_4_6",
+      "log": "logs/gpt_4o_mini_v_claude_sonnet_4_6_20260615_182641.json",
+      "played_at": "2026-06-16T00:32:05.895147+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-4o mini": 7,
+          "Claude Sonnet 4.6": 14
+        },
+        "winner": "Claude Sonnet 4.6",
+        "goals": [
+          {
+            "frame": 61,
+            "time_seconds": 2.0,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 121,
+            "time_seconds": 4.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 304,
+            "time_seconds": 10.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 340,
+            "time_seconds": 11.3,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 401,
+            "time_seconds": 13.4,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 510,
+            "time_seconds": 17.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 607,
+            "time_seconds": 20.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 638,
+            "time_seconds": 21.3,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 703,
+            "time_seconds": 23.4,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 853,
+            "time_seconds": 28.4,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 958,
+            "time_seconds": 31.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1001,
+            "time_seconds": 33.4,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              4,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1089,
+            "time_seconds": 36.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1134,
+            "time_seconds": 37.8,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              5,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1170,
+            "time_seconds": 39.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              5,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1267,
+            "time_seconds": 42.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              5,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1298,
+            "time_seconds": 43.3,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              6,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1363,
+            "time_seconds": 45.4,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              12
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1709,
+            "time_seconds": 57.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              13
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1754,
+            "time_seconds": 58.5,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              7,
+              13
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1790,
+            "time_seconds": 59.7,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              7,
+              14
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 21,
+          "total_ball_touches": 57,
+          "total_own_goals": 11,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 2.0,
+          "first_scorer": "GPT-4o mini",
+          "lead_changes": 1,
+          "largest_lead": 7
+        },
+        "players": {
+          "GPT-4o mini": {
+            "model": "gpt-4o-mini",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 14,
+            "ball_touches": 33,
+            "goals_per_touch": 0.212,
+            "saves": 4,
+            "own_goals": 9,
+            "possession_pct": 51.5,
+            "jumps": 5,
+            "distance_travelled": 18179.7,
+            "time_to_first_goal_seconds": 2.0,
+            "action_distribution": {
+              "move_left": 60,
+              "move_right": 115,
+              "jump": 0,
+              "move_left_jump": 3,
+              "move_right_jump": 2,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 504.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146529,
+              "completion": 365
+            },
+            "estimated_cost_usd": 0.022198
+          },
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 14,
+            "goals_against": 7,
+            "ball_touches": 24,
+            "goals_per_touch": 0.583,
+            "saves": 3,
+            "own_goals": 2,
+            "possession_pct": 48.5,
+            "jumps": 4,
+            "distance_travelled": 17219.6,
+            "time_to_first_goal_seconds": 4.0,
+            "action_distribution": {
+              "move_left": 118,
+              "move_right": 57,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 4,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1295.3,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159129,
+              "completion": 3584
+            },
+            "estimated_cost_usd": 0.531147
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_4o_mini__gpt_5_mini",
+      "home": "gpt_4o_mini",
+      "away": "gpt_5_mini",
+      "home_name": "GPT-4o mini",
+      "away_name": "GPT-5 mini",
+      "home_color": "#10A37F",
+      "away_color": "#2DD4BF",
+      "score": [
+        6,
+        15
+      ],
+      "winner": "GPT-5 mini",
+      "winner_id": "gpt_5_mini",
+      "log": "logs/gpt_4o_mini_v_gpt_5_mini_20260615_183205.json",
+      "played_at": "2026-06-16T00:36:02.181055+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-4o mini": 6,
+          "GPT-5 mini": 15
+        },
+        "winner": "GPT-5 mini",
+        "goals": [
+          {
+            "frame": 61,
+            "time_seconds": 2.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 180,
+            "time_seconds": 6.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 247,
+            "time_seconds": 8.2,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 278,
+            "time_seconds": 9.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 358,
+            "time_seconds": 11.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 438,
+            "time_seconds": 14.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 518,
+            "time_seconds": 17.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 598,
+            "time_seconds": 19.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 678,
+            "time_seconds": 22.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 758,
+            "time_seconds": 25.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 838,
+            "time_seconds": 27.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 881,
+            "time_seconds": 29.4,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              2,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 941,
+            "time_seconds": 31.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1016,
+            "time_seconds": 33.9,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              3,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1094,
+            "time_seconds": 36.5,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              3,
+              12
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1130,
+            "time_seconds": 37.7,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              4,
+              12
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1245,
+            "time_seconds": 41.5,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              4,
+              13
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1488,
+            "time_seconds": 49.6,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              5,
+              13
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1602,
+            "time_seconds": 53.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              5,
+              14
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1767,
+            "time_seconds": 58.9,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              6,
+              14
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1798,
+            "time_seconds": 59.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              6,
+              15
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 21,
+          "total_ball_touches": 44,
+          "total_own_goals": 12,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 2.0,
+          "first_scorer": "GPT-5 mini",
+          "lead_changes": 0,
+          "largest_lead": 9
+        },
+        "players": {
+          "GPT-4o mini": {
+            "model": "gpt-4o-mini",
+            "policy": "model",
+            "goals_for": 6,
+            "goals_against": 15,
+            "ball_touches": 31,
+            "goals_per_touch": 0.194,
+            "saves": 1,
+            "own_goals": 10,
+            "possession_pct": 78.1,
+            "jumps": 2,
+            "distance_travelled": 17594.7,
+            "time_to_first_goal_seconds": 8.2,
+            "action_distribution": {
+              "move_left": 56,
+              "move_right": 122,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 0,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 561.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146526,
+              "completion": 362
+            },
+            "estimated_cost_usd": 0.022196
+          },
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 15,
+            "goals_against": 6,
+            "ball_touches": 13,
+            "goals_per_touch": 1.154,
+            "saves": 6,
+            "own_goals": 2,
+            "possession_pct": 21.9,
+            "jumps": 14,
+            "distance_travelled": 21180.7,
+            "time_to_first_goal_seconds": 2.0,
+            "action_distribution": {
+              "move_left": 85,
+              "move_right": 77,
+              "jump": 0,
+              "move_left_jump": 4,
+              "move_right_jump": 14,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 750.5,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146346,
+              "completion": 1998
+            },
+            "estimated_cost_usd": 0.040583
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash_lite__claude_sonnet_4_6",
+      "home": "gemini_2_5_flash_lite",
+      "away": "claude_sonnet_4_6",
+      "home_name": "Gemini 2.5 Flash-Lite",
+      "away_name": "Claude Sonnet 4.6",
+      "home_color": "#4285F4",
+      "away_color": "#EC4899",
+      "score": [
+        8,
+        9
+      ],
+      "winner": "Claude Sonnet 4.6",
+      "winner_id": "claude_sonnet_4_6",
+      "log": "logs/gemini_2_5_flash_lite_v_claude_sonnet_4_6_20260615_183602.json",
+      "played_at": "2026-06-16T00:41:27.170814+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash-Lite": 8,
+          "Claude Sonnet 4.6": 9
+        },
+        "winner": "Claude Sonnet 4.6",
+        "goals": [
+          {
+            "frame": 172,
+            "time_seconds": 5.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 237,
+            "time_seconds": 7.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 308,
+            "time_seconds": 10.3,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 719,
+            "time_seconds": 24.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 764,
+            "time_seconds": 25.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 830,
+            "time_seconds": 27.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 934,
+            "time_seconds": 31.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 996,
+            "time_seconds": 33.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1068,
+            "time_seconds": 35.6,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1134,
+            "time_seconds": 37.8,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              5,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1206,
+            "time_seconds": 40.2,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1325,
+            "time_seconds": 44.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1416,
+            "time_seconds": 47.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1519,
+            "time_seconds": 50.6,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1585,
+            "time_seconds": 52.8,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1688,
+            "time_seconds": 56.3,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1762,
+            "time_seconds": 58.7,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 17,
+          "total_ball_touches": 37,
+          "total_own_goals": 10,
+          "total_saves": 10,
+          "time_to_first_goal_seconds": 5.7,
+          "first_scorer": "Gemini 2.5 Flash-Lite",
+          "lead_changes": 3,
+          "largest_lead": 1
+        },
+        "players": {
+          "Gemini 2.5 Flash-Lite": {
+            "model": "gemini-2.5-flash-lite",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 9,
+            "ball_touches": 17,
+            "goals_per_touch": 0.471,
+            "saves": 1,
+            "own_goals": 3,
+            "possession_pct": 28.7,
+            "jumps": 76,
+            "distance_travelled": 15747.1,
+            "time_to_first_goal_seconds": 5.7,
+            "action_distribution": {
+              "move_left": 2,
+              "move_right": 0,
+              "jump": 6,
+              "move_left_jump": 55,
+              "move_right_jump": 117,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 330.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157467,
+              "completion": 872
+            },
+            "estimated_cost_usd": 0.016095
+          },
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 8,
+            "ball_touches": 20,
+            "goals_per_touch": 0.45,
+            "saves": 9,
+            "own_goals": 7,
+            "possession_pct": 71.3,
+            "jumps": 3,
+            "distance_travelled": 13492.8,
+            "time_to_first_goal_seconds": 7.9,
+            "action_distribution": {
+              "move_left": 80,
+              "move_right": 92,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 1,
+              "idle": 5
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1475.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159125,
+              "completion": 5532
+            },
+            "estimated_cost_usd": 0.560355
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash_lite__gpt_5_mini",
+      "home": "gemini_2_5_flash_lite",
+      "away": "gpt_5_mini",
+      "home_name": "Gemini 2.5 Flash-Lite",
+      "away_name": "GPT-5 mini",
+      "home_color": "#4285F4",
+      "away_color": "#2DD4BF",
+      "score": [
+        7,
+        12
+      ],
+      "winner": "GPT-5 mini",
+      "winner_id": "gpt_5_mini",
+      "log": "logs/gemini_2_5_flash_lite_v_gpt_5_mini_20260615_184127.json",
+      "played_at": "2026-06-16T00:44:47.218214+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash-Lite": 7,
+          "GPT-5 mini": 12
+        },
+        "winner": "GPT-5 mini",
+        "goals": [
+          {
+            "frame": 29,
+            "time_seconds": 1.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 79,
+            "time_seconds": 2.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 133,
+            "time_seconds": 4.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 249,
+            "time_seconds": 8.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 391,
+            "time_seconds": 13.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 533,
+            "time_seconds": 17.8,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 660,
+            "time_seconds": 22.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 779,
+            "time_seconds": 26.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 828,
+            "time_seconds": 27.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 883,
+            "time_seconds": 29.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 988,
+            "time_seconds": 32.9,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              1,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1097,
+            "time_seconds": 36.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1247,
+            "time_seconds": 41.6,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              2,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1400,
+            "time_seconds": 46.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              3,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1482,
+            "time_seconds": 49.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              4,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1522,
+            "time_seconds": 50.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              5,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1562,
+            "time_seconds": 52.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              6,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1602,
+            "time_seconds": 53.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              7,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1714,
+            "time_seconds": 57.1,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              7,
+              12
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 19,
+          "total_ball_touches": 48,
+          "total_own_goals": 5,
+          "total_saves": 13,
+          "time_to_first_goal_seconds": 1.0,
+          "first_scorer": "GPT-5 mini",
+          "lead_changes": 0,
+          "largest_lead": 10
+        },
+        "players": {
+          "Gemini 2.5 Flash-Lite": {
+            "model": "gemini-2.5-flash-lite",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 12,
+            "ball_touches": 26,
+            "goals_per_touch": 0.269,
+            "saves": 7,
+            "own_goals": 4,
+            "possession_pct": 48.5,
+            "jumps": 79,
+            "distance_travelled": 19102.0,
+            "time_to_first_goal_seconds": 32.9,
+            "action_distribution": {
+              "move_left": 1,
+              "move_right": 0,
+              "jump": 8,
+              "move_left_jump": 86,
+              "move_right_jump": 85,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 315.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157943,
+              "completion": 866
+            },
+            "estimated_cost_usd": 0.016141
+          },
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 12,
+            "goals_against": 7,
+            "ball_touches": 22,
+            "goals_per_touch": 0.545,
+            "saves": 6,
+            "own_goals": 1,
+            "possession_pct": 51.5,
+            "jumps": 22,
+            "distance_travelled": 22748.0,
+            "time_to_first_goal_seconds": 1.0,
+            "action_distribution": {
+              "move_left": 83,
+              "move_right": 73,
+              "jump": 0,
+              "move_left_jump": 4,
+              "move_right_jump": 20,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 796.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146351,
+              "completion": 2004
+            },
+            "estimated_cost_usd": 0.040596
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_opus_4_8__claude_sonnet_4_6",
+      "home": "claude_opus_4_8",
+      "away": "claude_sonnet_4_6",
+      "home_name": "Claude Opus 4.8",
+      "away_name": "Claude Sonnet 4.6",
+      "home_color": "#9B59B6",
+      "away_color": "#EC4899",
+      "score": [
+        8,
+        6
+      ],
+      "winner": "Claude Opus 4.8",
+      "winner_id": "claude_opus_4_8",
+      "log": "logs/claude_opus_4_8_v_claude_sonnet_4_6_20260615_184447.json",
+      "played_at": "2026-06-16T00:52:43.498922+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Opus 4.8": 8,
+          "Claude Sonnet 4.6": 6
+        },
+        "winner": "Claude Opus 4.8",
+        "goals": [
+          {
+            "frame": 104,
+            "time_seconds": 3.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 423,
+            "time_seconds": 14.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 508,
+            "time_seconds": 16.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 551,
+            "time_seconds": 18.4,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 633,
+            "time_seconds": 21.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 666,
+            "time_seconds": 22.2,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 960,
+            "time_seconds": 32.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1121,
+            "time_seconds": 37.4,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1203,
+            "time_seconds": 40.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1236,
+            "time_seconds": 41.2,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1434,
+            "time_seconds": 47.8,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1501,
+            "time_seconds": 50.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1552,
+            "time_seconds": 51.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1682,
+            "time_seconds": 56.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              6
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 14,
+          "total_ball_touches": 57,
+          "total_own_goals": 8,
+          "total_saves": 13,
+          "time_to_first_goal_seconds": 3.5,
+          "first_scorer": "Claude Opus 4.8",
+          "lead_changes": 2,
+          "largest_lead": 2
+        },
+        "players": {
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 6,
+            "ball_touches": 37,
+            "goals_per_touch": 0.216,
+            "saves": 2,
+            "own_goals": 5,
+            "possession_pct": 66.1,
+            "jumps": 25,
+            "distance_travelled": 15388.0,
+            "time_to_first_goal_seconds": 3.5,
+            "action_distribution": {
+              "move_left": 39,
+              "move_right": 104,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 28,
+              "idle": 2
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1175.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204668,
+              "completion": 1783
+            },
+            "estimated_cost_usd": 1.067915
+          },
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 6,
+            "goals_against": 8,
+            "ball_touches": 20,
+            "goals_per_touch": 0.3,
+            "saves": 11,
+            "own_goals": 3,
+            "possession_pct": 33.9,
+            "jumps": 3,
+            "distance_travelled": 14124.0,
+            "time_to_first_goal_seconds": 14.1,
+            "action_distribution": {
+              "move_left": 69,
+              "move_right": 104,
+              "jump": 0,
+              "move_left_jump": 1,
+              "move_right_jump": 2,
+              "idle": 4
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1470.5,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159128,
+              "completion": 5506
+            },
+            "estimated_cost_usd": 0.559974
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_opus_4_8__gpt_5_mini",
+      "home": "claude_opus_4_8",
+      "away": "gpt_5_mini",
+      "home_name": "Claude Opus 4.8",
+      "away_name": "GPT-5 mini",
+      "home_color": "#9B59B6",
+      "away_color": "#2DD4BF",
+      "score": [
+        11,
+        6
+      ],
+      "winner": "Claude Opus 4.8",
+      "winner_id": "claude_opus_4_8",
+      "log": "logs/claude_opus_4_8_v_gpt_5_mini_20260615_185243.json",
+      "played_at": "2026-06-16T00:59:27.169682+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Opus 4.8": 11,
+          "GPT-5 mini": 6
+        },
+        "winner": "Claude Opus 4.8",
+        "goals": [
+          {
+            "frame": 29,
+            "time_seconds": 1.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 101,
+            "time_seconds": 3.4,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              2,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 185,
+            "time_seconds": 6.2,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 216,
+            "time_seconds": 7.2,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 351,
+            "time_seconds": 11.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 544,
+            "time_seconds": 18.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 607,
+            "time_seconds": 20.2,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              6,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 730,
+            "time_seconds": 24.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 835,
+            "time_seconds": 27.8,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 899,
+            "time_seconds": 30.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              8,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 982,
+            "time_seconds": 32.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              8,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1159,
+            "time_seconds": 38.6,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              9,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1362,
+            "time_seconds": 45.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              9,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1502,
+            "time_seconds": 50.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              10,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1693,
+            "time_seconds": 56.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              10,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1735,
+            "time_seconds": 57.8,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              10,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1766,
+            "time_seconds": 58.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              11,
+              6
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 17,
+          "total_ball_touches": 61,
+          "total_own_goals": 2,
+          "total_saves": 15,
+          "time_to_first_goal_seconds": 1.0,
+          "first_scorer": "Claude Opus 4.8",
+          "lead_changes": 0,
+          "largest_lead": 7
+        },
+        "players": {
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 6,
+            "ball_touches": 41,
+            "goals_per_touch": 0.268,
+            "saves": 1,
+            "own_goals": 2,
+            "possession_pct": 69.5,
+            "jumps": 18,
+            "distance_travelled": 18906.3,
+            "time_to_first_goal_seconds": 1.0,
+            "action_distribution": {
+              "move_left": 45,
+              "move_right": 112,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 17,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1423.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204670,
+              "completion": 1525
+            },
+            "estimated_cost_usd": 1.061475
+          },
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 6,
+            "goals_against": 11,
+            "ball_touches": 20,
+            "goals_per_touch": 0.3,
+            "saves": 14,
+            "own_goals": 0,
+            "possession_pct": 30.5,
+            "jumps": 26,
+            "distance_travelled": 21502.6,
+            "time_to_first_goal_seconds": 6.2,
+            "action_distribution": {
+              "move_left": 72,
+              "move_right": 72,
+              "jump": 0,
+              "move_left_jump": 8,
+              "move_right_jump": 28,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 818.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146350,
+              "completion": 2016
+            },
+            "estimated_cost_usd": 0.04062
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash__claude_sonnet_4_6",
+      "home": "gemini_2_5_flash",
+      "away": "claude_sonnet_4_6",
+      "home_name": "Gemini 2.5 Flash",
+      "away_name": "Claude Sonnet 4.6",
+      "home_color": "#DB4437",
+      "away_color": "#EC4899",
+      "score": [
+        9,
+        8
+      ],
+      "winner": "Gemini 2.5 Flash",
+      "winner_id": "gemini_2_5_flash",
+      "log": "logs/gemini_2_5_flash_v_claude_sonnet_4_6_20260615_185927.json",
+      "played_at": "2026-06-16T01:14:55.084396+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash": 9,
+          "Claude Sonnet 4.6": 8
+        },
+        "winner": "Gemini 2.5 Flash",
+        "goals": [
+          {
+            "frame": 32,
+            "time_seconds": 1.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 134,
+            "time_seconds": 4.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 341,
+            "time_seconds": 11.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 384,
+            "time_seconds": 12.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 446,
+            "time_seconds": 14.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 499,
+            "time_seconds": 16.6,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 585,
+            "time_seconds": 19.5,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 791,
+            "time_seconds": 26.4,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 914,
+            "time_seconds": 30.5,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1149,
+            "time_seconds": 38.3,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              6,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1216,
+            "time_seconds": 40.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1374,
+            "time_seconds": 45.8,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1449,
+            "time_seconds": 48.3,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1517,
+            "time_seconds": 50.6,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1589,
+            "time_seconds": 53.0,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              8,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1655,
+            "time_seconds": 55.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1745,
+            "time_seconds": 58.2,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              9,
+              8
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 17,
+          "total_ball_touches": 56,
+          "total_own_goals": 9,
+          "total_saves": 13,
+          "time_to_first_goal_seconds": 1.1,
+          "first_scorer": "Claude Sonnet 4.6",
+          "lead_changes": 1,
+          "largest_lead": 2
+        },
+        "players": {
+          "Gemini 2.5 Flash": {
+            "model": "gemini-2.5-flash",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 8,
+            "ball_touches": 24,
+            "goals_per_touch": 0.375,
+            "saves": 2,
+            "own_goals": 3,
+            "possession_pct": 36.8,
+            "jumps": 59,
+            "distance_travelled": 15289.9,
+            "time_to_first_goal_seconds": 11.4,
+            "action_distribution": {
+              "move_left": 26,
+              "move_right": 35,
+              "jump": 0,
+              "move_left_jump": 20,
+              "move_right_jump": 88,
+              "idle": 11
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 3514.9,
+            "api_errors": 7,
+            "tokens": {
+              "prompt": 151439,
+              "completion": 727
+            },
+            "estimated_cost_usd": 0.047249
+          },
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 9,
+            "ball_touches": 32,
+            "goals_per_touch": 0.25,
+            "saves": 11,
+            "own_goals": 6,
+            "possession_pct": 63.2,
+            "jumps": 2,
+            "distance_travelled": 17050.9,
+            "time_to_first_goal_seconds": 1.1,
+            "action_distribution": {
+              "move_left": 95,
+              "move_right": 81,
+              "jump": 0,
+              "move_left_jump": 1,
+              "move_right_jump": 1,
+              "idle": 2
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1639.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159125,
+              "completion": 5400
+            },
+            "estimated_cost_usd": 0.558375
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash__gpt_5_mini",
+      "home": "gemini_2_5_flash",
+      "away": "gpt_5_mini",
+      "home_name": "Gemini 2.5 Flash",
+      "away_name": "GPT-5 mini",
+      "home_color": "#DB4437",
+      "away_color": "#2DD4BF",
+      "score": [
+        8,
+        11
+      ],
+      "winner": "GPT-5 mini",
+      "winner_id": "gpt_5_mini",
+      "log": "logs/gemini_2_5_flash_v_gpt_5_mini_20260615_191455.json",
+      "played_at": "2026-06-16T01:25:23.262119+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash": 8,
+          "GPT-5 mini": 11
+        },
+        "winner": "GPT-5 mini",
+        "goals": [
+          {
+            "frame": 32,
+            "time_seconds": 1.1,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 164,
+            "time_seconds": 5.5,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 200,
+            "time_seconds": 6.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 479,
+            "time_seconds": 16.0,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 579,
+            "time_seconds": 19.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 656,
+            "time_seconds": 21.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 748,
+            "time_seconds": 24.9,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 801,
+            "time_seconds": 26.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1007,
+            "time_seconds": 33.6,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1038,
+            "time_seconds": 34.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1093,
+            "time_seconds": 36.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1184,
+            "time_seconds": 39.5,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1259,
+            "time_seconds": 42.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              5,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1481,
+            "time_seconds": 49.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              5,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1551,
+            "time_seconds": 51.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              6,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1594,
+            "time_seconds": 53.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              7,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1630,
+            "time_seconds": 54.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              7,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1709,
+            "time_seconds": 57.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              7,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1785,
+            "time_seconds": 59.5,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              8,
+              11
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 19,
+          "total_ball_touches": 56,
+          "total_own_goals": 6,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 1.1,
+          "first_scorer": "GPT-5 mini",
+          "lead_changes": 0,
+          "largest_lead": 4
+        },
+        "players": {
+          "Gemini 2.5 Flash": {
+            "model": "gemini-2.5-flash",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 11,
+            "ball_touches": 34,
+            "goals_per_touch": 0.235,
+            "saves": 0,
+            "own_goals": 4,
+            "possession_pct": 69.3,
+            "jumps": 64,
+            "distance_travelled": 18998.5,
+            "time_to_first_goal_seconds": 5.5,
+            "action_distribution": {
+              "move_left": 27,
+              "move_right": 31,
+              "jump": 0,
+              "move_left_jump": 35,
+              "move_right_jump": 86,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 2693.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157844,
+              "completion": 780
+            },
+            "estimated_cost_usd": 0.049303
+          },
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 8,
+            "ball_touches": 22,
+            "goals_per_touch": 0.5,
+            "saves": 7,
+            "own_goals": 2,
+            "possession_pct": 30.7,
+            "jumps": 18,
+            "distance_travelled": 20597.2,
+            "time_to_first_goal_seconds": 1.1,
+            "action_distribution": {
+              "move_left": 81,
+              "move_right": 72,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 21,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 795.4,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146345,
+              "completion": 2007
+            },
+            "estimated_cost_usd": 0.0406
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5__claude_sonnet_4_6",
+      "home": "gpt_5",
+      "away": "claude_sonnet_4_6",
+      "home_name": "GPT-5",
+      "away_name": "Claude Sonnet 4.6",
+      "home_color": "#E8A317",
+      "away_color": "#EC4899",
+      "score": [
+        8,
+        9
+      ],
+      "winner": "Claude Sonnet 4.6",
+      "winner_id": "claude_sonnet_4_6",
+      "log": "logs/gpt_5_v_claude_sonnet_4_6_20260615_192523.json",
+      "played_at": "2026-06-16T01:32:58.466976+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5": 8,
+          "Claude Sonnet 4.6": 9
+        },
+        "winner": "Claude Sonnet 4.6",
+        "goals": [
+          {
+            "frame": 32,
+            "time_seconds": 1.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 82,
+            "time_seconds": 2.7,
+            "scorer": "GPT-5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 179,
+            "time_seconds": 6.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 215,
+            "time_seconds": 7.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 280,
+            "time_seconds": 9.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 501,
+            "time_seconds": 16.7,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 552,
+            "time_seconds": 18.4,
+            "scorer": "GPT-5",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 593,
+            "time_seconds": 19.8,
+            "scorer": "GPT-5",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 668,
+            "time_seconds": 22.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 762,
+            "time_seconds": 25.4,
+            "scorer": "GPT-5",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 903,
+            "time_seconds": 30.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 984,
+            "time_seconds": 32.8,
+            "scorer": "GPT-5",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1100,
+            "time_seconds": 36.7,
+            "scorer": "GPT-5",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1366,
+            "time_seconds": 45.5,
+            "scorer": "GPT-5",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1647,
+            "time_seconds": 54.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1719,
+            "time_seconds": 57.3,
+            "scorer": "GPT-5",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1773,
+            "time_seconds": 59.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 17,
+          "total_ball_touches": 58,
+          "total_own_goals": 6,
+          "total_saves": 10,
+          "time_to_first_goal_seconds": 1.1,
+          "first_scorer": "Claude Sonnet 4.6",
+          "lead_changes": 0,
+          "largest_lead": 4
+        },
+        "players": {
+          "GPT-5": {
+            "model": "gpt-5",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 9,
+            "ball_touches": 38,
+            "goals_per_touch": 0.211,
+            "saves": 3,
+            "own_goals": 3,
+            "possession_pct": 68.0,
+            "jumps": 39,
+            "distance_travelled": 18185.4,
+            "time_to_first_goal_seconds": 2.7,
+            "action_distribution": {
+              "move_left": 40,
+              "move_right": 85,
+              "jump": 1,
+              "move_left_jump": 17,
+              "move_right_jump": 37,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 900.6,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146350,
+              "completion": 2033
+            },
+            "estimated_cost_usd": 0.203267
+          },
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 8,
+            "ball_touches": 20,
+            "goals_per_touch": 0.45,
+            "saves": 7,
+            "own_goals": 3,
+            "possession_pct": 32.0,
+            "jumps": 2,
+            "distance_travelled": 17934.5,
+            "time_to_first_goal_seconds": 1.1,
+            "action_distribution": {
+              "move_left": 102,
+              "move_right": 75,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 2,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1627.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159130,
+              "completion": 4880
+            },
+            "estimated_cost_usd": 0.55059
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5__gpt_5_mini",
+      "home": "gpt_5",
+      "away": "gpt_5_mini",
+      "home_name": "GPT-5",
+      "away_name": "GPT-5 mini",
+      "home_color": "#E8A317",
+      "away_color": "#2DD4BF",
+      "score": [
+        5,
+        6
+      ],
+      "winner": "GPT-5 mini",
+      "winner_id": "gpt_5_mini",
+      "log": "logs/gpt_5_v_gpt_5_mini_20260615_193258.json",
+      "played_at": "2026-06-16T01:37:55.703891+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5": 5,
+          "GPT-5 mini": 6
+        },
+        "winner": "GPT-5 mini",
+        "goals": [
+          {
+            "frame": 103,
+            "time_seconds": 3.4,
+            "scorer": "GPT-5",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 178,
+            "time_seconds": 5.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 385,
+            "time_seconds": 12.8,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 844,
+            "time_seconds": 28.1,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 888,
+            "time_seconds": 29.6,
+            "scorer": "GPT-5",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1124,
+            "time_seconds": 37.5,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1220,
+            "time_seconds": 40.7,
+            "scorer": "GPT-5",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1404,
+            "time_seconds": 46.8,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1440,
+            "time_seconds": 48.0,
+            "scorer": "GPT-5",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1617,
+            "time_seconds": 53.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1788,
+            "time_seconds": 59.6,
+            "scorer": "GPT-5",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 11,
+          "total_ball_touches": 57,
+          "total_own_goals": 6,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 3.4,
+          "first_scorer": "GPT-5",
+          "lead_changes": 1,
+          "largest_lead": 2
+        },
+        "players": {
+          "GPT-5": {
+            "model": "gpt-5",
+            "policy": "model",
+            "goals_for": 5,
+            "goals_against": 6,
+            "ball_touches": 40,
+            "goals_per_touch": 0.125,
+            "saves": 1,
+            "own_goals": 5,
+            "possession_pct": 76.6,
+            "jumps": 41,
+            "distance_travelled": 17914.6,
+            "time_to_first_goal_seconds": 3.4,
+            "action_distribution": {
+              "move_left": 36,
+              "move_right": 81,
+              "jump": 0,
+              "move_left_jump": 22,
+              "move_right_jump": 41,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 918.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146353,
+              "completion": 2043
+            },
+            "estimated_cost_usd": 0.203371
+          },
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 6,
+            "goals_against": 5,
+            "ball_touches": 17,
+            "goals_per_touch": 0.353,
+            "saves": 6,
+            "own_goals": 1,
+            "possession_pct": 23.4,
+            "jumps": 21,
+            "distance_travelled": 21368.3,
+            "time_to_first_goal_seconds": 5.9,
+            "action_distribution": {
+              "move_left": 79,
+              "move_right": 75,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 19,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 732.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146353,
+              "completion": 2006
+            },
+            "estimated_cost_usd": 0.0406
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_sonnet_4_6__gpt_5_mini",
+      "home": "claude_sonnet_4_6",
+      "away": "gpt_5_mini",
+      "home_name": "Claude Sonnet 4.6",
+      "away_name": "GPT-5 mini",
+      "home_color": "#EC4899",
+      "away_color": "#2DD4BF",
+      "score": [
+        1,
+        3
+      ],
+      "winner": "GPT-5 mini",
+      "winner_id": "gpt_5_mini",
+      "log": "logs/claude_sonnet_4_6_v_gpt_5_mini_20260615_193755.json",
+      "played_at": "2026-06-16T01:44:33.373467+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Sonnet 4.6": 1,
+          "GPT-5 mini": 3
+        },
+        "winner": "GPT-5 mini",
+        "goals": [
+          {
+            "frame": 29,
+            "time_seconds": 1.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 230,
+            "time_seconds": 7.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 448,
+            "time_seconds": 14.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1166,
+            "time_seconds": 38.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 4,
+          "total_ball_touches": 28,
+          "total_own_goals": 1,
+          "total_saves": 12,
+          "time_to_first_goal_seconds": 1.0,
+          "first_scorer": "Claude Sonnet 4.6",
+          "lead_changes": 1,
+          "largest_lead": 2
+        },
+        "players": {
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 1,
+            "goals_against": 3,
+            "ball_touches": 14,
+            "goals_per_touch": 0.071,
+            "saves": 3,
+            "own_goals": 1,
+            "possession_pct": 43.1,
+            "jumps": 0,
+            "distance_travelled": 6606.0,
+            "time_to_first_goal_seconds": 1.0,
+            "action_distribution": {
+              "move_left": 145,
+              "move_right": 30,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 0,
+              "idle": 5
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1474.5,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159123,
+              "completion": 5474
+            },
+            "estimated_cost_usd": 0.559479
+          },
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 3,
+            "goals_against": 1,
+            "ball_touches": 14,
+            "goals_per_touch": 0.214,
+            "saves": 9,
+            "own_goals": 0,
+            "possession_pct": 56.9,
+            "jumps": 42,
+            "distance_travelled": 23838.0,
+            "time_to_first_goal_seconds": 7.7,
+            "action_distribution": {
+              "move_left": 56,
+              "move_right": 41,
+              "jump": 0,
+              "move_left_jump": 30,
+              "move_right_jump": 53,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 734.3,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146343,
+              "completion": 2063
+            },
+            "estimated_cost_usd": 0.040712
+          }
+        }
+      }
     }
   ],
   "standings": [
     {
-      "id": "claude_haiku_4_5",
-      "name": "Claude Haiku 4.5",
-      "color": "#D97757",
-      "abbrev": "HAI",
-      "provider": "Anthropic",
-      "played": 5,
-      "w": 4,
+      "id": "gpt_5_mini",
+      "name": "GPT-5 mini",
+      "color": "#2DD4BF",
+      "abbrev": "G5M",
+      "provider": "OpenAI",
+      "played": 7,
+      "w": 6,
       "d": 0,
       "l": 1,
-      "gf": 54,
-      "ga": 51,
-      "gd": 3,
-      "points": 12,
+      "gf": 61,
+      "ga": 40,
+      "gd": 21,
+      "points": 18,
       "rank": 1
     },
     {
@@ -4792,15 +8138,31 @@
       "color": "#9B59B6",
       "abbrev": "OPU",
       "provider": "Anthropic",
-      "played": 5,
-      "w": 3,
+      "played": 7,
+      "w": 5,
       "d": 0,
       "l": 2,
-      "gf": 54,
-      "ga": 49,
-      "gd": 5,
-      "points": 9,
+      "gf": 73,
+      "ga": 61,
+      "gd": 12,
+      "points": 15,
       "rank": 2
+    },
+    {
+      "id": "claude_haiku_4_5",
+      "name": "Claude Haiku 4.5",
+      "color": "#D97757",
+      "abbrev": "HAI",
+      "provider": "Anthropic",
+      "played": 7,
+      "w": 5,
+      "d": 0,
+      "l": 2,
+      "gf": 65,
+      "ga": 66,
+      "gd": -1,
+      "points": 15,
+      "rank": 3
     },
     {
       "id": "gemini_2_5_flash",
@@ -4808,31 +8170,31 @@
       "color": "#DB4437",
       "abbrev": "GMF",
       "provider": "Gemini",
-      "played": 5,
-      "w": 2,
+      "played": 7,
+      "w": 3,
       "d": 1,
-      "l": 2,
-      "gf": 52,
-      "ga": 50,
-      "gd": 2,
-      "points": 7,
-      "rank": 3
+      "l": 3,
+      "gf": 69,
+      "ga": 69,
+      "gd": 0,
+      "points": 10,
+      "rank": 4
     },
     {
-      "id": "gpt_4o_mini",
-      "name": "GPT-4o mini",
-      "color": "#10A37F",
-      "abbrev": "GPT",
-      "provider": "OpenAI",
-      "played": 5,
-      "w": 2,
+      "id": "claude_sonnet_4_6",
+      "name": "Claude Sonnet 4.6",
+      "color": "#EC4899",
+      "abbrev": "SON",
+      "provider": "Anthropic",
+      "played": 7,
+      "w": 3,
       "d": 0,
-      "l": 3,
-      "gf": 55,
-      "ga": 54,
-      "gd": 1,
-      "points": 6,
-      "rank": 4
+      "l": 4,
+      "gf": 54,
+      "ga": 52,
+      "gd": 2,
+      "points": 9,
+      "rank": 5
     },
     {
       "id": "gpt_5",
@@ -4840,15 +8202,31 @@
       "color": "#E8A317",
       "abbrev": "GP5",
       "provider": "OpenAI",
-      "played": 5,
+      "played": 7,
       "w": 2,
       "d": 0,
-      "l": 3,
-      "gf": 47,
-      "ga": 57,
-      "gd": -10,
+      "l": 5,
+      "gf": 60,
+      "ga": 72,
+      "gd": -12,
       "points": 6,
-      "rank": 5
+      "rank": 6
+    },
+    {
+      "id": "gpt_4o_mini",
+      "name": "GPT-4o mini",
+      "color": "#10A37F",
+      "abbrev": "GPT",
+      "provider": "OpenAI",
+      "played": 7,
+      "w": 2,
+      "d": 0,
+      "l": 5,
+      "gf": 68,
+      "ga": 83,
+      "gd": -15,
+      "points": 6,
+      "rank": 7
     },
     {
       "id": "gemini_2_5_flash_lite",
@@ -4856,119 +8234,153 @@
       "color": "#4285F4",
       "abbrev": "GEM",
       "provider": "Gemini",
-      "played": 5,
+      "played": 7,
       "w": 1,
       "d": 1,
-      "l": 3,
-      "gf": 59,
-      "ga": 60,
-      "gd": -1,
+      "l": 5,
+      "gf": 74,
+      "ga": 81,
+      "gd": -7,
       "points": 4,
-      "rank": 6
+      "rank": 8
     }
   ],
   "aggregate_stats": {
     "claude_haiku_4_5": {
-      "games": 5,
-      "goals_for": 54,
-      "goals_against": 51,
-      "goal_diff": 3,
-      "ball_touches": 123,
-      "goals_per_touch": 0.439,
-      "saves": 34,
-      "own_goals": 17,
-      "jumps": 218,
-      "distance": 79413.0,
-      "avg_possession_pct": 41.1,
-      "avg_latency_ms": 948.0,
-      "tokens_in": 794743,
-      "tokens_out": 18297,
-      "total_cost_usd": 0.8862
+      "games": 7,
+      "goals_for": 65,
+      "goals_against": 66,
+      "goal_diff": -1,
+      "ball_touches": 162,
+      "goals_per_touch": 0.401,
+      "saves": 40,
+      "own_goals": 26,
+      "jumps": 312,
+      "distance": 109867.0,
+      "avg_possession_pct": 43.0,
+      "avg_latency_ms": 893.0,
+      "tokens_in": 1112628,
+      "tokens_out": 25131,
+      "total_cost_usd": 1.2383
     },
     "gpt_4o_mini": {
-      "games": 5,
-      "goals_for": 55,
-      "goals_against": 54,
-      "goal_diff": 1,
-      "ball_touches": 155,
-      "goals_per_touch": 0.355,
-      "saves": 13,
-      "own_goals": 23,
-      "jumps": 30,
-      "distance": 85308.0,
-      "avg_possession_pct": 54.8,
-      "avg_latency_ms": 570.0,
-      "tokens_in": 732646,
-      "tokens_out": 1833,
-      "total_cost_usd": 0.111
+      "games": 7,
+      "goals_for": 68,
+      "goals_against": 83,
+      "goal_diff": -15,
+      "ball_touches": 219,
+      "goals_per_touch": 0.311,
+      "saves": 18,
+      "own_goals": 42,
+      "jumps": 37,
+      "distance": 121082.0,
+      "avg_possession_pct": 57.6,
+      "avg_latency_ms": 560.0,
+      "tokens_in": 1025701,
+      "tokens_out": 2560,
+      "total_cost_usd": 0.1554
     },
     "gemini_2_5_flash_lite": {
-      "games": 5,
-      "goals_for": 59,
-      "goals_against": 60,
-      "goal_diff": -1,
-      "ball_touches": 124,
-      "goals_per_touch": 0.476,
-      "saves": 11,
-      "own_goals": 17,
-      "jumps": 394,
-      "distance": 90552.0,
-      "avg_possession_pct": 40.7,
+      "games": 7,
+      "goals_for": 74,
+      "goals_against": 81,
+      "goal_diff": -7,
+      "ball_touches": 167,
+      "goals_per_touch": 0.443,
+      "saves": 19,
+      "own_goals": 24,
+      "jumps": 549,
+      "distance": 125401.0,
+      "avg_possession_pct": 40.1,
       "avg_latency_ms": 324.0,
-      "tokens_in": 789722,
-      "tokens_out": 4298,
-      "total_cost_usd": 0.0807
+      "tokens_in": 1105132,
+      "tokens_out": 6036,
+      "total_cost_usd": 0.1129
     },
     "claude_opus_4_8": {
-      "games": 5,
-      "goals_for": 54,
-      "goals_against": 49,
-      "goal_diff": 5,
-      "ball_touches": 180,
-      "goals_per_touch": 0.3,
-      "saves": 27,
-      "own_goals": 27,
-      "jumps": 92,
-      "distance": 87054.0,
-      "avg_possession_pct": 59.4,
-      "avg_latency_ms": 1527.0,
-      "tokens_in": 1023359,
-      "tokens_out": 11014,
-      "total_cost_usd": 5.3921
+      "games": 7,
+      "goals_for": 73,
+      "goals_against": 61,
+      "goal_diff": 12,
+      "ball_touches": 258,
+      "goals_per_touch": 0.283,
+      "saves": 30,
+      "own_goals": 34,
+      "jumps": 135,
+      "distance": 121348.0,
+      "avg_possession_pct": 61.8,
+      "avg_latency_ms": 1462.0,
+      "tokens_in": 1432697,
+      "tokens_out": 14322,
+      "total_cost_usd": 7.5215
     },
     "gemini_2_5_flash": {
-      "games": 5,
-      "goals_for": 52,
-      "goals_against": 50,
-      "goal_diff": 2,
-      "ball_touches": 155,
-      "goals_per_touch": 0.335,
-      "saves": 12,
-      "own_goals": 26,
-      "jumps": 311,
-      "distance": 80633.0,
-      "avg_possession_pct": 48.9,
-      "avg_latency_ms": 3034.0,
-      "tokens_in": 755265,
-      "tokens_out": 3571,
-      "total_cost_usd": 0.2355
+      "games": 7,
+      "goals_for": 69,
+      "goals_against": 69,
+      "goal_diff": 0,
+      "ball_touches": 213,
+      "goals_per_touch": 0.324,
+      "saves": 14,
+      "own_goals": 33,
+      "jumps": 434,
+      "distance": 114921.0,
+      "avg_possession_pct": 50.1,
+      "avg_latency_ms": 3054.0,
+      "tokens_in": 1064548,
+      "tokens_out": 5078,
+      "total_cost_usd": 0.3321
     },
     "gpt_5": {
-      "games": 5,
-      "goals_for": 47,
-      "goals_against": 57,
-      "goal_diff": -10,
-      "ball_touches": 134,
-      "goals_per_touch": 0.351,
-      "saves": 36,
-      "own_goals": 23,
-      "jumps": 191,
-      "distance": 101996.0,
-      "avg_possession_pct": 55.1,
-      "avg_latency_ms": 959.0,
-      "tokens_in": 731750,
-      "tokens_out": 10202,
-      "total_cost_usd": 1.0167
+      "games": 7,
+      "goals_for": 60,
+      "goals_against": 72,
+      "goal_diff": -12,
+      "ball_touches": 212,
+      "goals_per_touch": 0.283,
+      "saves": 40,
+      "own_goals": 31,
+      "jumps": 271,
+      "distance": 138096.0,
+      "avg_possession_pct": 60.0,
+      "avg_latency_ms": 945.0,
+      "tokens_in": 1024453,
+      "tokens_out": 14278,
+      "total_cost_usd": 1.4233
+    },
+    "claude_sonnet_4_6": {
+      "games": 7,
+      "goals_for": 54,
+      "goals_against": 52,
+      "goal_diff": 2,
+      "ball_touches": 153,
+      "goals_per_touch": 0.353,
+      "saves": 53,
+      "own_goals": 29,
+      "jumps": 15,
+      "distance": 100518.0,
+      "avg_possession_pct": 50.0,
+      "avg_latency_ms": 1512.0,
+      "tokens_in": 1113883,
+      "tokens_out": 36008,
+      "total_cost_usd": 3.8818
+    },
+    "gpt_5_mini": {
+      "games": 7,
+      "goals_for": 61,
+      "goals_against": 40,
+      "goal_diff": 21,
+      "ball_touches": 126,
+      "goals_per_touch": 0.484,
+      "saves": 55,
+      "own_goals": 7,
+      "jumps": 163,
+      "distance": 153950.0,
+      "avg_possession_pct": 37.4,
+      "avg_latency_ms": 777.0,
+      "tokens_in": 1024430,
+      "tokens_out": 14102,
+      "total_cost_usd": 0.2843
     }
   }
 }
