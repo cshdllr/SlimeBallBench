@@ -55,7 +55,7 @@
   }
   .match-line b { color: #fff; font-variant-numeric: tabular-nums; }
   .mcards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-  .mcard { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; border-top: 3px solid #888; }
+  .mcard { background: var(--panel); border: 2px solid #888; border-radius: 10px; padding: 12px 14px; }
   .mcard h3 { margin: 0 0 4px; font-size: 14px; }
   .mcard .sub { font-size: 11px; color: var(--muted); margin-bottom: 10px; font-family: ui-monospace, monospace; }
   .stat { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.04); }
@@ -149,7 +149,7 @@
 
   <footer class="site">
     Headless physics · identical prompts · replays rendered from logged frames ·
-    <a href="https://github.com/cshdllr/SlimeBallBench">source on GitHub</a>
+    Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a>
   </footer>
 </div>
 
@@ -186,8 +186,11 @@ function loadLog(obj) {
   fps = log.fps || 30;
   cur = 0;
 
-  canvas.width = field.width;
-  canvas.height = field.height;
+  // back the canvas at device-pixel resolution for crisp rendering on retina
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = field.width * dpr;
+  canvas.height = field.height * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   const p1 = log.players.p1, p2 = log.players.p2;
   document.getElementById("name1").textContent = p1.name;
@@ -235,8 +238,12 @@ function renderMetrics() {
 // ---- goal-differential timeline (from log.summary.goals) ----
 function drawGoalChart() {
   const cv = document.getElementById("goalChart");
+  // render at device-pixel resolution so text/lines stay crisp on retina displays
+  const W = 1000, H = 170;
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = W * dpr; cv.height = H * dpr;
   const g = cv.getContext("2d");
-  const W = cv.width, H = cv.height;
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
   g.clearRect(0, 0, W, H);
 
   const s = log.summary;
@@ -314,7 +321,7 @@ function drawGoalChart() {
 function fillCard(elId, meta, st) {
   const el = document.getElementById(elId);
   if (!st) { el.innerHTML = ""; return; }
-  el.style.borderTopColor = meta.color;
+  el.style.borderColor = meta.color;
 
   const row = (k, v) => `<div class="stat"><span class="k">${k}</span><span class="v">${v}</span></div>`;
   const rows = [
