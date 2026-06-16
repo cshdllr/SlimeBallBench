@@ -13,13 +13,16 @@ header.site {
   display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
   padding: 18px 2px 12px; border-bottom: 1px solid var(--line); margin-bottom: 18px;
 }
-header.site .title { font-size: 18px; font-weight: 700; }
+header.site .title { font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: .2px; }
+a.title:hover { color: #fff; }
 header.site nav { display: flex; gap: 14px; }
 header.site nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
 header.site nav a:hover, header.site nav a.active { color: var(--text); }
 h1 { font-size: 22px; margin: 8px 2px 4px; }
 .sub { color: var(--muted); font-size: 13px; margin: 0 2px 18px; }
 a { color: #58a6ff; }
+footer.site { margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 12px; text-align: center; }
 
 table { width: 100%; border-collapse: collapse; background: var(--panel);
   border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -32,6 +35,8 @@ thead th.sortable:hover { color: var(--text); }
 tbody tr { border-top: 1px solid rgba(255,255,255,0.04); }
 tbody tr.clickable { cursor: pointer; }
 tbody tr.clickable:hover { background: rgba(255,255,255,0.03); }
+tbody tr.leader td { background: rgba(63,185,80,0.07); }
+tbody tr.leader .pos::before { content: "🥇 "; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
 .team-cell .name { font-weight: 600; }
 .team-cell .meta { color: var(--muted); font-size: 11px; }

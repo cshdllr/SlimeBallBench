@@ -102,6 +102,18 @@
       "request_timeout_seconds": 30,
       "max_completion_tokens": 512,
       "reasoning_effort": "minimal"
+    },
+    {
+      "name": "Gemini 3.1 Pro",
+      "abbrev": "G31",
+      "model": "gemini-3.1-pro-preview",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "api_key_env": "GEMINI_API_KEY",
+      "color": "#34A853",
+      "input_cost_per_1m": 2.0,
+      "output_cost_per_1m": 12.0,
+      "request_timeout_seconds": 60,
+      "max_tokens": 512
     }
   ]
 }

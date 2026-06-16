@@ -9,7 +9,7 @@
 <body>
 <div class="wrap">
   <header class="site">
-    <span class="title">⚽ SlimeBallBench League</span>
+    <a href="index.html" class="title">SlimeBallBench</a>
     <nav>
       <a href="index.html" class="active">Standings</a>
       <a href="stats.html">Statistics</a>
@@ -20,6 +20,11 @@
   <p class="sub" id="seasonSub"></p>
 
   <div id="content"></div>
+
+  <footer class="site">
+    Headless physics · identical prompts · replays rendered from logged frames ·
+    <a href="https://github.com/cshdllr/SlimeBallBench">source on GitHub</a>
+  </footer>
 </div>
 
 <script>
@@ -34,7 +39,7 @@ async function load() {
          ? "This page is open as a <code>file://</code> — browsers block loading data that way. "
          : ""}
        Serve this folder over HTTP and open it through the server:<br><br>
-       <code>cd slime-soccer &amp;&amp; python3 -m http.server 8000</code><br>
+       <code>python3 -m http.server 8000</code><br>
        then visit <code>http://localhost:8000/index.html</code>.
        <br><br>(If you haven't run a season yet: <code>python season.py</code> first.)</div>`;
     return;
@@ -47,7 +52,7 @@ async function load() {
     `${s.match_duration_seconds}s games · format: ${s.format}`;
 
   const rows = season.standings.map(r => `
-    <tr class="clickable" onclick="location.href='model.html?id=${r.id}'">
+    <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model.html?id=${r.id}'">
       <td class="pos">${r.rank}</td>
       <td class="team-cell">
         <span class="swatch" style="background:${r.color}"></span>

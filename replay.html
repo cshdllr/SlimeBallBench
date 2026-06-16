@@ -70,11 +70,28 @@
   #loader input { color: var(--text); }
   .hidden { display: none; }
   a { color: #58a6ff; }
+  header.site { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
+    padding: 2px 2px 12px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+  header.site .title { font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: .2px; }
+  header.site .title:hover { color: #fff; }
+  header.site nav { display: flex; gap: 14px; }
+  header.site nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+  header.site nav a:hover { color: var(--text); }
+  footer.site { margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 12px; text-align: center; }
+  .chart-title { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 16px 2px 6px; }
+  #goalChart { width: 100%; height: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: block; }
 </style>
 </head>
 <body>
 <div id="wrap">
-  <h1>⚽ SlimeBallBench — Replay</h1>
+  <header class="site">
+    <a href="index.html" class="title">SlimeBallBench</a>
+    <nav>
+      <a href="index.html">Standings</a>
+      <a href="stats.html">Statistics</a>
+    </nav>
+  </header>
 
   <div id="scoreboard">
     <div class="team left">
@@ -116,6 +133,8 @@
   <div id="metrics" class="hidden">
     <div class="metrics-title">Final match metrics</div>
     <div class="match-line" id="matchLine"></div>
+    <div class="chart-title">Goal differential over time</div>
+    <canvas id="goalChart" width="1000" height="170"></canvas>
     <div class="mcards">
       <div class="mcard" id="mcard1"></div>
       <div class="mcard" id="mcard2"></div>
@@ -127,6 +146,11 @@
     <input type="file" id="file" accept="application/json,.json">
     &nbsp;or append <code>?log=logs/yourfile.json</code> to the URL (when served over http).
   </div>
+
+  <footer class="site">
+    Headless physics · identical prompts · replays rendered from logged frames ·
+    <a href="https://github.com/cshdllr/SlimeBallBench">source on GitHub</a>
+  </footer>
 </div>
 
 <script>
@@ -205,6 +229,86 @@ function renderMetrics() {
   const players = s.players || {};
   fillCard("mcard1", log.players.p1, players[log.players.p1.name]);
   fillCard("mcard2", log.players.p2, players[log.players.p2.name]);
+  drawGoalChart();
+}
+
+// ---- goal-differential timeline (from log.summary.goals) ----
+function drawGoalChart() {
+  const cv = document.getElementById("goalChart");
+  const g = cv.getContext("2d");
+  const W = cv.width, H = cv.height;
+  g.clearRect(0, 0, W, H);
+
+  const s = log.summary;
+  const goals = (s && s.goals) ? s.goals : [];
+  const duration = (s && s.duration_seconds) || (frames.length / fps) || 1;
+  const p1 = log.players.p1, p2 = log.players.p2;
+
+  const padL = 14, padR = 14, padTB = 24;
+  const x0 = padL, x1 = W - padR, midY = H / 2;
+  const half = midY - padTB;
+  let maxAbs = 1;
+  for (const go of goals) maxAbs = Math.max(maxAbs, Math.abs(go.score_after[0] - go.score_after[1]));
+  const xAt = t => x0 + (x1 - x0) * Math.min(1, t / duration);
+  const yAt = diff => midY - (diff / maxAbs) * half;
+
+  // step segments [tStart, tEnd, differential]
+  const segs = [];
+  let prevT = 0, prevD = 0;
+  for (const go of goals) {
+    segs.push([prevT, go.time_seconds, prevD]);
+    prevT = go.time_seconds; prevD = go.score_after[0] - go.score_after[1];
+  }
+  segs.push([prevT, duration, prevD]);
+
+  // shaded areas (p1 above midline, p2 below)
+  for (const [ta, tb, diff] of segs) {
+    if (!diff) continue;
+    const xa = xAt(ta), xb = xAt(tb), yv = yAt(diff);
+    g.fillStyle = (diff > 0 ? p1.color : p2.color) + "44";
+    g.fillRect(xa, Math.min(midY, yv), Math.max(1, xb - xa), Math.abs(yv - midY));
+  }
+
+  // quarter gridlines + time ticks
+  g.strokeStyle = "rgba(255,255,255,0.06)"; g.lineWidth = 1;
+  g.fillStyle = "#8b949e"; g.font = "10px ui-sans-serif"; g.textAlign = "center";
+  for (let k = 1; k < 4; k++) {
+    const t = duration * k / 4, x = xAt(t);
+    g.beginPath(); g.moveTo(x, padTB / 2); g.lineTo(x, H - padTB / 2); g.stroke();
+    g.fillText(Math.round(t) + "s", x, H - 6);
+  }
+
+  // step line
+  g.strokeStyle = "#e6edf3"; g.lineWidth = 2; g.beginPath();
+  let started = false;
+  for (const [ta, tb, diff] of segs) {
+    const xa = xAt(ta), xb = xAt(tb), yv = yAt(diff);
+    if (!started) { g.moveTo(xa, yv); started = true; } else { g.lineTo(xa, yv); }
+    g.lineTo(xb, yv);
+  }
+  g.stroke();
+
+  // midline
+  g.strokeStyle = "rgba(255,255,255,0.3)"; g.lineWidth = 1;
+  g.beginPath(); g.moveTo(x0, midY); g.lineTo(x1, midY); g.stroke();
+
+  // goal markers (colored by scorer; own goals get a red ring)
+  for (const go of goals) {
+    const diff = go.score_after[0] - go.score_after[1];
+    const gx = xAt(go.time_seconds), gy = yAt(diff);
+    const color = go.scorer === p1.name ? p1.color : p2.color;
+    g.fillStyle = color; g.strokeStyle = "#0e1116"; g.lineWidth = 1.5;
+    g.beginPath(); g.arc(gx, gy, 4.5, 0, 2 * Math.PI); g.fill(); g.stroke();
+    if (go.own_goal) {
+      g.strokeStyle = "#f85149"; g.lineWidth = 1.5;
+      g.beginPath(); g.arc(gx, gy, 7.5, 0, 2 * Math.PI); g.stroke();
+    }
+  }
+
+  // team labels
+  g.textAlign = "left"; g.font = "11px ui-sans-serif";
+  g.fillStyle = p1.color; g.fillText("▲ " + p1.name, x0 + 2, padTB - 8);
+  g.fillStyle = p2.color; g.fillText("▼ " + p2.name, x0 + 2, H - 8);
 }
 
 function fillCard(elId, meta, st) {
@@ -241,20 +345,28 @@ function fillCard(elId, meta, st) {
 }
 
 // ---- drawing ----
-function drawSlime(cx, baseY, r, color, facing) {
+function drawSlime(cx, baseY, r, color, ballX, ballY) {
   // semicircle: flat side on the ground, dome above
   ctx.fillStyle = color;
   ctx.beginPath();
   ctx.arc(tx(cx), ty(baseY), r, Math.PI, 2 * Math.PI);
   ctx.closePath();
   ctx.fill();
-  // eye, looking toward the opponent
-  const ex = tx(cx) + facing * r * 0.45;
-  const ey = ty(baseY) - r * 0.45;
+  // googly eye on the dome whose pupil tracks the ball
+  const eyeX = tx(cx);
+  const eyeY = ty(baseY) - r * 0.5;
+  const eyeR = r * 0.22;
   ctx.fillStyle = "#fff";
-  ctx.beginPath(); ctx.arc(ex, ey, r * 0.18, 0, 2 * Math.PI); ctx.fill();
+  ctx.beginPath(); ctx.arc(eyeX, eyeY, eyeR, 0, 2 * Math.PI); ctx.fill();
+  // aim the pupil from the eye center toward the ball
+  let dx = tx(ballX) - eyeX, dy = ty(ballY) - eyeY;
+  const dist = Math.hypot(dx, dy) || 1;
+  const pupilR = r * 0.1;
+  const reach = eyeR - pupilR;
+  const px = eyeX + (dx / dist) * reach;
+  const py = eyeY + (dy / dist) * reach;
   ctx.fillStyle = "#111";
-  ctx.beginPath(); ctx.arc(ex + facing * r * 0.06, ey, r * 0.09, 0, 2 * Math.PI); ctx.fill();
+  ctx.beginPath(); ctx.arc(px, py, pupilR, 0, 2 * Math.PI); ctx.fill();
 }
 
 function drawGoal(side) {
@@ -327,8 +439,8 @@ function drawFrame(i) {
   const f = frames[i];
 
   drawField();
-  drawSlime(f.p1[0], f.p1[1], field.slime_radius, log.players.p1.color, +1);
-  drawSlime(f.p2[0], f.p2[1], field.slime_radius, log.players.p2.color, -1);
+  drawSlime(f.p1[0], f.p1[1], field.slime_radius, log.players.p1.color, f.ball[0], f.ball[1]);
+  drawSlime(f.p2[0], f.p2[1], field.slime_radius, log.players.p2.color, f.ball[0], f.ball[1]);
   drawBall(f.ball[0], f.ball[1]);
 
   // HUD
