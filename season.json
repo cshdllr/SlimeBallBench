@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-06-16T01:44:33.383065+00:00",
+  "generated_at": "2026-06-22T22:01:13.519747+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -71,6 +71,14 @@
       "abbrev": "G5M",
       "provider": "OpenAI",
       "model": "gpt-5-mini"
+    },
+    {
+      "id": "gemini_3_1_pro",
+      "name": "Gemini 3.1 Pro",
+      "color": "#34A853",
+      "abbrev": "G31",
+      "provider": "Gemini",
+      "model": "gemini-3.1-pro-preview"
     }
   ],
   "matches": [
@@ -8113,6 +8121,336 @@
           }
         }
       }
+    },
+    {
+      "id": "gemini_3_1_pro__claude_opus_4_8",
+      "home": "gemini_3_1_pro",
+      "away": "claude_opus_4_8",
+      "home_name": "Gemini 3.1 Pro",
+      "away_name": "Claude Opus 4.8",
+      "home_color": "#34A853",
+      "away_color": "#9B59B6",
+      "score": [
+        9,
+        14
+      ],
+      "winner": "Claude Opus 4.8",
+      "winner_id": "claude_opus_4_8",
+      "log": "logs/gemini_3_1_pro_v_claude_opus_4_8_20260622_150540.json",
+      "played_at": "2026-06-22T21:29:09.723794+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 3.1 Pro": 9,
+          "Claude Opus 4.8": 14
+        },
+        "winner": "Claude Opus 4.8",
+        "goals": [
+          {
+            "frame": 61,
+            "time_seconds": 2.0,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 159,
+            "time_seconds": 5.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 229,
+            "time_seconds": 7.6,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 274,
+            "time_seconds": 9.1,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 310,
+            "time_seconds": 10.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 414,
+            "time_seconds": 13.8,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 450,
+            "time_seconds": 15.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 498,
+            "time_seconds": 16.6,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 525,
+            "time_seconds": 17.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 838,
+            "time_seconds": 27.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 869,
+            "time_seconds": 29.0,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 915,
+            "time_seconds": 30.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 980,
+            "time_seconds": 32.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1078,
+            "time_seconds": 35.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1105,
+            "time_seconds": 36.8,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              6,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1186,
+            "time_seconds": 39.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              7,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1262,
+            "time_seconds": 42.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1351,
+            "time_seconds": 45.0,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              8,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1431,
+            "time_seconds": 47.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1550,
+            "time_seconds": 51.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              12
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1684,
+            "time_seconds": 56.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              13
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1720,
+            "time_seconds": 57.3,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              9,
+              13
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1784,
+            "time_seconds": 59.5,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              9,
+              14
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 23,
+          "total_ball_touches": 59,
+          "total_own_goals": 11,
+          "total_saves": 5,
+          "time_to_first_goal_seconds": 2.0,
+          "first_scorer": "Gemini 3.1 Pro",
+          "lead_changes": 1,
+          "largest_lead": 5
+        },
+        "players": {
+          "Gemini 3.1 Pro": {
+            "model": "gemini-3.1-pro-preview",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 14,
+            "ball_touches": 29,
+            "goals_per_touch": 0.31,
+            "saves": 1,
+            "own_goals": 6,
+            "possession_pct": 37.2,
+            "jumps": 17,
+            "distance_travelled": 17425.2,
+            "time_to_first_goal_seconds": 2.0,
+            "action_distribution": {
+              "move_left": 53,
+              "move_right": 110,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 11,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 6211.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157334,
+              "completion": 561
+            },
+            "estimated_cost_usd": 0.3214
+          },
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 14,
+            "goals_against": 9,
+            "ball_touches": 30,
+            "goals_per_touch": 0.467,
+            "saves": 4,
+            "own_goals": 5,
+            "possession_pct": 62.8,
+            "jumps": 9,
+            "distance_travelled": 16242.1,
+            "time_to_first_goal_seconds": 5.3,
+            "action_distribution": {
+              "move_left": 124,
+              "move_right": 45,
+              "jump": 0,
+              "move_left_jump": 9,
+              "move_right_jump": 1,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1614.3,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204674,
+              "completion": 2134
+            },
+            "estimated_cost_usd": 1.07672
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -8138,14 +8476,14 @@
       "color": "#9B59B6",
       "abbrev": "OPU",
       "provider": "Anthropic",
-      "played": 7,
-      "w": 5,
+      "played": 8,
+      "w": 6,
       "d": 0,
       "l": 2,
-      "gf": 73,
-      "ga": 61,
-      "gd": 12,
-      "points": 15,
+      "gf": 87,
+      "ga": 70,
+      "gd": 17,
+      "points": 18,
       "rank": 2
     },
     {
@@ -8243,6 +8581,22 @@
       "gd": -7,
       "points": 4,
       "rank": 8
+    },
+    {
+      "id": "gemini_3_1_pro",
+      "name": "Gemini 3.1 Pro",
+      "color": "#34A853",
+      "abbrev": "G31",
+      "provider": "Gemini",
+      "played": 1,
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 9,
+      "ga": 14,
+      "gd": -5,
+      "points": 0,
+      "rank": 9
     }
   ],
   "aggregate_stats": {
@@ -8298,21 +8652,21 @@
       "total_cost_usd": 0.1129
     },
     "claude_opus_4_8": {
-      "games": 7,
-      "goals_for": 73,
-      "goals_against": 61,
-      "goal_diff": 12,
-      "ball_touches": 258,
-      "goals_per_touch": 0.283,
-      "saves": 30,
-      "own_goals": 34,
-      "jumps": 135,
-      "distance": 121348.0,
-      "avg_possession_pct": 61.8,
-      "avg_latency_ms": 1462.0,
-      "tokens_in": 1432697,
-      "tokens_out": 14322,
-      "total_cost_usd": 7.5215
+      "games": 8,
+      "goals_for": 87,
+      "goals_against": 70,
+      "goal_diff": 17,
+      "ball_touches": 288,
+      "goals_per_touch": 0.302,
+      "saves": 34,
+      "own_goals": 39,
+      "jumps": 144,
+      "distance": 137590.0,
+      "avg_possession_pct": 61.9,
+      "avg_latency_ms": 1481.0,
+      "tokens_in": 1637371,
+      "tokens_out": 16456,
+      "total_cost_usd": 8.5983
     },
     "gemini_2_5_flash": {
       "games": 7,
@@ -8381,6 +8735,23 @@
       "tokens_in": 1024430,
       "tokens_out": 14102,
       "total_cost_usd": 0.2843
+    },
+    "gemini_3_1_pro": {
+      "games": 1,
+      "goals_for": 9,
+      "goals_against": 14,
+      "goal_diff": -5,
+      "ball_touches": 29,
+      "goals_per_touch": 0.31,
+      "saves": 1,
+      "own_goals": 6,
+      "jumps": 17,
+      "distance": 17425.0,
+      "avg_possession_pct": 37.2,
+      "avg_latency_ms": 6211.0,
+      "tokens_in": 157334,
+      "tokens_out": 561,
+      "total_cost_usd": 0.3214
     }
   }
 }
