@@ -1,0 +1,27 @@
+{
+  "match_duration_seconds": 60,
+  "decision_every_n_frames": 10,
+  "fps": 30,
+  "player1": {
+    "name": "Gemini 3.1 Pro",
+    "model": "gemini-3.1-pro-preview",
+    "api_key_env": "GEMINI_API_KEY",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "color": "#34A853",
+    "input_cost_per_1m": 2.0,
+    "output_cost_per_1m": 12.0,
+    "request_timeout_seconds": 60,
+    "max_tokens": 512
+  },
+  "player2": {
+    "name": "Claude Opus 4.8",
+    "model": "claude-opus-4-8",
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "base_url": "https://api.anthropic.com/v1/",
+    "color": "#9B59B6",
+    "input_cost_per_1m": 5.0,
+    "output_cost_per_1m": 25.0,
+    "request_timeout_seconds": 30,
+    "max_tokens": 32
+  }
+}
