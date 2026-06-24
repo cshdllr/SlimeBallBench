@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-06-22T22:01:13.519747+00:00",
+  "generated_at": "2026-06-24T18:18:55.906369+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -8451,6 +8451,246 @@
           }
         }
       }
+    },
+    {
+      "id": "gemini_3_1_pro__gpt_5",
+      "home": "gemini_3_1_pro",
+      "away": "gpt_5",
+      "home_name": "Gemini 3.1 Pro",
+      "away_name": "GPT-5",
+      "home_color": "#34A853",
+      "away_color": "#E8A317",
+      "score": [
+        7,
+        7
+      ],
+      "winner": "draw",
+      "winner_id": "draw",
+      "log": "logs/gemini_3_1_pro_v_gpt_5_20260624_115814.json",
+      "played_at": "2026-06-24T18:18:38.117656+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 3.1 Pro": 7,
+          "GPT-5": 7
+        },
+        "winner": "draw",
+        "goals": [
+          {
+            "frame": 107,
+            "time_seconds": 3.6,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 138,
+            "time_seconds": 4.6,
+            "scorer": "GPT-5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 165,
+            "time_seconds": 5.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 224,
+            "time_seconds": 7.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 291,
+            "time_seconds": 9.7,
+            "scorer": "GPT-5",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 342,
+            "time_seconds": 11.4,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 471,
+            "time_seconds": 15.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              5,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 899,
+            "time_seconds": 30.0,
+            "scorer": "GPT-5",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1067,
+            "time_seconds": 35.6,
+            "scorer": "GPT-5",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1232,
+            "time_seconds": 41.1,
+            "scorer": "GPT-5",
+            "score_after": [
+              5,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1426,
+            "time_seconds": 47.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1488,
+            "time_seconds": 49.6,
+            "scorer": "GPT-5",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1679,
+            "time_seconds": 56.0,
+            "scorer": "GPT-5",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1744,
+            "time_seconds": 58.1,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 14,
+          "total_ball_touches": 60,
+          "total_own_goals": 7,
+          "total_saves": 9,
+          "time_to_first_goal_seconds": 3.6,
+          "first_scorer": "Gemini 3.1 Pro",
+          "lead_changes": 1,
+          "largest_lead": 3
+        },
+        "players": {
+          "Gemini 3.1 Pro": {
+            "model": "gemini-3.1-pro-preview",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 7,
+            "ball_touches": 40,
+            "goals_per_touch": 0.175,
+            "saves": 2,
+            "own_goals": 5,
+            "possession_pct": 71.6,
+            "jumps": 21,
+            "distance_travelled": 16991.2,
+            "time_to_first_goal_seconds": 3.6,
+            "action_distribution": {
+              "move_left": 49,
+              "move_right": 109,
+              "jump": 0,
+              "move_left_jump": 5,
+              "move_right_jump": 16,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 5369.3,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157624,
+              "completion": 571
+            },
+            "estimated_cost_usd": 0.3221
+          },
+          "GPT-5": {
+            "model": "gpt-5",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 7,
+            "ball_touches": 20,
+            "goals_per_touch": 0.35,
+            "saves": 7,
+            "own_goals": 2,
+            "possession_pct": 28.4,
+            "jumps": 32,
+            "distance_travelled": 20560.1,
+            "time_to_first_goal_seconds": 4.6,
+            "action_distribution": {
+              "move_left": 85,
+              "move_right": 42,
+              "jump": 0,
+              "move_left_jump": 16,
+              "move_right_jump": 37,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1424.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146354,
+              "completion": 2033
+            },
+            "estimated_cost_usd": 0.203272
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -8540,14 +8780,14 @@
       "color": "#E8A317",
       "abbrev": "GP5",
       "provider": "OpenAI",
-      "played": 7,
+      "played": 8,
       "w": 2,
-      "d": 0,
+      "d": 1,
       "l": 5,
-      "gf": 60,
-      "ga": 72,
+      "gf": 67,
+      "ga": 79,
       "gd": -12,
-      "points": 6,
+      "points": 7,
       "rank": 6
     },
     {
@@ -8588,14 +8828,14 @@
       "color": "#34A853",
       "abbrev": "G31",
       "provider": "Gemini",
-      "played": 1,
+      "played": 2,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 1,
-      "gf": 9,
-      "ga": 14,
+      "gf": 16,
+      "ga": 21,
       "gd": -5,
-      "points": 0,
+      "points": 1,
       "rank": 9
     }
   ],
@@ -8686,21 +8926,21 @@
       "total_cost_usd": 0.3321
     },
     "gpt_5": {
-      "games": 7,
-      "goals_for": 60,
-      "goals_against": 72,
+      "games": 8,
+      "goals_for": 67,
+      "goals_against": 79,
       "goal_diff": -12,
-      "ball_touches": 212,
-      "goals_per_touch": 0.283,
-      "saves": 40,
-      "own_goals": 31,
-      "jumps": 271,
-      "distance": 138096.0,
-      "avg_possession_pct": 60.0,
-      "avg_latency_ms": 945.0,
-      "tokens_in": 1024453,
-      "tokens_out": 14278,
-      "total_cost_usd": 1.4233
+      "ball_touches": 232,
+      "goals_per_touch": 0.289,
+      "saves": 47,
+      "own_goals": 33,
+      "jumps": 303,
+      "distance": 158656.0,
+      "avg_possession_pct": 56.1,
+      "avg_latency_ms": 1005.0,
+      "tokens_in": 1170807,
+      "tokens_out": 16311,
+      "total_cost_usd": 1.6266
     },
     "claude_sonnet_4_6": {
       "games": 7,
@@ -8737,21 +8977,21 @@
       "total_cost_usd": 0.2843
     },
     "gemini_3_1_pro": {
-      "games": 1,
-      "goals_for": 9,
-      "goals_against": 14,
+      "games": 2,
+      "goals_for": 16,
+      "goals_against": 21,
       "goal_diff": -5,
-      "ball_touches": 29,
-      "goals_per_touch": 0.31,
-      "saves": 1,
-      "own_goals": 6,
-      "jumps": 17,
-      "distance": 17425.0,
-      "avg_possession_pct": 37.2,
-      "avg_latency_ms": 6211.0,
-      "tokens_in": 157334,
-      "tokens_out": 561,
-      "total_cost_usd": 0.3214
+      "ball_touches": 69,
+      "goals_per_touch": 0.232,
+      "saves": 3,
+      "own_goals": 11,
+      "jumps": 38,
+      "distance": 34416.0,
+      "avg_possession_pct": 54.4,
+      "avg_latency_ms": 5790.0,
+      "tokens_in": 314958,
+      "tokens_out": 1132,
+      "total_cost_usd": 0.6435
     }
   }
 }
