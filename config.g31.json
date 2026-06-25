@@ -14,15 +14,14 @@
     "max_tokens": 512
   },
   "player2": {
-    "name": "GPT-5",
-    "model": "gpt-5",
-    "api_key_env": "OPENAI_API_KEY",
-    "base_url": "https://api.openai.com/v1",
-    "color": "#E8A317",
-    "input_cost_per_1m": 1.25,
-    "output_cost_per_1m": 10.0,
+    "name": "Claude Haiku 4.5",
+    "model": "claude-haiku-4-5",
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "base_url": "https://api.anthropic.com/v1/",
+    "color": "#D97757",
+    "input_cost_per_1m": 1.0,
+    "output_cost_per_1m": 5.0,
     "request_timeout_seconds": 30,
-    "max_completion_tokens": 512,
-    "reasoning_effort": "minimal"
+    "max_tokens": 32
   }
 }
