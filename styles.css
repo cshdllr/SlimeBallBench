@@ -36,7 +36,7 @@ tbody tr { border-top: 1px solid rgba(255,255,255,0.04); }
 tbody tr.clickable { cursor: pointer; }
 tbody tr.clickable:hover { background: rgba(255,255,255,0.03); }
 tbody tr.leader td { background: rgba(63,185,80,0.07); }
-tbody tr.leader .pos::before { content: "🥇 "; }
+tbody tr.leader td.pos::before { content: "🥇 "; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
 .team-cell .name { font-weight: 600; }
 .team-cell .meta { color: var(--muted); font-size: 11px; }
@@ -50,6 +50,43 @@ tbody tr.leader .pos::before { content: "🥇 "; }
 
 .result { font-weight: 700; display: inline-block; width: 18px; text-align: center; border-radius: 4px; }
 .result.W { color: #3fb950; } .result.L { color: #f85149; } .result.D { color: #d29922; }
+
+/* --- inline data bars in the standings table (Tufte: the table IS the chart) --- */
+/* Points: a team-coloured bar scaled to the leader, value sitting on top. */
+td.barcell { padding: 6px 12px; }
+.barwrap { position: relative; height: 22px; min-width: 90px; }
+.barwrap .bar { position: absolute; left: 0; top: 2px; bottom: 2px; border-radius: 3px; opacity: .9; }
+.barwrap .val { position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  font-weight: 700; font-variant-numeric: tabular-nums; font-size: 13px; mix-blend-mode: normal; }
+/* Goal difference: a diverging bar centred on zero (right = positive, left = negative),
+   with the value in its own gutter so it's always legible. */
+.divwrap { display: grid; grid-template-columns: 96px 28px; align-items: center;
+  gap: 7px; width: 131px; margin-left: auto; }
+.divwrap .dtrack { position: relative; height: 18px; }
+.divwrap .axis { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--line); }
+.divwrap .dbar { position: absolute; top: 4px; bottom: 4px; border-radius: 2px; }
+.divwrap .dbar.pos { left: 50%; background: #3fb950; }
+.divwrap .dbar.neg { right: 50%; background: #f85149; }
+.divwrap .dval { font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; color: var(--muted); }
+.divwrap .dval.pos { color: #3fb950; } .divwrap .dval.neg { color: #f85149; }
+/* Form: last-N results as tiny direct-labelled cells, newest on the right. */
+.form { display: inline-flex; gap: 2px; }
+.form i { width: 14px; height: 16px; border-radius: 2px; font-style: normal; font-size: 10px;
+  font-weight: 700; line-height: 16px; text-align: center; color: #0e1116; }
+.form i.W { background: #3fb950; } .form i.D { background: #d29922; } .form i.L { background: #f85149; }
+
+/* --- small-multiple ranked bar charts on the statistics page --- */
+.smgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px 26px; margin: 6px 0 30px; }
+.sm h3 { font-size: 13px; font-weight: 600; margin: 0 0 9px; color: var(--text); }
+.sm h3 .hint { color: var(--muted); font-weight: 400; font-size: 11px; margin-left: 6px; }
+.smrow { display: grid; grid-template-columns: 38px 1fr 52px; align-items: center;
+  gap: 8px; height: 19px; }
+.smrow .lab { font-size: 11px; color: var(--muted); text-align: right; font-weight: 600; }
+.smrow .track { position: relative; height: 11px; }
+.smrow .track .b { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px; min-width: 1px; }
+.smrow .num { font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; color: var(--text); }
+.smrow.best .lab { color: var(--text); }
 .notice { color: var(--muted); background: var(--panel); border: 1px dashed var(--line);
   border-radius: 10px; padding: 16px; margin-top: 16px; font-size: 14px; }
 code { background: #21262d; padding: 1px 5px; border-radius: 4px; }

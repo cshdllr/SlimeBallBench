@@ -17,7 +17,12 @@
   </header>
 
   <h1>Statistics</h1>
-  <p class="sub">Aggregate per-team metrics across all matches. Click a column header to sort.</p>
+  <p class="sub">Aggregate per-team metrics across all matches. Each chart ranks every
+     team on one metric (same scale within a chart); the leader is highlighted.</p>
+  <div id="charts"></div>
+
+  <h2 style="font-size:16px;margin:6px 2px 4px">Full table</h2>
+  <p class="sub">Click a column header to sort.</p>
   <div id="content"></div>
 
   <footer class="site">
@@ -46,6 +51,48 @@ const COLS = [
 
 let ROWS = [];
 let sortKey = "goal_diff", sortDir = -1;
+
+// Small multiples: each entry is one ranked bar-chart. `better` decides ordering
+// (best on top) and whether the bar length should track "more = longer" — for
+// "low is better" metrics we invert the bar so a short bar always reads as good.
+const SMALL_MULTIPLES = [
+  { key: "goals_for",          label: "Goals for",       better: "high", fmt: v => v },
+  { key: "goals_against",      label: "Goals against",   better: "low",  fmt: v => v },
+  { key: "goals_per_touch",    label: "Goals per touch", better: "high", fmt: v => v.toFixed(3), hint: "finishing" },
+  { key: "avg_possession_pct", label: "Possession",      better: "high", fmt: v => v + "%" },
+  { key: "saves",              label: "Saves",           better: "high", fmt: v => v },
+  { key: "own_goals",          label: "Own goals",       better: "low",  fmt: v => v, hint: "fewer is better" },
+  { key: "jumps",              label: "Jumps",           better: "high", fmt: v => v },
+  { key: "avg_latency_ms",     label: "Avg latency",     better: "low",  fmt: v => v == null ? "—" : v + "ms", hint: "lower is better" },
+  { key: "total_cost_usd",     label: "Total cost",      better: "low",  fmt: v => "$" + (v ?? 0).toFixed(2), hint: "lower is better" },
+];
+
+function renderSmallMultiples() {
+  const charts = SMALL_MULTIPLES.map(m => {
+    const vals = ROWS.map(r => r[m.key]).filter(v => v != null);
+    if (!vals.length) return "";
+    const max = Math.max(...vals), min = Math.min(...vals);
+    // best on top: descending for high-is-better, ascending for low-is-better
+    const ranked = [...ROWS]
+      .filter(r => r[m.key] != null)
+      .sort((a, b) => m.better === "low" ? a[m.key] - b[m.key] : b[m.key] - a[m.key]);
+    const rows = ranked.map((r, i) => {
+      const v = r[m.key];
+      // Bar length: longest bar = best team. For "low is better", invert so the
+      // best (smallest value) still draws the longest bar.
+      const span = (max - min) || 1;
+      const frac = m.better === "low" ? (max - v) / span : (v - min) / span;
+      const w = 6 + frac * 94; // keep a sliver visible even for the worst
+      return `<div class="smrow${i === 0 ? " best" : ""}">
+          <span class="lab">${r.abbrev || r.name.slice(0, 3)}</span>
+          <span class="track"><span class="b" style="width:${w}%;background:${r.color}"></span></span>
+          <span class="num">${m.fmt(v)}</span>
+        </div>`;
+    }).join("");
+    return `<div class="sm"><h3>${m.label}${m.hint ? `<span class="hint">${m.hint}</span>` : ""}</h3>${rows}</div>`;
+  }).join("");
+  document.getElementById("charts").innerHTML = `<div class="smgrid">${charts}</div>`;
+}
 
 function render() {
   ROWS.sort((a, b) => {
@@ -86,8 +133,9 @@ async function load() {
   }
   const byId = Object.fromEntries(season.models.map(m => [m.id, m]));
   ROWS = Object.entries(season.aggregate_stats).map(([id, s]) => ({
-    id, name: byId[id].name, color: byId[id].color, ...s,
+    id, name: byId[id].name, color: byId[id].color, abbrev: byId[id].abbrev, ...s,
   }));
+  renderSmallMultiples();
   render();
 }
 load();
