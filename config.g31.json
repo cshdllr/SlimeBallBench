@@ -14,14 +14,14 @@
     "max_tokens": 512
   },
   "player2": {
-    "name": "Claude Haiku 4.5",
-    "model": "claude-haiku-4-5",
-    "api_key_env": "ANTHROPIC_API_KEY",
-    "base_url": "https://api.anthropic.com/v1/",
-    "color": "#D97757",
-    "input_cost_per_1m": 1.0,
-    "output_cost_per_1m": 5.0,
-    "request_timeout_seconds": 30,
-    "max_tokens": 32
+    "name": "Gemini 2.5 Flash",
+    "model": "gemini-2.5-flash",
+    "api_key_env": "GEMINI_API_KEY",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "color": "#DB4437",
+    "input_cost_per_1m": 0.30,
+    "output_cost_per_1m": 2.50,
+    "request_timeout_seconds": 60,
+    "max_tokens": 512
   }
 }

@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-06-25T21:05:33.747302+00:00",
+  "generated_at": "2026-06-26T19:09:09.558027+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -8941,6 +8941,276 @@
           }
         }
       }
+    },
+    {
+      "id": "gemini_3_1_pro__gemini_2_5_flash",
+      "home": "gemini_3_1_pro",
+      "away": "gemini_2_5_flash",
+      "home_name": "Gemini 3.1 Pro",
+      "away_name": "Gemini 2.5 Flash",
+      "home_color": "#34A853",
+      "away_color": "#DB4437",
+      "score": [
+        8,
+        9
+      ],
+      "winner": "Gemini 2.5 Flash",
+      "winner_id": "gemini_2_5_flash",
+      "log": "logs/gemini_3_1_pro_v_gemini_2_5_flash_20260626_124619.json",
+      "played_at": "2026-06-26T19:08:46.606783+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 3.1 Pro": 8,
+          "Gemini 2.5 Flash": 9
+        },
+        "winner": "Gemini 2.5 Flash",
+        "goals": [
+          {
+            "frame": 46,
+            "time_seconds": 1.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 97,
+            "time_seconds": 3.2,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              2,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 220,
+            "time_seconds": 7.3,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              3,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 295,
+            "time_seconds": 9.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 350,
+            "time_seconds": 11.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 515,
+            "time_seconds": 17.2,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 546,
+            "time_seconds": 18.2,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 863,
+            "time_seconds": 28.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 965,
+            "time_seconds": 32.2,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1020,
+            "time_seconds": 34.0,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1068,
+            "time_seconds": 35.6,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1095,
+            "time_seconds": 36.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1212,
+            "time_seconds": 40.4,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1259,
+            "time_seconds": 42.0,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              6,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1299,
+            "time_seconds": 43.3,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1391,
+            "time_seconds": 46.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              7,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1784,
+            "time_seconds": 59.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 17,
+          "total_ball_touches": 62,
+          "total_own_goals": 5,
+          "total_saves": 6,
+          "time_to_first_goal_seconds": 1.5,
+          "first_scorer": "Gemini 3.1 Pro",
+          "lead_changes": 1,
+          "largest_lead": 3
+        },
+        "players": {
+          "Gemini 3.1 Pro": {
+            "model": "gemini-3.1-pro-preview",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 9,
+            "ball_touches": 31,
+            "goals_per_touch": 0.258,
+            "saves": 5,
+            "own_goals": 2,
+            "possession_pct": 50.2,
+            "jumps": 25,
+            "distance_travelled": 18504.2,
+            "time_to_first_goal_seconds": 1.5,
+            "action_distribution": {
+              "move_left": 50,
+              "move_right": 105,
+              "jump": 1,
+              "move_left_jump": 13,
+              "move_right_jump": 11,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 4644.6,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157833,
+              "completion": 570
+            },
+            "estimated_cost_usd": 0.322506
+          },
+          "Gemini 2.5 Flash": {
+            "model": "gemini-2.5-flash",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 8,
+            "ball_touches": 31,
+            "goals_per_touch": 0.29,
+            "saves": 1,
+            "own_goals": 3,
+            "possession_pct": 49.8,
+            "jumps": 62,
+            "distance_travelled": 15904.2,
+            "time_to_first_goal_seconds": 9.8,
+            "action_distribution": {
+              "move_left": 48,
+              "move_right": 16,
+              "jump": 1,
+              "move_left_jump": 77,
+              "move_right_jump": 29,
+              "idle": 9
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 2836.1,
+            "api_errors": 1,
+            "tokens": {
+              "prompt": 156949,
+              "completion": 731
+            },
+            "estimated_cost_usd": 0.048912
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -8998,14 +9268,14 @@
       "color": "#DB4437",
       "abbrev": "GMF",
       "provider": "Gemini",
-      "played": 7,
-      "w": 3,
+      "played": 8,
+      "w": 4,
       "d": 1,
       "l": 3,
-      "gf": 69,
-      "ga": 69,
-      "gd": 0,
-      "points": 10,
+      "gf": 78,
+      "ga": 77,
+      "gd": 1,
+      "points": 13,
       "rank": 4
     },
     {
@@ -9062,13 +9332,13 @@
       "color": "#34A853",
       "abbrev": "G31",
       "provider": "Gemini",
-      "played": 3,
+      "played": 4,
       "w": 1,
       "d": 1,
-      "l": 1,
-      "gf": 25,
-      "ga": 27,
-      "gd": -2,
+      "l": 2,
+      "gf": 33,
+      "ga": 36,
+      "gd": -3,
       "points": 4,
       "rank": 8
     },
@@ -9159,21 +9429,21 @@
       "total_cost_usd": 8.5983
     },
     "gemini_2_5_flash": {
-      "games": 7,
-      "goals_for": 69,
-      "goals_against": 69,
-      "goal_diff": 0,
-      "ball_touches": 213,
-      "goals_per_touch": 0.324,
-      "saves": 14,
-      "own_goals": 33,
-      "jumps": 434,
-      "distance": 114921.0,
+      "games": 8,
+      "goals_for": 78,
+      "goals_against": 77,
+      "goal_diff": 1,
+      "ball_touches": 244,
+      "goals_per_touch": 0.32,
+      "saves": 15,
+      "own_goals": 36,
+      "jumps": 496,
+      "distance": 130825.0,
       "avg_possession_pct": 50.1,
-      "avg_latency_ms": 3054.0,
-      "tokens_in": 1064548,
-      "tokens_out": 5078,
-      "total_cost_usd": 0.3321
+      "avg_latency_ms": 3027.0,
+      "tokens_in": 1221497,
+      "tokens_out": 5809,
+      "total_cost_usd": 0.381
     },
     "gpt_5": {
       "games": 8,
@@ -9227,21 +9497,21 @@
       "total_cost_usd": 0.2843
     },
     "gemini_3_1_pro": {
-      "games": 3,
-      "goals_for": 25,
-      "goals_against": 27,
-      "goal_diff": -2,
-      "ball_touches": 99,
-      "goals_per_touch": 0.253,
-      "saves": 7,
-      "own_goals": 14,
-      "jumps": 55,
-      "distance": 51656.0,
-      "avg_possession_pct": 56.5,
-      "avg_latency_ms": 5258.0,
-      "tokens_in": 472559,
-      "tokens_out": 1694,
-      "total_cost_usd": 0.9654
+      "games": 4,
+      "goals_for": 33,
+      "goals_against": 36,
+      "goal_diff": -3,
+      "ball_touches": 130,
+      "goals_per_touch": 0.254,
+      "saves": 12,
+      "own_goals": 16,
+      "jumps": 80,
+      "distance": 70160.0,
+      "avg_possession_pct": 54.9,
+      "avg_latency_ms": 5105.0,
+      "tokens_in": 630392,
+      "tokens_out": 2264,
+      "total_cost_usd": 1.288
     }
   }
 }
