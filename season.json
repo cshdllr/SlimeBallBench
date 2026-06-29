@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-06-26T19:09:09.558027+00:00",
+  "generated_at": "2026-06-29T02:48:52.193049+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -9211,6 +9211,286 @@
           }
         }
       }
+    },
+    {
+      "id": "gemini_3_1_pro__claude_sonnet_4_6",
+      "home": "gemini_3_1_pro",
+      "away": "claude_sonnet_4_6",
+      "home_name": "Gemini 3.1 Pro",
+      "away_name": "Claude Sonnet 4.6",
+      "home_color": "#34A853",
+      "away_color": "#EC4899",
+      "score": [
+        8,
+        10
+      ],
+      "winner": "Claude Sonnet 4.6",
+      "winner_id": "claude_sonnet_4_6",
+      "log": "logs/gemini_3_1_pro_v_claude_sonnet_4_6_20260628_203031.json",
+      "played_at": "2026-06-29T02:48:35.783055+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 3.1 Pro": 8,
+          "Claude Sonnet 4.6": 10
+        },
+        "winner": "Claude Sonnet 4.6",
+        "goals": [
+          {
+            "frame": 48,
+            "time_seconds": 1.6,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 112,
+            "time_seconds": 3.7,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 187,
+            "time_seconds": 6.2,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 248,
+            "time_seconds": 8.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 291,
+            "time_seconds": 9.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 351,
+            "time_seconds": 11.7,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 597,
+            "time_seconds": 19.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 889,
+            "time_seconds": 29.6,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 969,
+            "time_seconds": 32.3,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1036,
+            "time_seconds": 34.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1132,
+            "time_seconds": 37.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1197,
+            "time_seconds": 39.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1277,
+            "time_seconds": 42.6,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1338,
+            "time_seconds": 44.6,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1531,
+            "time_seconds": 51.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1582,
+            "time_seconds": 52.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              7,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1725,
+            "time_seconds": 57.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1785,
+            "time_seconds": 59.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              8,
+              10
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 18,
+          "total_ball_touches": 59,
+          "total_own_goals": 12,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 1.6,
+          "first_scorer": "Gemini 3.1 Pro",
+          "lead_changes": 1,
+          "largest_lead": 3
+        },
+        "players": {
+          "Gemini 3.1 Pro": {
+            "model": "gemini-3.1-pro-preview",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 10,
+            "ball_touches": 40,
+            "goals_per_touch": 0.2,
+            "saves": 5,
+            "own_goals": 9,
+            "possession_pct": 74.0,
+            "jumps": 27,
+            "distance_travelled": 19006.8,
+            "time_to_first_goal_seconds": 1.6,
+            "action_distribution": {
+              "move_left": 53,
+              "move_right": 100,
+              "jump": 1,
+              "move_left_jump": 8,
+              "move_right_jump": 18,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 4233.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157411,
+              "completion": 572
+            },
+            "estimated_cost_usd": 0.321686
+          },
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 10,
+            "goals_against": 8,
+            "ball_touches": 19,
+            "goals_per_touch": 0.526,
+            "saves": 2,
+            "own_goals": 3,
+            "possession_pct": 26.0,
+            "jumps": 1,
+            "distance_travelled": 18022.8,
+            "time_to_first_goal_seconds": 3.7,
+            "action_distribution": {
+              "move_left": 102,
+              "move_right": 75,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 1,
+              "idle": 2
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1786.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159132,
+              "completion": 5060
+            },
+            "estimated_cost_usd": 0.553296
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -9284,14 +9564,14 @@
       "color": "#EC4899",
       "abbrev": "SON",
       "provider": "Anthropic",
-      "played": 7,
-      "w": 3,
+      "played": 8,
+      "w": 4,
       "d": 0,
       "l": 4,
-      "gf": 54,
-      "ga": 52,
-      "gd": 2,
-      "points": 9,
+      "gf": 64,
+      "ga": 60,
+      "gd": 4,
+      "points": 12,
       "rank": 5
     },
     {
@@ -9332,13 +9612,13 @@
       "color": "#34A853",
       "abbrev": "G31",
       "provider": "Gemini",
-      "played": 4,
+      "played": 5,
       "w": 1,
       "d": 1,
-      "l": 2,
-      "gf": 33,
-      "ga": 36,
-      "gd": -3,
+      "l": 3,
+      "gf": 41,
+      "ga": 46,
+      "gd": -5,
       "points": 4,
       "rank": 8
     },
@@ -9463,21 +9743,21 @@
       "total_cost_usd": 1.6266
     },
     "claude_sonnet_4_6": {
-      "games": 7,
-      "goals_for": 54,
-      "goals_against": 52,
-      "goal_diff": 2,
-      "ball_touches": 153,
-      "goals_per_touch": 0.353,
-      "saves": 53,
-      "own_goals": 29,
-      "jumps": 15,
-      "distance": 100518.0,
-      "avg_possession_pct": 50.0,
-      "avg_latency_ms": 1512.0,
-      "tokens_in": 1113883,
-      "tokens_out": 36008,
-      "total_cost_usd": 3.8818
+      "games": 8,
+      "goals_for": 64,
+      "goals_against": 60,
+      "goal_diff": 4,
+      "ball_touches": 172,
+      "goals_per_touch": 0.372,
+      "saves": 55,
+      "own_goals": 32,
+      "jumps": 16,
+      "distance": 118541.0,
+      "avg_possession_pct": 47.0,
+      "avg_latency_ms": 1547.0,
+      "tokens_in": 1273015,
+      "tokens_out": 41068,
+      "total_cost_usd": 4.4351
     },
     "gpt_5_mini": {
       "games": 7,
@@ -9497,21 +9777,21 @@
       "total_cost_usd": 0.2843
     },
     "gemini_3_1_pro": {
-      "games": 4,
-      "goals_for": 33,
-      "goals_against": 36,
-      "goal_diff": -3,
-      "ball_touches": 130,
-      "goals_per_touch": 0.254,
-      "saves": 12,
-      "own_goals": 16,
-      "jumps": 80,
-      "distance": 70160.0,
-      "avg_possession_pct": 54.9,
-      "avg_latency_ms": 5105.0,
-      "tokens_in": 630392,
-      "tokens_out": 2264,
-      "total_cost_usd": 1.288
+      "games": 5,
+      "goals_for": 41,
+      "goals_against": 46,
+      "goal_diff": -5,
+      "ball_touches": 170,
+      "goals_per_touch": 0.241,
+      "saves": 17,
+      "own_goals": 25,
+      "jumps": 107,
+      "distance": 89167.0,
+      "avg_possession_pct": 58.7,
+      "avg_latency_ms": 4931.0,
+      "tokens_in": 787803,
+      "tokens_out": 2836,
+      "total_cost_usd": 1.6096
     }
   }
 }
