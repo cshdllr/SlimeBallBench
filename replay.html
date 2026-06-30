@@ -81,6 +81,9 @@
     color: var(--muted); font-size: 12px; text-align: center; }
   .chart-title { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 16px 2px 6px; }
   #goalChart { width: 100%; height: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: block; }
+  /* embed mode: drop the page chrome so this can be framed inside another page */
+  body.embed { padding: 0; }
+  body.embed header.site, body.embed footer.site, body.embed #loader { display: none; }
 </style>
 </head>
 <body>
@@ -166,6 +169,32 @@ let playing = false;
 let speed = 1;
 let lastTs = 0;
 let frameAcc = 0;
+let loopPlayback = false;  // when true, restart at the end instead of stopping
+
+// ---- mirror a log left↔right so a team can be shown on the chosen side ----
+// We transform the data (swap p1/p2, flip every x by field.width) rather than the
+// rendering, so every existing draw path works unchanged on the mirrored log.
+function mirrorLog(obj) {
+  const W = obj.field.width;
+  const fx = x => W - x;
+  const m = { ...obj };
+  m.players = { p1: obj.players.p2, p2: obj.players.p1 };
+  m.frames = obj.frames.map(f => ({
+    ...f,
+    p1: [fx(f.p2[0]), f.p2[1]],
+    p2: [fx(f.p1[0]), f.p1[1]],
+    ball: [fx(f.ball[0]), f.ball[1]],
+    score: [f.score[1], f.score[0]],
+    a1: f.a2, a2: f.a1,
+  }));
+  if (obj.summary) {
+    m.summary = { ...obj.summary };
+    if (Array.isArray(obj.summary.goals)) {
+      m.summary.goals = obj.summary.goals.map(g => ({ ...g, score_after: [g.score_after[1], g.score_after[0]] }));
+    }
+  }
+  return m;
+}
 
 // ---- coordinate transform: sim y is up, canvas y is down ----
 const tx = x => x;
@@ -471,7 +500,12 @@ function tick(ts) {
     const advance = Math.floor(frameAcc);
     frameAcc -= advance;
     let next = cur + advance;
-    if (next >= frames.length - 1) { next = frames.length - 1; drawFrame(next); pause(); return; }
+    if (next >= frames.length - 1) {
+      drawFrame(frames.length - 1);
+      if (loopPlayback) { cur = 0; frameAcc = 0; requestAnimationFrame(tick); }
+      else pause();
+      return;
+    }
     drawFrame(next);
   }
   requestAnimationFrame(tick);
@@ -524,12 +558,18 @@ document.addEventListener("keydown", e => {
   else if (e.code === "ArrowLeft") { pause(); drawFrame(cur - 1); }
 });
 
-// auto-load via ?log=path when served over http(s)
+// auto-load via ?log=path when served over http(s).
+// Extra params: embed (drop page chrome), mirror (flip sides), autoplay, loop.
 (function () {
   const params = new URLSearchParams(location.search);
   const src = params.get("log");
+  const mirror = params.get("mirror") === "1";
+  const autoplay = params.get("autoplay") === "1";
+  loopPlayback = params.get("loop") === "1";
+  if (params.get("embed") === "1") document.body.classList.add("embed");
   if (src && location.protocol.startsWith("http")) {
-    fetch(src).then(r => r.json()).then(loadLog)
+    fetch(src).then(r => r.json())
+      .then(obj => { loadLog(mirror ? mirrorLog(obj) : obj); if (autoplay) play(); })
       .catch(err => console.warn("Could not auto-load log:", err));
   }
 })();

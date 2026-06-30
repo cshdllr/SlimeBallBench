@@ -96,3 +96,20 @@ td.barcell { padding: 6px 12px; }
 .notice { color: var(--muted); background: var(--panel); border: 1px dashed var(--line);
   border-radius: 10px; padding: 16px; margin-top: 16px; font-size: 14px; }
 code { background: #21262d; padding: 1px 5px; border-radius: 4px; }
+.hidden { display: none; }
+
+/* "Watch a match" homepage section */
+#watchSection { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+.section-h { font-size: 18px; margin: 0 2px 4px; }
+.matchpick { display: flex; align-items: center; gap: 12px; margin: 14px 0 12px; flex-wrap: wrap; }
+.matchpick .vs { color: var(--muted); font-size: 13px; font-weight: 600; }
+.teamsel {
+  flex: 1; min-width: 0; background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; font-size: 14px;
+  font-weight: 600; cursor: pointer; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
+}
+.teamsel:hover { border-color: #3a424e; }
+.teamsel:focus { outline: none; border-color: var(--accent); }
+.stage-frame { width: 100%; border: 0; display: block; min-height: 640px; overflow: hidden; }
