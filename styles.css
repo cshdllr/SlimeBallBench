@@ -8,7 +8,7 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   padding: 0 16px 48px;
 }
-.wrap { max-width: 920px; margin: 0 auto; }
+.wrap { max-width: 800px; margin: 0 auto; }
 header.site {
   display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
   padding: 18px 2px 12px; border-bottom: 1px solid var(--line); margin-bottom: 18px;
