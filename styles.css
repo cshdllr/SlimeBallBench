@@ -113,3 +113,19 @@ code { background: #21262d; padding: 1px 5px; border-radius: 4px; }
 .teamsel:hover { border-color: #3a424e; }
 .teamsel:focus { outline: none; border-color: var(--accent); }
 .stage-frame { width: 100%; border: 0; display: block; min-height: 640px; overflow: hidden; }
+
+/* "How it works" prose page */
+.prose { max-width: 720px; }
+.prose .lead { font-size: 16px; color: var(--text); line-height: 1.6; margin: 6px 2px 8px; }
+.prose h2 { font-size: 16px; margin: 30px 2px 8px; }
+.prose p, .prose li { font-size: 14px; line-height: 1.65; color: #c9d4de; margin: 8px 2px; }
+.prose ul { margin: 8px 0; padding-left: 22px; }
+.prose li { margin: 4px 0; }
+.prose .key { color: var(--text); font-weight: 600; }
+pre.code { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 16px; overflow-x: auto; font-size: 12.5px; line-height: 1.55; color: #c9d4de;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre; margin: 12px 0; }
+.field-spec { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px; margin: 14px 0; }
+.field-spec .card .k { color: var(--muted); font-size: 12px; }
+.field-spec .card .v { font-size: 16px; font-weight: 700; margin-top: 2px; }
