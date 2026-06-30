@@ -34,21 +34,49 @@
   #center { text-align: center; }
   #score { font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; }
   #timer { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
-  canvas { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; display: block; background: var(--sky); }
-  #controls {
-    display: flex; align-items: center; gap: 12px; margin-top: 10px;
-    background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px;
+  canvas#pitch { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; display: block; background: var(--sky); }
+  /* video-like stage: the canvas with overlay controls on top */
+  #stage { position: relative; line-height: 0; cursor: pointer; }
+  #bigPlay {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 64px; height: 64px; border-radius: 50%; border: none;
+    background: rgba(14,17,22,0.55); color: #fff; font-size: 24px; line-height: 64px;
+    padding-left: 4px; cursor: pointer; transition: opacity .15s, transform .15s;
+    backdrop-filter: blur(2px);
   }
-  button {
-    background: #21262d; color: var(--text); border: 1px solid var(--line);
-    border-radius: 8px; padding: 7px 14px; font-size: 14px; cursor: pointer;
+  #bigPlay:hover { background: rgba(14,17,22,0.75); }
+  #stage:not(.paused) #bigPlay { opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(.8); }
+  #vbar {
+    position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 12px;
+    padding: 22px 14px 12px; border-radius: 0 0 10px 10px; line-height: normal;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+    opacity: 0; transition: opacity .15s;
   }
-  button:hover { background: #2a313c; }
-  button.active { background: #2f6feb; border-color: #2f6feb; }
-  #speeds { display: flex; gap: 6px; }
-  #speeds button { padding: 6px 10px; font-size: 12px; }
-  #scrub { flex: 1; cursor: pointer; }
-  #frameLabel { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; min-width: 110px; text-align: right; }
+  #stage:hover #vbar, #stage.paused #vbar { opacity: 1; }
+  #frameLabel { font-size: 12px; color: #e6edf3; font-variant-numeric: tabular-nums; min-width: 96px; text-align: right;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6); }
+  #scrub { flex: 1; cursor: pointer; height: 5px; -webkit-appearance: none; appearance: none;
+    background: rgba(255,255,255,0.3); border-radius: 3px; }
+  #scrub::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 13px; height: 13px;
+    border-radius: 50%; background: #fff; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+  #scrub::-moz-range-thumb { width: 13px; height: 13px; border: none; border-radius: 50%; background: #fff; cursor: pointer; }
+  /* head-to-head diverging bars: number then bar on each side of a centered label */
+  #h2h { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px 14px; }
+  .h2hrow { display: grid; grid-template-columns: 1fr 132px 1fr; align-items: center; gap: 10px;
+    height: 28px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .h2hrow:last-child { border-bottom: none; }
+  .h2hrow .side { display: flex; align-items: center; gap: 8px; }
+  .h2hrow .side.left { justify-content: flex-end; }
+  .h2hrow .num { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 42px; }
+  .h2hrow .side.left .num { text-align: right; }
+  .h2hrow .side.right .num { text-align: left; }
+  .h2hrow .track { position: relative; flex: 1; height: 10px; }
+  .h2hrow .track .b { position: absolute; top: 0; bottom: 0; border-radius: 2px; min-width: 1px; }
+  .h2hrow .side.left .b { right: 0; } .h2hrow .side.right .b { left: 0; }
+  .h2hrow .label { text-align: center; font-size: 12px; color: var(--muted); }
+  .h2hhead { display: grid; grid-template-columns: 1fr 132px 1fr; gap: 10px; margin: 2px 0 6px; }
+  .h2hhead .tname { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .h2hhead .tname.left { text-align: right; } .h2hhead .tname.right { text-align: left; }
   #metrics { margin-top: 10px; }
   .metrics-title { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 6px 2px; }
   .match-line {
@@ -56,15 +84,6 @@
     padding: 10px 14px; font-size: 13px; color: var(--text); display: flex; flex-wrap: wrap; gap: 6px 18px;
   }
   .match-line b { color: #fff; font-variant-numeric: tabular-nums; }
-  .mcards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-  .mcard { background: var(--panel); border: 2px solid #888; border-radius: 10px; padding: 12px 14px; }
-  .mcard h3 { margin: 0 0 4px; font-size: 14px; }
-  .mcard .sub { font-size: 11px; color: var(--muted); margin-bottom: 10px; font-family: ui-monospace, monospace; }
-  .stat { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.04); }
-  .stat:last-child { border-bottom: none; }
-  .stat .k { color: var(--muted); }
-  .stat .v { font-variant-numeric: tabular-nums; font-weight: 600; }
-  @media (max-width: 620px) { .mcards { grid-template-columns: 1fr; } }
   #loader {
     margin-top: 14px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px;
     color: var(--muted); font-size: 14px; text-align: center;
@@ -121,18 +140,13 @@
     </div>
   </div>
 
-  <canvas id="pitch" width="1000" height="500"></canvas>
-
-  <div id="controls">
-    <button id="playBtn">▶ Play</button>
-    <div id="speeds">
-      <button data-speed="0.5">0.5×</button>
-      <button data-speed="1" class="active">1×</button>
-      <button data-speed="2">2×</button>
-      <button data-speed="4">4×</button>
+  <div id="stage" class="paused">
+    <canvas id="pitch" width="1000" height="500"></canvas>
+    <button id="bigPlay" aria-label="Play or pause">▶</button>
+    <div id="vbar">
+      <input type="range" id="scrub" min="0" max="0" value="0">
+      <span id="frameLabel">00:00 / 00:00</span>
     </div>
-    <input type="range" id="scrub" min="0" max="0" value="0">
-    <span id="frameLabel">0 / 0</span>
   </div>
 
   <div id="metrics" class="hidden">
@@ -140,10 +154,8 @@
     <div class="match-line" id="matchLine"></div>
     <div class="chart-title">Goal differential over time</div>
     <canvas id="goalChart" width="1000" height="170"></canvas>
-    <div class="mcards">
-      <div class="mcard" id="mcard1"></div>
-      <div class="mcard" id="mcard2"></div>
-    </div>
+    <div class="metrics-title">Head-to-head</div>
+    <div id="h2h"></div>
   </div>
 
   <div id="loader">
@@ -261,9 +273,51 @@ function renderMetrics() {
   ].join(" · ");
 
   const players = s.players || {};
-  fillCard("mcard1", log.players.p1, players[log.players.p1.name]);
-  fillCard("mcard2", log.players.p2, players[log.players.p2.name]);
+  renderH2H(log.players.p1, players[log.players.p1.name],
+            log.players.p2, players[log.players.p2.name]);
   drawGoalChart();
+}
+
+// ---- head-to-head diverging bars: number then bar on each side of the label ----
+function renderH2H(p1, st1, p2, st2) {
+  const el = document.getElementById("h2h");
+  if (!st1 || !st2) { el.innerHTML = ""; return; }
+  const STATS = [
+    ["Goals", "goals_for", v => v],
+    ["Possession", "possession_pct", v => v + "%"],
+    ["Ball touches", "ball_touches", v => v],
+    ["Goals / touch", "goals_per_touch", v => v],
+    ["Saves", "saves", v => v ?? 0],
+    ["Own goals", "own_goals", v => v ?? 0],
+    ["Jumps", "jumps", v => v],
+    ["Distance", "distance_travelled", v => Math.round(v)],
+  ];
+  if (st1.decisions || st2.decisions) {
+    STATS.push(["Avg latency", "avg_decision_latency_ms", v => v != null ? v + "ms" : "—"]);
+    STATS.push(["Est. cost", "estimated_cost_usd", v => "$" + (v ?? 0).toFixed(3)]);
+  }
+  const rows = STATS.map(([label, key, fmt]) => {
+    const a = Number(st1[key]) || 0, b = Number(st2[key]) || 0;
+    const scale = Math.max(Math.abs(a), Math.abs(b)) || 1;
+    const aw = Math.abs(a) / scale * 100, bw = Math.abs(b) / scale * 100;
+    return `<div class="h2hrow">
+      <div class="side left">
+        <span class="track"><span class="b" style="width:${aw}%;background:${p1.color}"></span></span>
+        <span class="num">${fmt(st1[key])}</span>
+      </div>
+      <div class="label">${label}</div>
+      <div class="side right">
+        <span class="num">${fmt(st2[key])}</span>
+        <span class="track"><span class="b" style="width:${bw}%;background:${p2.color}"></span></span>
+      </div>
+    </div>`;
+  }).join("");
+  el.innerHTML =
+    `<div class="h2hhead">
+       <div class="tname left" style="color:${p1.color}">${p1.name}</div>
+       <div></div>
+       <div class="tname right" style="color:${p2.color}">${p2.name}</div>
+     </div>` + rows;
 }
 
 // ---- goal-differential timeline (from log.summary.goals) ----
@@ -347,39 +401,6 @@ function drawGoalChart() {
   g.textAlign = "left"; g.font = "11px ui-sans-serif";
   g.fillStyle = p1.color; g.fillText("▲ " + p1.name, x0 + 2, padTB - 8);
   g.fillStyle = p2.color; g.fillText("▼ " + p2.name, x0 + 2, H - 8);
-}
-
-function fillCard(elId, meta, st) {
-  const el = document.getElementById(elId);
-  if (!st) { el.innerHTML = ""; return; }
-  el.style.borderColor = meta.color;
-
-  const row = (k, v) => `<div class="stat"><span class="k">${k}</span><span class="v">${v}</span></div>`;
-  const rows = [
-    row("Goals (for – against)", `${st.goals_for} – ${st.goals_against}`),
-    row("Ball touches", st.ball_touches),
-    row("Goals / touch", st.goals_per_touch),
-    row("Saves", st.saves ?? 0),
-    row("Own goals", st.own_goals ?? 0),
-    row("Possession", `${st.possession_pct}%`),
-    row("Jumps", st.jumps),
-    row("Distance travelled", Math.round(st.distance_travelled)),
-    row("Time to first goal", st.time_to_first_goal_seconds != null ? st.time_to_first_goal_seconds + "s" : "—"),
-  ];
-  // model-only stats
-  if (st.decisions) {
-    rows.push(row("Decisions", st.decisions));
-    rows.push(row("Avg latency", st.avg_decision_latency_ms != null ? st.avg_decision_latency_ms + " ms" : "—"));
-    rows.push(row("API errors", st.api_errors ?? 0));
-    const tok = st.tokens || {};
-    rows.push(row("Tokens (in / out)", `${tok.prompt ?? 0} / ${tok.completion ?? 0}`));
-    rows.push(row("Est. cost", `$${(st.estimated_cost_usd ?? 0).toFixed(4)}`));
-  }
-
-  el.innerHTML =
-    `<h3 style="color:${meta.color}">${meta.name}</h3>` +
-    `<div class="sub">${meta.model || meta.policy || ""}</div>` +
-    rows.join("");
 }
 
 // ---- drawing ----
@@ -488,7 +509,8 @@ function drawFrame(i) {
   document.getElementById("act1").textContent = "▸ " + f.a1;
   document.getElementById("act2").textContent = f.a2 + " ◂";
   document.getElementById("scrub").value = i;
-  document.getElementById("frameLabel").textContent = `${i} / ${frames.length - 1}`;
+  document.getElementById("frameLabel").textContent =
+    `${fmtTime(f.t / fps)} / ${fmtTime(frames.length / fps)}`;
 }
 
 // ---- playback loop ----
@@ -518,23 +540,18 @@ function play() {
   if (cur >= frames.length - 1) cur = 0;  // restart from beginning
   playing = true;
   lastTs = 0; frameAcc = 0;
-  document.getElementById("playBtn").textContent = "⏸ Pause";
+  document.getElementById("stage").classList.remove("paused");
   requestAnimationFrame(tick);
 }
 function pause() {
   playing = false;
-  document.getElementById("playBtn").textContent = "▶ Play";
+  document.getElementById("stage").classList.add("paused");
 }
 
-// ---- wiring ----
-document.getElementById("playBtn").addEventListener("click", () => playing ? pause() : play());
-
-document.querySelectorAll("#speeds button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    speed = parseFloat(btn.dataset.speed);
-    document.querySelectorAll("#speeds button").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-  });
+// ---- wiring: click the video to toggle play/pause (like a normal video) ----
+document.getElementById("stage").addEventListener("click", e => {
+  if (e.target.closest("#vbar")) return;  // don't toggle while using the scrubber
+  playing ? pause() : play();
 });
 
 document.getElementById("scrub").addEventListener("input", e => {
