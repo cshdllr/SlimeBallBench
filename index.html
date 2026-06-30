@@ -141,8 +141,10 @@ function renderWatcher(season) {
 
   document.getElementById("watchSection").classList.remove("hidden");
   const wrap = document.getElementById("watch");
-  const opts = sel => models
-    .map(m => `<option value="${m.id}"${m.id === sel ? " selected" : ""}>${m.name}</option>`).join("");
+  // `disabled` is the team picked on the other side, so it can't be chosen here too.
+  const opts = (sel, disabled) => models
+    .map(m => `<option value="${m.id}"${m.id === sel ? " selected" : ""}` +
+              `${m.id === disabled ? " disabled" : ""}>${m.name}</option>`).join("");
 
   function paint() {
     const m = byPair[pairKey(leftId, rightId)];
@@ -159,9 +161,9 @@ function renderWatcher(season) {
     }
     wrap.innerHTML = `
       <div class="matchpick">
-        <select id="leftSel" class="teamsel">${opts(leftId)}</select>
+        <select id="leftSel" class="teamsel">${opts(leftId, rightId)}</select>
         <span class="vs">vs</span>
-        <select id="rightSel" class="teamsel">${opts(rightId)}</select>
+        <select id="rightSel" class="teamsel">${opts(rightId, leftId)}</select>
       </div>
       <div id="stage">${stage}</div>`;
     document.getElementById("leftSel").onchange = e => { leftId = e.target.value; paint(); };
