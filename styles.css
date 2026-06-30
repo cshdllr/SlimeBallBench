@@ -98,8 +98,8 @@ td.barcell { padding: 6px 12px; }
 code { background: #21262d; padding: 1px 5px; border-radius: 4px; }
 .hidden { display: none; }
 
-/* "Watch a match" homepage section */
-#watchSection { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+/* "Watch a match" homepage section (leads the page, standings below it) */
+#watchSection { margin: 4px 0 26px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .section-h { font-size: 18px; margin: 0 2px 4px; }
 .matchpick { display: flex; align-items: center; gap: 12px; margin: 14px 0 12px; flex-wrap: wrap; }
 .matchpick .vs { color: var(--muted); font-size: 13px; font-weight: 600; }

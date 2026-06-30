@@ -16,11 +16,6 @@
     </nav>
   </header>
 
-  <h1 id="seasonName">League Table</h1>
-  <p class="sub" id="seasonSub"></p>
-
-  <div id="content"></div>
-
   <section id="watchSection" class="hidden">
     <h2 class="section-h">Watch a match</h2>
     <p class="sub">Pick any two teams to watch their game. Each gets a side — if a match
@@ -29,8 +24,9 @@
     <div id="watch"></div>
   </section>
 
+  <div id="content"></div>
+
   <footer class="site">
-    Headless physics · identical prompts · replays rendered from logged frames ·
     Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a>
   </footer>
 </div>
@@ -53,12 +49,6 @@ async function load() {
        <br><br>(If you haven't run a season yet: <code>python season.py</code> first.)</div>`;
     return;
   }
-
-  document.getElementById("seasonName").textContent = season.season_name;
-  const s = season.settings;
-  document.getElementById("seasonSub").textContent =
-    `${season.models.length} teams · ${season.matches.length} matches played · ` +
-    `${s.match_duration_seconds}s games · format: ${s.format}`;
 
   // Scales for the inline bars: points relative to the leader, GD relative to
   // the largest swing in either direction (so the diverging bars share one scale).
