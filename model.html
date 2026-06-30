@@ -23,6 +23,7 @@
   </footer>
 </div>
 
+<script src="logos.js"></script>
 <script>
 function qs(name) { return new URLSearchParams(location.search).get(name); }
 
@@ -86,8 +87,8 @@ async function load() {
     </tr>`).join("");
 
   document.getElementById("content").innerHTML = `
-    <h1><span class="swatch" style="background:${model.color}"></span>${team.name}</h1>
-    <p class="sub">${model.provider} · <code>${model.model}</code> · Rank #${team.rank} ·
+    <h1><span class="swatch" style="background:${model.color}"></span>${team.name}${providerLogo(model.provider)}</h1>
+    <p class="sub">${providerLogo(model.provider)} ${model.provider} · <code>${model.model}</code> · Rank #${team.rank} ·
        ${team.w}W ${team.d}D ${team.l}L · ${team.points} pts</p>
     ${aggCards}
     <h1 style="font-size:18px">Schedule</h1>

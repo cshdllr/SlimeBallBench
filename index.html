@@ -27,6 +27,7 @@
   </footer>
 </div>
 
+<script src="logos.js"></script>
 <script>
 async function load() {
   let season;
@@ -88,7 +89,7 @@ async function load() {
       <td class="pos">${r.rank}</td>
       <td class="team-cell">
         <span class="swatch" style="background:${r.color}"></span>
-        <span class="name">${r.name}</span>
+        <span class="name">${r.name}</span>${providerLogo(r.provider)}
         <span class="meta">&nbsp;${r.abbrev} · ${r.provider}</span>
       </td>
       <td>${r.played}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>

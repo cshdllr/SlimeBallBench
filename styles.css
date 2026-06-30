@@ -40,6 +40,12 @@ tbody tr.leader td.pos::before { content: "🥇 "; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
 .team-cell .name { font-weight: 600; }
 .team-cell .meta { color: var(--muted); font-size: 11px; }
+/* brand mark of the lab behind a model */
+.plogo { display: inline-flex; vertical-align: middle; }
+.plogo svg { width: 13px; height: 13px; display: block; }
+.team-cell .name + .plogo { margin-left: 6px; }
+.team-cell .meta .plogo { margin: 0 3px 0 1px; }
+.plogo svg { width: 12px; height: 12px; }
 .pts { font-weight: 700; }
 .pos { color: var(--muted); }
 

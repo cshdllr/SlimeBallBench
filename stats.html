@@ -31,6 +31,7 @@
   </footer>
 </div>
 
+<script src="logos.js"></script>
 <script>
 // column definitions: [key, label, formatter]
 const COLS = [
@@ -107,7 +108,7 @@ function render() {
   const body = ROWS.map(r => "<tr>" + COLS.map(([k, , fmt]) => {
     if (k === "name") return `<td class="team-cell">
         <span class="swatch" style="background:${r.color}"></span>
-        <a href="model.html?id=${r.id}">${r.name}</a></td>`;
+        <a href="model.html?id=${r.id}">${r.name}</a>${providerLogo(r.provider)}</td>`;
     return `<td>${fmt ? fmt(r[k]) : r[k]}</td>`;
   }).join("") + "</tr>").join("");
 
@@ -133,7 +134,8 @@ async function load() {
   }
   const byId = Object.fromEntries(season.models.map(m => [m.id, m]));
   ROWS = Object.entries(season.aggregate_stats).map(([id, s]) => ({
-    id, name: byId[id].name, color: byId[id].color, abbrev: byId[id].abbrev, ...s,
+    id, name: byId[id].name, color: byId[id].color, abbrev: byId[id].abbrev,
+    provider: byId[id].provider, ...s,
   }));
   renderSmallMultiples();
   render();
