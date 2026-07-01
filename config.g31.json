@@ -14,13 +14,13 @@
     "max_tokens": 512
   },
   "player2": {
-    "name": "GPT-4o mini",
-    "model": "gpt-4o-mini",
-    "api_key_env": "OPENAI_API_KEY",
-    "base_url": "https://api.openai.com/v1",
-    "color": "#10A37F",
-    "input_cost_per_1m": 0.15,
-    "output_cost_per_1m": 0.60,
+    "name": "Gemini 2.5 Flash-Lite",
+    "model": "gemini-2.5-flash-lite",
+    "api_key_env": "GEMINI_API_KEY",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "color": "#4285F4",
+    "input_cost_per_1m": 0.10,
+    "output_cost_per_1m": 0.40,
     "request_timeout_seconds": 30,
     "max_tokens": 32
   }
