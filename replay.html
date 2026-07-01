@@ -79,6 +79,10 @@
     text-transform: uppercase; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
   .go-winner { font-size: clamp(15px, 3.4vw, 24px); font-weight: 700; letter-spacing: .5px;
     color: #ffd27a; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+  .go-btn { margin-top: 8px; font-family: inherit; font-size: 14px; font-weight: 700;
+    letter-spacing: .3px; cursor: pointer; color: #0e1116; background: #ffd27a; border: none;
+    border-radius: 8px; padding: 9px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.45); transition: background .15s; }
+  .go-btn:hover { background: #ffdf9a; }
   /* +1 that pops up on the scoring team's side and floats away */
   .goal-pop { position: absolute; top: 40%; z-index: 4; pointer-events: none; line-height: 1;
     font-size: clamp(30px, 7vw, 56px); font-weight: 800; font-variant-numeric: tabular-nums;
@@ -189,6 +193,7 @@
     <div id="gameOver" class="hidden">
       <div class="go-title">Game Over</div>
       <div class="go-winner" id="goWinner"></div>
+      <button id="nextBtn" class="go-btn">Next match ▸</button>
     </div>
     <div id="noMatch" class="hidden">
       <div class="go-title">No match yet</div>
@@ -245,6 +250,7 @@ function showGameOver() {
   const s1 = f.score[0], s2 = f.score[1];
   document.getElementById("goWinner").textContent =
     s1 === s2 ? "It’s a draw" : `${s1 > s2 ? p1.name : p2.name} wins`;
+  document.getElementById("nextBtn").textContent = pickerMode ? "Next match ▸" : "↻ Watch again";
   document.getElementById("gameOver").classList.remove("hidden");
 }
 
@@ -407,6 +413,20 @@ function loadMatch() {
   fetch(m.log).then(r => r.json())
     .then(obj => { loadLog(mirror ? mirrorLog(obj) : obj); play(); })
     .catch(err => console.warn("picker: could not load match", err));
+}
+
+// pick a fresh random matchup (avoiding the current one) and play it
+function nextMatch() {
+  const keys = Object.keys(P.byPair);
+  if (!keys.length) return;
+  const curKey = pairKey(P.left, P.right);
+  const pool = keys.filter(k => k !== curKey);
+  const key = (pool.length ? pool : keys)[Math.floor(Math.random() * (pool.length ? pool.length : keys.length))];
+  const m = P.byPair[key];
+  P.left = m.home; P.right = m.away;
+  hideGameOver();
+  buildSelects();
+  loadMatch();
 }
 
 // ---- final-match metrics panel (from log.summary) ----
@@ -717,6 +737,11 @@ function pause() {
 document.getElementById("stage").addEventListener("click", e => {
   if (e.target.closest("#vbar")) return;  // don't toggle while using the scrubber
   playing ? pause() : play();
+});
+
+document.getElementById("nextBtn").addEventListener("click", e => {
+  e.stopPropagation();  // don't also trigger the stage play/pause toggle
+  if (pickerMode) nextMatch(); else play();
 });
 
 document.getElementById("scrub").addEventListener("input", e => {

@@ -118,7 +118,7 @@ function renderWatcher(season) {
   document.getElementById("watchSection").classList.remove("hidden");
   const wrap = document.getElementById("watch");
   wrap.innerHTML = `<iframe id="stageFrame" class="stage-frame"
-      src="replay.html?embed=1&autoplay=1&loop=1&picker=1" title="match replay" scrolling="no"></iframe>`;
+      src="replay.html?embed=1&autoplay=1&picker=1" title="match replay" scrolling="no"></iframe>`;
   const fr = document.getElementById("stageFrame");
   const fit = () => { try { fr.style.height = fr.contentDocument.body.scrollHeight + "px"; } catch (_) {} };
   fr.addEventListener("load", () => { fit(); setTimeout(fit, 400); setTimeout(fit, 1200); });
