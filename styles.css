@@ -82,13 +82,14 @@ td.barcell { padding: 6px 12px; }
 .form i.W { background: #3fb950; } .form i.D { background: #d29922; } .form i.L { background: #f85149; }
 
 /* --- small-multiple ranked bar charts on the statistics page --- */
-.smgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.smgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 18px 26px; margin: 6px 0 30px; }
 .sm h3 { font-size: 13px; font-weight: 600; margin: 0 0 9px; color: var(--text); }
 .sm h3 .hint { color: var(--muted); font-weight: 400; font-size: 11px; margin-left: 6px; }
-.smrow { display: grid; grid-template-columns: 38px 1fr 52px; align-items: center;
+.smrow { display: grid; grid-template-columns: 118px 1fr 52px; align-items: center;
   gap: 8px; height: 19px; }
-.smrow .lab { font-size: 11px; color: var(--muted); text-align: right; font-weight: 600; }
+.smrow .lab { font-size: 11px; color: var(--muted); text-align: left; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .smrow .track { position: relative; height: 11px; }
 .smrow .track .b { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px; min-width: 1px; }
 .smrow .num { font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; color: var(--text); }
@@ -142,8 +143,9 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .h2h-table { min-width: 520px; }
 .h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
   font-variant-numeric: tabular-nums; }
-.h2h-table thead th { border-bottom: 1px solid var(--line); }
-.h2h-col span:last-child { display: block; margin-top: 3px; }
+.h2h-table thead th { border-bottom: 1px solid var(--line); vertical-align: bottom; }
+.h2h-col .lbl { display: block; margin: 4px auto 0; writing-mode: vertical-rl;
+  transform: rotate(180deg); white-space: nowrap; font-weight: 600; }
 .h2h-col .swatch { margin: 0 auto; display: block; }
 .h2h-rowh { text-align: left; white-space: nowrap; color: var(--text); font-weight: 600; }
 .h2h-rowh .swatch { margin-right: 6px; }

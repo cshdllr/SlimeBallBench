@@ -94,7 +94,7 @@ function renderSmallMultiples() {
       }
       const best = i === 0 && !m.neutral;
       return `<div class="smrow${best ? " best" : ""}">
-          <span class="lab">${r.abbrev || r.name.slice(0, 3)}</span>
+          <span class="lab" title="${r.name}">${r.name}</span>
           <span class="track"><span class="b" style="width:${w}%;background:${r.color}"></span></span>
           <span class="num">${m.fmt(v)}</span>
         </div>`;

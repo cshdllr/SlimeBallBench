@@ -110,11 +110,11 @@ async function load() {
     return `<td class="h2h ${res}"><a href="replay.html?log=${encodeURIComponent(m.log)}">${myG}–${opG}</a></td>`;
   };
   const h2hHead = order.map(c =>
-    `<th class="h2h-col"><span class="swatch" style="background:${c.color}"></span><span>${c.abbrev}</span></th>`
+    `<th class="h2h-col"><span class="swatch" style="background:${c.color}"></span><span class="lbl">${c.name}</span></th>`
   ).join("");
   const h2hRows = order.map(r => `
     <tr>
-      <th class="h2h-rowh"><span class="swatch" style="background:${r.color}"></span>${r.abbrev}</th>
+      <th class="h2h-rowh"><span class="swatch" style="background:${r.color}"></span>${r.name}</th>
       ${order.map(c => h2hCell(r.id, c.id)).join("")}
     </tr>`).join("");
   const h2h = `
@@ -133,7 +133,7 @@ async function load() {
       <td class="team-cell">
         <span class="swatch" style="background:${r.color}"></span>
         <span class="name">${r.name}</span>${providerLogo(r.provider)}
-        <span class="meta">&nbsp;${r.abbrev} · ${r.provider}</span>
+        <span class="meta">&nbsp;${r.provider}</span>
       </td>
       <td>${r.played}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
       <td>${r.gf}</td><td>${r.ga}</td>
