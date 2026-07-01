@@ -53,6 +53,16 @@
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
     letter-spacing: .3px; color: rgba(230,237,243,0.34); }
   .move-tag.left { left: 13px; } .move-tag.right { right: 13px; text-align: right; }
+  /* end-of-match overlay: hold on the final frame so the result is readable */
+  #gameOver { position: absolute; inset: 0; z-index: 3; border-radius: 10px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    background: rgba(8,11,16,0.6); backdrop-filter: blur(1px); text-align: center; padding: 12px; }
+  #gameOver.hidden { display: none; }  /* id+class beats the plain .hidden rule */
+  .go-title { font-size: clamp(24px, 6vw, 44px); font-weight: 800; letter-spacing: 3px;
+    text-transform: uppercase; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
+  .go-score { font-size: clamp(14px, 3.2vw, 20px); font-weight: 700; color: #e6edf3;
+    font-variant-numeric: tabular-nums; }
+  .go-winner { font-size: 13px; letter-spacing: 1px; color: #ffd27a; }
   /* video-like stage: the canvas with overlay controls on top */
   #stage { position: relative; line-height: 0; cursor: pointer; }
   #bigPlay {
@@ -149,6 +159,11 @@
     <canvas id="pitch" width="1000" height="500"></canvas>
     <div class="move-tag left" id="mvL"></div>
     <div class="move-tag right" id="mvR"></div>
+    <div id="gameOver" class="hidden">
+      <div class="go-title">Game Over</div>
+      <div class="go-score" id="goScore"></div>
+      <div class="go-winner" id="goWinner"></div>
+    </div>
     <button id="bigPlay" aria-label="Play or pause">
       <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="#fff"/></svg>
     </button>
@@ -192,6 +207,21 @@ let speed = 1;
 let lastTs = 0;
 let frameAcc = 0;
 let loopPlayback = false;  // when true, restart at the end instead of stopping
+let endTimer = null;       // holds the "Game Over" pause before looping / stopping
+
+function showGameOver() {
+  const f = frames[frames.length - 1];
+  const p1 = log.players.p1, p2 = log.players.p2;
+  const s1 = f.score[0], s2 = f.score[1];
+  document.getElementById("goScore").textContent = `${p1.name} ${s1} – ${s2} ${p2.name}`;
+  document.getElementById("goWinner").textContent =
+    s1 === s2 ? "Draw" : `Winner: ${s1 > s2 ? p1.name : p2.name}`;
+  document.getElementById("gameOver").classList.remove("hidden");
+}
+function hideGameOver() {
+  clearTimeout(endTimer); endTimer = null;
+  document.getElementById("gameOver").classList.add("hidden");
+}
 
 // ---- mirror a log left↔right so a team can be shown on the chosen side ----
 // We transform the data (swap p1/p2, flip every x by field.width) rather than the
@@ -281,6 +311,7 @@ function loadLog(obj) {
 
   document.getElementById("loader").classList.add("hidden");
   renderMetrics();
+  hideGameOver();
   pause();
   drawFrame(0);
 }
@@ -566,8 +597,13 @@ function tick(ts) {
     let next = cur + advance;
     if (next >= frames.length - 1) {
       drawFrame(frames.length - 1);
-      if (loopPlayback) { cur = 0; frameAcc = 0; requestAnimationFrame(tick); }
-      else pause();
+      playing = false;                 // stop advancing; hold on the final frame
+      showGameOver();                  // show the result so it's readable
+      if (loopPlayback) {
+        endTimer = setTimeout(() => { hideGameOver(); play(); }, 2600);
+      } else {
+        document.getElementById("stage").classList.add("paused");
+      }
       return;
     }
     drawFrame(next);
@@ -577,6 +613,7 @@ function tick(ts) {
 
 function play() {
   if (!frames.length) return;
+  hideGameOver();
   if (cur >= frames.length - 1) cur = 0;  // restart from beginning
   playing = true;
   lastTs = 0; frameAcc = 0;
@@ -598,6 +635,7 @@ document.getElementById("scrub").addEventListener("input", e => {
   // Seek without changing play state: if it was playing, keep playing from here;
   // if paused, stay paused. drawFrame sets `cur`, and the running loop (if any)
   // simply continues from the new position.
+  hideGameOver();
   frameAcc = 0;
   drawFrame(parseInt(e.target.value, 10));
 });
