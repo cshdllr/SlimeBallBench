@@ -22,6 +22,38 @@
     background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
     padding: 10px 16px; margin-bottom: 10px;
   }
+  /* --- retro bulb scoreboard (experimental, mounted above the normal one) --- */
+  #retroBoard {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;
+    padding: 22px 26px; margin-bottom: 12px;
+    background:
+      radial-gradient(120% 140% at 50% -20%, #223047 0%, #16202f 55%, #0f1722 100%);
+    border: 4px solid #7b6f4b; border-radius: 8px;
+    box-shadow: inset 0 0 46px rgba(0,0,0,0.65), 0 2px 10px rgba(0,0,0,0.5);
+  }
+  .rb-side { display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1 1 0; min-width: 0; }
+  .rb-center { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 4px; }
+  .rb-name {
+    font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
+    color: #ece3c9; font-size: clamp(13px, 3vw, 22px); text-align: center;
+    line-height: 1.05; text-shadow: 0 1px 1px rgba(0,0,0,0.6); max-width: 100%;
+  }
+  .rb-caption { font-family: "Arial Narrow", Arial, sans-serif; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 3px; color: #9b8f6a; font-size: 11px; }
+  .rb-digits { display: flex; gap: 8px; align-items: flex-start; }
+  .rb-digits .char { display: grid; grid-template-columns: repeat(var(--cols, 5), var(--dot, 8px));
+    grid-auto-rows: var(--dot, 8px); gap: 3px; }
+  .rb-clock { --dot: 7px; }
+  .rb-digits .dot {
+    width: var(--dot, 8px); height: var(--dot, 8px); border-radius: 50%;
+    background: radial-gradient(circle at 35% 32%, #2c2c24, #0b0b09);
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.9);
+  }
+  .rb-digits .dot.on {
+    background: radial-gradient(circle at 35% 32%, #ffdf9a, #ff8f1f 70%, #d9700f);
+    box-shadow: 0 0 7px 1px rgba(255,150,40,0.85), inset 0 0 2px #fff2cf;
+  }
   .team { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1 1 0; }
   .team.right { flex-direction: row-reverse; text-align: right; }
   #center { flex: 0 0 auto; }
@@ -114,6 +146,21 @@
       <a href="howitworks.html">How it works</a>
     </nav>
   </header>
+
+  <div id="retroBoard">
+    <div class="rb-side">
+      <div class="rb-name" id="rbName1">PLAYER 1</div>
+      <div class="rb-digits" id="rbScore1"></div>
+    </div>
+    <div class="rb-center">
+      <div class="rb-digits rb-clock" id="rbClock"></div>
+      <div class="rb-caption">TIME</div>
+    </div>
+    <div class="rb-side">
+      <div class="rb-name" id="rbName2">PLAYER 2</div>
+      <div class="rb-digits" id="rbScore2"></div>
+    </div>
+  </div>
 
   <div id="scoreboard">
     <div class="team left">
@@ -220,6 +267,34 @@ function fmtTime(sec) {
   return `${m}:${s}`;
 }
 
+// ---- retro bulb scoreboard: 5x7 dot-matrix font for score + clock digits ----
+const RB_FONT = {
+  "0": ["01110", "10001", "10011", "10101", "11001", "10001", "01110"],
+  "1": ["00100", "01100", "00100", "00100", "00100", "00100", "01110"],
+  "2": ["01110", "10001", "00001", "00010", "00100", "01000", "11111"],
+  "3": ["11111", "00010", "00100", "00010", "00001", "10001", "01110"],
+  "4": ["00010", "00110", "01010", "10010", "11111", "00010", "00010"],
+  "5": ["11111", "10000", "11110", "00001", "00001", "10001", "01110"],
+  "6": ["00110", "01000", "10000", "11110", "10001", "10001", "01110"],
+  "7": ["11111", "00001", "00010", "00100", "01000", "01000", "01000"],
+  "8": ["01110", "10001", "10001", "01110", "10001", "10001", "01110"],
+  "9": ["01110", "10001", "10001", "01111", "00001", "00010", "01100"],
+  ":": ["0", "0", "1", "0", "1", "0", "0"],
+  " ": ["00", "00", "00", "00", "00", "00", "00"],
+};
+function rbChar(ch) {
+  const rows = RB_FONT[ch] || RB_FONT[" "];
+  const cols = rows[0].length;
+  let dots = "";
+  for (const row of rows) for (const c of row) dots += `<span class="dot${c === "1" ? " on" : ""}"></span>`;
+  return `<span class="char" style="--cols:${cols}">${dots}</span>`;
+}
+function renderDigits(el, str) {
+  if (!el || el.dataset.val === str) return;  // only rebuild when the value changes
+  el.dataset.val = str;
+  el.innerHTML = [...str].map(rbChar).join("");
+}
+
 // ---- load a parsed log object ----
 function loadLog(obj) {
   log = obj;
@@ -241,6 +316,8 @@ function loadLog(obj) {
   document.getElementById("model2").textContent = p2.model || p2.policy || "";
   document.getElementById("sw1").style.background = p1.color;
   document.getElementById("sw2").style.background = p2.color;
+  document.getElementById("rbName1").textContent = p1.name.toUpperCase();
+  document.getElementById("rbName2").textContent = p2.name.toUpperCase();
 
   const scrub = document.getElementById("scrub");
   scrub.max = frames.length - 1;
@@ -510,6 +587,11 @@ function drawFrame(i) {
   document.getElementById("score").textContent = `${f.score[0]} – ${f.score[1]}`;
   document.getElementById("timer").textContent =
     `${fmtTime(f.t / fps)} / ${fmtTime(frames.length / fps)}`;
+  // retro bulb board
+  const pad2 = n => String(n).padStart(2, "0");
+  renderDigits(document.getElementById("rbScore1"), pad2(f.score[0]));
+  renderDigits(document.getElementById("rbScore2"), pad2(f.score[1]));
+  renderDigits(document.getElementById("rbClock"), fmtTime(f.t / fps));
   document.getElementById("act1").textContent = "▸ " + f.a1;
   document.getElementById("act2").textContent = f.a2 + " ◂";
   document.getElementById("scrub").value = i;
