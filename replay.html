@@ -28,26 +28,27 @@
   .rb-names { display: flex; justify-content: space-between; gap: 12px; }
   .rb-name {
     font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
-    color: #ece3c9; font-size: clamp(11px, 2.2vw, 15px); max-width: 46%;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+    color: #ece3c9; font-size: clamp(14px, 3vw, 26px); max-width: 48%;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   }
   .rb-name:last-child { text-align: right; }
-  /* team-picker dropdowns styled to read as the scoreboard name plates */
+  /* team-picker dropdowns: styled as tappable pills so it reads as "change team" */
   .rb-select {
-    font: inherit; font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
-    color: #ece3c9; font-size: clamp(11px, 2.2vw, 15px); max-width: 100%;
-    background: transparent; border: none; cursor: pointer; padding: 1px 16px 1px 0;
-    appearance: none; -webkit-appearance: none; text-shadow: 0 1px 1px rgba(0,0,0,0.6);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23c9bd93' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right center;
+    font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+    color: #ece3c9; font-size: clamp(14px, 3vw, 26px); max-width: 100%;
+    cursor: pointer; appearance: none; -webkit-appearance: none;
+    background-color: rgba(255,255,255,0.06); border: 1px solid rgba(236,227,201,0.4);
+    border-radius: 8px; padding: 3px 32px 3px 11px; text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23ece3c9' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 10px center;
+    transition: background-color .15s, border-color .15s;
   }
-  .rb-select:hover { color: #fff; } .rb-select:focus { outline: none; }
+  .rb-select:hover { background-color: rgba(255,255,255,0.13); border-color: rgba(236,227,201,0.8); color: #fff; }
+  .rb-select:focus { outline: none; border-color: rgba(236,227,201,0.9); }
   .rb-select option { color: #111; text-transform: none; font-weight: 600; }
-  .rb-name:last-child .rb-select { text-align-last: right; padding: 1px 0 1px 16px;
-    background-position: left center; }
   .rb-row { display: flex; justify-content: space-between; align-items: center; }
   .rb-digits { display: flex; gap: clamp(2.5px, 0.7vw, 5px); align-items: flex-start;
     --dot: clamp(2.5px, 0.7vw, 5px); }
@@ -64,21 +65,31 @@
   }
   canvas#pitch { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; display: block; background: var(--sky); }
   /* current move of each model, subtly overlaid in the top corners of the video */
-  .move-tag { position: absolute; top: 9px; z-index: 2; pointer-events: none;
+  .move-tag { position: absolute; top: 13px; z-index: 2; pointer-events: none;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
     letter-spacing: .3px; color: rgba(230,237,243,0.34); }
   .move-tag.left { left: 13px; } .move-tag.right { right: 13px; text-align: right; }
   /* end-of-match overlay: hold on the final frame so the result is readable */
-  #gameOver, #noMatch { position: absolute; inset: 0; z-index: 3; border-radius: 10px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  #gameOver, #noMatch { position: absolute; inset: 0; z-index: 3; border-radius: 10px; line-height: 1.2;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
     background: rgba(8,11,16,0.6); backdrop-filter: blur(1px); text-align: center; padding: 12px; }
   #gameOver.hidden, #noMatch.hidden { display: none; }  /* id+class beats the plain .hidden rule */
   #noMatch .go-title { font-size: clamp(16px, 3.6vw, 26px); }
   .go-title { font-size: clamp(24px, 6vw, 44px); font-weight: 800; letter-spacing: 3px;
     text-transform: uppercase; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
-  .go-score { font-size: clamp(14px, 3.2vw, 20px); font-weight: 700; color: #e6edf3;
-    font-variant-numeric: tabular-nums; }
-  .go-winner { font-size: 13px; letter-spacing: 1px; color: #ffd27a; }
+  .go-winner { font-size: clamp(15px, 3.4vw, 24px); font-weight: 700; letter-spacing: .5px;
+    color: #ffd27a; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+  /* +1 that pops up on the scoring team's side and floats away */
+  .goal-pop { position: absolute; top: 40%; z-index: 4; pointer-events: none; line-height: 1;
+    font-size: clamp(30px, 7vw, 56px); font-weight: 800; font-variant-numeric: tabular-nums;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.65); animation: goalpop 1.25s ease-out forwards; }
+  .goal-pop.left { left: 22%; } .goal-pop.right { right: 22%; }
+  @keyframes goalpop {
+    0%   { opacity: 0; transform: translateY(12px) scale(.6); }
+    18%  { opacity: 1; transform: translateY(0) scale(1.15); }
+    38%  { transform: translateY(-6px) scale(1); }
+    100% { opacity: 0; transform: translateY(-64px) scale(1); }
+  }
   /* video-like stage: the canvas with overlay controls on top */
   #stage { position: relative; line-height: 0; cursor: pointer; }
   #bigPlay {
@@ -177,7 +188,6 @@
     <div class="move-tag right" id="mvR"></div>
     <div id="gameOver" class="hidden">
       <div class="go-title">Game Over</div>
-      <div class="go-score" id="goScore"></div>
       <div class="go-winner" id="goWinner"></div>
     </div>
     <div id="noMatch" class="hidden">
@@ -226,15 +236,27 @@ let lastTs = 0;
 let frameAcc = 0;
 let loopPlayback = false;  // when true, restart at the end instead of stopping
 let endTimer = null;       // holds the "Game Over" pause before looping / stopping
+let lastScore = null;      // last drawn score, to detect goals for the +1 popup
+let seeking = false;       // true while scrubbing, so we don't pop +1 on a jump
 
 function showGameOver() {
   const f = frames[frames.length - 1];
   const p1 = log.players.p1, p2 = log.players.p2;
   const s1 = f.score[0], s2 = f.score[1];
-  document.getElementById("goScore").textContent = `${p1.name} ${s1} – ${s2} ${p2.name}`;
   document.getElementById("goWinner").textContent =
-    s1 === s2 ? "Draw" : `Winner: ${s1 > s2 ? p1.name : p2.name}`;
+    s1 === s2 ? "It’s a draw" : `${s1 > s2 ? p1.name : p2.name} wins`;
   document.getElementById("gameOver").classList.remove("hidden");
+}
+
+// a "+1" that pops up on the scoring team's side of the pitch
+function spawnGoalPop(side) {
+  const stage = document.getElementById("stage");
+  const el = document.createElement("div");
+  el.className = "goal-pop " + (side === 0 ? "left" : "right");
+  el.textContent = "+1";
+  el.style.color = (side === 0 ? log.players.p1.color : log.players.p2.color);
+  stage.appendChild(el);
+  el.addEventListener("animationend", () => el.remove());
 }
 function hideGameOver() {
   clearTimeout(endTimer); endTimer = null;
@@ -636,6 +658,12 @@ function drawFrame(i) {
   renderDigits(document.getElementById("rbScore1"), pad2(f.score[0]));
   renderDigits(document.getElementById("rbScore2"), pad2(f.score[1]));
   renderDigits(document.getElementById("rbClock"), `${cm}:${String(cs).padStart(2, "0")}`);
+  // goal +1 popup, only on live forward playback (not scrubbing / restart)
+  if (playing && !seeking && lastScore) {
+    if (f.score[0] > lastScore[0]) spawnGoalPop(0);
+    if (f.score[1] > lastScore[1]) spawnGoalPop(1);
+  }
+  lastScore = [f.score[0], f.score[1]];
   // subtle move tags overlaid in the video's top corners
   document.getElementById("mvL").textContent = f.a1;
   document.getElementById("mvR").textContent = f.a2;
@@ -697,7 +725,9 @@ document.getElementById("scrub").addEventListener("input", e => {
   // simply continues from the new position.
   hideGameOver();
   frameAcc = 0;
+  seeking = true;
   drawFrame(parseInt(e.target.value, 10));
+  seeking = false;
 });
 
 document.getElementById("file").addEventListener("change", e => {
