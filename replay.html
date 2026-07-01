@@ -34,6 +34,20 @@
     text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   }
   .rb-name:last-child { text-align: right; }
+  /* team-picker dropdowns styled to read as the scoreboard name plates */
+  .rb-select {
+    font: inherit; font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
+    color: #ece3c9; font-size: clamp(11px, 2.2vw, 15px); max-width: 100%;
+    background: transparent; border: none; cursor: pointer; padding: 1px 16px 1px 0;
+    appearance: none; -webkit-appearance: none; text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23c9bd93' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right center;
+  }
+  .rb-select:hover { color: #fff; } .rb-select:focus { outline: none; }
+  .rb-select option { color: #111; text-transform: none; font-weight: 600; }
+  .rb-name:last-child .rb-select { text-align-last: right; padding: 1px 0 1px 16px;
+    background-position: left center; }
   .rb-row { display: flex; justify-content: space-between; align-items: center; }
   .rb-digits { display: flex; gap: 5px; align-items: flex-start; --dot: 5px; }
   .rb-digits .char { display: grid; grid-template-columns: repeat(var(--cols, 5), var(--dot));
@@ -54,10 +68,11 @@
     letter-spacing: .3px; color: rgba(230,237,243,0.34); }
   .move-tag.left { left: 13px; } .move-tag.right { right: 13px; text-align: right; }
   /* end-of-match overlay: hold on the final frame so the result is readable */
-  #gameOver { position: absolute; inset: 0; z-index: 3; border-radius: 10px;
+  #gameOver, #noMatch { position: absolute; inset: 0; z-index: 3; border-radius: 10px;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
     background: rgba(8,11,16,0.6); backdrop-filter: blur(1px); text-align: center; padding: 12px; }
-  #gameOver.hidden { display: none; }  /* id+class beats the plain .hidden rule */
+  #gameOver.hidden, #noMatch.hidden { display: none; }  /* id+class beats the plain .hidden rule */
+  #noMatch .go-title { font-size: clamp(16px, 3.6vw, 26px); }
   .go-title { font-size: clamp(24px, 6vw, 44px); font-weight: 800; letter-spacing: 3px;
     text-transform: uppercase; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
   .go-score { font-size: clamp(14px, 3.2vw, 20px); font-weight: 700; color: #e6edf3;
@@ -164,6 +179,10 @@
       <div class="go-score" id="goScore"></div>
       <div class="go-winner" id="goWinner"></div>
     </div>
+    <div id="noMatch" class="hidden">
+      <div class="go-title">No match yet</div>
+      <div class="go-winner" id="nmText"></div>
+    </div>
     <button id="bigPlay" aria-label="Play or pause">
       <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="#fff"/></svg>
     </button>
@@ -174,8 +193,6 @@
   </div>
 
   <div id="metrics" class="hidden">
-    <div class="metrics-title">Final match metrics</div>
-    <div class="match-line" id="matchLine"></div>
     <div class="chart-title">Goal differential over time</div>
     <canvas id="goalChart" width="1000" height="170"></canvas>
     <div class="metrics-title">Head-to-head</div>
@@ -302,8 +319,10 @@ function loadLog(obj) {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   const p1 = log.players.p1, p2 = log.players.p2;
-  document.getElementById("rbName1").textContent = p1.name.toUpperCase();
-  document.getElementById("rbName2").textContent = p2.name.toUpperCase();
+  if (!pickerMode) {  // in picker mode the name plates are dropdowns, don't overwrite
+    document.getElementById("rbName1").textContent = p1.name.toUpperCase();
+    document.getElementById("rbName2").textContent = p2.name.toUpperCase();
+  }
 
   const scrub = document.getElementById("scrub");
   scrub.max = frames.length - 1;
@@ -314,6 +333,57 @@ function loadLog(obj) {
   hideGameOver();
   pause();
   drawFrame(0);
+  // if embedded, ask the parent page to re-fit the iframe height to the content
+  if (window.parent !== window) window.parent.postMessage("sbb-resize", "*");
+}
+
+// ---- team picker (used when embedded on the homepage): the two scoreboard name
+// plates become dropdowns; changing either loads that matchup (mirrored so each
+// team stays on the chosen side). Self-contained: reads season.json directly. ----
+let pickerMode = false;
+const P = { models: [], byId: {}, byPair: {}, left: null, right: null };
+const pairKey = (a, b) => [a, b].sort().join("|");
+
+function initPicker() {
+  pickerMode = true;
+  fetch("season.json").then(r => r.json()).then(season => {
+    P.models = season.models;
+    P.byId = Object.fromEntries(season.models.map(m => [m.id, m]));
+    const played = season.matches.filter(m => m.log);
+    if (!played.length) return;
+    for (const m of played) P.byPair[pairKey(m.home, m.away)] = m;
+    const init = played[Math.floor(Math.random() * played.length)];
+    P.left = init.home; P.right = init.away;
+    buildSelects();
+    loadMatch();
+  }).catch(err => console.warn("picker: could not load season.json", err));
+}
+
+function buildSelects() {
+  const opt = (sel, dis) => P.models
+    .map(m => `<option value="${m.id}"${m.id === sel ? " selected" : ""}` +
+              `${m.id === dis ? " disabled" : ""}>${m.name.toUpperCase()}</option>`).join("");
+  document.getElementById("rbName1").innerHTML = `<select class="rb-select" id="selL">${opt(P.left, P.right)}</select>`;
+  document.getElementById("rbName2").innerHTML = `<select class="rb-select" id="selR">${opt(P.right, P.left)}</select>`;
+  document.getElementById("selL").onchange = e => { P.left = e.target.value; buildSelects(); loadMatch(); };
+  document.getElementById("selR").onchange = e => { P.right = e.target.value; buildSelects(); loadMatch(); };
+}
+
+function loadMatch() {
+  const m = P.byPair[pairKey(P.left, P.right)];
+  const nm = document.getElementById("noMatch");
+  if (!m) {
+    pause();
+    document.getElementById("nmText").textContent =
+      `${P.byId[P.left].name} vs ${P.byId[P.right].name} hasn’t been played yet.`;
+    nm.classList.remove("hidden");
+    return;
+  }
+  nm.classList.add("hidden");
+  const mirror = m.home !== P.left;  // flip so the left pick shows on the left
+  fetch(m.log).then(r => r.json())
+    .then(obj => { loadLog(mirror ? mirrorLog(obj) : obj); play(); })
+    .catch(err => console.warn("picker: could not load match", err));
 }
 
 // ---- final-match metrics panel (from log.summary) ----
@@ -322,18 +392,6 @@ function renderMetrics() {
   const panel = document.getElementById("metrics");
   if (!s) { panel.classList.add("hidden"); return; }
   panel.classList.remove("hidden");
-
-  const m = s.match_metrics || {};
-  const ttfg = m.time_to_first_goal_seconds;
-  document.getElementById("matchLine").innerHTML = [
-    `Winner: <b>${s.winner}</b>`,
-    `Time to first goal: <b>${ttfg != null ? ttfg + "s" : "—"}</b>${m.first_scorer ? " (" + m.first_scorer + ")" : ""}`,
-    `Total touches: <b>${m.total_ball_touches ?? 0}</b>`,
-    `Saves: <b>${m.total_saves ?? 0}</b>`,
-    `Own goals: <b>${m.total_own_goals ?? 0}</b>`,
-    `Lead changes: <b>${m.lead_changes ?? 0}</b>`,
-    `Largest lead: <b>${m.largest_lead ?? 0}</b>`,
-  ].join(" · ");
 
   const players = s.players || {};
   renderH2H(log.players.p1, players[log.players.p1.name],
@@ -667,6 +725,10 @@ document.addEventListener("keydown", e => {
   const autoplay = params.get("autoplay") === "1";
   loopPlayback = params.get("loop") === "1";
   if (params.get("embed") === "1") document.body.classList.add("embed");
+  if (params.get("picker") === "1" && location.protocol.startsWith("http")) {
+    initPicker();
+    return;  // picker manages match loading itself
+  }
   if (src && location.protocol.startsWith("http")) {
     fetch(src).then(r => r.json())
       .then(obj => { loadLog(mirror ? mirrorLog(obj) : obj); if (autoplay) play(); })

@@ -18,10 +18,6 @@
   </header>
 
   <section id="watchSection" class="hidden">
-    <h2 class="section-h">Watch a match</h2>
-    <p class="sub">Pick any two teams to watch their game. Each gets a side — if a match
-       was recorded the other way round, the replay mirrors so each team stays on the
-       side you chose.</p>
     <div id="watch"></div>
   </section>
 
@@ -115,58 +111,20 @@ async function load() {
   renderWatcher(season);
 }
 
-// ---- "Watch a match": opponent pickers + embedded, auto-playing replay ----
+// ---- "Watch a match": embed the self-contained replay+picker. The team
+// dropdowns live in the replay's scoreboard; it manages selection + mirroring. ----
 function renderWatcher(season) {
-  const models = season.models;
-  const byId = Object.fromEntries(models.map(m => [m.id, m]));
-  const played = season.matches.filter(m => m.log);
-  if (!played.length) return;  // nothing to show yet
-
-  const pairKey = (a, b) => [a, b].sort().join("|");
-  const byPair = {};
-  for (const m of played) byPair[pairKey(m.home, m.away)] = m;
-
-  // default: a random recorded matchup, shown as recorded (no mirror)
-  const init = played[Math.floor(Math.random() * played.length)];
-  let leftId = init.home, rightId = init.away;
-
+  if (!season.matches.some(m => m.log)) return;  // nothing to show yet
   document.getElementById("watchSection").classList.remove("hidden");
   const wrap = document.getElementById("watch");
-  // `disabled` is the team picked on the other side, so it can't be chosen here too.
-  const opts = (sel, disabled) => models
-    .map(m => `<option value="${m.id}"${m.id === sel ? " selected" : ""}` +
-              `${m.id === disabled ? " disabled" : ""}>${m.name}</option>`).join("");
-
-  function paint() {
-    const m = byPair[pairKey(leftId, rightId)];
-    let stage;
-    if (leftId === rightId) {
-      stage = `<div class="notice">Pick two different teams.</div>`;
-    } else if (!m) {
-      stage = `<div class="notice">No recorded match between
-        <b>${byId[leftId].name}</b> and <b>${byId[rightId].name}</b> yet.</div>`;
-    } else {
-      const mirror = m.home === leftId ? "" : "&mirror=1";
-      const src = `replay.html?log=${encodeURIComponent(m.log)}&embed=1&autoplay=1&loop=1${mirror}`;
-      stage = `<iframe id="stageFrame" class="stage-frame" src="${src}" title="match replay" scrolling="no"></iframe>`;
-    }
-    wrap.innerHTML = `
-      <div class="matchpick">
-        <select id="leftSel" class="teamsel">${opts(leftId, rightId)}</select>
-        <span class="vs">vs</span>
-        <select id="rightSel" class="teamsel">${opts(rightId, leftId)}</select>
-      </div>
-      <div id="stage">${stage}</div>`;
-    document.getElementById("leftSel").onchange = e => { leftId = e.target.value; paint(); };
-    document.getElementById("rightSel").onchange = e => { rightId = e.target.value; paint(); };
-    const fr = document.getElementById("stageFrame");
-    if (fr) {
-      const fit = () => { try { fr.style.height = fr.contentDocument.body.scrollHeight + "px"; } catch (_) {} };
-      fr.addEventListener("load", () => { fit(); setTimeout(fit, 250); });
-      window.addEventListener("resize", fit);
-    }
-  }
-  paint();
+  wrap.innerHTML = `<iframe id="stageFrame" class="stage-frame"
+      src="replay.html?embed=1&autoplay=1&loop=1&picker=1" title="match replay" scrolling="no"></iframe>`;
+  const fr = document.getElementById("stageFrame");
+  const fit = () => { try { fr.style.height = fr.contentDocument.body.scrollHeight + "px"; } catch (_) {} };
+  fr.addEventListener("load", () => { fit(); setTimeout(fit, 400); setTimeout(fit, 1200); });
+  window.addEventListener("resize", fit);
+  // the embedded replay posts this after it (re)loads a match
+  window.addEventListener("message", e => { if (e.data === "sbb-resize") fit(); });
 }
 load();
 </script>
