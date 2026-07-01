@@ -49,9 +49,10 @@
   .rb-name:last-child .rb-select { text-align-last: right; padding: 1px 0 1px 16px;
     background-position: left center; }
   .rb-row { display: flex; justify-content: space-between; align-items: center; }
-  .rb-digits { display: flex; gap: 5px; align-items: flex-start; --dot: 5px; }
+  .rb-digits { display: flex; gap: clamp(2.5px, 0.7vw, 5px); align-items: flex-start;
+    --dot: clamp(2.5px, 0.7vw, 5px); }
   .rb-digits .char { display: grid; grid-template-columns: repeat(var(--cols, 5), var(--dot));
-    grid-auto-rows: var(--dot); gap: 2px; }
+    grid-auto-rows: var(--dot); gap: clamp(1px, 0.3vw, 2px); }
   .rb-digits .dot {
     width: var(--dot); height: var(--dot); border-radius: 50%;
     background: radial-gradient(circle at 35% 32%, #2c2c24, #0b0b09);
@@ -631,9 +632,10 @@ function drawFrame(i) {
   // retro bulb board: scores + a clock that counts DOWN from the match length
   const pad2 = n => String(n).padStart(2, "0");
   const remain = Math.max(0, (frames.length - f.t) / fps);
+  const cm = Math.floor(remain / 60), cs = Math.floor(remain % 60);
   renderDigits(document.getElementById("rbScore1"), pad2(f.score[0]));
   renderDigits(document.getElementById("rbScore2"), pad2(f.score[1]));
-  renderDigits(document.getElementById("rbClock"), fmtTime(remain));
+  renderDigits(document.getElementById("rbClock"), `${cm}:${String(cs).padStart(2, "0")}`);
   // subtle move tags overlaid in the video's top corners
   document.getElementById("mvL").textContent = f.a1;
   document.getElementById("mvR").textContent = f.a2;
