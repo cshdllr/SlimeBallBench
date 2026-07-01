@@ -30,6 +30,16 @@
 
 <script src="logos.js"></script>
 <script>
+// Quiet "provenance" strip: version, season, coverage, freshness date.
+function provenanceStrip(season) {
+  const total = season.matches.length;
+  const played = season.matches.filter(m => m.played_at).length;
+  const date = new Date(season.generated_at).toLocaleDateString("en-US",
+    { month: "short", day: "numeric", year: "numeric" });
+  return `<p class="provenance">SlimeBallBench v1.0 · Season 1 ·
+    ${played}/${total} matches · Updated ${date}</p>`;
+}
+
 async function load() {
   let season;
   try {
@@ -79,6 +89,44 @@ async function load() {
         <span class="dval ${side}">${label}</span></div>`;
   };
 
+  // ---- Head-to-head matrix: rows/cols = teams in rank order, each cell shows
+  // the pairing from the ROW team's perspective (row goals first). Single
+  // round-robin, so one match per pair mirrored into both off-diagonal cells. ----
+  const order = season.standings; // already rank-ordered
+  const matchBetween = {};
+  for (const m of season.matches) {
+    if (!m.played_at) continue;
+    matchBetween[m.home + "|" + m.away] = m;
+    matchBetween[m.away + "|" + m.home] = m;
+  }
+  const h2hCell = (rowId, colId) => {
+    if (rowId === colId) return `<td class="h2h-diag"></td>`;
+    const m = matchBetween[rowId + "|" + colId];
+    if (!m) return `<td class="h2h-empty">—</td>`;
+    const rowIsHome = m.home === rowId;
+    const myG = rowIsHome ? m.score[0] : m.score[1];
+    const opG = rowIsHome ? m.score[1] : m.score[0];
+    const res = myG > opG ? "W" : myG < opG ? "L" : "D";
+    return `<td class="h2h ${res}"><a href="replay.html?log=${encodeURIComponent(m.log)}">${myG}–${opG}</a></td>`;
+  };
+  const h2hHead = order.map(c =>
+    `<th class="h2h-col"><span class="swatch" style="background:${c.color}"></span><span>${c.abbrev}</span></th>`
+  ).join("");
+  const h2hRows = order.map(r => `
+    <tr>
+      <th class="h2h-rowh"><span class="swatch" style="background:${r.color}"></span>${r.abbrev}</th>
+      ${order.map(c => h2hCell(r.id, c.id)).join("")}
+    </tr>`).join("");
+  const h2h = `
+    <h2 class="section-h" style="margin-top:26px">Head-to-head</h2>
+    <div class="h2h-scroll">
+      <table class="h2h-table">
+        <thead><tr><th></th>${h2hHead}</tr></thead>
+        <tbody>${h2hRows}</tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:10px">Read across: each row shows that team's result against every opponent.</p>`;
+
   const rows = season.standings.map(r => `
     <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model.html?id=${r.id}'">
       <td class="pos">${r.rank}</td>
@@ -97,6 +145,7 @@ async function load() {
     </tr>`).join("");
 
   document.getElementById("content").innerHTML = `
+    ${provenanceStrip(season)}
     <table>
       <thead><tr>
         <th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th>
@@ -106,7 +155,8 @@ async function load() {
     </table>
     <p class="sub" style="margin-top:14px">Tap a team to see its schedule and stats.
        Points: win 3, draw 1. Ties broken by goal difference, then goals for.
-       Bars scale to the leader; <b>GD</b> diverges from zero; <b>Form</b> shows the last six results (newest right).</p>`;
+       Bars scale to the leader; <b>GD</b> diverges from zero; <b>Form</b> shows the last six results (newest right).</p>
+    ${h2h}`;
 
   renderWatcher(season);
 }

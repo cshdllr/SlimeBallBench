@@ -36,7 +36,7 @@ tbody tr { border-top: 1px solid rgba(255,255,255,0.04); }
 tbody tr.clickable { cursor: pointer; }
 tbody tr.clickable:hover { background: rgba(255,255,255,0.03); }
 tbody tr.leader td { background: rgba(63,185,80,0.07); }
-tbody tr.leader td.pos::before { content: "🥇 "; }
+tbody tr.leader td:first-child { border-left: 3px solid #d4a72c; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
 .team-cell .name { font-weight: 600; }
 .team-cell .meta { color: var(--muted); font-size: 11px; }
@@ -129,3 +129,28 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   gap: 10px; margin: 14px 0; }
 .field-spec .card .k { color: var(--muted); font-size: 12px; }
 .field-spec .card .v { font-size: 16px; font-weight: 700; margin-top: 2px; }
+
+/* per-value muted suffix inside a card (e.g. "$1.41  $0.18/match") */
+.card .v .v-sub { display: block; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 2px; }
+
+/* quiet provenance / freshness strip */
+.provenance { color: var(--muted); font-size: 12px; margin: 0 2px 16px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+
+/* --- Head-to-head results matrix --- */
+.h2h-scroll { overflow-x: auto; margin: 4px 0 2px; }
+.h2h-table { min-width: 520px; }
+.h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
+  font-variant-numeric: tabular-nums; }
+.h2h-table thead th { border-bottom: 1px solid var(--line); }
+.h2h-col span:last-child { display: block; margin-top: 3px; }
+.h2h-col .swatch { margin: 0 auto; display: block; }
+.h2h-rowh { text-align: left; white-space: nowrap; color: var(--text); font-weight: 600; }
+.h2h-rowh .swatch { margin-right: 6px; }
+.h2h-table td.h2h a { text-decoration: none; font-weight: 600; }
+.h2h-table td.h2h.W { background: rgba(63,185,80,0.15); } .h2h-table td.h2h.W a { color: #3fb950; }
+.h2h-table td.h2h.L { background: rgba(248,81,73,0.15); } .h2h-table td.h2h.L a { color: #f85149; }
+.h2h-table td.h2h.D { background: rgba(210,153,34,0.16); } .h2h-table td.h2h.D a { color: #d29922; }
+.h2h-table td.h2h a:hover { text-decoration: underline; }
+.h2h-table td.h2h-diag { background: rgba(42,49,60,0.5); }
+.h2h-table td.h2h-empty { color: var(--muted); }

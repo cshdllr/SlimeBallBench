@@ -18,6 +18,7 @@
   </header>
 
   <h1>Statistics</h1>
+  <div id="provenance"></div>
   <p class="sub">Aggregate per-team metrics across all matches. Each chart ranks every
      team on one metric (same scale within a chart); the leader is highlighted.</p>
   <div id="charts"></div>
@@ -54,18 +55,21 @@ let ROWS = [];
 let sortKey = "goal_diff", sortDir = -1;
 
 // Small multiples: each entry is one ranked bar-chart. `better` decides ordering
-// (best on top) and whether the bar length should track "more = longer" — for
-// "low is better" metrics we invert the bar so a short bar always reads as good.
+// (best on top). `baseline` decides bar length: "zero" draws width from a true
+// zero baseline (honest for counts), "range" uses inverted min-max so a short bar
+// reads as good (kept only for latency/cost, where zero baseline flattens things).
+// `neutral` suppresses the "best" highlight for metrics that aren't a virtue.
 const SMALL_MULTIPLES = [
-  { key: "goals_for",          label: "Goals for",       better: "high", fmt: v => v },
-  { key: "goals_against",      label: "Goals against",   better: "low",  fmt: v => v },
-  { key: "goals_per_touch",    label: "Goals per touch", better: "high", fmt: v => v.toFixed(3), hint: "finishing" },
-  { key: "avg_possession_pct", label: "Possession",      better: "high", fmt: v => v + "%" },
-  { key: "saves",              label: "Saves",           better: "high", fmt: v => v },
-  { key: "own_goals",          label: "Own goals",       better: "low",  fmt: v => v, hint: "fewer is better" },
-  { key: "jumps",              label: "Jumps",           better: "high", fmt: v => v },
-  { key: "avg_latency_ms",     label: "Avg latency",     better: "low",  fmt: v => v == null ? "—" : v + "ms", hint: "lower is better" },
-  { key: "total_cost_usd",     label: "Total cost",      better: "low",  fmt: v => "$" + (v ?? 0).toFixed(2), hint: "lower is better" },
+  { key: "goals_for",          label: "Goals for",       better: "high", baseline: "zero",  fmt: v => v },
+  { key: "goals_against",      label: "Goals against",   better: "low",  baseline: "zero",  fmt: v => v },
+  { key: "goals_per_touch",    label: "Goals per touch", better: "high", baseline: "zero",  fmt: v => v.toFixed(3), hint: "finishing" },
+  { key: "avg_possession_pct", label: "Possession",      better: "high", baseline: "zero",  fmt: v => v + "%" },
+  { key: "saves",              label: "Saves",           better: "high", baseline: "zero",  fmt: v => v },
+  { key: "own_goals",          label: "Own goals",       better: "low",  baseline: "zero",  fmt: v => v, hint: "fewer is better" },
+  { key: "jumps",              label: "Jumps",           better: "high", baseline: "zero",  neutral: true, fmt: v => v, hint: "activity, not ability" },
+  { key: "cost_per_point",     label: "Cost per point",  better: "low",  baseline: "range", fmt: v => "$" + v.toFixed(3) + "/pt", hint: "efficiency" },
+  { key: "avg_latency_ms",     label: "Avg latency",     better: "low",  baseline: "range", fmt: v => v == null ? "—" : v + "ms", hint: "lower is better" },
+  { key: "total_cost_usd",     label: "Total cost",      better: "low",  baseline: "range", fmt: v => "$" + (v ?? 0).toFixed(2), hint: "lower is better" },
 ];
 
 function renderSmallMultiples() {
@@ -79,12 +83,17 @@ function renderSmallMultiples() {
       .sort((a, b) => m.better === "low" ? a[m.key] - b[m.key] : b[m.key] - a[m.key]);
     const rows = ranked.map((r, i) => {
       const v = r[m.key];
-      // Bar length: longest bar = best team. For "low is better", invert so the
-      // best (smallest value) still draws the longest bar.
-      const span = (max - min) || 1;
-      const frac = m.better === "low" ? (max - v) / span : (v - min) / span;
-      const w = 6 + frac * 94; // keep a sliver visible even for the worst
-      return `<div class="smrow${i === 0 ? " best" : ""}">
+      let w;
+      if (m.baseline === "zero") {
+        w = max ? v / max * 100 : 0; // honest zero baseline
+      } else {
+        // inverted min-max: shortest value still draws the longest (best) bar
+        const span = (max - min) || 1;
+        const frac = m.better === "low" ? (max - v) / span : (v - min) / span;
+        w = 6 + frac * 94; // keep a sliver visible even for the worst
+      }
+      const best = i === 0 && !m.neutral;
+      return `<div class="smrow${best ? " best" : ""}">
           <span class="lab">${r.abbrev || r.name.slice(0, 3)}</span>
           <span class="track"><span class="b" style="width:${w}%;background:${r.color}"></span></span>
           <span class="num">${m.fmt(v)}</span>
@@ -133,12 +142,29 @@ async function load() {
     return;
   }
   const byId = Object.fromEntries(season.models.map(m => [m.id, m]));
-  ROWS = Object.entries(season.aggregate_stats).map(([id, s]) => ({
-    id, name: byId[id].name, color: byId[id].color, abbrev: byId[id].abbrev,
-    provider: byId[id].provider, ...s,
-  }));
+  const ptsById = Object.fromEntries(season.standings.map(r => [r.id, r.points]));
+  ROWS = Object.entries(season.aggregate_stats).map(([id, s]) => {
+    const points = ptsById[id] ?? 0;
+    // efficiency: $ spent per league point. 0 points → no meaningful ratio.
+    const cost_per_point = points > 0 ? (s.total_cost_usd ?? 0) / points : null;
+    return {
+      id, name: byId[id].name, color: byId[id].color, abbrev: byId[id].abbrev,
+      provider: byId[id].provider, points, cost_per_point, ...s,
+    };
+  });
+  document.getElementById("provenance").innerHTML = provenanceStrip(season);
   renderSmallMultiples();
   render();
+}
+
+// Quiet "provenance" strip: version, season, coverage, freshness date.
+function provenanceStrip(season) {
+  const total = season.matches.length;
+  const played = season.matches.filter(m => m.played_at).length;
+  const date = new Date(season.generated_at).toLocaleDateString("en-US",
+    { month: "short", day: "numeric", year: "numeric" });
+  return `<p class="provenance">SlimeBallBench v1.0 · Season 1 ·
+    ${played}/${total} matches · Updated ${date}</p>`;
 }
 load();
 </script>
