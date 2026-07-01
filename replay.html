@@ -17,56 +17,42 @@
   }
   h1 { font-size: 18px; font-weight: 600; margin: 4px 0 12px; letter-spacing: .3px; }
   #wrap { width: 100%; max-width: 800px; }
-  #scoreboard {
-    display: flex; align-items: center; justify-content: space-between;
-    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
-    padding: 10px 16px; margin-bottom: 10px;
-  }
-  /* --- retro bulb scoreboard (experimental, mounted above the normal one) --- */
+  /* --- retro bulb scoreboard: names on top, score/clock/score on one bottom row --- */
   #retroBoard {
-    display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;
-    padding: 22px 26px; margin-bottom: 12px;
-    background:
-      radial-gradient(120% 140% at 50% -20%, #223047 0%, #16202f 55%, #0f1722 100%);
-    border: 4px solid #7b6f4b; border-radius: 8px;
-    box-shadow: inset 0 0 46px rgba(0,0,0,0.65), 0 2px 10px rgba(0,0,0,0.5);
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 12px 18px 14px; margin-bottom: 10px;
+    background: radial-gradient(120% 140% at 50% -20%, #223047 0%, #16202f 55%, #0f1722 100%);
+    border: 3px solid #7b6f4b; border-radius: 7px;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.65), 0 2px 8px rgba(0,0,0,0.5);
   }
-  .rb-side { display: flex; flex-direction: column; align-items: center; gap: 14px; flex: 1 1 0; min-width: 0; }
-  .rb-center { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 4px; }
+  .rb-names { display: flex; justify-content: space-between; gap: 12px; }
   .rb-name {
     font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
-    color: #ece3c9; font-size: clamp(13px, 3vw, 22px); text-align: center;
-    line-height: 1.05; text-shadow: 0 1px 1px rgba(0,0,0,0.6); max-width: 100%;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
+    color: #ece3c9; font-size: clamp(11px, 2.2vw, 15px); max-width: 46%;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   }
-  .rb-caption { font-family: "Arial Narrow", Arial, sans-serif; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 3px; color: #9b8f6a; font-size: 11px; }
-  .rb-digits { display: flex; gap: 8px; align-items: flex-start; }
-  .rb-digits .char { display: grid; grid-template-columns: repeat(var(--cols, 5), var(--dot, 8px));
-    grid-auto-rows: var(--dot, 8px); gap: 3px; }
-  .rb-clock { --dot: 7px; }
+  .rb-name:last-child { text-align: right; }
+  .rb-row { display: flex; justify-content: space-between; align-items: center; }
+  .rb-digits { display: flex; gap: 5px; align-items: flex-start; --dot: 5px; }
+  .rb-digits .char { display: grid; grid-template-columns: repeat(var(--cols, 5), var(--dot));
+    grid-auto-rows: var(--dot); gap: 2px; }
   .rb-digits .dot {
-    width: var(--dot, 8px); height: var(--dot, 8px); border-radius: 50%;
+    width: var(--dot); height: var(--dot); border-radius: 50%;
     background: radial-gradient(circle at 35% 32%, #2c2c24, #0b0b09);
     box-shadow: inset 0 0 2px rgba(0,0,0,0.9);
   }
   .rb-digits .dot.on {
     background: radial-gradient(circle at 35% 32%, #ffdf9a, #ff8f1f 70%, #d9700f);
-    box-shadow: 0 0 7px 1px rgba(255,150,40,0.85), inset 0 0 2px #fff2cf;
+    box-shadow: 0 0 5px 1px rgba(255,150,40,0.8), inset 0 0 2px #fff2cf;
   }
-  .team { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1 1 0; }
-  .team.right { flex-direction: row-reverse; text-align: right; }
-  #center { flex: 0 0 auto; }
-  .swatch { width: 16px; height: 16px; border-radius: 4px; flex: 0 0 auto; }
-  .team .meta { display: flex; flex-direction: column; min-width: 0; }
-  .team .name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .team .model { font-size: 11px; color: var(--muted); white-space: nowrap; }
-  .team .action { font-size: 11px; color: var(--muted); font-family: ui-monospace, monospace;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  #center { text-align: center; }
-  #score { font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; }
-  #timer { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
   canvas#pitch { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; display: block; background: var(--sky); }
+  /* current move of each model, subtly overlaid in the top corners of the video */
+  .move-tag { position: absolute; top: 9px; z-index: 2; pointer-events: none;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+    letter-spacing: .3px; color: rgba(230,237,243,0.34); }
+  .move-tag.left { left: 13px; } .move-tag.right { right: 13px; text-align: right; }
   /* video-like stage: the canvas with overlay controls on top */
   #stage { position: relative; line-height: 0; cursor: pointer; }
   #bigPlay {
@@ -148,45 +134,21 @@
   </header>
 
   <div id="retroBoard">
-    <div class="rb-side">
+    <div class="rb-names">
       <div class="rb-name" id="rbName1">PLAYER 1</div>
-      <div class="rb-digits" id="rbScore1"></div>
-    </div>
-    <div class="rb-center">
-      <div class="rb-digits rb-clock" id="rbClock"></div>
-      <div class="rb-caption">TIME</div>
-    </div>
-    <div class="rb-side">
       <div class="rb-name" id="rbName2">PLAYER 2</div>
+    </div>
+    <div class="rb-row">
+      <div class="rb-digits" id="rbScore1"></div>
+      <div class="rb-digits rb-clock" id="rbClock"></div>
       <div class="rb-digits" id="rbScore2"></div>
-    </div>
-  </div>
-
-  <div id="scoreboard">
-    <div class="team left">
-      <div class="swatch" id="sw1"></div>
-      <div class="meta">
-        <span class="name" id="name1">Player 1</span>
-        <span class="model" id="model1"></span>
-        <span class="action" id="act1"></span>
-      </div>
-    </div>
-    <div id="center">
-      <div id="score">0 – 0</div>
-      <div id="timer">00:00 / 00:00</div>
-    </div>
-    <div class="team right">
-      <div class="swatch" id="sw2"></div>
-      <div class="meta">
-        <span class="name" id="name2">Player 2</span>
-        <span class="model" id="model2"></span>
-        <span class="action" id="act2"></span>
-      </div>
     </div>
   </div>
 
   <div id="stage" class="paused">
     <canvas id="pitch" width="1000" height="500"></canvas>
+    <div class="move-tag left" id="mvL"></div>
+    <div class="move-tag right" id="mvR"></div>
     <button id="bigPlay" aria-label="Play or pause">
       <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="#fff"/></svg>
     </button>
@@ -310,12 +272,6 @@ function loadLog(obj) {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   const p1 = log.players.p1, p2 = log.players.p2;
-  document.getElementById("name1").textContent = p1.name;
-  document.getElementById("name2").textContent = p2.name;
-  document.getElementById("model1").textContent = p1.model || p1.policy || "";
-  document.getElementById("model2").textContent = p2.model || p2.policy || "";
-  document.getElementById("sw1").style.background = p1.color;
-  document.getElementById("sw2").style.background = p2.color;
   document.getElementById("rbName1").textContent = p1.name.toUpperCase();
   document.getElementById("rbName2").textContent = p2.name.toUpperCase();
 
@@ -583,17 +539,15 @@ function drawFrame(i) {
   drawSlime(f.p2[0], f.p2[1], field.slime_radius, log.players.p2.color, f.ball[0], f.ball[1]);
   drawBall(f.ball[0], f.ball[1]);
 
-  // HUD
-  document.getElementById("score").textContent = `${f.score[0]} – ${f.score[1]}`;
-  document.getElementById("timer").textContent =
-    `${fmtTime(f.t / fps)} / ${fmtTime(frames.length / fps)}`;
-  // retro bulb board
+  // retro bulb board: scores + a clock that counts DOWN from the match length
   const pad2 = n => String(n).padStart(2, "0");
+  const remain = Math.max(0, (frames.length - f.t) / fps);
   renderDigits(document.getElementById("rbScore1"), pad2(f.score[0]));
   renderDigits(document.getElementById("rbScore2"), pad2(f.score[1]));
-  renderDigits(document.getElementById("rbClock"), fmtTime(f.t / fps));
-  document.getElementById("act1").textContent = "▸ " + f.a1;
-  document.getElementById("act2").textContent = f.a2 + " ◂";
+  renderDigits(document.getElementById("rbClock"), fmtTime(remain));
+  // subtle move tags overlaid in the video's top corners
+  document.getElementById("mvL").textContent = f.a1;
+  document.getElementById("mvR").textContent = f.a2;
   document.getElementById("scrub").value = i;
   document.getElementById("frameLabel").textContent =
     `${fmtTime(f.t / fps)} / ${fmtTime(frames.length / fps)}`;
