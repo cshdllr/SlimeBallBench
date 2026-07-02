@@ -485,6 +485,10 @@ class Player:
         # "reasoning_effort" in the player config to keep them fast and cheap.
         self._max_completion_tokens = cfg.get("max_completion_tokens")
         self._reasoning_effort = cfg.get("reasoning_effort")
+        # Optional provider-specific passthrough (e.g. {"thinking": {"type": "disabled"}}
+        # to keep an adaptive-thinking model like Claude Sonnet 5 from spending its
+        # tiny token budget on hidden reasoning and returning empty content).
+        self._extra_body = cfg.get("extra_body")
 
     @property
     def cost(self) -> float:
@@ -509,6 +513,8 @@ class Player:
                             else {"max_tokens": self._max_tokens})
             if self._reasoning_effort:
                 token_kwargs["reasoning_effort"] = self._reasoning_effort
+            if self._extra_body:
+                token_kwargs["extra_body"] = self._extra_body
             resp = self._client.chat.completions.create(
                 model=self.model,
                 messages=[

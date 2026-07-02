@@ -87,6 +87,8 @@ def verify_models(models: list[dict]) -> None:
                   if m.get("max_completion_tokens") is not None else {"max_tokens": 8})
             if m.get("reasoning_effort"):
                 tk["reasoning_effort"] = m["reasoning_effort"]
+            if m.get("extra_body"):
+                tk["extra_body"] = m["extra_body"]
             client.chat.completions.create(
                 model=m["model"],
                 messages=[{"role": "user", "content": "Reply with one word: ok"}],
@@ -298,7 +300,15 @@ def main() -> None:
         verify_models(models)
 
     fixtures = build_fixtures(models, fmt)
-    to_play = [(h, a) for (h, a) in fixtures if f"{h['id']}__{a['id']}" not in done_ids]
+    # A single round-robin plays each unordered pair once, so a fixture already
+    # recorded in either home/away orientation counts as done (models added later
+    # can shift a pair's home/away order without meaning the game must replay).
+    # For home_and_away each orientation is its own fixture, so match order exactly.
+    def already_played(h, a):
+        if f"{h['id']}__{a['id']}" in done_ids:
+            return True
+        return fmt != "home_and_away" and f"{a['id']}__{h['id']}" in done_ids
+    to_play = [(h, a) for (h, a) in fixtures if not already_played(h, a)]
     print(f"\nSeason: {cfg.get('season_name', 'League')}  |  {len(models)} models  |  "
           f"{len(fixtures)} fixtures ({fmt})  |  {len(to_play)} to play  |  "
           f"{cfg['match_duration_seconds']}s games\n")

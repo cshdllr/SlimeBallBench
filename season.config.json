@@ -30,18 +30,6 @@
       "max_tokens": 32
     },
     {
-      "name": "Gemini 2.5 Flash-Lite",
-      "abbrev": "GEM",
-      "model": "gemini-2.5-flash-lite",
-      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "api_key_env": "GEMINI_API_KEY",
-      "color": "#4285F4",
-      "input_cost_per_1m": 0.10,
-      "output_cost_per_1m": 0.40,
-      "request_timeout_seconds": 30,
-      "max_tokens": 32
-    },
-    {
       "name": "Claude Opus 4.8",
       "abbrev": "OPU",
       "model": "claude-opus-4-8",
@@ -114,6 +102,31 @@
       "output_cost_per_1m": 12.0,
       "request_timeout_seconds": 60,
       "max_tokens": 512
+    },
+    {
+      "name": "Gemini 2.5 Flash-Lite",
+      "abbrev": "GEM",
+      "model": "gemini-2.5-flash-lite",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "api_key_env": "GEMINI_API_KEY",
+      "color": "#4285F4",
+      "input_cost_per_1m": 0.10,
+      "output_cost_per_1m": 0.40,
+      "request_timeout_seconds": 30,
+      "max_tokens": 32
+    },
+    {
+      "name": "Claude Sonnet 5",
+      "abbrev": "SN5",
+      "model": "claude-sonnet-5",
+      "base_url": "https://api.anthropic.com/v1/",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "color": "#6366F1",
+      "input_cost_per_1m": 2.0,
+      "output_cost_per_1m": 10.0,
+      "request_timeout_seconds": 30,
+      "max_tokens": 32,
+      "extra_body": { "thinking": { "type": "disabled" } }
     }
   ]
 }
