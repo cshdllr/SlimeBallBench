@@ -141,7 +141,8 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   padding-bottom: 10px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 
 /* --- Head-to-head results matrix --- */
-.h2h-scroll { overflow-x: auto; margin: 4px 0 2px; }
+.h2h-scroll { --scroll-bg: var(--panel);
+  overflow-x: auto; overflow-y: hidden; margin: 4px 0 2px; }
 .h2h-table { min-width: 520px; }
 .h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
   font-variant-numeric: tabular-nums; }
@@ -165,11 +166,33 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 /* --- Horizontally-scrollable tables with a frozen first column ---
    The wrapper scrolls sideways on narrow screens; the leftmost column (the
    model/metric label) stays pinned so you never lose track of what a row is. */
-.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.table-scroll { --scroll-bg: var(--panel);
+  overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line); border-radius: 10px; }
 /* the table must NOT be its own scroll container, or sticky cells would pin to
-   it instead of the wrapper — reset the base rule's overflow:hidden */
-.table-scroll > table { border: 0; border-radius: 0; overflow: visible; }
+   it instead of the wrapper — reset the base rule's overflow:hidden. it's also
+   transparent so the wrapper's edge scroll-shadows show through the cells. */
+.table-scroll > table { border: 0; border-radius: 0; overflow: visible; background: transparent; }
+
+/* --- Edge scroll-shadows: hint that a table has more columns off-screen. ---
+   Two opaque "cover" layers (scroll WITH the content) sit over two fixed inner
+   shadows; at each end the cover hides its shadow, and as you scroll the cover
+   slides away to reveal it. So a shadow appears only on the side you can still
+   scroll toward. Also hides the scrollbars themselves. */
+.table-scroll, .h2h-scroll {
+  background-color: var(--scroll-bg);
+  background-image:
+    linear-gradient(to right, var(--scroll-bg) 32%, transparent),
+    linear-gradient(to left,  var(--scroll-bg) 32%, transparent),
+    radial-gradient(farthest-side at 0 50%,   rgba(0,0,0,0.45), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,0.45), transparent);
+  background-position: left, right, left, right;
+  background-size: 42px 100%, 42px 100%, 16px 100%, 16px 100%;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.table-scroll::-webkit-scrollbar, .h2h-scroll::-webkit-scrollbar { display: none; }
 
 /* pin the first column and give it an opaque background so scrolled cells
    pass cleanly behind it, plus a hairline divider on its right edge */
@@ -212,7 +235,7 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--panel); }
 
 /* pin the row-header column in the head-to-head matrix too */
-.h2h-scroll > table { overflow: visible; }
+.h2h-scroll > table { overflow: visible; background: transparent; }
 .h2h-scroll .h2h-rowh { position: sticky; left: 0; z-index: 1; background: var(--panel); }
 .h2h-scroll thead th:first-child { position: sticky; left: 0; z-index: 3; background: var(--panel); }
 .h2h-scroll .h2h-rowh::after {
