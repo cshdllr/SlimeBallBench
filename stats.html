@@ -21,6 +21,12 @@
   <div id="provenance"></div>
   <p class="sub">Aggregate per-team metrics across all matches. Each chart ranks every
      team on one metric (same scale within a chart); the leader is highlighted.</p>
+
+  <h2 style="font-size:16px;margin:6px 2px 4px">At a glance</h2>
+  <p class="sub">Models across the top, one metric per row. The leader in each row is
+     outlined. Scroll sideways to see every model; metric labels stay pinned.</p>
+  <div id="compare"></div>
+
   <div id="charts"></div>
 
   <h2 style="font-size:16px;margin:6px 2px 4px">Full table</h2>
@@ -104,6 +110,50 @@ function renderSmallMultiples() {
   document.getElementById("charts").innerHTML = `<div class="smgrid">${charts}</div>`;
 }
 
+// "At a glance" comparison grid: models are columns (rank order), metrics are
+// rows. `better` decides which cell wins the row (and gets the outline).
+const COMPARE = [
+  { key: "wins",               label: "Wins",            better: "high", fmt: v => v },
+  { key: "points",             label: "Points",          better: "high", fmt: v => v },
+  { key: "goals_for",          label: "Goals for",       better: "high", fmt: v => v },
+  { key: "goals_against",      label: "Goals against",   better: "low",  fmt: v => v },
+  { key: "goal_diff",          label: "Goal diff",       better: "high", fmt: v => (v >= 0 ? "+" + v : v) },
+  { key: "saves",              label: "Saves",           better: "high", fmt: v => v },
+  { key: "own_goals",          label: "Own goals",       better: "low",  fmt: v => v, hint: "fewer is better" },
+  { key: "goals_per_touch",    label: "Goals per touch", better: "high", fmt: v => v.toFixed(3) },
+  { key: "avg_possession_pct", label: "Possession",      better: "high", fmt: v => v + "%" },
+  { key: "jumps",              label: "Jumps",           better: "high", fmt: v => v, hint: "activity, not ability" },
+];
+
+function renderCompare(models) {
+  const head = models.map(m =>
+    `<th><a href="model.html?id=${m.id}"><span class="swatch" style="background:${m.color}"></span><span class="cname">${m.name}</span></a></th>`
+  ).join("");
+  const body = COMPARE.map(metric => {
+    const vals = models.map(m => m[metric.key]).filter(v => v != null);
+    const best = vals.length
+      ? (metric.better === "low" ? Math.min(...vals) : Math.max(...vals))
+      : null;
+    const cells = models.map(m => {
+      const v = m[metric.key];
+      if (v == null) return `<td>—</td>`;
+      const win = best != null && v === best ? " win" : "";
+      return `<td class="${win.trim()}">${metric.fmt(v)}</td>`;
+    }).join("");
+    return `<tr>
+      <td class="metric">${metric.label}${metric.hint ? `<span class="mhint">${metric.hint}</span>` : ""}</td>
+      ${cells}
+    </tr>`;
+  }).join("");
+  document.getElementById("compare").innerHTML =
+    `<div class="table-scroll compare-scroll">
+       <table class="compare-table">
+         <thead><tr><th class="metric"></th>${head}</tr></thead>
+         <tbody>${body}</tbody>
+       </table>
+     </div>`;
+}
+
 function render() {
   ROWS.sort((a, b) => {
     let x = a[sortKey], y = b[sortKey];
@@ -122,7 +172,7 @@ function render() {
   }).join("") + "</tr>").join("");
 
   document.getElementById("content").innerHTML =
-    `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+    `<div class="table-scroll"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
 
   document.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
     const k = th.dataset.key;
@@ -142,17 +192,21 @@ async function load() {
     return;
   }
   const byId = Object.fromEntries(season.models.map(m => [m.id, m]));
-  const ptsById = Object.fromEntries(season.standings.map(r => [r.id, r.points]));
+  const standById = Object.fromEntries(season.standings.map(r => [r.id, r]));
   ROWS = Object.entries(season.aggregate_stats).map(([id, s]) => {
-    const points = ptsById[id] ?? 0;
+    const st = standById[id] || {};
+    const points = st.points ?? 0;
     // efficiency: $ spent per league point. 0 points → no meaningful ratio.
     const cost_per_point = points > 0 ? (s.total_cost_usd ?? 0) / points : null;
     return {
       id, name: byId[id].name, color: byId[id].color, abbrev: byId[id].abbrev,
-      provider: byId[id].provider, points, cost_per_point, ...s,
+      provider: byId[id].provider, points, wins: st.w ?? 0, cost_per_point, ...s,
     };
   });
   document.getElementById("provenance").innerHTML = provenanceStrip(season);
+  // comparison grid: columns follow the standings' rank order (leader first)
+  const byIdRow = Object.fromEntries(ROWS.map(r => [r.id, r]));
+  renderCompare(season.standings.map(st => byIdRow[st.id]).filter(Boolean));
   renderSmallMultiples();
   render();
 }
