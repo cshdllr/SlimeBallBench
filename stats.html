@@ -17,20 +17,14 @@
     </nav>
   </header>
 
-  <h1>Statistics</h1>
   <div id="provenance"></div>
-  <p class="sub">Aggregate per-team metrics across all matches. Each chart ranks every
-     team on one metric (same scale within a chart); the leader is highlighted.</p>
 
   <h2 style="font-size:16px;margin:6px 2px 4px">At a glance</h2>
-  <p class="sub">Models across the top, one metric per row. The leader in each row is
-     outlined. Scroll sideways to see every model; metric labels stay pinned.</p>
   <div id="compare"></div>
 
   <div id="charts"></div>
 
-  <h2 style="font-size:16px;margin:6px 2px 4px">Full table</h2>
-  <p class="sub">Click a column header to sort.</p>
+  <h2 style="font-size:16px;margin:18px 2px 4px">Full table</h2>
   <div id="content"></div>
 
   <footer class="site">
@@ -68,14 +62,14 @@ let sortKey = "goal_diff", sortDir = -1;
 const SMALL_MULTIPLES = [
   { key: "goals_for",          label: "Goals for",       better: "high", baseline: "zero",  fmt: v => v },
   { key: "goals_against",      label: "Goals against",   better: "low",  baseline: "zero",  fmt: v => v },
-  { key: "goals_per_touch",    label: "Goals per touch", better: "high", baseline: "zero",  fmt: v => v.toFixed(3), hint: "finishing" },
+  { key: "goals_per_touch",    label: "Goals per touch", better: "high", baseline: "zero",  fmt: v => v.toFixed(3) },
   { key: "avg_possession_pct", label: "Possession",      better: "high", baseline: "zero",  fmt: v => v + "%" },
   { key: "saves",              label: "Saves",           better: "high", baseline: "zero",  fmt: v => v },
-  { key: "own_goals",          label: "Own goals",       better: "low",  baseline: "zero",  fmt: v => v, hint: "fewer is better" },
-  { key: "jumps",              label: "Jumps",           better: "high", baseline: "zero",  neutral: true, fmt: v => v, hint: "activity, not ability" },
-  { key: "cost_per_point",     label: "Cost per point",  better: "low",  baseline: "range", fmt: v => "$" + v.toFixed(3) + "/pt", hint: "efficiency" },
-  { key: "avg_latency_ms",     label: "Avg latency",     better: "low",  baseline: "range", fmt: v => v == null ? "—" : v + "ms", hint: "lower is better" },
-  { key: "total_cost_usd",     label: "Total cost",      better: "low",  baseline: "range", fmt: v => "$" + (v ?? 0).toFixed(2), hint: "lower is better" },
+  { key: "own_goals",          label: "Own goals",       better: "low",  baseline: "zero",  fmt: v => v },
+  { key: "jumps",              label: "Jumps",           better: "high", baseline: "zero",  neutral: true, fmt: v => v },
+  { key: "cost_per_point",     label: "Cost per point",  better: "low",  baseline: "range", fmt: v => "$" + v.toFixed(3) + "/pt" },
+  { key: "avg_latency_ms",     label: "Avg latency",     better: "low",  baseline: "range", fmt: v => v == null ? "—" : v + "ms" },
+  { key: "total_cost_usd",     label: "Total cost",      better: "low",  baseline: "range", fmt: v => "$" + (v ?? 0).toFixed(2) },
 ];
 
 function renderSmallMultiples() {
@@ -119,15 +113,24 @@ const COMPARE = [
   { key: "goals_against",      label: "Goals against",   better: "low",  fmt: v => v },
   { key: "goal_diff",          label: "Goal diff",       better: "high", fmt: v => (v >= 0 ? "+" + v : v) },
   { key: "saves",              label: "Saves",           better: "high", fmt: v => v },
-  { key: "own_goals",          label: "Own goals",       better: "low",  fmt: v => v, hint: "fewer is better" },
+  { key: "own_goals",          label: "Own goals",       better: "low",  fmt: v => v },
   { key: "goals_per_touch",    label: "Goals per touch", better: "high", fmt: v => v.toFixed(3) },
   { key: "avg_possession_pct", label: "Possession",      better: "high", fmt: v => v + "%" },
-  { key: "jumps",              label: "Jumps",           better: "high", fmt: v => v, hint: "activity, not ability" },
+  { key: "jumps",              label: "Jumps",           better: "high", fmt: v => v },
 ];
+
+// Break a model name onto two stacked lines: the first word on top, the rest
+// below (e.g. "Claude" / "Opus 4.8"), so column headers read without rotation.
+function twoLineName(name) {
+  const i = name.indexOf(" ");
+  const top = i === -1 ? name : name.slice(0, i);
+  const rest = i === -1 ? "" : name.slice(i + 1);
+  return `<span class="cl1">${top}</span>${rest ? `<span class="cl2">${rest}</span>` : ""}`;
+}
 
 function renderCompare(models) {
   const head = models.map(m =>
-    `<th><a href="model.html?id=${m.id}"><span class="swatch" style="background:${m.color}"></span><span class="cname">${m.name}</span></a></th>`
+    `<th><a href="model.html?id=${m.id}"><span class="swatch" style="background:${m.color}"></span><span class="cname">${twoLineName(m.name)}</span></a></th>`
   ).join("");
   const body = COMPARE.map(metric => {
     const vals = models.map(m => m[metric.key]).filter(v => v != null);

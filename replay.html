@@ -38,7 +38,7 @@
   .rb-select {
     font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
     font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
-    color: #ece3c9; font-size: clamp(14px, 3vw, 26px); max-width: 100%;
+    color: #ece3c9; font-size: clamp(13px, 1.6vw, 18px); max-width: 100%;
     cursor: pointer; appearance: none; -webkit-appearance: none;
     background-color: rgba(255,255,255,0.06); border: 1px solid rgba(236,227,201,0.4);
     border-radius: 8px; padding: 3px 32px 3px 11px; text-shadow: 0 1px 1px rgba(0,0,0,0.6);
@@ -532,7 +532,7 @@ function drawGoalChart() {
 
   // quarter gridlines + time ticks
   g.strokeStyle = "rgba(255,255,255,0.06)"; g.lineWidth = 1;
-  g.fillStyle = "#8b949e"; g.font = "10px ui-sans-serif"; g.textAlign = "center";
+  g.fillStyle = "#8b949e"; g.font = '10px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'; g.textAlign = "center";
   for (let k = 1; k < 4; k++) {
     const t = duration * k / 4, x = xAt(t);
     g.beginPath(); g.moveTo(x, padTB / 2); g.lineTo(x, H - padTB / 2); g.stroke();
@@ -567,9 +567,9 @@ function drawGoalChart() {
   }
 
   // team labels
-  g.textAlign = "left"; g.font = "11px ui-sans-serif";
-  g.fillStyle = p1.color; g.fillText("▲ " + p1.name, x0 + 2, padTB - 8);
-  g.fillStyle = p2.color; g.fillText("▼ " + p2.name, x0 + 2, H - 8);
+  g.textAlign = "left"; g.font = '11px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+  g.fillStyle = p1.color; g.fillText(p1.name, x0 + 2, padTB - 8);
+  g.fillStyle = p2.color; g.fillText(p2.name, x0 + 2, H - 8);
 }
 
 // ---- drawing ----

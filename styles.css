@@ -23,6 +23,8 @@ h1 { font-size: 22px; margin: 8px 2px 4px; }
 a { color: #58a6ff; }
 footer.site { margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--line);
   color: var(--muted); font-size: 12px; text-align: center; }
+footer.site a { color: var(--text); font-weight: 600; text-decoration: none; }
+footer.site a:hover { text-decoration: underline; }
 
 table { width: 100%; border-collapse: collapse; background: var(--panel);
   border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -149,11 +151,14 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .h2h-col .swatch { margin: 0 auto; display: block; }
 .h2h-rowh { text-align: left; white-space: nowrap; color: var(--text); font-weight: 600; }
 .h2h-rowh .swatch { margin-right: 6px; }
-.h2h-table td.h2h a { text-decoration: none; font-weight: 600; }
+/* the whole score cell is the click target: the link fills the padding box */
+.h2h-table td.h2h { padding: 0; position: relative; }
+.h2h-table td.h2h a { display: block; padding: 6px 7px; text-decoration: none; font-weight: 600; }
 .h2h-table td.h2h.W { background: rgba(63,185,80,0.15); } .h2h-table td.h2h.W a { color: #3fb950; }
 .h2h-table td.h2h.L { background: rgba(248,81,73,0.15); } .h2h-table td.h2h.L a { color: #f85149; }
 .h2h-table td.h2h.D { background: rgba(210,153,34,0.16); } .h2h-table td.h2h.D a { color: #d29922; }
-.h2h-table td.h2h a:hover { text-decoration: underline; }
+/* hover: outline the cell rather than underline the score */
+.h2h-table td.h2h:hover { box-shadow: inset 0 0 0 2px rgba(236,236,236,0.55); border-radius: 5px; }
 .h2h-table td.h2h-diag { background: rgba(42,49,60,0.5); }
 .h2h-table td.h2h-empty { color: var(--muted); }
 
@@ -223,8 +228,12 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .compare-table thead th a { color: var(--text); text-decoration: none; font-weight: 600; }
 .compare-table thead th a:hover { text-decoration: underline; }
 .compare-table thead th .swatch { margin: 0 auto 6px; display: block; }
-.compare-table thead th .cname { display: block; writing-mode: vertical-rl;
-  transform: rotate(180deg); white-space: nowrap; margin: 0 auto; font-size: 12px; }
+/* upright, two-line column headers (first word over the rest) */
+.compare-table thead th { min-width: 78px; }
+.compare-table thead th .cname { display: block; font-size: 12px; line-height: 1.25;
+  white-space: nowrap; }
+.compare-table thead th .cname .cl1 { display: block; }
+.compare-table thead th .cname .cl2 { display: block; color: var(--muted); font-weight: 400; }
 .compare-table .metric { text-align: left; color: var(--text); font-weight: 600;
   white-space: nowrap; }
 .compare-table .metric .mhint { display: block; color: var(--muted); font-weight: 400;
