@@ -101,10 +101,12 @@ async function load() {
        ${team.w}W ${team.d}D ${team.l}L · ${team.points} pts</p>
     ${aggCards}
     <h1 style="font-size:18px">Schedule</h1>
+    <div class="table-scroll">
     <table>
       <thead><tr><th>Opponent</th><th>Date</th><th>Score</th><th>Result</th><th>Replay</th></tr></thead>
       <tbody>${fixtureRows || '<tr><td colspan="5">No games yet.</td></tr>'}</tbody>
     </table>
+    </div>
     <p class="sub" style="margin-top:14px"><a href="index.html">← Back to standings</a></p>`;
 }
 load();

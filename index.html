@@ -146,6 +146,7 @@ async function load() {
 
   document.getElementById("content").innerHTML = `
     ${provenanceStrip(season)}
+    <div class="table-scroll standings-scroll">
     <table>
       <thead><tr>
         <th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th>
@@ -153,6 +154,7 @@ async function load() {
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>
+    </div>
     <p class="sub" style="margin-top:14px">Tap a team to see its schedule and stats.
        Points: win 3, draw 1. Ties broken by goal difference, then goals for.
        Bars scale to the leader; <b>GD</b> diverges from zero; <b>Form</b> shows the last six results (newest right).</p>
