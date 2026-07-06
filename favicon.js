@@ -1,6 +1,7 @@
-// Animated favicon: a little slime that crouches, springs up and boots a ball
-// out of frame, then settles as the ball rolls back in. ~2s loop, drawn to a
-// small canvas whose data URL is swapped into the <link rel="icon"> each frame.
+// Animated favicon: a ball flies in, the slime hops up and heads it off screen,
+// then it loops. ~2s loop, drawn to a small canvas whose data URL is swapped into
+// the <link rel="icon"> each frame. The jump apex and the ball's arrival are timed
+// to coincide, so the header actually connects.
 // (Chrome/Firefox/Edge animate live; Safari shows a single frame — still fine.)
 (function () {
   // don't bother animating a favicon nobody sees inside the embedded replay
@@ -22,38 +23,45 @@
   const SLIME = "#3fb950";     // matches the site's "win" green
   const BALL = "#f0c020";      // warm scoreboard amber
   const GROUND = 25;           // baseline y
+  const CX = 12;               // slime centre x
+  const BASE_R = 8.5;          // slime radius
+  const BR = 3.6;              // ball radius
+  const HIT = 0.42;            // loop phase at which the header connects
   const PERIOD = 2000;         // full loop in ms
   const FPS = 15;
   let last = 0;
 
-  // simple eased jump height over the "airborne" window
+  // Jump height: airborne 0.28→0.56 with the apex landing exactly on HIT (0.42),
+  // so the slime's head is at its highest the instant the ball arrives.
   const jumpAt = p => {
-    // p in [0,1] across the whole loop; airborne between 0.12 and 0.52
-    if (p < 0.12 || p > 0.52) return 0;
-    const t = (p - 0.12) / 0.40;       // 0..1 during the hop
-    return Math.sin(t * Math.PI) * 11; // up to 11px off the ground
+    if (p < 0.28 || p > 0.56) return 0;
+    const t = (p - 0.28) / 0.28;
+    return Math.sin(t * Math.PI) * 8;
   };
-  // squash factor: crouch just before takeoff, stretch at apex
+  // squash: a quick crouch just before take-off, a slight stretch in the air.
   const squashAt = p => {
-    if (p < 0.12) return 1 - (p / 0.12) * 0.28;      // crouch down to 0.72
-    if (p <= 0.52) return 0.85 + jumpAt(p) / 11 * 0.2; // stretch in the air
+    if (p >= 0.20 && p < 0.28) return 1 - ((p - 0.20) / 0.08) * 0.22;
+    if (p >= 0.28 && p <= 0.56) return 0.9 + jumpAt(p) / 8 * 0.12;
     return 1;
   };
 
+  // Contact point: just above the head at the apex, so the ball sits on the dome.
+  const HITX = CX + 1, HITY = GROUND - 8 - BASE_R + BR; // ≈ 5
+
   function ballPos(p) {
-    // rest at the slime's feet, get kicked up-and-right at p=0.18, arc off-screen,
-    // stay gone briefly, then roll back in from the left to the rest spot.
-    if (p < 0.18) return { x: 11, y: GROUND - 3, r: 4.5, show: true };
-    if (p < 0.62) {
-      const t = (p - 0.18) / 0.44;
-      const x = 11 + t * 46;                 // flies right, past the edge
-      const y = GROUND - 3 - (34 * t - 34 * t * t) * 1.7; // parabola
-      return { x, y, r: 4.5, show: x < SIZE + 6 };
+    // fly in from off the right, meeting the head at HIT…
+    if (p < HIT) {
+      const t = p / HIT;
+      return { x: 33 - t * (33 - HITX), y: 9 - t * (9 - HITY), show: true };
     }
-    if (p < 0.72) return { x: 60, y: 0, r: 4.5, show: false }; // off-screen
-    const t = (p - 0.72) / 0.28;
-    const x = -6 + t * 17;                   // rolls back to rest near the slime
-    return { x, y: GROUND - 3, r: 4.5, show: true };
+    // …then headed up and away off the top-left corner.
+    if (p < 0.74) {
+      const u = (p - HIT) / (0.74 - HIT);
+      const x = HITX - u * (HITX + 8);   // → off the left edge
+      const y = HITY - u * (HITY + 14);  // → up and off the top
+      return { x, y, show: x > -BR - 2 && y > -BR - 2 };
+    }
+    return { x: 0, y: 0, show: false };  // off-screen; it comes in again next loop
   }
 
   function draw(p) {
@@ -67,39 +75,33 @@
     g.lineTo(SIZE - 2, GROUND + 1.5);
     g.stroke();
 
-    // ball (drawn behind the slime on the way in, in front on the way out)
-    const b = ballPos(p);
-    const drawBall = () => {
-      if (!b.show) return;
-      g.fillStyle = BALL;
-      g.beginPath();
-      g.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-      g.fill();
-    };
-    if (p >= 0.62) drawBall(); // rolling in — behind slime feels natural
-
     // slime: a squashable half-circle sitting on the ground
     const lift = jumpAt(p);
     const sq = squashAt(p);
-    const cx = 11;
-    const baseR = 9;
-    const rx = baseR / Math.sqrt(sq);   // widen when squashed
-    const ry = baseR * sq;
+    const rx = BASE_R / Math.sqrt(sq);   // widen when squashed
+    const ry = BASE_R * sq;
     const cy = GROUND - lift;
 
     g.fillStyle = SLIME;
     g.beginPath();
-    g.ellipse(cx, cy, rx, ry, 0, Math.PI, 0, false); // upper half only
-    g.lineTo(cx - rx, cy);
+    g.ellipse(CX, cy, rx, ry, 0, Math.PI, 0, false); // upper half only
+    g.lineTo(CX - rx, cy);
     g.fill();
 
     // eye
     g.fillStyle = "#0b0f14";
     g.beginPath();
-    g.arc(cx + rx * 0.42, cy - ry * 0.45, 1.5, 0, Math.PI * 2);
+    g.arc(CX + rx * 0.42, cy - ry * 0.45, 1.5, 0, Math.PI * 2);
     g.fill();
 
-    if (p < 0.62) drawBall(); // launched — in front of the slime
+    // ball, always on top (it's either flying in front toward, or off, the head)
+    const b = ballPos(p);
+    if (b.show) {
+      g.fillStyle = BALL;
+      g.beginPath();
+      g.arc(b.x, b.y, BR, 0, Math.PI * 2);
+      g.fill();
+    }
 
     link.href = cv.toDataURL("image/png");
   }
