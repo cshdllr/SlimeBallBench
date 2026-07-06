@@ -82,16 +82,11 @@ async function load() {
         `<span class="v-sub">$${(agg.games ? (agg.total_cost_usd ?? 0) / agg.games : 0).toFixed(2)}/match</span>`)}
     </div>` : "";
 
-  const fmtDate = iso => iso
-    ? new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric" })
-    : "—";
-
   const fixtureRows = games.map(g => `
     <tr>
       <td class="team-cell">${g.isHome ? "vs" : "@"}
         ${crestMark(g.oppId, 18)}<a href="model?id=${g.oppId}">${g.oppName}</a>
         <span class="meta">#${rankById[g.oppId] ?? "?"}</span></td>
-      <td>${fmtDate(g.played_at)}</td>
       <td>${g.myG} – ${g.opG}</td>
       <td><span class="result ${g.res}">${g.res}</span></td>
       <td style="text-align:right"><a class="watch-btn" href="replay?log=${encodeURIComponent(g.log)}"><span class="tri">▶</span>Watch</a></td>
@@ -105,8 +100,8 @@ async function load() {
     <h2 class="section-h">Schedule</h2>
     <div class="table-scroll">
     <table>
-      <thead><tr><th>Opponent</th><th>Date</th><th>Score</th><th>Result</th><th>Watch</th></tr></thead>
-      <tbody>${fixtureRows || '<tr><td colspan="5">No games yet.</td></tr>'}</tbody>
+      <thead><tr><th>Opponent</th><th>Score</th><th>Result</th><th>Watch</th></tr></thead>
+      <tbody>${fixtureRows || '<tr><td colspan="4">No games yet.</td></tr>'}</tbody>
     </table>
     </div>
     <p class="sub" style="margin-top:14px"><a href="standings">← Back to standings</a></p>`;

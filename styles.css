@@ -31,7 +31,7 @@ table { width: 100%; border-collapse: collapse; background: var(--panel);
 th, td { padding: 9px 12px; text-align: right; font-variant-numeric: tabular-nums; font-size: 14px; }
 th:first-child, td:first-child, .team-cell { text-align: left; }
 thead th { color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--line);
-  cursor: default; user-select: none; }
+  cursor: default; user-select: none; text-align: left; }
 thead th.sortable { cursor: pointer; }
 thead th.sortable:hover { color: var(--text); }
 tbody tr { border-top: 1px solid rgba(255,255,255,0.04); }
