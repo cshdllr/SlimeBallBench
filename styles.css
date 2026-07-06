@@ -47,6 +47,13 @@ h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .h2h-col .crest { display: block; margin: 0 auto 4px; }
 .h2h-rowh .crest { margin-right: 7px; }
 .compare-table thead th .crest { display: block; margin: 0 auto 7px; }
+/* standings team cell: crest centred beside a two-line name / provider stack */
+.team-stack { display: flex; align-items: center; gap: 11px; }
+.team-stack .crest { margin-right: 0; flex: none; }
+.team-stack .tstack { display: flex; flex-direction: column; line-height: 1.3; }
+.team-stack .tline { display: flex; align-items: center; }
+.team-stack .name { font-weight: 600; }
+.team-stack .meta { font-size: 11px; color: var(--muted); }
 .team-cell .name { font-weight: 600; }
 /* model names in tables read as plain text, not blue underlined links */
 .team-cell a { color: var(--text); font-weight: 600; text-decoration: none; }

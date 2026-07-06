@@ -109,10 +109,12 @@ async function load() {
   const rows = season.standings.map(r => `
     <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model?id=${r.id}'">
       <td class="pos">${r.rank}</td>
-      <td class="team-cell">
-        ${crestMark(r.id, 22, r.color)}
-        <span class="name">${r.name}</span>${providerLogo(r.provider)}
-        <span class="meta">&nbsp;${r.provider}</span>
+      <td class="team-cell team-stack">
+        ${crestMark(r.id, 32, r.color)}
+        <span class="tstack">
+          <span class="tline"><span class="name">${r.name}</span>${providerLogo(r.provider)}</span>
+          <span class="meta">${r.provider}</span>
+        </span>
       </td>
       <td>${r.played}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
       <td>${r.gf}</td><td>${r.ga}</td>
