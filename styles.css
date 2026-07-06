@@ -51,9 +51,11 @@ h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .h2h-col .crest { display: block; margin: 0 auto 4px; }
 .h2h-rowh .crest { margin-right: 7px; }
 .compare-table thead th .crest { display: block; margin: 0 auto 7px; }
-/* standings team cell: crest centred beside a two-line name / provider stack.
-   The flex lives on an inner wrapper, NOT the <td> — a display:flex table cell
-   loses position:sticky, which broke the frozen column on horizontal scroll. */
+/* team cell: crest centred beside a two-line name / provider stack (used in the
+   standings and the statistics full table). The flex lives on an inner wrapper,
+   NOT the <td> — a display:flex table cell loses position:sticky, which broke
+   the frozen column on horizontal scroll. */
+.team-stack { min-width: 200px; }
 .team-stack .tstack-row { display: flex; align-items: center; gap: 11px; }
 .team-stack .crest { margin-right: 0; flex: none; }
 .team-stack .tstack { display: flex; flex-direction: column; line-height: 1.3; }
@@ -298,8 +300,10 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .compare-table thead th .swatch { margin: 0 auto 6px; display: block; }
 /* upright, two-line column headers (first word over the rest) */
 .compare-table thead th { min-width: 78px; }
+/* reserve two lines so single-word names (e.g. GPT-5) keep every crest
+   aligned along the top instead of dropping down a line */
 .compare-table thead th .cname { display: block; font-size: 12px; line-height: 1.25;
-  white-space: nowrap; }
+  white-space: nowrap; min-height: 2.5em; }
 .compare-table thead th .cname .cl1 { display: block; }
 .compare-table thead th .cname .cl2 { display: block; color: var(--muted); font-weight: 400; }
 .compare-table .metric { text-align: left; color: var(--text); font-weight: 600;
