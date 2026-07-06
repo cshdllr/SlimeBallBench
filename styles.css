@@ -11,7 +11,7 @@ body {
 .wrap { max-width: 800px; margin: 0 auto; }
 header.site {
   display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
-  padding: 18px 2px 12px; border-bottom: 1px solid var(--line); margin-bottom: 18px;
+  padding: 18px 2px 10px; margin-bottom: 20px;
 }
 header.site .title { font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: .2px; }
 a.title:hover { color: #fff; }
@@ -41,6 +41,9 @@ tbody tr.leader td { background: rgba(63,185,80,0.07); }
 tbody tr.leader td:first-child { border-left: 3px solid #d4a72c; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
 .team-cell .name { font-weight: 600; }
+/* model names in tables read as plain text, not blue underlined links */
+.team-cell a { color: var(--text); font-weight: 600; text-decoration: none; }
+.team-cell a:hover { text-decoration: underline; }
 .team-cell .meta { color: var(--muted); font-size: 11px; }
 /* brand mark of the lab behind a model */
 .plogo { display: inline-flex; vertical-align: middle; }
@@ -85,7 +88,7 @@ td.barcell { padding: 6px 12px; }
 
 /* --- small-multiple ranked bar charts on the statistics page --- */
 .smgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 18px 26px; margin: 6px 0 30px; }
+  gap: 22px 26px; margin: 14px 0 10px; }
 .sm h3 { font-size: 13px; font-weight: 600; margin: 0 0 9px; color: var(--text); }
 .sm h3 .hint { color: var(--muted); font-weight: 400; font-size: 11px; margin-left: 6px; }
 .smrow { display: grid; grid-template-columns: 118px 1fr 52px; align-items: center;
@@ -101,9 +104,8 @@ td.barcell { padding: 6px 12px; }
 code { background: #21262d; padding: 1px 5px; border-radius: 4px; }
 .hidden { display: none; }
 
-/* "Watch a match" homepage section (leads the page, standings below it) */
-#watchSection { margin: 4px 0 26px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
-.section-h { font-size: 18px; margin: 0 2px 4px; }
+/* "Watch a match" homepage section */
+#watchSection { margin: 4px 0 8px; }
 .matchpick { display: flex; align-items: center; gap: 12px; margin: 14px 0 12px; flex-wrap: wrap; }
 .matchpick .vs { color: var(--muted); font-size: 13px; font-weight: 600; }
 .teamsel {
@@ -137,8 +139,13 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .card .v .v-sub { display: block; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 2px; }
 
 /* quiet provenance / freshness strip */
-.provenance { color: var(--muted); font-size: 12px; margin: 0 2px 16px;
-  padding-bottom: 10px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.provenance { color: var(--muted); font-size: 12px; margin: 0 2px 18px;
+  font-variant-numeric: tabular-nums; }
+
+/* --- consistent section rhythm: one heading style, one gap between blocks --- */
+.section-h { font-size: 16px; font-weight: 600; margin: 36px 2px 12px; }
+/* the first section on a page shouldn't push down from the header */
+.section-h.first { margin-top: 8px; }
 
 /* --- Head-to-head results matrix --- */
 .h2h-scroll { --scroll-bg: var(--panel);

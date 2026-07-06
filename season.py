@@ -242,7 +242,8 @@ def write_season(out_path, cfg, models, matches):
         },
         "models": [{"id": m["id"], "name": m["name"], "color": m.get("color", "#888"),
                     "abbrev": m["abbrev"], "provider": m["provider"],
-                    "model": m.get("model") or m.get("policy", "")}
+                    "model": m.get("model") or m.get("policy", ""),
+                    "released": m.get("released")}
                    for m in models],
         "matches": matches,
         "standings": compute_standings(models, matches),

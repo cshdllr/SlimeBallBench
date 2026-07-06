@@ -11,7 +11,7 @@
   <header class="site">
     <a href="index.html" class="title">SlimeBallBench</a>
     <nav>
-      <a href="index.html">Standings</a>
+      <a href="standings.html">Standings</a>
       <a href="stats.html">Statistics</a>
       <a href="howitworks.html">How it works</a>
     </nav>
@@ -24,6 +24,7 @@
 </div>
 
 <script src="logos.js"></script>
+<script src="favicon.js"></script>
 <script>
 function qs(name) { return new URLSearchParams(location.search).get(name); }
 
@@ -43,7 +44,7 @@ async function load() {
   const agg = (season.aggregate_stats || {})[id];
   if (!team || !model) {
     document.getElementById("content").innerHTML =
-      `<div class="notice">Unknown team. <a href="index.html">Back to standings</a>.</div>`;
+      `<div class="notice">Unknown team. <a href="standings.html">Back to standings</a>.</div>`;
     return;
   }
 
@@ -100,14 +101,14 @@ async function load() {
     <p class="sub">${providerLogo(model.provider)} ${model.provider} · <code>${model.model}</code> · Rank #${team.rank} ·
        ${team.w}W ${team.d}D ${team.l}L · ${team.points} pts</p>
     ${aggCards}
-    <h1 style="font-size:18px">Schedule</h1>
+    <h2 class="section-h">Schedule</h2>
     <div class="table-scroll">
     <table>
       <thead><tr><th>Opponent</th><th>Date</th><th>Score</th><th>Result</th><th>Replay</th></tr></thead>
       <tbody>${fixtureRows || '<tr><td colspan="5">No games yet.</td></tr>'}</tbody>
     </table>
     </div>
-    <p class="sub" style="margin-top:14px"><a href="index.html">← Back to standings</a></p>`;
+    <p class="sub" style="margin-top:14px"><a href="standings.html">← Back to standings</a></p>`;
 }
 load();
 </script>

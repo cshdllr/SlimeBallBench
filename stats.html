@@ -11,7 +11,7 @@
   <header class="site">
     <a href="index.html" class="title">SlimeBallBench</a>
     <nav>
-      <a href="index.html">Standings</a>
+      <a href="standings.html">Standings</a>
       <a href="stats.html" class="active">Statistics</a>
       <a href="howitworks.html">How it works</a>
     </nav>
@@ -19,12 +19,13 @@
 
   <div id="provenance"></div>
 
-  <h2 style="font-size:16px;margin:6px 2px 4px">At a glance</h2>
+  <h2 class="section-h first">At a glance</h2>
   <div id="compare"></div>
 
+  <h2 class="section-h">By metric</h2>
   <div id="charts"></div>
 
-  <h2 style="font-size:16px;margin:18px 2px 4px">Full table</h2>
+  <h2 class="section-h">Full table</h2>
   <div id="content"></div>
 
   <footer class="site">
@@ -33,6 +34,7 @@
 </div>
 
 <script src="logos.js"></script>
+<script src="favicon.js"></script>
 <script>
 // column definitions: [key, label, formatter]
 const COLS = [
@@ -167,12 +169,13 @@ function render() {
   const head = COLS.map(([k, label]) =>
     `<th class="sortable" data-key="${k}">${label}${sortKey === k ? (sortDir < 0 ? " ▾" : " ▴") : ""}</th>`
   ).join("");
-  const body = ROWS.map(r => "<tr>" + COLS.map(([k, , fmt]) => {
-    if (k === "name") return `<td class="team-cell">
-        <span class="swatch" style="background:${r.color}"></span>
-        <a href="model.html?id=${r.id}">${r.name}</a>${providerLogo(r.provider)}</td>`;
-    return `<td>${fmt ? fmt(r[k]) : r[k]}</td>`;
-  }).join("") + "</tr>").join("");
+  const body = ROWS.map(r => `<tr class="clickable" onclick="location.href='model.html?id=${r.id}'">` +
+    COLS.map(([k, , fmt]) => {
+      if (k === "name") return `<td class="team-cell">
+          <span class="swatch" style="background:${r.color}"></span>
+          <a href="model.html?id=${r.id}">${r.name}</a>${providerLogo(r.provider)}</td>`;
+      return `<td>${fmt ? fmt(r[k]) : r[k]}</td>`;
+    }).join("") + "</tr>").join("");
 
   document.getElementById("content").innerHTML =
     `<div class="table-scroll"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;

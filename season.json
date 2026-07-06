@@ -14,7 +14,8 @@
       "color": "#D97757",
       "abbrev": "HAI",
       "provider": "Anthropic",
-      "model": "claude-haiku-4-5"
+      "model": "claude-haiku-4-5",
+      "released": "2025-10-01"
     },
     {
       "id": "gpt_4o_mini",
@@ -22,7 +23,8 @@
       "color": "#10A37F",
       "abbrev": "GPT",
       "provider": "OpenAI",
-      "model": "gpt-4o-mini"
+      "model": "gpt-4o-mini",
+      "released": "2024-07-18"
     },
     {
       "id": "claude_opus_4_8",
@@ -30,7 +32,8 @@
       "color": "#9B59B6",
       "abbrev": "OPU",
       "provider": "Anthropic",
-      "model": "claude-opus-4-8"
+      "model": "claude-opus-4-8",
+      "released": "2026-02-10"
     },
     {
       "id": "gemini_2_5_flash",
@@ -38,7 +41,8 @@
       "color": "#DB4437",
       "abbrev": "GMF",
       "provider": "Gemini",
-      "model": "gemini-2.5-flash"
+      "model": "gemini-2.5-flash",
+      "released": "2025-06-17"
     },
     {
       "id": "gpt_5",
@@ -46,7 +50,8 @@
       "color": "#E8A317",
       "abbrev": "GP5",
       "provider": "OpenAI",
-      "model": "gpt-5"
+      "model": "gpt-5",
+      "released": "2025-08-07"
     },
     {
       "id": "claude_sonnet_4_6",
@@ -54,7 +59,8 @@
       "color": "#EC4899",
       "abbrev": "SON",
       "provider": "Anthropic",
-      "model": "claude-sonnet-4-6"
+      "model": "claude-sonnet-4-6",
+      "released": "2025-12-15"
     },
     {
       "id": "gpt_5_mini",
@@ -62,7 +68,8 @@
       "color": "#2DD4BF",
       "abbrev": "G5M",
       "provider": "OpenAI",
-      "model": "gpt-5-mini"
+      "model": "gpt-5-mini",
+      "released": "2025-08-07"
     },
     {
       "id": "gemini_3_1_pro",
@@ -70,7 +77,8 @@
       "color": "#34A853",
       "abbrev": "G31",
       "provider": "Gemini",
-      "model": "gemini-3.1-pro-preview"
+      "model": "gemini-3.1-pro-preview",
+      "released": "2026-05-06"
     },
     {
       "id": "gemini_2_5_flash_lite",
@@ -78,7 +86,8 @@
       "color": "#4285F4",
       "abbrev": "GEM",
       "provider": "Gemini",
-      "model": "gemini-2.5-flash-lite"
+      "model": "gemini-2.5-flash-lite",
+      "released": "2025-07-22"
     },
     {
       "id": "claude_sonnet_5",
@@ -86,7 +95,8 @@
       "color": "#6366F1",
       "abbrev": "SN5",
       "provider": "Anthropic",
-      "model": "claude-sonnet-5"
+      "model": "claude-sonnet-5",
+      "released": "2026-06-24"
     }
   ],
   "matches": [

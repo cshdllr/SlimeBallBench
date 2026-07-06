@@ -168,7 +168,7 @@
   <header class="site">
     <a href="index.html" class="title">SlimeBallBench</a>
     <nav>
-      <a href="index.html">Standings</a>
+      <a href="standings.html">Standings</a>
       <a href="stats.html">Statistics</a>
       <a href="howitworks.html">How it works</a>
     </nav>
@@ -376,7 +376,10 @@ const pairKey = (a, b) => [a, b].sort().join("|");
 function initPicker() {
   pickerMode = true;
   fetch("season.json").then(r => r.json()).then(season => {
-    P.models = season.models;
+    // dropdown lists models newest-first by release date (ISO strings sort
+    // chronologically; missing dates fall to the bottom)
+    P.models = season.models.slice()
+      .sort((a, b) => (b.released || "").localeCompare(a.released || ""));
     P.byId = Object.fromEntries(season.models.map(m => [m.id, m]));
     const played = season.matches.filter(m => m.log);
     if (!played.length) return;
@@ -793,5 +796,6 @@ document.addEventListener("keydown", e => {
   }
 })();
 </script>
+<script src="favicon.js"></script>
 </body>
 </html>
