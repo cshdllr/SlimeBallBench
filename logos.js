@@ -15,3 +15,12 @@ function providerLogo(provider) {
   const svg = PROVIDER_LOGOS[provider];
   return svg ? `<span class="plogo" title="${provider}">${svg}</span>` : "";
 }
+
+// Each model's own crest (model-designed SVG in crests/<id>.svg), used in place
+// of the plain colour swatch. Falls back to the swatch if the id is missing.
+function crestMark(id, size = 22, color) {
+  if (!id) return color ? `<span class="swatch" style="background:${color}"></span>` : "";
+  return `<img class="crest" src="crests/${id}.svg" width="${size}" height="${size}"` +
+         ` alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),` +
+         `{className:'swatch',style:'background:${color || "#888"}'}))">`;
+}

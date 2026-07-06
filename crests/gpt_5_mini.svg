@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background shield -->
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#16A085"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield base -->
+  <path d="M50 4 L82 18 L88 52 C88 72 68 88 50 96 C32 88 12 72 12 52 L18 18 Z" fill="url(#g1)" stroke="#054" stroke-width="1.5"/>
+
+  <!-- Inner shield -->
+  <path d="M50 12 L78 24 L82 52 C82 68 66 82 50 88 C34 82 18 68 18 52 L22 24 Z" fill="url(#g2)" stroke="#0b6" stroke-width="1"/>
+
+  <!-- Soccer pitch simplified (dominant color field panel) -->
+  <rect x="22" y="34" width="56" height="36" rx="2" fill="#2DD4BF" stroke="#045" stroke-width="0.8"/>
+
+  <!-- Half line and center circle -->
+  <line x1="50" y1="34" x2="50" y2="70" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.95"/>
+  <circle cx="50" cy="52" r="4.5" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.95"/>
+  <circle cx="50" cy="52" r="1.2" fill="#FFFFFF" />
+
+  <!-- Goals minimal stylized -->
+  <rect x="22" y="42" width="3.5" height="16" fill="#FFFFFF" opacity="0.9" stroke="#0a3" stroke-width="0.4"/>
+  <rect x="74.5" y="42" width="3.5" height="16" fill="#FFFFFF" opacity="0.9" stroke="#0a3" stroke-width="0.4"/>
+
+  <!-- Net pattern inside goals (diagonal lines) -->
+  <g stroke="#E6FFFB" stroke-width="0.4" opacity="0.75">
+    <line x1="24.5" y1="42" x2="26" y2="58"/>
+    <line x1="22.5" y1="44" x2="25" y2="60"/>
+    <line x1="76" y1="42" x2="74.5" y2="58"/>
+    <line x1="78" y1="44" x2="75.5" y2="60"/>
+  </g>
+
+  <!-- Stylized soccer ball (geometric pentagons/hex shapes) centered above shield center -->
+  <g transform="translate(50,28) scale(0.9)">
+    <!-- outer circle -->
+    <circle cx="0" cy="0" r="9.2" fill="#FFFFFF" stroke="#0b6" stroke-width="0.9"/>
+    <!-- pentagon/hex pattern -->
+    <polygon points="0,-6 3,-2 1.8,3 -1.8,3 -3,-2" fill="#2DD4BF" stroke="#0b6" stroke-width="0.6"/>
+    <polygon points="0,6 2.7,2 1.6,-3.5 -1.6,-3.5 -2.7,2" fill="#2DD4BF" stroke="#0b6" stroke-width="0.5" transform="rotate(36)"/>
+    <polygon points="0,6 2.7,2 1.6,-3.5 -1.6,-3.5 -2.7,2" fill="#2DD4BF" stroke="#0b6" stroke-width="0.5" transform="rotate(-36)"/>
+    <!-- seams -->
+    <line x1="0" y1="-9.2" x2="0" y2="9.2" stroke="#0b6" stroke-width="0.6" opacity="0.9"/>
+    <line x1="-9.2" y1="0" x2="9.2" y2="0" stroke="#0b6" stroke-width="0.6" opacity="0.9"/>
+  </g>
+
+  <!-- Laurel wings/flanks -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M18 28 C12 26 9 34 14 36 C10 34 11 40 18 42" />
+    <path d="M82 28 C88 26 91 34 86 36 C90 34 89 40 82 42" />
+    <!-- layered leaves -->
+    <path d="M16 34 C20 32 22 36 18 38" />
+    <path d="M84 34 C80 32 78 36 82 38" />
+  </g>
+
+  <!-- Three stars above shield (accent color #FFD166) -->
+  <g fill="#FFD166" stroke="#C47E1C" stroke-width="0.4">
+    <polygon points="50,2 51.8,6.8 56.8,7.2 52.9,10.2 54,14 50,12 46,14 47.1,10.2 43.2,7.2 48.2,6.8"/>
+    <polygon points="42,6 43.2,8.2 45.6,8.4 44,10 44.6,12 42,11 39.4,12 40,10 38.4,8.4 40.8,8.2"/>
+    <polygon points="58,6 59.2,8.2 61.6,8.4 60,10 60.6,12 58,11 55.4,12 56,10 54.4,8.4 56.8,8.2"/>
+  </g>
+
+  <!-- Bottom ribbon curve (abstract banner) -->
+  <path d="M28 74 C40 80 60 80 72 74 C68 78 60 82 50 84 C40 82 32 78 28 74 Z" fill="#0A6" opacity="0.12"/>
+
+  <!-- Outline accent -->
+  <path d="M50 4 L82 18 L88 52 C88 72 68 88 50 96 C32 88 12 72 12 52 L18 18 Z" fill="none" stroke="#053" stroke-width="0.8" opacity="0.9"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gradient-flash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3367D6; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4285F4; stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient-lite" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9AA0A6; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BDC1C6; stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Shield Shape -->
+  <path d="M50,0 C27.9,0 0,27.9 0,50 C0,72.1 27.9,100 50,100 C72.1,100 100,72.1 100,50 C100,27.9 72.1,0 50,0 z" fill="url(#gradient-flash)"/>
+
+  <!-- Soccer Ball - simplified pentagons/hexagons -->
+  <circle cx="50" cy="50" r="18" fill="#FFFFFF"/>
+  <g transform="translate(50, 50) scale(0.5)">
+    <circle cx="0" cy="0" r="18" fill="#FFFFFF"/>
+    <path d="M-18 0l8.66 5 0 10l-8.66 5l-8.66-5l0-10l8.66-5z" fill="#CCCCCC"/>
+    <path d="M0 -18l5 8.66l10 0l5-8.66l-5-8.66l-10 0l-5 8.66z" fill="#CCCCCC"/>
+    <path d="M18 0l-8.66 5l-0 10l8.66 5l8.66-5l0-10l-8.66-5z" fill="#CCCCCC"/>
+    <path d="M0 18l-5-8.66l-10 0l-5 8.66l5 8.66l10 0l5-8.66z" fill="#CCCCCC"/>
+    <path d="M-9.85 17.32l-8.66-5l-0-10l8.66-5l8.66 5l0 10l-8.66 5z" fill="#CCCCCC"/>
+    <path d="M9.85 17.32l8.66-5l0-10l-8.66-5l-8.66 5l0 10l8.66 5z" fill="#CCCCCC"/>
+  </g>
+
+  <!-- Flash/Lightning Bolt Accent -->
+  <path d="M30,25 L40,15 L50,25 L60,15 L70,25 L50,50 L30,25 Z" fill="url(#gradient-lite)" transform="rotate(18, 50, 50)"/>
+
+  <!-- Wing Accents -->
+  <g transform="translate(50, 50)">
+    <path d="M0,0 Q-25,-15 -35,-30 V-40 L-30,-35 Q-20,-25 0,-20 Z" fill="url(#gradient-lite)" transform="scale(0.8) rotate(-30)"/>
+    <path d="M0,0 Q25,-15 35,-30 V-40 L30,-35 Q20,-25 0,-20 Z" fill="url(#gradient-lite)" transform="scale(0.8) rotate(30)"/>
+  </g>
+
+</svg>

@@ -40,6 +40,13 @@ tbody tr.clickable:hover { background: rgba(255,255,255,0.03); }
 tbody tr.leader td { background: rgba(63,185,80,0.07); }
 tbody tr.leader td:first-child { border-left: 3px solid #d4a72c; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+/* model-designed crest, used wherever a colour swatch would otherwise sit */
+.crest { display: inline-block; vertical-align: middle; border-radius: 5px; }
+.team-cell .crest { margin-right: 8px; }
+h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
+.h2h-col .crest { display: block; margin: 0 auto 4px; }
+.h2h-rowh .crest { margin-right: 7px; }
+.compare-table thead th .crest { display: block; margin: 0 auto 7px; }
 .team-cell .name { font-weight: 600; }
 /* model names in tables read as plain text, not blue underlined links */
 .team-cell a { color: var(--text); font-weight: 600; text-decoration: none; }

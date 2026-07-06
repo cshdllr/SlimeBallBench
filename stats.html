@@ -132,7 +132,7 @@ function twoLineName(name) {
 
 function renderCompare(models) {
   const head = models.map(m =>
-    `<th><a href="model.html?id=${m.id}"><span class="swatch" style="background:${m.color}"></span><span class="cname">${twoLineName(m.name)}</span></a></th>`
+    `<th><a href="model.html?id=${m.id}">${crestMark(m.id, 26, m.color)}<span class="cname">${twoLineName(m.name)}</span></a></th>`
   ).join("");
   const body = COMPARE.map(metric => {
     const vals = models.map(m => m[metric.key]).filter(v => v != null);
@@ -172,7 +172,7 @@ function render() {
   const body = ROWS.map(r => `<tr class="clickable" onclick="location.href='model.html?id=${r.id}'">` +
     COLS.map(([k, , fmt]) => {
       if (k === "name") return `<td class="team-cell">
-          <span class="swatch" style="background:${r.color}"></span>
+          ${crestMark(r.id, 22, r.color)}
           <a href="model.html?id=${r.id}">${r.name}</a>${providerLogo(r.provider)}</td>`;
       return `<td>${fmt ? fmt(r[k]) : r[k]}</td>`;
     }).join("") + "</tr>").join("");

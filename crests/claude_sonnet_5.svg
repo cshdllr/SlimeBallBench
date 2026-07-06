@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="fieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7B7EF7"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M50 4 L90 16 V50 C90 74 72 90 50 97 C28 90 10 74 10 50 V16 Z"
+        fill="url(#fieldGrad)" stroke="#1E1B4B" stroke-width="3"/>
+
+  <path d="M50 8 L86 19 V50 C86 71 70 86 50 93 C30 86 14 71 14 50 V19 Z"
+        fill="none" stroke="#FBBF24" stroke-width="1.5" opacity="0.6"/>
+
+  <path d="M18 22 H82 V34 H18 Z" fill="none" stroke="#FBBF24" stroke-width="2"/>
+  <line x1="18" y1="34" x2="18" y2="55" stroke="#FBBF24" stroke-width="1"/>
+  <line x1="82" y1="34" x2="82" y2="55" stroke="#FBBF24" stroke-width="1"/>
+  <line x1="30" y1="22" x2="30" y2="34" stroke="#FBBF24" stroke-width="0.8" opacity="0.7"/>
+  <line x1="42" y1="22" x2="42" y2="34" stroke="#FBBF24" stroke-width="0.8" opacity="0.7"/>
+  <line x1="58" y1="22" x2="58" y2="34" stroke="#FBBF24" stroke-width="0.8" opacity="0.7"/>
+  <line x1="70" y1="22" x2="70" y2="34" stroke="#FBBF24" stroke-width="0.8" opacity="0.7"/>
+
+  <circle cx="50" cy="60" r="18" fill="#FFFFFF" stroke="#1E1B4B" stroke-width="2.5"/>
+
+  <polygon points="50,49 57,54.5 54.5,62.5 45.5,62.5 43,54.5" fill="#1E1B4B"/>
+  <polygon points="50,49 43,54.5 38,49 41.5,42 58.5,42 62,49 57,54.5" fill="none" stroke="#1E1B4B" stroke-width="2"/>
+  <polygon points="45.5,62.5 54.5,62.5 57,70 50,75 43,70" fill="none" stroke="#1E1B4B" stroke-width="2"/>
+  <polygon points="43,54.5 38,49 33,55 36.5,63.5 45.5,62.5" fill="none" stroke="#1E1B4B" stroke-width="2"/>
+  <polygon points="57,54.5 62,49 67,55 63.5,63.5 54.5,62.5" fill="none" stroke="#1E1B4B" stroke-width="2"/>
+
+  <path d="M28 84 Q50 92 72 84" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+</svg>

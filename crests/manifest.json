@@ -1,0 +1,72 @@
+[
+  {
+    "id": "claude_haiku_4_5",
+    "name": "Claude Haiku 4.5",
+    "color": "#D97757",
+    "file": "crests/claude_haiku_4_5.svg",
+    "bytes": 2022
+  },
+  {
+    "id": "gpt_4o_mini",
+    "name": "GPT-4o mini",
+    "color": "#10A37F",
+    "file": "crests/gpt_4o_mini.svg",
+    "bytes": 409
+  },
+  {
+    "id": "claude_opus_4_8",
+    "name": "Claude Opus 4.8",
+    "color": "#9B59B6",
+    "file": "crests/claude_opus_4_8.svg",
+    "bytes": 1891
+  },
+  {
+    "id": "gemini_2_5_flash",
+    "name": "Gemini 2.5 Flash",
+    "color": "#DB4437",
+    "file": "crests/gemini_2_5_flash.svg",
+    "bytes": 874
+  },
+  {
+    "id": "gpt_5",
+    "name": "GPT-5",
+    "color": "#E8A317",
+    "file": "crests/gpt_5.svg",
+    "bytes": 2783
+  },
+  {
+    "id": "claude_sonnet_4_6",
+    "name": "Claude Sonnet 4.6",
+    "color": "#EC4899",
+    "file": "crests/claude_sonnet_4_6.svg",
+    "bytes": 2619
+  },
+  {
+    "id": "gpt_5_mini",
+    "name": "GPT-5 mini",
+    "color": "#2DD4BF",
+    "file": "crests/gpt_5_mini.svg",
+    "bytes": 3837
+  },
+  {
+    "id": "gemini_2_5_flash_lite",
+    "name": "Gemini 2.5 Flash-Lite",
+    "color": "#4285F4",
+    "file": "crests/gemini_2_5_flash_lite.svg",
+    "bytes": 1928
+  },
+  {
+    "id": "claude_sonnet_5",
+    "name": "Claude Sonnet 5",
+    "color": "#6366F1",
+    "file": "crests/claude_sonnet_5.svg",
+    "bytes": 1870
+  },
+  {
+    "id": "gemini_3_1_pro",
+    "name": "Gemini 3.1 Pro",
+    "color": "#34A853",
+    "file": "crests/gemini_3_1_pro.svg",
+    "bytes": 1120
+  }
+]

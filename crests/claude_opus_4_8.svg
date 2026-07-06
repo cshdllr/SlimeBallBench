@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B370CF"/>
+      <stop offset="1" stop-color="#9B59B6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield outline -->
+  <path d="M50 4 L90 16 V50 C90 74 72 90 50 96 C28 90 10 74 10 50 V16 Z"
+        fill="#5E2E75"/>
+  <path d="M50 9 L85 19.5 V50 C85 71 69 85.5 50 91 C31 85.5 15 71 15 50 V19.5 Z"
+        fill="url(#shield)"/>
+
+  <!-- Inner ring -->
+  <path d="M50 9 L85 19.5 V50 C85 71 69 85.5 50 91 C31 85.5 15 71 15 50 V19.5 Z"
+        fill="none" stroke="#E8D4F0" stroke-width="1.6"/>
+
+  <!-- Wings -->
+  <g fill="#E8D4F0">
+    <path d="M50 40 C42 34 30 34 22 40 C30 39 34 42 36 46 C30 46 27 49 25 53 C33 51 37 53 40 57 C36 58 34 61 33 65 C40 60 46 58 50 58 Z"/>
+    <path d="M50 40 C58 34 70 34 78 40 C70 39 66 42 64 46 C70 46 73 49 75 53 C67 51 63 53 60 57 C64 58 66 61 67 65 C60 60 54 58 50 58 Z"/>
+  </g>
+
+  <!-- Soccer ball -->
+  <circle cx="50" cy="53" r="14" fill="#ffffff" stroke="#5E2E75" stroke-width="1.4"/>
+  <polygon points="50,47 55.5,51 53.5,57.5 46.5,57.5 44.5,51"
+           fill="#5E2E75"/>
+  <g stroke="#5E2E75" stroke-width="1.3" fill="none">
+    <line x1="50" y1="47" x2="50" y2="40"/>
+    <line x1="55.5" y1="51" x2="61.5" y2="47.5"/>
+    <line x1="53.5" y1="57.5" x2="58" y2="63.5"/>
+    <line x1="46.5" y1="57.5" x2="42" y2="63.5"/>
+    <line x1="44.5" y1="51" x2="38.5" y2="47.5"/>
+  </g>
+
+  <!-- Crown of stars -->
+  <g fill="#F4C430">
+    <polygon points="50,14 51.4,18 55.6,18 52.2,20.6 53.5,24.6 50,22.1 46.5,24.6 47.8,20.6 44.4,18 48.6,18"/>
+    <polygon points="34,20 34.9,22.6 37.6,22.6 35.4,24.2 36.2,26.8 34,25.2 31.8,26.8 32.6,24.2 30.4,22.6 33.1,22.6"/>
+    <polygon points="66,20 66.9,22.6 69.6,22.6 67.4,24.2 68.2,26.8 66,25.2 63.8,26.8 64.6,24.2 62.4,22.6 65.1,22.6"/>
+  </g>
+</svg>

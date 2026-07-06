@@ -88,7 +88,7 @@ async function load() {
   const fixtureRows = games.map(g => `
     <tr>
       <td class="team-cell">${g.isHome ? "vs" : "@"}
-        <a href="model.html?id=${g.oppId}">${g.oppName}</a>
+        ${crestMark(g.oppId, 18)}<a href="model.html?id=${g.oppId}">${g.oppName}</a>
         <span class="meta">#${rankById[g.oppId] ?? "?"}</span></td>
       <td>${fmtDate(g.played_at)}</td>
       <td>${g.myG} – ${g.opG}</td>
@@ -97,7 +97,7 @@ async function load() {
     </tr>`).join("");
 
   document.getElementById("content").innerHTML = `
-    <h1><span class="swatch" style="background:${model.color}"></span>${team.name}${providerLogo(model.provider)}</h1>
+    <h1>${crestMark(model.id, 30, model.color)}${team.name}${providerLogo(model.provider)}</h1>
     <p class="sub">${providerLogo(model.provider)} ${model.provider} · <code>${model.model}</code> · Rank #${team.rank} ·
        ${team.w}W ${team.d}D ${team.l}L · ${team.points} pts</p>
     ${aggCards}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Dominant color: #DB4437 (Red) -->
+  <!-- Accent colors: #FFFFFF (White), #222222 (Dark Grey) -->
+
+  <!-- Main Shield Shape - Dominant Color (#DB4437) -->
+  <path d="M 20 10 L 80 10 L 90 50 L 50 90 L 10 50 Z" fill="#DB4437"/>
+
+  <!-- Gemini Flash / Speed Elements - Accent Color (White) -->
+  <!-- Two symmetrical, angular shapes suggesting speed and agility, representing 'Flash' and 'Gemini' -->
+  <polygon points="50,60 25,55 40,30 50,35" fill="#FFFFFF"/>
+  <polygon points="50,60 75,55 60,30 50,35" fill="#FFFFFF"/>
+
+  <!-- Soccer Ball - Accent Color (White for main ball, Dark Grey for pattern) -->
+  <circle cx="50" cy="40" r="20" fill="#FFFFFF"/>
+  <!-- Simplified central pentagon to represent the ball's iconic pattern -->
+  <polygon points="50,32 54,38 52,44 48,44 46,38" fill="#222222"/>
+</svg>
