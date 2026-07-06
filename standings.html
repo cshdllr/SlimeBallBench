@@ -111,10 +111,10 @@ async function load() {
     <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model?id=${r.id}'">
       <td class="pos">${r.rank}</td>
       <td class="team-cell team-stack">
-        ${crestMark(r.id, 32, r.color)}
+        ${crestMark(r.id, 40, r.color)}
         <span class="tstack">
-          <span class="tline"><span class="name">${r.name}</span>${providerLogo(r.provider)}</span>
-          <span class="meta">${r.provider}</span>
+          <span class="name">${r.name}</span>
+          <span class="meta">${providerLogo(r.provider)}${r.provider}</span>
         </span>
       </td>
       <td>${r.played}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
