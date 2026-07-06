@@ -9,11 +9,11 @@
 <body>
 <div class="wrap">
   <header class="site">
-    <a href="index.html" class="title">SlimeBallBench</a>
+    <a href="./" class="title">SlimeBallBench</a>
     <nav>
-      <a href="standings.html">Standings</a>
-      <a href="stats.html">Statistics</a>
-      <a href="howitworks.html">How it works</a>
+      <a href="standings">Standings</a>
+      <a href="stats">Statistics</a>
+      <a href="howitworks">How it works</a>
     </nav>
   </header>
   <div id="content"></div>
@@ -44,7 +44,7 @@ async function load() {
   const agg = (season.aggregate_stats || {})[id];
   if (!team || !model) {
     document.getElementById("content").innerHTML =
-      `<div class="notice">Unknown team. <a href="standings.html">Back to standings</a>.</div>`;
+      `<div class="notice">Unknown team. <a href="standings">Back to standings</a>.</div>`;
     return;
   }
 
@@ -88,12 +88,12 @@ async function load() {
   const fixtureRows = games.map(g => `
     <tr>
       <td class="team-cell">${g.isHome ? "vs" : "@"}
-        ${crestMark(g.oppId, 18)}<a href="model.html?id=${g.oppId}">${g.oppName}</a>
+        ${crestMark(g.oppId, 18)}<a href="model?id=${g.oppId}">${g.oppName}</a>
         <span class="meta">#${rankById[g.oppId] ?? "?"}</span></td>
       <td>${fmtDate(g.played_at)}</td>
       <td>${g.myG} – ${g.opG}</td>
       <td><span class="result ${g.res}">${g.res}</span></td>
-      <td style="text-align:right"><a href="replay.html?log=${encodeURIComponent(g.log)}">▶ replay</a></td>
+      <td style="text-align:right"><a href="replay?log=${encodeURIComponent(g.log)}">▶ replay</a></td>
     </tr>`).join("");
 
   document.getElementById("content").innerHTML = `
@@ -108,7 +108,7 @@ async function load() {
       <tbody>${fixtureRows || '<tr><td colspan="5">No games yet.</td></tr>'}</tbody>
     </table>
     </div>
-    <p class="sub" style="margin-top:14px"><a href="standings.html">← Back to standings</a></p>`;
+    <p class="sub" style="margin-top:14px"><a href="standings">← Back to standings</a></p>`;
 }
 load();
 </script>

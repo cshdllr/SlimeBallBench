@@ -9,11 +9,11 @@
 <body>
 <div class="wrap">
   <header class="site">
-    <a href="index.html" class="title">SlimeBallBench</a>
+    <a href="./" class="title">SlimeBallBench</a>
     <nav>
-      <a href="standings.html" class="active">Standings</a>
-      <a href="stats.html">Statistics</a>
-      <a href="howitworks.html">How it works</a>
+      <a href="standings" class="active">Standings</a>
+      <a href="stats">Statistics</a>
+      <a href="howitworks">How it works</a>
     </nav>
   </header>
 
@@ -48,8 +48,8 @@ async function load() {
          ? "This page is open as a <code>file://</code> — browsers block loading data that way. "
          : ""}
        Serve this folder over HTTP and open it through the server:<br><br>
-       <code>python3 -m http.server 8000</code><br>
-       then visit <code>http://localhost:8000/standings.html</code>.</div>`;
+       <code>python3 serve.py</code><br>
+       then visit <code>http://localhost:8000/standings</code>.</div>`;
     return;
   }
 
@@ -86,7 +86,7 @@ async function load() {
     const myG = rowIsHome ? m.score[0] : m.score[1];
     const opG = rowIsHome ? m.score[1] : m.score[0];
     const res = myG > opG ? "W" : myG < opG ? "L" : "D";
-    return `<td class="h2h ${res}"><a href="replay.html?log=${encodeURIComponent(m.log)}">${myG}–${opG}</a></td>`;
+    return `<td class="h2h ${res}"><a href="replay?log=${encodeURIComponent(m.log)}">${myG}–${opG}</a></td>`;
   };
   const h2hHead = order.map(c =>
     `<th class="h2h-col">${crestMark(c.id, 20, c.color)}<span class="lbl">${c.name}</span></th>`
@@ -107,7 +107,7 @@ async function load() {
     <p class="sub" style="margin-top:10px">Read across: each row shows that team's result against every opponent.</p>`;
 
   const rows = season.standings.map(r => `
-    <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model.html?id=${r.id}'">
+    <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model?id=${r.id}'">
       <td class="pos">${r.rank}</td>
       <td class="team-cell">
         ${crestMark(r.id, 22, r.color)}

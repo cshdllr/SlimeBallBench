@@ -9,11 +9,11 @@
 <body>
 <div class="wrap">
   <header class="site">
-    <a href="index.html" class="title">SlimeBallBench</a>
+    <a href="./" class="title">SlimeBallBench</a>
     <nav>
-      <a href="standings.html">Standings</a>
-      <a href="stats.html" class="active">Statistics</a>
-      <a href="howitworks.html">How it works</a>
+      <a href="standings">Standings</a>
+      <a href="stats" class="active">Statistics</a>
+      <a href="howitworks">How it works</a>
     </nav>
   </header>
 
@@ -132,7 +132,7 @@ function twoLineName(name) {
 
 function renderCompare(models) {
   const head = models.map(m =>
-    `<th><a href="model.html?id=${m.id}">${crestMark(m.id, 26, m.color)}<span class="cname">${twoLineName(m.name)}</span></a></th>`
+    `<th><a href="model?id=${m.id}">${crestMark(m.id, 26, m.color)}<span class="cname">${twoLineName(m.name)}</span></a></th>`
   ).join("");
   const body = COMPARE.map(metric => {
     const vals = models.map(m => m[metric.key]).filter(v => v != null);
@@ -169,11 +169,11 @@ function render() {
   const head = COLS.map(([k, label]) =>
     `<th class="sortable" data-key="${k}">${label}${sortKey === k ? (sortDir < 0 ? " ▾" : " ▴") : ""}</th>`
   ).join("");
-  const body = ROWS.map(r => `<tr class="clickable" onclick="location.href='model.html?id=${r.id}'">` +
+  const body = ROWS.map(r => `<tr class="clickable" onclick="location.href='model?id=${r.id}'">` +
     COLS.map(([k, , fmt]) => {
       if (k === "name") return `<td class="team-cell">
           ${crestMark(r.id, 22, r.color)}
-          <a href="model.html?id=${r.id}">${r.name}</a>${providerLogo(r.provider)}</td>`;
+          <a href="model?id=${r.id}">${r.name}</a>${providerLogo(r.provider)}</td>`;
       return `<td>${fmt ? fmt(r[k]) : r[k]}</td>`;
     }).join("") + "</tr>").join("");
 

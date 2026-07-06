@@ -9,11 +9,11 @@
 <body>
 <div class="wrap">
   <header class="site">
-    <a href="index.html" class="title">SlimeBallBench</a>
+    <a href="./" class="title">SlimeBallBench</a>
     <nav>
-      <a href="standings.html">Standings</a>
-      <a href="stats.html">Statistics</a>
-      <a href="howitworks.html">How it works</a>
+      <a href="standings">Standings</a>
+      <a href="stats">Statistics</a>
+      <a href="howitworks">How it works</a>
     </nav>
   </header>
 
@@ -54,8 +54,8 @@ async function load() {
          ? "This page is open as a <code>file://</code> — browsers block loading data that way. "
          : ""}
        Serve this folder over HTTP:<br><br>
-       <code>python3 -m http.server 8000</code><br>
-       then visit <code>http://localhost:8000/index.html</code>.</div>`;
+       <code>python3 serve.py</code><br>
+       then visit <code>http://localhost:8000/</code>.</div>`;
     return;
   }
   document.getElementById("topProvenance").innerHTML = provenanceStrip(season);
@@ -70,7 +70,7 @@ function renderWatcher(season) {
   document.getElementById("watchSection").classList.remove("hidden");
   const wrap = document.getElementById("watch");
   wrap.innerHTML = `<iframe id="stageFrame" class="stage-frame"
-      src="replay.html?embed=1&autoplay=1&picker=1" title="match replay" scrolling="no"></iframe>`;
+      src="replay?embed=1&autoplay=1&picker=1" title="match replay" scrolling="no"></iframe>`;
   const fr = document.getElementById("stageFrame");
   const fit = () => { try { fr.style.height = fr.contentDocument.body.scrollHeight + "px"; } catch (_) {} };
   fr.addEventListener("load", () => { fit(); setTimeout(fit, 400); setTimeout(fit, 1200); });
