@@ -76,43 +76,62 @@ async function load() {
       return { isHome, oppId, oppName, myG, opG, res, log: m.log, played_at: m.played_at };
     });
 
-  const card = (k, v) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+  // league average for every metric, so each stat shows its gap vs the field
+  const allStats = Object.values(season.aggregate_stats || {});
+  const leagueAvg = key => {
+    const vals = allStats.map(s => s[key]).filter(v => v != null);
+    return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+  };
+  const vsAvg = key => {
+    if (!agg || agg[key] == null) return "";
+    const avg = leagueAvg(key);
+    if (avg == null || Math.abs(avg) < 1e-9) return "";   // e.g. goal diff averages ~0
+    const pct = Math.round((agg[key] - avg) / Math.abs(avg) * 100);
+    const label = pct === 0 ? "at league average"
+      : `${pct > 0 ? "+" : ""}${pct}% ${pct > 0 ? "above" : "below"} league average`;
+    return `<span class="v-sub">${label}</span>`;
+  };
+  const card = (k, v, key) =>
+    `<div class="card"><div class="k">${k}</div><div class="v">${v}${key ? vsAvg(key) : ""}</div></div>`;
   const aggCards = agg ? `
     <div class="cards">
-      ${card("Goals for", agg.goals_for)}
-      ${card("Goals against", agg.goals_against)}
+      ${card("Goals for", agg.goals_for, "goals_for")}
+      ${card("Goals against", agg.goals_against, "goals_against")}
       ${card("Goal diff", (agg.goal_diff >= 0 ? "+" : "") + agg.goal_diff)}
-      ${card("Ball touches", agg.ball_touches)}
-      ${card("Goals / touch", agg.goals_per_touch)}
-      ${card("Saves", agg.saves)}
-      ${card("Own goals", agg.own_goals)}
-      ${card("Jumps", agg.jumps)}
-      ${card("Possession", agg.avg_possession_pct + "%")}
-      ${card("Avg latency", agg.avg_latency_ms != null ? agg.avg_latency_ms + " ms" : "—")}
-      ${card("Total cost", "$" + (agg.total_cost_usd ?? 0).toFixed(2) +
-        `<span class="v-sub">$${(agg.games ? (agg.total_cost_usd ?? 0) / agg.games : 0).toFixed(2)}/match</span>`)}
+      ${card("Ball touches", agg.ball_touches, "ball_touches")}
+      ${card("Goals / touch", agg.goals_per_touch, "goals_per_touch")}
+      ${card("Saves", agg.saves, "saves")}
+      ${card("Own goals", agg.own_goals, "own_goals")}
+      ${card("Jumps", agg.jumps, "jumps")}
+      ${card("Possession", agg.avg_possession_pct + "%", "avg_possession_pct")}
+      ${card("Avg latency", agg.avg_latency_ms != null ? agg.avg_latency_ms + " ms" : "—", "avg_latency_ms")}
+      ${card("Total cost", "$" + (agg.total_cost_usd ?? 0).toFixed(2), "total_cost_usd")}
     </div>` : "";
 
   const fixtureRows = games.map(g => `
-    <tr>
+    <tr class="clickable" onclick="location.href='replay?log=${encodeURIComponent(g.log)}'">
       <td class="team-cell">${g.isHome ? "vs" : "@"}
-        ${crestMark(g.oppId, 18)}<a href="model?id=${g.oppId}">${g.oppName}</a>
+        ${crestMark(g.oppId, 18)}<span>${g.oppName}</span>
         <span class="meta">#${rankById[g.oppId] ?? "?"}</span></td>
       <td>${g.myG} – ${g.opG}</td>
       <td><span class="result ${g.res}">${g.res}</span></td>
-      <td style="text-align:right"><a class="watch-btn" href="replay?log=${encodeURIComponent(g.log)}"><span class="tri">▶</span>Watch</a></td>
     </tr>`).join("");
 
   document.getElementById("content").innerHTML = `
-    <h1>${crestMark(model.id, 30, model.color)}${team.name}${providerLogo(model.provider)}</h1>
-    <p class="sub">${providerLogo(model.provider)} ${model.provider} · <code>${model.model}</code> · Rank #${team.rank} ·
-       ${team.w}W ${team.d}D ${team.l}L · ${team.points} pts</p>
+    <div class="team-head">
+      ${crestMark(model.id, 52, model.color)}
+      <div>
+        <h1>${team.name}</h1>
+        <p class="sub">${providerLogo(model.provider)} ${model.provider} · <code>${model.model}</code> · Rank #${team.rank} ·
+           ${team.w}W ${team.d}D ${team.l}L · ${team.points} pts</p>
+      </div>
+    </div>
     ${aggCards}
     <h2 class="section-h">Schedule</h2>
     <div class="table-scroll">
-    <table>
-      <thead><tr><th>Opponent</th><th>Score</th><th>Result</th><th>Watch</th></tr></thead>
-      <tbody>${fixtureRows || '<tr><td colspan="4">No games yet.</td></tr>'}</tbody>
+    <table class="schedule-table">
+      <thead><tr><th>Opponent</th><th>Score</th><th>Result</th></tr></thead>
+      <tbody>${fixtureRows || '<tr><td colspan="3">No games yet.</td></tr>'}</tbody>
     </table>
     </div>
     <p class="sub" style="margin-top:14px"><a href="standings">← Back to standings</a></p>`;

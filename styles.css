@@ -40,7 +40,9 @@ thead th.sortable { cursor: pointer; }
 thead th.sortable:hover { color: var(--text); }
 tbody tr { border-top: 1px solid rgba(255,255,255,0.04); }
 tbody tr.clickable { cursor: pointer; }
-tbody tr.clickable:hover { background: rgba(255,255,255,0.03); }
+tbody tr:hover { background: rgba(255,255,255,0.03); }
+/* the head-to-head matrix keeps its per-cell hover instead of a full-row fill */
+.h2h-table tbody tr:hover { background: transparent; }
 tbody tr.leader td { background: rgba(63,185,80,0.07); }
 tbody tr.leader td:first-child { border-left: 3px solid #d4a72c; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
@@ -91,14 +93,15 @@ h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .result { font-weight: 700; display: inline-block; width: 18px; text-align: center; border-radius: 4px; }
 .result.W { color: #3fb950; } .result.L { color: #f85149; } .result.D { color: #d29922; }
 
-/* "Watch" pill button (replaces the old blue replay link) */
-.watch-btn { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;
-  border: 1px solid var(--line); border-radius: 999px; color: var(--text);
-  text-decoration: none; font-size: 12px; font-weight: 600; white-space: nowrap;
-  transition: border-color .12s, background .12s, color .12s; }
-.watch-btn .tri { font-size: 8px; color: var(--accent); }
-.watch-btn:hover { border-color: var(--accent); background: rgba(47,111,235,0.14); color: #fff; }
-.watch-btn:hover .tri { color: #fff; }
+/* team detail header: big crest spanning the name + provider/detail lines */
+.team-head { display: flex; align-items: center; gap: 14px; margin: 8px 2px 20px; }
+.team-head .crest { width: 52px; height: 52px; border-radius: 9px; flex: none; }
+.team-head h1 { margin: 0; }
+.team-head .sub { margin: 4px 0 0; }
+.team-head .sub .plogo svg { width: 12px; height: 12px; }
+
+/* schedule table: every column left-aligned, whole row links to the replay */
+.schedule-table td, .schedule-table th { text-align: left; }
 
 /* --- inline data bars in the standings table (Tufte: the table IS the chart) --- */
 /* Points: a team-coloured bar scaled to the leader, value sitting on top. */
@@ -255,7 +258,7 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   background: var(--line); pointer-events: none;
 }
 /* keep the pinned cell in sync with row states (opaque tints, not see-through) */
-.table-scroll tbody tr.clickable:hover td:first-child {
+.table-scroll tbody tr:hover td:first-child {
   background: linear-gradient(rgba(255,255,255,0.03),rgba(255,255,255,0.03)), var(--panel); }
 .table-scroll tbody tr.leader td:first-child {
   background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--panel); }
@@ -274,8 +277,8 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .standings-scroll td:nth-child(2)::after {
   content: ""; position: absolute; top: 0; right: -1px; bottom: -1px; width: 1px;
   background: var(--line); pointer-events: none; }
-.standings-scroll tbody tr.clickable:hover td:nth-child(1),
-.standings-scroll tbody tr.clickable:hover td:nth-child(2) {
+.standings-scroll tbody tr:hover td:nth-child(1),
+.standings-scroll tbody tr:hover td:nth-child(2) {
   background: linear-gradient(rgba(255,255,255,0.03),rgba(255,255,255,0.03)), var(--panel); }
 .standings-scroll tbody tr.leader td:nth-child(1),
 .standings-scroll tbody tr.leader td:nth-child(2) {
