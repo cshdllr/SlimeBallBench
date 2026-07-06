@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SlimeBallBench — Replay</title>
+<title>SlimeBallBench · Replay</title>
 <style>
   :root {
     --bg: #0e1116; --panel: #171c24; --line: #2a313c; --text: #e6edf3;
@@ -19,7 +19,7 @@
   #wrap { width: 100%; max-width: 800px; }
   /* --- retro bulb scoreboard: names on top, score/clock/score on one bottom row --- */
   #retroBoard {
-    display: flex; flex-direction: column; gap: 10px;
+    display: flex; flex-direction: column; gap: 16px;
     padding: 12px 18px 14px; margin-bottom: 10px;
     background: radial-gradient(120% 140% at 50% -20%, #223047 0%, #16202f 55%, #0f1722 100%);
     border: 3px solid #7b6f4b; border-radius: 7px;
@@ -50,6 +50,10 @@
   .rb-select:focus { outline: none; border-color: rgba(236,227,201,0.9); }
   .rb-select option { color: #111; text-transform: none; font-weight: 600; }
   .rb-row { display: flex; justify-content: space-between; align-items: center; }
+  /* team crest flanking each score: left of the left score, right of the right score */
+  .rb-side { display: flex; align-items: center; gap: clamp(6px, 1.8vw, 13px); }
+  .rb-crest { width: clamp(26px, 6.5vw, 44px); height: clamp(26px, 6.5vw, 44px);
+    display: block; flex: none; border-radius: 6px; }
   .rb-digits { display: flex; gap: clamp(2.5px, 0.7vw, 5px); align-items: flex-start;
     --dot: clamp(2.5px, 0.7vw, 5px); }
   .rb-digits .char { display: grid; grid-template-columns: repeat(var(--cols, 5), var(--dot));
@@ -134,7 +138,7 @@
   .h2hhead .tname { font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .h2hhead .tname.right { text-align: right; }
   #metrics { margin-top: 10px; }
-  .metrics-title { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 6px 2px; }
+  .metrics-title { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 26px 2px 8px; }
   .match-line {
     background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
     padding: 10px 14px; font-size: 13px; color: var(--text); display: flex; flex-wrap: wrap; gap: 6px 18px;
@@ -181,9 +185,15 @@
       <div class="rb-name" id="rbName2">PLAYER 2</div>
     </div>
     <div class="rb-row">
-      <div class="rb-digits" id="rbScore1"></div>
+      <div class="rb-side">
+        <img class="rb-crest" id="rbCrest1" alt="">
+        <div class="rb-digits" id="rbScore1"></div>
+      </div>
       <div class="rb-digits rb-clock" id="rbClock"></div>
-      <div class="rb-digits" id="rbScore2"></div>
+      <div class="rb-side">
+        <div class="rb-digits" id="rbScore2"></div>
+        <img class="rb-crest" id="rbCrest2" alt="">
+      </div>
     </div>
   </div>
 
@@ -353,6 +363,11 @@ function loadLog(obj) {
     document.getElementById("rbName1").textContent = p1.name.toUpperCase();
     document.getElementById("rbName2").textContent = p2.name.toUpperCase();
   }
+  // each side's own crest, flanking its score (crest files are keyed by model id,
+  // which is just the slugified team name)
+  const teamSlug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  document.getElementById("rbCrest1").src = "crests/" + teamSlug(p1.name) + ".svg";
+  document.getElementById("rbCrest2").src = "crests/" + teamSlug(p2.name) + ".svg";
 
   const scrub = document.getElementById("scrub");
   scrub.max = frames.length - 1;

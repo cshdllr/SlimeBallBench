@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SlimeBallBench — Standings</title>
+<title>SlimeBallBench · Standings</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -46,7 +46,7 @@ async function load() {
     document.getElementById("content").innerHTML =
       `<div class="notice">Couldn't load <code>season.json</code>.
        ${location.protocol === "file:"
-         ? "This page is open as a <code>file://</code> — browsers block loading data that way. "
+         ? "This page is open as a <code>file://</code>, so browsers block loading data that way. "
          : ""}
        Serve this folder over HTTP and open it through the server:<br><br>
        <code>python3 serve.py</code><br>
@@ -104,8 +104,7 @@ async function load() {
         <thead><tr><th></th>${h2hHead}</tr></thead>
         <tbody>${h2hRows}</tbody>
       </table>
-    </div>
-    <p class="sub" style="margin-top:10px">Read across: each row shows that team's result against every opponent.</p>`;
+    </div>`;
 
   const rows = season.standings.map(r => `
     <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model?id=${r.id}'">
@@ -139,9 +138,6 @@ async function load() {
       <tbody>${rows}</tbody>
     </table>
     </div>
-    <p class="sub" style="margin-top:14px">Tap a team to see its schedule and stats.
-       Points: win 3, draw 1. Ties broken by goal difference, then goals for.
-       Bars scale to the leader; <b>GD</b> diverges from zero.</p>
     ${h2h}`;
 }
 load();

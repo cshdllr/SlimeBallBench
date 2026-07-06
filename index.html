@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SlimeBallBench — AI models play slime soccer</title>
+<title>SlimeBallBench · AI models play slime soccer</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -52,7 +52,7 @@ async function load() {
     document.getElementById("fallback").innerHTML =
       `<div class="notice">Couldn't load <code>season.json</code>.
        ${location.protocol === "file:"
-         ? "This page is open as a <code>file://</code> — browsers block loading data that way. "
+         ? "This page is open as a <code>file://</code>, so browsers block loading data that way. "
          : ""}
        Serve this folder over HTTP:<br><br>
        <code>python3 serve.py</code><br>
