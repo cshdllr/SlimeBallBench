@@ -85,6 +85,15 @@ h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .result { font-weight: 700; display: inline-block; width: 18px; text-align: center; border-radius: 4px; }
 .result.W { color: #3fb950; } .result.L { color: #f85149; } .result.D { color: #d29922; }
 
+/* "Watch" pill button (replaces the old blue replay link) */
+.watch-btn { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;
+  border: 1px solid var(--line); border-radius: 999px; color: var(--text);
+  text-decoration: none; font-size: 12px; font-weight: 600; white-space: nowrap;
+  transition: border-color .12s, background .12s, color .12s; }
+.watch-btn .tri { font-size: 8px; color: var(--accent); }
+.watch-btn:hover { border-color: var(--accent); background: rgba(47,111,235,0.14); color: #fff; }
+.watch-btn:hover .tri { color: #fff; }
+
 /* --- inline data bars in the standings table (Tufte: the table IS the chart) --- */
 /* Points: a team-coloured bar scaled to the leader, value sitting on top. */
 td.barcell { padding: 6px 12px; }

@@ -94,7 +94,7 @@ async function load() {
       <td>${fmtDate(g.played_at)}</td>
       <td>${g.myG} – ${g.opG}</td>
       <td><span class="result ${g.res}">${g.res}</span></td>
-      <td style="text-align:right"><a href="replay?log=${encodeURIComponent(g.log)}">▶ replay</a></td>
+      <td style="text-align:right"><a class="watch-btn" href="replay?log=${encodeURIComponent(g.log)}"><span class="tri">▶</span>Watch</a></td>
     </tr>`).join("");
 
   document.getElementById("content").innerHTML = `
@@ -105,7 +105,7 @@ async function load() {
     <h2 class="section-h">Schedule</h2>
     <div class="table-scroll">
     <table>
-      <thead><tr><th>Opponent</th><th>Date</th><th>Score</th><th>Result</th><th>Replay</th></tr></thead>
+      <thead><tr><th>Opponent</th><th>Date</th><th>Score</th><th>Result</th><th>Watch</th></tr></thead>
       <tbody>${fixtureRows || '<tr><td colspan="5">No games yet.</td></tr>'}</tbody>
     </table>
     </div>
