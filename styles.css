@@ -22,9 +22,11 @@ h1 { font-size: 22px; margin: 8px 2px 4px; }
 .sub { color: var(--muted); font-size: 13px; margin: 0 2px 18px; }
 a { color: #58a6ff; }
 footer.site { margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--line);
-  color: var(--muted); font-size: 12px; text-align: center; }
+  color: var(--muted); font-size: 12px;
+  display: flex; justify-content: space-between; align-items: center; gap: 6px 16px; flex-wrap: wrap; }
 footer.site a { color: var(--text); font-weight: 600; text-decoration: none; }
 footer.site a:hover { text-decoration: underline; }
+.prov-foot { font-variant-numeric: tabular-nums; }
 
 table { width: 100%; border-collapse: collapse; background: var(--panel);
   border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }

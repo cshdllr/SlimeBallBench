@@ -21,21 +21,21 @@
   <div id="content"></div>
 
   <footer class="site">
-    Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a>
+    <span class="prov-foot" id="footProv"></span>
+    <span>Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a></span>
   </footer>
 </div>
 
 <script src="logos.js"></script>
 <script src="favicon.js"></script>
 <script>
-// Quiet "provenance" strip: version, season, coverage, freshness date.
-function provenanceStrip(season) {
+// Quiet "provenance" line for the footer: version, season, coverage, freshness.
+function provenanceText(season) {
   const total = season.matches.length;
   const played = season.matches.filter(m => m.played_at).length;
   const date = new Date(season.generated_at).toLocaleDateString("en-US",
     { month: "short", day: "numeric", year: "numeric" });
-  return `<p class="provenance">SlimeBallBench v1.0 · Season 1 ·
-    ${played}/${total} matches · Updated ${date}</p>`;
+  return `SlimeBallBench v1.0 · Season 1 · ${played}/${total} matches · Updated ${date}`;
 }
 
 async function load() {
@@ -126,8 +126,8 @@ async function load() {
         <span class="val">${r.points}</span></div></td>
     </tr>`).join("");
 
+  document.getElementById("footProv").textContent = provenanceText(season);
   document.getElementById("content").innerHTML = `
-    ${provenanceStrip(season)}
     <h2 class="section-h first">Standings</h2>
     <div class="table-scroll standings-scroll">
     <table>

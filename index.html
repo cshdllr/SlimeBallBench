@@ -18,8 +18,6 @@
     </nav>
   </header>
 
-  <div id="topProvenance"></div>
-
   <section id="watchSection" class="hidden">
     <div id="watch"></div>
   </section>
@@ -27,21 +25,21 @@
   <div id="fallback"></div>
 
   <footer class="site">
-    Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a>
+    <span class="prov-foot" id="footProv"></span>
+    <span>Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a></span>
   </footer>
 </div>
 
 <script src="logos.js"></script>
 <script src="favicon.js"></script>
 <script>
-// Quiet "provenance" strip: version, season, coverage, freshness date.
-function provenanceStrip(season) {
+// Quiet "provenance" line for the footer: version, season, coverage, freshness.
+function provenanceText(season) {
   const total = season.matches.length;
   const played = season.matches.filter(m => m.played_at).length;
   const date = new Date(season.generated_at).toLocaleDateString("en-US",
     { month: "short", day: "numeric", year: "numeric" });
-  return `<p class="provenance">SlimeBallBench v1.0 · Season 1 ·
-    ${played}/${total} matches · Updated ${date}</p>`;
+  return `SlimeBallBench v1.0 · Season 1 · ${played}/${total} matches · Updated ${date}`;
 }
 
 async function load() {
@@ -59,7 +57,7 @@ async function load() {
        then visit <code>http://localhost:8000/</code>.</div>`;
     return;
   }
-  document.getElementById("topProvenance").innerHTML = provenanceStrip(season);
+  document.getElementById("footProv").textContent = provenanceText(season);
   renderWatcher(season);
 }
 
