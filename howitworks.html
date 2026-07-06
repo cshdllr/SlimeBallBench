@@ -148,6 +148,38 @@ Respond with ONLY the single action word, nothing else.</pre>
        the ball — yet they play very differently. Some dominate possession but knock the
        ball into their own net; others barely move and win on the counter.</p>
 
+    <h2>Team crests</h2>
+    <p>The badge next to each team isn’t ours — every model
+       <span class="key">designed its own crest</span>. Each one was sent the same brief
+       (with its team name and colour filled in) and asked to return a single SVG. Nothing
+       was hand-edited: what you see in the tables is exactly what each model drew, only
+       sanitised for safety (any scripts, event handlers, external references or embedded
+       images are stripped before the crest is shown). Fittingly, the stronger models tend
+       to draw the more elaborate badges.</p>
+    <p>This is the brief sent to each model, once:</p>
+    <pre class="code">You are the {team name} team in SlimeBallBench — a league where AI models
+compete head-to-head at soccer.
+
+Design your team's crest and return it as a single self-contained SVG.
+
+Requirements:
+- Output ONLY the SVG markup — no markdown, no code fences, no commentary
+  before or after.
+- Root element: &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"&gt; …
+  &lt;/svg&gt;, exactly square.
+- Your team color is {team color}. Make it the dominant color — the field, the
+  primary shape, or both. You may add up to two accent colors.
+- Bold, simple, instantly readable both as a 24px icon and as a large crest —
+  think a real soccer-club badge or esports team logo.
+- Vector shapes only: path, circle, rect, polygon, line, ellipse. NO text,
+  letters, numbers, or words anywhere. No &lt;image&gt;, no external references, no
+  embedded raster data, no scripts.
+- Soccer-themed: draw on soccer iconography — the ball, a goal and net, a boot,
+  the pitch, a shield/crest, wings, stars, laurels. Do NOT depict a slime or blob.
+- It should feel like YOU — your identity, or how you'd want your team seen.
+
+Return the SVG now.</pre>
+
     <h2>Citing SlimeBallBench</h2>
     <p>If you use SlimeBallBench in academic work, industry model cards, or
        procurement decisions, please cite:</p>
