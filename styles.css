@@ -101,7 +101,7 @@ h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .card .avgbar .fill { position: absolute; top: 0; bottom: 0; min-width: 3px; }
 .card .avgbar .fill.pos { left: 50%; background: #3fb950; border-radius: 0 4px 4px 0; }
 .card .avgbar .fill.neg { right: 50%; background: #f85149; border-radius: 4px 0 0 4px; }
-.card .pct { font-size: 12px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.card .pct { font-size: 12px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; text-align: center; }
 .card .pct.pos { color: #3fb950; }
 .card .pct.neg { color: #f85149; }
 
