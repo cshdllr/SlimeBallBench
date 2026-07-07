@@ -91,7 +91,7 @@ async function load() {
     return `<td class="h2h ${res}"><a href="replay?log=${encodeURIComponent(m.log)}">${myG}–${opG}</a></td>`;
   };
   const h2hHead = order.map(c =>
-    `<th class="h2h-col"><span class="h2h-collab">${crestMark(c.id, 15, c.color)}<span class="lbl">${c.name}</span></span></th>`
+    `<th class="h2h-col" title="${c.name}">${crestMark(c.id, 26, c.color)}</th>`
   ).join("");
   const h2hRows = order.map(r => `
     <tr>

@@ -232,15 +232,11 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
   font-variant-numeric: tabular-nums; }
 .h2h-table thead th { border-bottom: 1px solid var(--line); vertical-align: bottom; }
-/* column headers: crest + name inline, rotated 45° together (crest at the start) */
-.h2h-table thead th.h2h-col { height: 120px; padding: 0 0 4px; position: relative; }
-.h2h-col .h2h-collab {
-  position: absolute; left: 50%; bottom: 6px;
-  transform-origin: left bottom; transform: rotate(-45deg);
-  display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; font-weight: 600; }
-.h2h-col .crest { width: 15px; height: 15px; border-radius: 4px; flex: none; }
-/* row headers: crest + name, left-aligned */
-.h2h-table th.h2h-rowh { text-align: left; white-space: nowrap; color: var(--text); font-weight: 600; }
+/* column headers: just the team crest, upright and centred */
+.h2h-table thead th.h2h-col { padding: 10px 0; }
+.h2h-col .crest { width: 26px; height: 26px; border-radius: 6px; display: block; margin: 0 auto; }
+/* row headers: crest + name, right-aligned toward the matrix */
+.h2h-table th.h2h-rowh { text-align: right; white-space: nowrap; color: var(--text); font-weight: 600; }
 .h2h-rowh .crest { width: 18px; height: 18px; border-radius: 5px; margin-right: 7px; vertical-align: middle; }
 /* the whole score cell is the click target: the link fills the padding box */
 .h2h-table td.h2h { padding: 0; position: relative; }
@@ -337,7 +333,7 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--scroll-bg, var(--panel)); }
 
 /* pin the row-header column in the head-to-head matrix too */
-.h2h-scroll > table { overflow: visible; background: transparent; margin-right: 88px; }
+.h2h-scroll > table { overflow: visible; background: transparent; }
 .h2h-scroll .h2h-rowh { position: sticky; left: 0; z-index: 1; background: var(--panel); }
 .h2h-scroll thead th:first-child { position: sticky; left: 0; z-index: 3; background: var(--panel); }
 .h2h-scroll .h2h-rowh::after {
