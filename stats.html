@@ -119,6 +119,7 @@ const COMPARE = [
   { key: "goals_per_touch",    label: "Goals per touch", better: "high", fmt: v => v.toFixed(3) },
   { key: "avg_possession_pct", label: "Possession",      better: "high", fmt: v => v + "%" },
   { key: "jumps",              label: "Jumps",           better: "high", fmt: v => v },
+  { key: "total_cost_usd",     label: "Cost",            better: "low",  fmt: v => "$" + (v ?? 0).toFixed(2) },
 ];
 
 // Break a model name onto two stacked lines: the first word on top, the rest

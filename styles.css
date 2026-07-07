@@ -226,9 +226,14 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .section-h.first { margin-top: 8px; }
 
 /* --- Head-to-head results matrix --- */
+/* The frame owns the border + radius and clips the scroller inside it. Its
+   overflow:hidden is what rounds the corners over the sticky crest column —
+   a border-radius on the scroll container alone doesn't clip sticky cells in
+   Safari (they escape the rounding and square off the corners on scroll). */
+.h2h-frame { margin: 4px 0 2px;
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .h2h-scroll { --scroll-bg: var(--panel);
-  overflow-x: auto; overflow-y: hidden; margin: 4px 0 2px;
-  border: 1px solid var(--line); border-radius: 10px; }
+  overflow-x: auto; overflow-y: hidden; }
 .h2h-table { min-width: 520px; }
 .h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
   font-variant-numeric: tabular-nums; }
@@ -239,7 +244,7 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .h2h-table td.h2h, .h2h-table td.h2h-diag, .h2h-table td.h2h-empty { min-width: 52px; }
 /* pinned crest column (stays) + scrolling name column (tucks behind it on scroll) */
 .h2h-cc { text-align: center; padding: 6px 3px 6px 6px; }
-.h2h-cc .crest { width: 22px; height: 22px; border-radius: 6px; display: inline-block; vertical-align: middle; }
+.h2h-cc .crest { width: 26px; height: 26px; border-radius: 6px; display: inline-block; vertical-align: middle; }
 .h2h-nc { text-align: right; white-space: nowrap; color: var(--text); font-weight: 600;
   min-width: 150px; padding: 6px 14px 6px 4px; }
 /* the whole score cell is the click target: the link fills the padding box */
@@ -340,6 +345,12 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .h2h-scroll > table { overflow: visible; background: transparent; }
 .h2h-scroll .h2h-cc { position: sticky; left: 0; z-index: 2; background: var(--panel); }
 .h2h-scroll thead .h2h-cc { z-index: 3; }
+/* crisp freeze line on the crest column's right edge, matching the standings pin:
+   with the opaque backing (::before) covering the seam, coloured score cells scroll
+   cleanly behind the crest instead of bleeding out against it */
+.h2h-scroll .h2h-cc::after {
+  content: ""; position: absolute; top: 0; right: -1px; bottom: -1px; width: 1px;
+  background: var(--line); pointer-events: none; }
 
 /* --- Model comparison grid (models across the top, one metric per row) ---
    Mirrors the layout other benchmark leaderboards use; the leader in each row
