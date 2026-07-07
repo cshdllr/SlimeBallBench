@@ -718,10 +718,34 @@ function drawFrame(i) {
   document.getElementById("scrub").value = i;
   document.getElementById("frameLabel").textContent =
     `${fmtTime(f.t / fps)} / ${fmtTime(frames.length / fps)}`;
-  // playhead on the goal-differential timeline (chart plot spans 1.4%..98.6%)
-  const gh = document.getElementById("goalHead");
-  if (gh && frames.length > 1) gh.style.left = (1.4 + (i / (frames.length - 1)) * 97.2) + "%";
+  // playhead on the goal-differential timeline, aligned to the scrubber thumb
+  positionPlayhead(frames.length > 1 ? i / (frames.length - 1) : 0);
 }
+
+// --- keep the goal-chart playhead exactly under the video scrubber thumb ---
+// The scrubber is a native range input whose thumb travels in a pixel range
+// (inset by its radius); measuring it at runtime lets the playhead line up at
+// any width instead of only when the chart happens to be 1000px wide.
+const THUMB_R = 6.5;
+let phGeom = null;
+function measurePlayhead() {
+  const scrub = document.getElementById("scrub");
+  const gw = document.getElementById("goalWrap");
+  if (!scrub || !gw) { phGeom = null; return; }
+  const sr = scrub.getBoundingClientRect(), gr = gw.getBoundingClientRect();
+  if (!sr.width || !gr.width) { phGeom = null; return; }
+  phGeom = { startX: sr.left + THUMB_R, span: sr.width - 2 * THUMB_R,
+             grLeft: gr.left, grWidth: gr.width };
+}
+function positionPlayhead(frac) {
+  const gh = document.getElementById("goalHead");
+  if (!gh) return;
+  if (!phGeom) measurePlayhead();                          // cache; re-measured on resize
+  if (!phGeom) return;
+  const x = phGeom.startX + frac * phGeom.span;           // thumb centre, viewport px
+  gh.style.left = ((x - phGeom.grLeft) / phGeom.grWidth * 100) + "%";
+}
+window.addEventListener("resize", () => { phGeom = null; if (frames && frames.length) drawFrame(cur); });
 
 // ---- playback loop ----
 function tick(ts) {
@@ -789,12 +813,12 @@ document.getElementById("scrub").addEventListener("input", e => {
 // click the goal-differential timeline to jump the video to that moment
 document.getElementById("goalChart").addEventListener("click", e => {
   if (!frames || frames.length < 2) return;
-  const rect = e.currentTarget.getBoundingClientRect();
-  const screenFrac = (e.clientX - rect.left) / rect.width;   // 0..1 across the canvas
-  const plotFrac = Math.max(0, Math.min(1, (screenFrac - 0.014) / 0.972)); // strip the 1.4% pads
+  measurePlayhead();
+  if (!phGeom) return;
+  const frac = Math.max(0, Math.min(1, (e.clientX - phGeom.startX) / phGeom.span));
   hideGameOver();
   frameAcc = 0; seeking = true;
-  drawFrame(Math.round(plotFrac * (frames.length - 1)));
+  drawFrame(Math.round(frac * (frames.length - 1)));
   seeking = false;
 });
 
