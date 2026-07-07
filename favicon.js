@@ -45,8 +45,10 @@
     return 1;
   };
 
-  // Contact point: just above the head at the apex, so the ball sits on the dome.
-  const HITX = CX + 1, HITY = GROUND - 8 - BASE_R + BR; // ≈ 5
+  // Contact point: the ball rests ON the dome at the apex — its centre sits one
+  // ball-radius above the head's top (GROUND − jump − head radius), so it kisses
+  // the crown rather than sinking into the middle of the head.
+  const HITX = CX + 1, HITY = GROUND - 8 - BASE_R - BR; // ≈ 5
 
   function ballPos(p) {
     // fly in from off the right, meeting the head at HIT…
