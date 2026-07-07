@@ -138,14 +138,12 @@ async function load() {
   const rows = season.standings.map(r => `
     <tr class="clickable${r.rank === 1 ? ' leader' : ''}" onclick="location.href='model?id=${r.id}'">
       <td class="pos">${r.rank}</td>
+      <td class="logo-cell">${crestMark(r.id, 40, r.color)}</td>
       <td class="team-cell team-stack">
-        <div class="tstack-row">
-          ${crestMark(r.id, 40, r.color)}
-          <span class="tstack">
-            <span class="name">${r.name}</span>
-            <span class="meta">${providerLogo(r.provider)}${r.provider}</span>
-          </span>
-        </div>
+        <span class="tstack">
+          <span class="name">${r.name}</span>
+          <span class="meta">${providerLogo(r.provider)}${r.provider}</span>
+        </span>
       </td>
       <td>${r.played}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td>
       <td>${r.gf}</td><td>${r.ga}</td>
@@ -157,11 +155,10 @@ async function load() {
 
   document.getElementById("footProv").textContent = provenanceText(season);
   document.getElementById("content").innerHTML = `
-    <h2 class="section-h first">Standings</h2>
-    <div class="table-scroll standings-scroll">
+    <div class="table-scroll standings-scroll first-block">
     <table>
       <thead><tr>
-        <th>#</th><th class="lft">Team</th><th>P</th><th>W</th><th>D</th><th>L</th>
+        <th>#</th><th></th><th class="lft">Team</th><th>P</th><th>W</th><th>D</th><th>L</th>
         <th>GF</th><th>GA</th><th class="lft">GD</th><th class="barcell lft">Pts</th>
       </tr></thead>
       <tbody>${rows}</tbody>

@@ -49,6 +49,10 @@ tbody tr.leader td:first-child { border-left: 3px solid #d4a72c; }
 /* model-designed crest, used wherever a colour swatch would otherwise sit */
 .crest { display: inline-block; vertical-align: middle; border-radius: 5px; }
 .team-cell .crest { margin-right: 8px; }
+/* logo split out into its own cell so it can pin while the name scrolls behind
+   it on narrow screens; the crest sits alone, left-aligned, snug to the name */
+.logo-cell { text-align: left; padding-right: 4px; width: 1%; white-space: nowrap; }
+.logo-cell .crest { display: block; margin: 0; }
 h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .h2h-col .crest { display: block; margin: 0 auto 4px; }
 .h2h-rowh .crest { margin-right: 7px; }
@@ -182,8 +186,8 @@ code { background: #21262d; padding: 1px 5px; border-radius: 4px; }
 .prose { max-width: none; }
 .prose .lead { font-size: 16px; color: var(--text); line-height: 1.6; margin: 6px 2px 20px; }
 .prose h2 { font-size: 16px; margin: 30px 2px 8px; }
-.prose p { font-size: 14px; line-height: 1.65; color: #c9d4de; margin: 0 2px 24px; }
-.prose li { font-size: 14px; line-height: 1.65; color: #c9d4de; margin: 6px 0; }
+.prose p { font-size: 16px; line-height: 1.65; color: #c9d4de; margin: 0 2px 24px; }
+.prose li { font-size: 16px; line-height: 1.65; color: #c9d4de; margin: 6px 0; }
 .prose ul { margin: 0 0 24px; padding-left: 22px; }
 .prose .key { color: var(--text); font-weight: 600; }
 
@@ -224,6 +228,8 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .section-h { font-size: 16px; font-weight: 600; margin: 36px 0 12px; }
 /* the first section on a page shouldn't push down from the header */
 .section-h.first { margin-top: 8px; }
+/* a table that leads a page (no heading above it) keeps the same top breathing room */
+.first-block { margin-top: 8px; }
 
 /* --- Head-to-head results matrix --- */
 /* The frame owns the border + radius and clips the scroller inside it. Its
@@ -361,6 +367,8 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
    gets a bright outline so the winner reads at a glance. */
 .compare-scroll table { min-width: 640px; }
 .compare-table th, .compare-table td { text-align: center; white-space: nowrap; }
+/* right-justify the metric values (the row label stays left-aligned below) */
+.compare-table tbody td { text-align: right; }
 .compare-table thead th { vertical-align: bottom; padding-bottom: 12px; }
 .compare-table thead th a { color: var(--text); text-decoration: none; font-weight: 600; }
 .compare-table thead th a:hover { text-decoration: underline; }

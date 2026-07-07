@@ -87,6 +87,9 @@ let sortKey = "goal_diff", sortDir = -1;
 // reads as good (kept only for latency/cost, where zero baseline flattens things).
 // `neutral` suppresses the "best" highlight for metrics that aren't a virtue.
 const SMALL_MULTIPLES = [
+  { key: "total_cost_usd",     label: "Total cost",      better: "low",  baseline: "range", fmt: v => "$" + (v ?? 0).toFixed(2) },
+  { key: "cost_per_point",     label: "Cost per point",  better: "low",  baseline: "range", fmt: v => "$" + v.toFixed(3) + "/pt" },
+  { key: "avg_latency_ms",     label: "Avg latency",     better: "low",  baseline: "range", fmt: v => v == null ? "—" : v + "ms" },
   { key: "goals_for",          label: "Goals for",       better: "high", baseline: "zero",  fmt: v => v },
   { key: "goals_against",      label: "Goals against",   better: "low",  baseline: "zero",  fmt: v => v },
   { key: "goals_per_touch",    label: "Goals per touch", better: "high", baseline: "zero",  fmt: v => v.toFixed(3) },
@@ -94,9 +97,6 @@ const SMALL_MULTIPLES = [
   { key: "saves",              label: "Saves",           better: "high", baseline: "zero",  fmt: v => v },
   { key: "own_goals",          label: "Own goals",       better: "low",  baseline: "zero",  fmt: v => v },
   { key: "jumps",              label: "Jumps",           better: "high", baseline: "zero",  neutral: true, fmt: v => v },
-  { key: "cost_per_point",     label: "Cost per point",  better: "low",  baseline: "range", fmt: v => "$" + v.toFixed(3) + "/pt" },
-  { key: "avg_latency_ms",     label: "Avg latency",     better: "low",  baseline: "range", fmt: v => v == null ? "—" : v + "ms" },
-  { key: "total_cost_usd",     label: "Total cost",      better: "low",  baseline: "range", fmt: v => "$" + (v ?? 0).toFixed(2) },
 ];
 
 function renderSmallMultiples() {
@@ -192,19 +192,21 @@ function render() {
     x = x ?? -Infinity; y = y ?? -Infinity;
     return sortDir * (x - y);
   });
-  const head = COLS.map(([k, label]) =>
-    `<th class="sortable" data-key="${k}">${label}${sortKey === k ? (sortDir < 0 ? " ▾" : " ▴") : ""}</th>`
-  ).join("");
+  const head = COLS.map(([k, label]) => {
+    const arrow = sortKey === k ? (sortDir < 0 ? " ▾" : " ▴") : "";
+    // the team column is split into a pinned logo cell + a scrolling name cell,
+    // so the name (and its header) tucks behind the logo on horizontal scroll
+    const th = `<th class="sortable" data-key="${k}">${label}${arrow}</th>`;
+    return k === "name" ? `<th></th>${th}` : th;
+  }).join("");
   const body = ROWS.map(r => `<tr class="clickable" onclick="location.href='model?id=${r.id}'">` +
     COLS.map(([k, , fmt]) => {
-      if (k === "name") return `<td class="team-cell team-stack">
-          <div class="tstack-row">
-            ${crestMark(r.id, 40, r.color)}
-            <span class="tstack">
-              <span class="name">${r.name}</span>
-              <span class="meta">${providerLogo(r.provider)}${r.provider}</span>
-            </span>
-          </div></td>`;
+      if (k === "name") return `<td class="logo-cell">${crestMark(r.id, 40, r.color)}</td>
+        <td class="team-cell team-stack">
+          <span class="tstack">
+            <span class="name">${r.name}</span>
+            <span class="meta">${providerLogo(r.provider)}${r.provider}</span>
+          </span></td>`;
       return `<td>${fmt ? fmt(r[k]) : r[k]}</td>`;
     }).join("") + "</tr>").join("");
 
