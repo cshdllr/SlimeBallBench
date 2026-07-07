@@ -54,6 +54,8 @@
   .rb-side { display: flex; align-items: center; gap: clamp(6px, 1.8vw, 13px); }
   .rb-crest { width: clamp(26px, 6.5vw, 44px); height: clamp(26px, 6.5vw, 44px);
     display: block; flex: none; border-radius: 6px; }
+  .rb-crest-link { display: inline-flex; cursor: pointer; border-radius: 6px; transition: box-shadow .12s; }
+  .rb-crest-link:hover { box-shadow: 0 0 0 2px rgba(236,227,201,0.6); }
   .rb-digits { display: flex; gap: clamp(2.5px, 0.7vw, 5px); align-items: flex-start;
     --dot: clamp(2.5px, 0.7vw, 5px); }
   .rb-digits .char { display: grid; grid-template-columns: repeat(var(--cols, 5), var(--dot));
@@ -186,13 +188,13 @@
     </div>
     <div class="rb-row">
       <div class="rb-side">
-        <img class="rb-crest" id="rbCrest1" alt="">
+        <a class="rb-crest-link" id="rbCrestLink1" target="_top" title="View team"><img class="rb-crest" id="rbCrest1" alt=""></a>
         <div class="rb-digits" id="rbScore1"></div>
       </div>
       <div class="rb-digits rb-clock" id="rbClock"></div>
       <div class="rb-side">
         <div class="rb-digits" id="rbScore2"></div>
-        <img class="rb-crest" id="rbCrest2" alt="">
+        <a class="rb-crest-link" id="rbCrestLink2" target="_top" title="View team"><img class="rb-crest" id="rbCrest2" alt=""></a>
       </div>
     </div>
   </div>
@@ -366,8 +368,11 @@ function loadLog(obj) {
   // each side's own crest, flanking its score (crest files are keyed by model id,
   // which is just the slugified team name)
   const teamSlug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
-  document.getElementById("rbCrest1").src = "crests/" + teamSlug(p1.name) + ".svg";
-  document.getElementById("rbCrest2").src = "crests/" + teamSlug(p2.name) + ".svg";
+  const cid1 = teamSlug(p1.name), cid2 = teamSlug(p2.name);
+  document.getElementById("rbCrest1").src = "crests/" + cid1 + ".svg";
+  document.getElementById("rbCrest2").src = "crests/" + cid2 + ".svg";
+  document.getElementById("rbCrestLink1").href = "model?id=" + cid1;
+  document.getElementById("rbCrestLink2").href = "model?id=" + cid2;
 
   const scrub = document.getElementById("scrub");
   scrub.max = frames.length - 1;
