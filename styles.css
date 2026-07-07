@@ -245,8 +245,10 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 /* pinned crest column (stays) + scrolling name column (tucks behind it on scroll) */
 .h2h-cc { text-align: center; padding: 6px 3px 6px 6px; }
 .h2h-cc .crest { width: 26px; height: 26px; border-radius: 6px; display: inline-block; vertical-align: middle; }
-.h2h-nc { text-align: right; white-space: nowrap; color: var(--text); font-weight: 600;
-  min-width: 150px; padding: 6px 14px 6px 4px; }
+/* th.h2h-nc to outrank the `.h2h-table th { text-align:center }` above, which
+   would otherwise centre the model names in the left label column */
+.h2h-table th.h2h-nc { text-align: right; white-space: nowrap; color: var(--text);
+  font-weight: 600; min-width: 150px; padding: 6px 14px 6px 4px; }
 /* the whole score cell is the click target: the link fills the padding box */
 .h2h-table td.h2h { padding: 0; position: relative; }
 .h2h-table td.h2h a { display: block; padding: 6px 7px; text-decoration: none; font-weight: 600; }
@@ -342,7 +344,9 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 
 /* pin ONLY the crest column in the head-to-head matrix; the name column scrolls
    away behind it, so on narrow screens the row keeps just its logo pinned */
-.h2h-scroll > table { overflow: visible; background: transparent; }
+/* drop the base table's own border/radius (the frame owns them now) so the h2h
+   edge matches the other scrollable tables instead of double-bordering */
+.h2h-scroll > table { border: 0; border-radius: 0; overflow: visible; background: transparent; }
 .h2h-scroll .h2h-cc { position: sticky; left: 0; z-index: 2; background: var(--panel); }
 .h2h-scroll thead .h2h-cc { z-index: 3; }
 /* crisp freeze line on the crest column's right edge, matching the standings pin:
