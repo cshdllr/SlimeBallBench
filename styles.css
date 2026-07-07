@@ -233,7 +233,7 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   font-variant-numeric: tabular-nums; }
 .h2h-table thead th { border-bottom: 1px solid var(--line); vertical-align: bottom; }
 /* column headers: crest + name inline, rotated 45° together (crest at the start) */
-.h2h-table thead th.h2h-col { height: 96px; padding: 0 0 4px; position: relative; }
+.h2h-table thead th.h2h-col { height: 120px; padding: 0 0 4px; position: relative; }
 .h2h-col .h2h-collab {
   position: absolute; left: 50%; bottom: 6px;
   transform-origin: left bottom; transform: rotate(-45deg);
