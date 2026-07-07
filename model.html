@@ -82,17 +82,23 @@ async function load() {
     const vals = allStats.map(s => s[key]).filter(v => v != null);
     return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
   };
-  const vsAvg = key => {
-    if (!agg || agg[key] == null) return "";
-    const avg = leagueAvg(key);
-    if (avg == null || Math.abs(avg) < 1e-9) return "";   // e.g. goal diff averages ~0
-    const pct = Math.round((agg[key] - avg) / Math.abs(avg) * 100);
-    const label = pct === 0 ? "at league average"
-      : `${pct > 0 ? "+" : ""}${pct}% ${pct > 0 ? "above" : "below"} league average`;
-    return `<span class="v-sub">${label}</span>`;
+  // mini-viz: a bar centred on the league average, filling green (above) or red
+  // (below), with the signed % difference beneath it
+  const card = (label, display, key) => {
+    let viz = "";
+    if (key && agg && agg[key] != null) {
+      const avg = leagueAvg(key);
+      if (avg != null && Math.abs(avg) > 1e-9) {   // skip metrics whose avg is ~0 (goal diff)
+        const pct = Math.round((agg[key] - avg) / Math.abs(avg) * 100);
+        const pos = pct >= 0, w = Math.min(Math.abs(pct), 100) / 100 * 50;
+        viz = `<div class="avgbar"><span class="lab">avg</span>
+            <div class="track"><div class="axis"></div>
+              <div class="fill ${pos ? "pos" : "neg"}" style="width:${w}%"></div></div></div>
+          <div class="pct ${pos ? "pos" : "neg"}">${pct > 0 ? "+" : ""}${pct}%</div>`;
+      }
+    }
+    return `<div class="card"><div class="k">${label}</div><div class="v">${display}</div>${viz}</div>`;
   };
-  const card = (k, v, key) =>
-    `<div class="card"><div class="k">${k}</div><div class="v">${v}${key ? vsAvg(key) : ""}</div></div>`;
   const aggCards = agg ? `
     <div class="cards">
       ${card("Goals for", agg.goals_for, "goals_for")}

@@ -89,12 +89,27 @@ h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
 .card .k { color: var(--muted); font-size: 12px; }
 .card .v { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: 2px; }
+/* per-stat mini-viz: a bar centred on the league average, filling green above
+   / red below, with the signed % beneath it */
+.card .avgbar { margin-top: 11px; }
+.card .avgbar .lab { display: block; text-align: center; font-size: 10px; letter-spacing: .04em;
+  color: var(--muted); margin-bottom: 3px; }
+.card .avgbar .track { position: relative; height: 7px; border-radius: 4px;
+  background: rgba(255,255,255,0.06); }
+.card .avgbar .axis { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px;
+  background: rgba(255,255,255,0.4); }
+.card .avgbar .fill { position: absolute; top: 0; bottom: 0; min-width: 3px; }
+.card .avgbar .fill.pos { left: 50%; background: #3fb950; border-radius: 0 4px 4px 0; }
+.card .avgbar .fill.neg { right: 50%; background: #f85149; border-radius: 4px 0 0 4px; }
+.card .pct { font-size: 12px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.card .pct.pos { color: #3fb950; }
+.card .pct.neg { color: #f85149; }
 
 .result { font-weight: 700; display: inline-block; width: 18px; text-align: center; border-radius: 4px; }
 .result.W { color: #3fb950; } .result.L { color: #f85149; } .result.D { color: #d29922; }
 
 /* team detail header: big crest spanning the name + provider/detail lines */
-.team-head { display: flex; align-items: center; gap: 14px; margin: 8px 2px 20px; }
+.team-head { display: flex; align-items: center; gap: 8px; margin: 8px 2px 20px; }
 .team-head .crest { width: 52px; height: 52px; border-radius: 9px; flex: none; }
 .team-head h1 { margin: 0; }
 .team-head .sub { margin: 4px 0 0; }
