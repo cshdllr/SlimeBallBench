@@ -232,12 +232,15 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
   font-variant-numeric: tabular-nums; }
 .h2h-table thead th { border-bottom: 1px solid var(--line); vertical-align: bottom; }
-/* column headers: just the team crest, upright and centred */
-.h2h-table thead th.h2h-col { padding: 10px 0; }
+/* column headers: just the team crest, upright and centred; a bit wider */
+.h2h-table thead th.h2h-col { padding: 10px 0; min-width: 52px; }
 .h2h-col .crest { width: 26px; height: 26px; border-radius: 6px; display: block; margin: 0 auto; }
-/* row headers: crest + name, right-aligned toward the matrix */
-.h2h-table th.h2h-rowh { text-align: right; white-space: nowrap; color: var(--text); font-weight: 600; }
-.h2h-rowh .crest { width: 18px; height: 18px; border-radius: 5px; margin-right: 7px; vertical-align: middle; }
+.h2h-table td.h2h, .h2h-table td.h2h-diag, .h2h-table td.h2h-empty { min-width: 52px; }
+/* pinned crest column (stays) + scrolling name column (tucks behind it on scroll) */
+.h2h-cc { text-align: center; padding: 6px 3px 6px 6px; }
+.h2h-cc .crest { width: 22px; height: 22px; border-radius: 6px; display: inline-block; vertical-align: middle; }
+.h2h-nc { text-align: right; white-space: nowrap; color: var(--text); font-weight: 600;
+  min-width: 150px; padding: 6px 14px 6px 4px; }
 /* the whole score cell is the click target: the link fills the padding box */
 .h2h-table td.h2h { padding: 0; position: relative; }
 .h2h-table td.h2h a { display: block; padding: 6px 7px; text-decoration: none; font-weight: 600; }
@@ -299,8 +302,7 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .table-scroll td:first-child::before,
 .standings-scroll th:nth-child(2)::before,
 .standings-scroll td:nth-child(2)::before,
-.h2h-scroll thead th:first-child::before,
-.h2h-scroll .h2h-rowh::before {
+.h2h-scroll .h2h-cc::before {
   content: ""; position: absolute; left: 0; right: 0; top: -1px; bottom: -1px;
   background: var(--scroll-bg, var(--panel)); z-index: -1; pointer-events: none;
 }
@@ -332,13 +334,11 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .standings-scroll tbody tr.leader td:nth-child(2)::before {
   background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--scroll-bg, var(--panel)); }
 
-/* pin the row-header column in the head-to-head matrix too */
+/* pin ONLY the crest column in the head-to-head matrix; the name column scrolls
+   away behind it, so on narrow screens the row keeps just its logo pinned */
 .h2h-scroll > table { overflow: visible; background: transparent; }
-.h2h-scroll .h2h-rowh { position: sticky; left: 0; z-index: 1; background: var(--panel); }
-.h2h-scroll thead th:first-child { position: sticky; left: 0; z-index: 3; background: var(--panel); }
-.h2h-scroll .h2h-rowh::after {
-  content: ""; position: absolute; top: 0; right: -1px; bottom: 0; width: 1px;
-  background: var(--line); pointer-events: none; }
+.h2h-scroll .h2h-cc { position: sticky; left: 0; z-index: 2; background: var(--panel); }
+.h2h-scroll thead .h2h-cc { z-index: 3; }
 
 /* --- Model comparison grid (models across the top, one metric per row) ---
    Mirrors the layout other benchmark leaderboards use; the leader in each row

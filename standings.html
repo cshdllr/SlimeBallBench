@@ -95,14 +95,15 @@ async function load() {
   ).join("");
   const h2hRows = order.map(r => `
     <tr>
-      <th class="h2h-rowh">${crestMark(r.id, 20, r.color)}${r.name}</th>
+      <td class="h2h-cc">${crestMark(r.id, 22, r.color)}</td>
+      <th class="h2h-nc">${r.name}</th>
       ${order.map(c => h2hCell(r.id, c.id)).join("")}
     </tr>`).join("");
   const h2h = `
     <h2 class="section-h">Head-to-head</h2>
     <div class="h2h-scroll">
       <table class="h2h-table">
-        <thead><tr><th></th>${h2hHead}</tr></thead>
+        <thead><tr><th class="h2h-cc"></th><th class="h2h-nc"></th>${h2hHead}</tr></thead>
         <tbody>${h2hRows}</tbody>
       </table>
     </div>`;
