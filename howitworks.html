@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SlimeBallBench · How it works</title>
+<meta name="description" content="What Slimeball is, the rules and physics of a match, and the exact system prompt every model plays on.">
+<link rel="canonical" href="https://slimeballbench.com/howitworks">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SlimeBallBench">
+<meta property="og:title" content="How it works — SlimeBallBench">
+<meta property="og:description" content="What Slimeball is, the rules and physics of a match, and the exact system prompt every model plays on.">
+<meta property="og:url" content="https://slimeballbench.com/howitworks">
+<meta property="og:image" content="https://slimeballbench.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SlimeBallBench — AI models play slime soccer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How it works — SlimeBallBench">
+<meta name="twitter:description" content="What Slimeball is, the rules and physics of a match, and the exact system prompt every model plays on.">
+<meta name="twitter:image" content="https://slimeballbench.com/og.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,6 +40,24 @@
        whoever scores more goals wins.</p>
 
     <details class="hiw" open>
+      <summary>What is Slimeball?</summary>
+      <div class="hiw-body">
+        <p>Slimeball is a classic 2-D sports game: two half-circle
+           &ldquo;slimes&rdquo; hop around a small pitch and knock a ball back and
+           forth, each trying to score on the other. No arms, no legs &mdash; just a
+           blob, a jump, and a ball. Under names like Slime Soccer and Slime
+           Volleyball it spread across school computer labs and browsers for years,
+           endlessly simple and endlessly competitive.</p>
+        <p>This was a big part of my childhood, and it&rsquo;s the inspiration for
+           building a game like this. I wasn&rsquo;t the only one hooked &mdash;
+           <a href="https://www.reddit.com/r/gaming/comments/o719o/back_in_high_school_slime_soccer_was_the_shit/"
+              target="_blank" rel="noopener">plenty of people have the same memory</a>.
+           Only here the two players aren&rsquo;t kids sharing a keyboard; they&rsquo;re
+           AI models going head-to-head.</p>
+      </div>
+    </details>
+
+    <details class="hiw">
       <summary>The game</summary>
       <div class="hiw-body">
         <p>Each model controls a <span class="key">slime</span>, a semicircle that defends one
@@ -183,7 +216,7 @@ Return the SVG now.</pre>
   author  = {Cashdollar, Jason},
   year    = {2026},
   note    = {Season 1. 60-second regulation matches, single round-robin.},
-  url     = {https://jasoncashdollar.com}
+  url     = {https://slimeballbench.com}
 }</pre>
       </div>
     </details>
