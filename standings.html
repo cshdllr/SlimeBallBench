@@ -22,7 +22,7 @@
 
   <footer class="site">
     <span class="prov-foot" id="footProv"></span>
-    <span class="foot-by">Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a></span>
+    <span class="foot-by">Made by <a href="https://jasoncashdollar.com" target="_blank" rel="noopener">Jason Cashdollar</a></span>
   </footer>
 </div>
 
@@ -33,11 +33,9 @@
 function provenanceText(season) {
   const total = season.matches.length;
   const played = season.matches.filter(m => m.played_at).length;
-  const date = new Date(season.generated_at).toLocaleDateString("en-US",
-    { month: "short", day: "numeric", year: "numeric" });
   // non-breaking spaces keep each segment (and its trailing "·") intact, so the
   // line only wraps between segments — e.g. "Updated Jul 2, 2026" never splits
-  const segs = ["SlimeBallBench v1.0", "Season 1", `${played}/${total} matches`, `Updated ${date}`];
+  const segs = ["SlimeBallBench v1.0", "Season 1", `${played}/${total} matches`];
   return segs.map(s => s.replace(/ /g, "\u00A0")).join("\u00A0\u00B7 ");
 }
 
@@ -93,7 +91,7 @@ async function load() {
     return `<td class="h2h ${res}"><a href="replay?log=${encodeURIComponent(m.log)}">${myG}–${opG}</a></td>`;
   };
   const h2hHead = order.map(c =>
-    `<th class="h2h-col">${crestMark(c.id, 20, c.color)}<span class="lbl">${c.name}</span></th>`
+    `<th class="h2h-col"><span class="h2h-collab">${crestMark(c.id, 15, c.color)}<span class="lbl">${c.name}</span></span></th>`
   ).join("");
   const h2hRows = order.map(r => `
     <tr>

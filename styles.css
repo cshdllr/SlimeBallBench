@@ -36,11 +36,11 @@ th, td { padding: 9px 12px; text-align: right; font-variant-numeric: tabular-num
 th:first-child, td:first-child, .team-cell { text-align: left; }
 thead th { color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--line);
   cursor: default; user-select: none; text-align: left; }
-thead th.sortable { cursor: pointer; }
+thead th.sortable { cursor: pointer; white-space: nowrap; }
 thead th.sortable:hover { color: var(--text); }
 tbody tr { border-top: 1px solid rgba(255,255,255,0.04); }
 tbody tr.clickable { cursor: pointer; }
-tbody tr:hover { background: rgba(255,255,255,0.03); }
+tbody tr:hover { background: rgba(255,255,255,0.05); }
 /* the head-to-head matrix keeps its per-cell hover instead of a full-row fill */
 .h2h-table tbody tr:hover { background: transparent; }
 tbody tr.leader td { background: rgba(63,185,80,0.07); }
@@ -148,7 +148,10 @@ td.barcell { padding: 6px 12px; }
 .sm h3 { font-size: 13px; font-weight: 600; margin: 0 0 9px; color: var(--text); }
 .sm h3 .hint { color: var(--muted); font-weight: 400; font-size: 11px; margin-left: 6px; }
 .smrow { display: grid; grid-template-columns: 118px 1fr 52px; align-items: center;
-  gap: 8px; height: 19px; }
+  gap: 8px; height: 20px; border-radius: 5px; }
+a.smrow { text-decoration: none; color: inherit; cursor: pointer; }
+a.smrow:hover { background: rgba(255,255,255,0.05); }
+a.smrow:hover .lab { color: var(--text); }
 .smrow .lab { font-size: 11px; color: var(--muted); text-align: left; font-weight: 600;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .smrow .track { position: relative; height: 11px; }
@@ -177,11 +180,28 @@ code { background: #21262d; padding: 1px 5px; border-radius: 4px; }
 
 /* "How it works" prose page */
 .prose { max-width: 720px; }
-.prose .lead { font-size: 16px; color: var(--text); line-height: 1.6; margin: 6px 2px 8px; }
+.prose .lead { font-size: 16px; color: var(--text); line-height: 1.6; margin: 6px 2px 20px; }
 .prose h2 { font-size: 16px; margin: 30px 2px 8px; }
-.prose p, .prose li { font-size: 14px; line-height: 1.65; color: #c9d4de; margin: 8px 2px; }
-.prose ul { margin: 8px 0; padding-left: 22px; }
-.prose li { margin: 4px 0; }
+.prose p { font-size: 14px; line-height: 1.65; color: #c9d4de; margin: 0 2px 24px; }
+.prose li { font-size: 14px; line-height: 1.65; color: #c9d4de; margin: 6px 0; }
+.prose ul { margin: 0 0 24px; padding-left: 22px; }
+.prose .key { color: var(--text); font-weight: 600; }
+
+/* collapsible sections */
+.prose details.hiw { border-top: 1px solid var(--line); }
+.prose details.hiw:last-of-type { border-bottom: 1px solid var(--line); }
+.prose .hiw > summary { list-style: none; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: 12px; padding: 16px 2px; font-size: 16px; font-weight: 600;
+  color: var(--text); }
+.prose .hiw > summary::-webkit-details-marker { display: none; }
+.prose .hiw > summary::after { content: ""; flex: none; width: 8px; height: 8px; margin-right: 4px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: translateY(-2px) rotate(-45deg); transition: transform .15s; }
+.prose .hiw[open] > summary::after { transform: translateY(-2px) rotate(45deg); }
+.prose .hiw > summary:hover { color: #fff; }
+.prose .hiw-body { padding: 2px 2px 14px; }
+.prose .hiw-body > *:first-child { margin-top: 0; }
+.prose h3 { font-size: 14px; margin: 24px 2px 8px; color: var(--text); }
 .prose .key { color: var(--text); font-weight: 600; }
 pre.code { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
   padding: 14px 16px; font-size: 12.5px; line-height: 1.55; color: #c9d4de;
@@ -201,7 +221,7 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   font-variant-numeric: tabular-nums; }
 
 /* --- consistent section rhythm: one heading style, one gap between blocks --- */
-.section-h { font-size: 16px; font-weight: 600; margin: 36px 2px 12px; }
+.section-h { font-size: 16px; font-weight: 600; margin: 36px 0 12px; }
 /* the first section on a page shouldn't push down from the header */
 .section-h.first { margin-top: 8px; }
 
@@ -212,11 +232,16 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
   font-variant-numeric: tabular-nums; }
 .h2h-table thead th { border-bottom: 1px solid var(--line); vertical-align: bottom; }
-.h2h-col .lbl { display: block; margin: 4px auto 0; writing-mode: vertical-rl;
-  transform: rotate(180deg); white-space: nowrap; font-weight: 600; }
-.h2h-col .swatch { margin: 0 auto; display: block; }
-.h2h-rowh { text-align: left; white-space: nowrap; color: var(--text); font-weight: 600; }
-.h2h-rowh .swatch { margin-right: 6px; }
+/* column headers: crest + name inline, rotated 45° together (crest at the start) */
+.h2h-table thead th.h2h-col { height: 96px; padding: 0 0 4px; position: relative; }
+.h2h-col .h2h-collab {
+  position: absolute; left: 50%; bottom: 6px;
+  transform-origin: left bottom; transform: rotate(-45deg);
+  display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; font-weight: 600; }
+.h2h-col .crest { width: 15px; height: 15px; border-radius: 4px; flex: none; }
+/* row headers: crest + name, left-aligned */
+.h2h-table th.h2h-rowh { text-align: left; white-space: nowrap; color: var(--text); font-weight: 600; }
+.h2h-rowh .crest { width: 18px; height: 18px; border-radius: 5px; margin-right: 7px; vertical-align: middle; }
 /* the whole score cell is the click target: the link fills the padding box */
 .h2h-table td.h2h { padding: 0; position: relative; }
 .h2h-table td.h2h a { display: block; padding: 6px 7px; text-decoration: none; font-weight: 600; }
@@ -283,11 +308,12 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   content: ""; position: absolute; left: 0; right: 0; top: -1px; bottom: -1px;
   background: var(--scroll-bg, var(--panel)); z-index: -1; pointer-events: none;
 }
-/* keep the pinned cell in sync with row states (opaque tints, not see-through) */
-.table-scroll tbody tr:hover td:first-child {
-  background: linear-gradient(rgba(255,255,255,0.03),rgba(255,255,255,0.03)), var(--panel); }
-.table-scroll tbody tr.leader td:first-child {
-  background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--panel); }
+/* keep the pinned cell's backing in sync with row states — the ::before layer
+   is what shows, so hover/leader tints go there (not the cell background) */
+.table-scroll tbody tr:hover td:first-child::before {
+  background: linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05)), var(--scroll-bg, var(--panel)); }
+.table-scroll tbody tr.leader td:first-child::before {
+  background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--scroll-bg, var(--panel)); }
 
 /* Standings: the useful label is the team, so pin the rank + team pair. */
 .standings-scroll th:nth-child(1), .standings-scroll td:nth-child(1) {
@@ -303,15 +329,15 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .standings-scroll td:nth-child(2)::after {
   content: ""; position: absolute; top: 0; right: -1px; bottom: -1px; width: 1px;
   background: var(--line); pointer-events: none; }
-.standings-scroll tbody tr:hover td:nth-child(1),
-.standings-scroll tbody tr:hover td:nth-child(2) {
-  background: linear-gradient(rgba(255,255,255,0.03),rgba(255,255,255,0.03)), var(--panel); }
-.standings-scroll tbody tr.leader td:nth-child(1),
-.standings-scroll tbody tr.leader td:nth-child(2) {
-  background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--panel); }
+.standings-scroll tbody tr:hover td:nth-child(1)::before,
+.standings-scroll tbody tr:hover td:nth-child(2)::before {
+  background: linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05)), var(--scroll-bg, var(--panel)); }
+.standings-scroll tbody tr.leader td:nth-child(1)::before,
+.standings-scroll tbody tr.leader td:nth-child(2)::before {
+  background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--scroll-bg, var(--panel)); }
 
 /* pin the row-header column in the head-to-head matrix too */
-.h2h-scroll > table { overflow: visible; background: transparent; }
+.h2h-scroll > table { overflow: visible; background: transparent; margin-right: 88px; }
 .h2h-scroll .h2h-rowh { position: sticky; left: 0; z-index: 1; background: var(--panel); }
 .h2h-scroll thead th:first-child { position: sticky; left: 0; z-index: 3; background: var(--panel); }
 .h2h-scroll .h2h-rowh::after {

@@ -29,7 +29,7 @@
 
   <footer class="site">
     <span class="prov-foot" id="footProv"></span>
-    <span class="foot-by">Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a></span>
+    <span class="foot-by">Made by <a href="https://jasoncashdollar.com" target="_blank" rel="noopener">Jason Cashdollar</a></span>
   </footer>
 </div>
 
@@ -95,11 +95,11 @@ function renderSmallMultiples() {
         w = 6 + frac * 94; // keep a sliver visible even for the worst
       }
       const best = i === 0 && !m.neutral;
-      return `<div class="smrow${best ? " best" : ""}">
+      return `<a class="smrow${best ? " best" : ""}" href="model?id=${r.id}">
           <span class="lab" title="${r.name}">${r.name}</span>
           <span class="track"><span class="b" style="width:${w}%;background:${r.color}"></span></span>
           <span class="num">${m.fmt(v)}</span>
-        </div>`;
+        </a>`;
     }).join("");
     return `<div class="sm"><h3>${m.label}${m.hint ? `<span class="hint">${m.hint}</span>` : ""}</h3>${rows}</div>`;
   }).join("");
@@ -226,11 +226,9 @@ async function load() {
 function provenanceText(season) {
   const total = season.matches.length;
   const played = season.matches.filter(m => m.played_at).length;
-  const date = new Date(season.generated_at).toLocaleDateString("en-US",
-    { month: "short", day: "numeric", year: "numeric" });
   // non-breaking spaces keep each segment (and its trailing "·") intact, so the
   // line only wraps between segments — e.g. "Updated Jul 2, 2026" never splits
-  const segs = ["SlimeBallBench v1.0", "Season 1", `${played}/${total} matches`, `Updated ${date}`];
+  const segs = ["SlimeBallBench v1.0", "Season 1", `${played}/${total} matches`];
   return segs.map(s => s.replace(/ /g, "\u00A0")).join("\u00A0\u00B7 ");
 }
 load();

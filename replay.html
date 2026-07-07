@@ -112,15 +112,16 @@
   #bigPlay:hover { background: rgba(14,17,22,0.75); }
   #stage:not(.paused) #bigPlay { opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(.8); }
   #vbar {
-    position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 12px;
+    position: absolute; left: 0; right: 0; bottom: 0;
+    display: flex; flex-direction: column; align-items: stretch; gap: 5px;
     padding: 22px 14px 12px; border-radius: 0 0 10px 10px; line-height: normal;
     background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
     opacity: 0; transition: opacity .15s;
   }
   #stage:hover #vbar, #stage.paused #vbar { opacity: 1; }
-  #frameLabel { font-size: 12px; color: #e6edf3; font-variant-numeric: tabular-nums; min-width: 96px; text-align: right;
+  #frameLabel { font-size: 12px; color: #e6edf3; font-variant-numeric: tabular-nums; text-align: right;
     text-shadow: 0 1px 2px rgba(0,0,0,0.6); }
-  #scrub { flex: 1; cursor: pointer; height: 5px; -webkit-appearance: none; appearance: none;
+  #scrub { width: 100%; cursor: pointer; height: 5px; -webkit-appearance: none; appearance: none;
     background: rgba(255,255,255,0.3); border-radius: 3px; }
   #scrub::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 13px; height: 13px;
     border-radius: 50%; background: #fff; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
@@ -163,7 +164,10 @@
   footer.site { margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--line);
     color: var(--muted); font-size: 12px; text-align: center; }
   .chart-title { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 16px 2px 6px; }
-  #goalChart { width: 100%; height: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: block; }
+  #goalChart { width: 100%; height: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: block; cursor: pointer; }
+  #goalWrap { position: relative; }
+  #goalHead { position: absolute; top: 8px; bottom: 8px; width: 2px; margin-left: -1px;
+    background: rgba(255,255,255,0.8); box-shadow: 0 0 3px rgba(0,0,0,0.7); pointer-events: none; }
   /* embed mode: drop the page chrome so this can be framed inside another page */
   body.embed { padding: 0; }
   body.embed header.site, body.embed footer.site, body.embed #loader { display: none; }
@@ -216,14 +220,14 @@
       <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="#fff"/></svg>
     </button>
     <div id="vbar">
-      <input type="range" id="scrub" min="0" max="0" value="0">
       <span id="frameLabel">00:00 / 00:00</span>
+      <input type="range" id="scrub" min="0" max="0" value="0">
     </div>
   </div>
 
   <div id="metrics" class="hidden">
-    <div class="chart-title">Goal differential over time</div>
-    <canvas id="goalChart" width="1000" height="170"></canvas>
+    <div class="chart-title">Goal differential</div>
+    <div id="goalWrap"><canvas id="goalChart" width="1000" height="170"></canvas><div id="goalHead"></div></div>
     <div class="metrics-title">Head-to-head</div>
     <div id="h2h"></div>
   </div>
@@ -714,6 +718,9 @@ function drawFrame(i) {
   document.getElementById("scrub").value = i;
   document.getElementById("frameLabel").textContent =
     `${fmtTime(f.t / fps)} / ${fmtTime(frames.length / fps)}`;
+  // playhead on the goal-differential timeline (chart plot spans 1.4%..98.6%)
+  const gh = document.getElementById("goalHead");
+  if (gh && frames.length > 1) gh.style.left = (1.4 + (i / (frames.length - 1)) * 97.2) + "%";
 }
 
 // ---- playback loop ----
@@ -776,6 +783,18 @@ document.getElementById("scrub").addEventListener("input", e => {
   frameAcc = 0;
   seeking = true;
   drawFrame(parseInt(e.target.value, 10));
+  seeking = false;
+});
+
+// click the goal-differential timeline to jump the video to that moment
+document.getElementById("goalChart").addEventListener("click", e => {
+  if (!frames || frames.length < 2) return;
+  const rect = e.currentTarget.getBoundingClientRect();
+  const screenFrac = (e.clientX - rect.left) / rect.width;   // 0..1 across the canvas
+  const plotFrac = Math.max(0, Math.min(1, (screenFrac - 0.014) / 0.972)); // strip the 1.4% pads
+  hideGameOver();
+  frameAcc = 0; seeking = true;
+  drawFrame(Math.round(plotFrac * (frames.length - 1)));
   seeking = false;
 });
 

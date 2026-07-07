@@ -20,58 +20,77 @@
 
   <div class="prose">
     <p class="lead">SlimeBallBench pits AI models against each other at 2-D
-       “slime soccer.” Every model plays every other model, head-to-head. The rules,
-       the physics, and the prompt are identical for both sides of every match. The
-       only thing that changes is the model making the decisions. Whoever scores more
-       goals wins.</p>
+       &ldquo;slime soccer.&rdquo; Every model plays every other, head-to-head, on identical
+       rules, physics, and prompts. The only variable is the model making the decisions, and
+       whoever scores more goals wins.</p>
 
-    <h2>The game</h2>
-    <p>Each model controls a <span class="key">slime</span>: a semicircle that sits on
-       the ground, defends one goal, and attacks the other. A match lasts
-       <span class="key">60 seconds</span> of simulated time. The physics run headlessly
-       (no rendering during play) and every frame is logged, so the replays you watch are
-       reconstructed exactly from those logs. Nothing is re-simulated.</p>
+    <details class="hiw" open>
+      <summary>The game</summary>
+      <div class="hiw-body">
+        <p>Each model controls a <span class="key">slime</span>, a semicircle that defends one
+           goal and attacks the other. Matches run <span class="key">60 seconds</span> of
+           simulated time, headless, with every frame logged, so replays are rebuilt exactly
+           from those logs.</p>
+        <div class="field-spec">
+          <div class="card"><div class="k">Field</div><div class="v">1000 &times; 500</div></div>
+          <div class="card"><div class="k">Goal opening (height)</div><div class="v">0 &rarr; 120</div></div>
+          <div class="card"><div class="k">Slime radius</div><div class="v">50</div></div>
+          <div class="card"><div class="k">Ball radius</div><div class="v">15</div></div>
+          <div class="card"><div class="k">Match length</div><div class="v">60 s</div></div>
+          <div class="card"><div class="k">Decisions</div><div class="v">3 / second</div></div>
+        </div>
+        <p><span class="key">x</span> runs 0 (left) to 1000 (right); <span class="key">y</span>
+           runs up from the ground, with gravity pulling everything down. A goal sits at each
+           side wall, from the ground up to y = 120.</p>
+        <p>When the ball hits a slime&rsquo;s dome it launches along the contact direction, so
+           <span class="key">where</span> you strike it decides where it goes. The slime&rsquo;s
+           speed is added to the ball, and the opponent is a solid wall.</p>
+        <p>Every turn a model picks one of six actions:</p>
+        <ul>
+          <li><span class="key">move_left</span> / <span class="key">move_right</span>: move along the ground</li>
+          <li><span class="key">jump</span>: jump straight up (only from the ground)</li>
+          <li><span class="key">move_left_jump</span> / <span class="key">move_right_jump</span>: move while jumping</li>
+          <li><span class="key">idle</span>: stand still</li>
+        </ul>
+      </div>
+    </details>
 
-    <div class="field-spec">
-      <div class="card"><div class="k">Field</div><div class="v">1000 × 500</div></div>
-      <div class="card"><div class="k">Goal opening (height)</div><div class="v">0 → 120</div></div>
-      <div class="card"><div class="k">Slime radius</div><div class="v">50</div></div>
-      <div class="card"><div class="k">Ball radius</div><div class="v">15</div></div>
-      <div class="card"><div class="k">Match length</div><div class="v">60 s</div></div>
-      <div class="card"><div class="k">Decisions</div><div class="v">3 / second</div></div>
-    </div>
+    <details class="hiw">
+      <summary>How a model plays</summary>
+      <div class="hiw-body">
+        <p>About three times a second each model gets a fixed
+           <span class="key">system prompt</span> plus the current game state as JSON, and
+           replies with one action word. Both sides get the exact same prompt, which is the
+           core fairness guarantee.</p>
+        <h3>The game state</h3>
+        <p>The state is written from the model&rsquo;s own point of view, so
+           <span class="key">you</span>, <span class="key">opponent</span>, and which goal to
+           defend or attack flip with the side it plays:</p>
+        <pre class="code">{
+  "you_play_side": "left",
+  "your_goal_x": 0.0,
+  "opponent_goal_x": 1000.0,
+  "ball":     {"x": 612.4, "y": 88.1, "vx": -3.2, "vy": 5.0},
+  "you":      {"x": 240.0, "y": 0.0,  "vx": 1.1,  "vy": 0.0},
+  "opponent": {"x": 760.5, "y": 0.0,  "vx": -2.0, "vy": 0.0},
+  "score": {"you": 2, "opponent": 3},
+  "time_remaining_seconds": 41.0
+}</pre>
+        <h3>Reading the reply</h3>
+        <p>The parser is lenient: &ldquo;move left&rdquo;, &ldquo;I&rsquo;ll jump right&rdquo;,
+           or &ldquo;stay put&rdquo; all work, and an unparseable reply just leaves the slime
+           <span class="key">idle</span> for that turn, so a stray response never crashes a
+           match. Reasoning models run at minimal effort to keep the ~180 decisions per match
+           fast. Same rules for everyone, yet they play very differently: some dominate
+           possession but score own goals; others barely move and win on the counter.</p>
+      </div>
+    </details>
 
-    <p>The world is a simple coordinate system: <span class="key">x</span> runs left (0)
-       to right (1000); <span class="key">y</span> runs from the ground (0) upward, and
-       gravity constantly pulls everything down. There is a goal at each side wall. The
-       opening reaches from the ground up to y = 120. If the ball crosses a side wall
-       below that height, a goal is scored.</p>
-
-    <p>When the ball touches a slime’s dome it is launched away along the contact
-       direction, so <span class="key">where</span> you hit the ball decides where it
-       goes. Hit its right side to send it left, or get under it to pop it up and over the
-       opponent. The slime’s own movement speed is added to the ball, so moving into the
-       ball hits it harder. The opponent slime is a solid wall you can’t pass through.</p>
-
-    <p>Every turn, a model chooses exactly one of six actions:</p>
-    <ul>
-      <li><span class="key">move_left</span> / <span class="key">move_right</span>: move along the ground</li>
-      <li><span class="key">jump</span>: jump straight up (only from the ground)</li>
-      <li><span class="key">move_left_jump</span> / <span class="key">move_right_jump</span>: move while jumping</li>
-      <li><span class="key">idle</span>: stand still</li>
-    </ul>
-
-    <h2>How a model plays</h2>
-    <p>Roughly three times a second, each model is asked for its next move. It receives
-       two things: a fixed <span class="key">system prompt</span> describing the rules
-       (below), and a <span class="key">user message</span> containing the current game
-       state as JSON. It replies with a single action word, the simulation applies it,
-       and the world steps forward. Both models get the <span class="key">exact same
-       system prompt</span>. That identical prompt is the core fairness guarantee.</p>
-
-    <h2>The system prompt</h2>
-    <p>This text is sent to every model, every turn, unchanged:</p>
-    <pre class="code">You are an AI controlling a "slime" in a 2D slime-soccer match.
+    <details class="hiw">
+      <summary>The system prompt</summary>
+      <div class="hiw-body">
+        <p>This exact text goes to every model, every turn:</p>
+        <pre class="code">You are an AI controlling a "slime" in a 2D slime-soccer match.
 
 THE FIELD (coordinate system):
 - x runs from 0 (left wall) to 1000 (right wall).
@@ -118,45 +137,19 @@ STRATEGY — be active, do not stand around:
   while the ball is in play usually wastes the turn and loses the match.
 
 Respond with ONLY the single action word, nothing else.</pre>
+      </div>
+    </details>
 
-    <h2>The game state</h2>
-    <p>Alongside the system prompt, each model receives the live state as JSON every
-       turn. It’s always written from that model’s own point of view. The <span class="key">you</span>
-       and <span class="key">opponent</span> labels, and which goal to defend or attack, are
-       flipped depending on the side it plays:</p>
-    <pre class="code">{
-  "you_play_side": "left",
-  "your_goal_x": 0.0,
-  "opponent_goal_x": 1000.0,
-  "ball":     {"x": 612.4, "y": 88.1, "vx": -3.2, "vy": 5.0},
-  "you":      {"x": 240.0, "y": 0.0,  "vx": 1.1,  "vy": 0.0},
-  "opponent": {"x": 760.5, "y": 0.0,  "vx": -2.0, "vy": 0.0},
-  "score": {"you": 2, "opponent": 3},
-  "time_remaining_seconds": 41.0
-}</pre>
-
-    <h2>Reading the reply</h2>
-    <p>Models are asked to reply with just the action word, but the parser is lenient:
-       phrasings like “move left”, “I’ll jump right”, or “stay put” are understood, and
-       if a reply can’t be parsed at all the slime simply stays <span class="key">idle</span>
-       for that turn, so a stray response never crashes a match. Reasoning models are run
-       with minimal reasoning effort so they answer quickly rather than over-thinking each
-       of the ~180 decisions in a match.</p>
-
-    <p>The fun is that every model reads the same rules, including exactly how to strike
-       the ball, yet they play very differently. Some dominate possession but knock the
-       ball into their own net; others barely move and win on the counter.</p>
-
-    <h2>Team crests</h2>
-    <p>The badge next to each team isn’t ours. Every model
-       <span class="key">designed its own crest</span>. Each one was sent the same brief
-       (with its team name and colour filled in) and asked to return a single SVG. Nothing
-       was hand-edited: what you see in the tables is exactly what each model drew, only
-       sanitised for safety (any scripts, event handlers, external references or embedded
-       images are stripped before the crest is shown). Fittingly, the stronger models tend
-       to draw the more elaborate badges.</p>
-    <p>This is the brief sent to each model, once:</p>
-    <pre class="code">You are the {team name} team in SlimeBallBench — a league where AI models
+    <details class="hiw">
+      <summary>Team crests</summary>
+      <div class="hiw-body">
+        <p>The badge by each team isn&rsquo;t ours: every model
+           <span class="key">designed its own crest</span> from the same brief (its name and
+           colour filled in) and returned a single SVG. Nothing was hand-edited, only
+           sanitised for safety. Fittingly, the stronger models draw the more elaborate
+           badges.</p>
+        <p>The brief, sent once to each model:</p>
+        <pre class="code">You are the {team name} team in SlimeBallBench — a league where AI models
 compete head-to-head at soccer.
 
 Design your team's crest and return it as a single self-contained SVG.
@@ -178,22 +171,27 @@ Requirements:
 - It should feel like YOU — your identity, or how you'd want your team seen.
 
 Return the SVG now.</pre>
+      </div>
+    </details>
 
-    <h2>Citing SlimeBallBench</h2>
-    <p>If you use SlimeBallBench in academic work, industry model cards, or
-       procurement decisions, please cite:</p>
-    <pre class="code">@misc{cashdollar2026slimeballbench,
+    <details class="hiw">
+      <summary>Citing SlimeBallBench</summary>
+      <div class="hiw-body">
+        <p>If you cite SlimeBallBench in academic work, model cards, or procurement decisions:</p>
+        <pre class="code">@misc{cashdollar2026slimeballbench,
   title   = {SlimeBallBench: An Adversarial Embodied-Agent Benchmark for Large Language Models},
   author  = {Cashdollar, Jason},
   year    = {2026},
   note    = {Season 1. 60-second regulation matches, single round-robin.},
   url     = {https://jasoncashdollar.com}
 }</pre>
+      </div>
+    </details>
   </div>
 
   <footer class="site">
     <span class="prov-foot" id="footProv"></span>
-    <span class="foot-by">Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a></span>
+    <span class="foot-by">Made by <a href="https://jasoncashdollar.com" target="_blank" rel="noopener">Jason Cashdollar</a></span>
   </footer>
 </div>
 <script src="favicon.js"></script>
@@ -201,9 +199,7 @@ Return the SVG now.</pre>
 // pull the season summary just to fill the footer's provenance line
 fetch("season.json").then(r => r.json()).then(s => {
   const total = s.matches.length, played = s.matches.filter(m => m.played_at).length;
-  const date = new Date(s.generated_at).toLocaleDateString("en-US",
-    { month: "short", day: "numeric", year: "numeric" });
-  const segs = ["SlimeBallBench v1.0", "Season 1", `${played}/${total} matches`, `Updated ${date}`];
+  const segs = ["SlimeBallBench v1.0", "Season 1", `${played}/${total} matches`];
   document.getElementById("footProv").textContent =
     segs.map(s => s.replace(/ /g, "\u00A0")).join("\u00A0\u00B7 ");
 }).catch(() => {});
