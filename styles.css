@@ -227,7 +227,8 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 
 /* --- Head-to-head results matrix --- */
 .h2h-scroll { --scroll-bg: var(--panel);
-  overflow-x: auto; overflow-y: hidden; margin: 4px 0 2px; }
+  overflow-x: auto; overflow-y: hidden; margin: 4px 0 2px;
+  border: 1px solid var(--line); border-radius: 10px; }
 .h2h-table { min-width: 520px; }
 .h2h-table th, .h2h-table td { padding: 6px 7px; text-align: center; font-size: 12px;
   font-variant-numeric: tabular-nums; }
