@@ -193,8 +193,7 @@ Return the SVG now.</pre>
 
   <footer class="site">
     <span class="prov-foot" id="footProv"></span>
-    <span class="foot-sep">·</span>
-    <span>Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a></span>
+    <span class="foot-by">Made by <a href="https://jasoncashdollar.com">Jason Cashdollar</a></span>
   </footer>
 </div>
 <script src="favicon.js"></script>
@@ -204,8 +203,9 @@ fetch("season.json").then(r => r.json()).then(s => {
   const total = s.matches.length, played = s.matches.filter(m => m.played_at).length;
   const date = new Date(s.generated_at).toLocaleDateString("en-US",
     { month: "short", day: "numeric", year: "numeric" });
+  const segs = ["SlimeBallBench v1.0", "Season 1", `${played}/${total} matches`, `Updated ${date}`];
   document.getElementById("footProv").textContent =
-    `SlimeBallBench v1.0 · Season 1 · ${played}/${total} matches · Updated ${date}`;
+    segs.map(s => s.replace(/ /g, "\u00A0")).join("\u00A0\u00B7 ");
 }).catch(() => {});
 </script>
 </body>

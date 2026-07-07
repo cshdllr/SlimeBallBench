@@ -22,13 +22,13 @@ h1 { font-size: 22px; margin: 8px 2px 4px; }
 .sub { color: var(--muted); font-size: 13px; margin: 0 2px 18px; }
 a { color: #58a6ff; }
 footer.site { margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--line);
-  color: var(--muted); font-size: 12px; }
+  color: var(--muted); font-size: 12px;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
 footer.site a { color: var(--text); font-weight: 600; text-decoration: none; }
 footer.site a:hover { text-decoration: underline; }
-.prov-foot { font-variant-numeric: tabular-nums; }
-.foot-sep { margin: 0 5px; }
-/* drop the separator if the provenance line didn't load */
-.prov-foot:empty + .foot-sep { display: none; }
+.prov-foot { font-variant-numeric: tabular-nums; min-width: 0; }
+/* credit sits at the right; wraps to its own line when the row runs out of room */
+.foot-by { margin-left: auto; white-space: nowrap; }
 
 table { width: 100%; border-collapse: collapse; background: var(--panel);
   border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -271,6 +271,17 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
 .table-scroll td:first-child::after {
   content: ""; position: absolute; top: 0; right: -1px; bottom: -1px; width: 1px;
   background: var(--line); pointer-events: none;
+}
+/* opaque backing that spills 1px past the row seams, so scrolling coloured cells
+   (e.g. the blue "win" outlines) can't bleed through the pinned column's border */
+.table-scroll th:first-child::before,
+.table-scroll td:first-child::before,
+.standings-scroll th:nth-child(2)::before,
+.standings-scroll td:nth-child(2)::before,
+.h2h-scroll thead th:first-child::before,
+.h2h-scroll .h2h-rowh::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -1px; bottom: -1px;
+  background: var(--scroll-bg, var(--panel)); z-index: -1; pointer-events: none;
 }
 /* keep the pinned cell in sync with row states (opaque tints, not see-through) */
 .table-scroll tbody tr:hover td:first-child {
