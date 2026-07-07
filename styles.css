@@ -179,7 +179,7 @@ code { background: #21262d; padding: 1px 5px; border-radius: 4px; }
 .stage-frame { width: 100%; border: 0; display: block; min-height: 640px; overflow: hidden; }
 
 /* "How it works" prose page */
-.prose { max-width: 720px; }
+.prose { max-width: none; }
 .prose .lead { font-size: 16px; color: var(--text); line-height: 1.6; margin: 6px 2px 20px; }
 .prose h2 { font-size: 16px; margin: 30px 2px 8px; }
 .prose p { font-size: 14px; line-height: 1.65; color: #c9d4de; margin: 0 2px 24px; }
