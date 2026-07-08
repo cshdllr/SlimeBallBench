@@ -8,3 +8,4 @@ __pycache__/
 # out of git.
 logs/scratch/
 .DS_Store
+fable5_run.log
