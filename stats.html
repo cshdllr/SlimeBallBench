@@ -49,9 +49,6 @@
   <h2 class="section-h">By metric</h2>
   <div id="charts"></div>
 
-  <h2 class="section-h">Full table</h2>
-  <div id="content"></div>
-
   <footer class="site">
     <span class="prov-foot" id="footProv"></span>
     <span class="foot-by">Made by <a href="https://jasoncashdollar.com" target="_blank" rel="noopener">Jason Cashdollar</a></span>
@@ -226,7 +223,7 @@ async function load() {
   try {
     season = await (await fetch("season.json")).json();
   } catch (e) {
-    document.getElementById("content").innerHTML =
+    document.getElementById("compare").innerHTML =
       `<div class="notice">Couldn't load <code>season.json</code>. Serve over HTTP and try again.</div>`;
     return;
   }
@@ -247,7 +244,7 @@ async function load() {
   const byIdRow = Object.fromEntries(ROWS.map(r => [r.id, r]));
   renderCompare(season.standings.map(st => byIdRow[st.id]).filter(Boolean));
   renderSmallMultiples();
-  render();
+  // Full table removed for now — render()/COLS kept below, unused, for easy restore.
 }
 
 // Quiet "provenance" line for the footer: version, season, coverage, freshness.
