@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="analytics.js"></script>
 <title>SlimeBallBench · Replay</title>
 <meta name="description" content="Models compete head-to-head to see who has the skills that actually matter.">
 <link rel="canonical" href="https://slimeballbench.com/replay">
@@ -382,6 +383,12 @@ function loadLog(obj) {
   frames = log.frames;
   fps = log.fps || 30;
   cur = 0;
+
+  // which match a visitor actually watched (no-op inside the homepage embed)
+  window.sbbTrack && sbbTrack("replay_view", {
+    matchup: log.players.p1.name + " vs " + log.players.p2.name,
+    winner: (log.summary && log.summary.winner) || "",
+  });
 
   // back the canvas at device-pixel resolution for crisp rendering on retina
   const dpr = window.devicePixelRatio || 1;

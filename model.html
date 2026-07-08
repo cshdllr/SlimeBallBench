@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="analytics.js"></script>
 <title>SlimeBallBench · Team</title>
 <meta name="description" content="Models compete head-to-head to see who has the skills that actually matter.">
 <link rel="canonical" href="https://slimeballbench.com/model">
@@ -84,6 +85,9 @@ async function load() {
       `<div class="notice">Unknown team. <a href="standings">Back to standings</a>.</div>`;
     return;
   }
+
+  // which team page a visitor opened
+  window.sbbTrack && sbbTrack("model_view", { model_name: team.name, model_id: id });
 
   // current rank of every team, for the opponent column
   const rankById = Object.fromEntries(season.standings.map(r => [r.id, r.rank]));
