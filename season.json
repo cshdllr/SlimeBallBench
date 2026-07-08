@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-07-02T16:33:45.164321+00:00",
+  "generated_at": "2026-07-08T11:50:18.088863+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -97,6 +97,15 @@
       "provider": "Anthropic",
       "model": "claude-sonnet-5",
       "released": "2026-06-24"
+    },
+    {
+      "id": "claude_fable_5",
+      "name": "Claude Fable 5",
+      "color": "#7C3AED",
+      "abbrev": "FAB",
+      "provider": "Anthropic",
+      "model": "claude-fable-5",
+      "released": "2026-06-01"
     }
   ],
   "matches": [
@@ -13439,6 +13448,2126 @@
           }
         }
       }
+    },
+    {
+      "id": "claude_haiku_4_5__claude_fable_5",
+      "home": "claude_haiku_4_5",
+      "away": "claude_fable_5",
+      "home_name": "Claude Haiku 4.5",
+      "away_name": "Claude Fable 5",
+      "home_color": "#D97757",
+      "away_color": "#7C3AED",
+      "score": [
+        7,
+        13
+      ],
+      "winner": "Claude Fable 5",
+      "winner_id": "claude_fable_5",
+      "log": "logs/claude_haiku_4_5_v_claude_fable_5_20260707_201227.json",
+      "played_at": "2026-07-08T02:40:03.908777+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Haiku 4.5": 7,
+          "Claude Fable 5": 13
+        },
+        "winner": "Claude Fable 5",
+        "goals": [
+          {
+            "frame": 28,
+            "time_seconds": 0.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 215,
+            "time_seconds": 7.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 405,
+            "time_seconds": 13.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 465,
+            "time_seconds": 15.5,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 590,
+            "time_seconds": 19.7,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 659,
+            "time_seconds": 22.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 688,
+            "time_seconds": 22.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 752,
+            "time_seconds": 25.1,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 818,
+            "time_seconds": 27.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              3,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 883,
+            "time_seconds": 29.4,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 934,
+            "time_seconds": 31.1,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 970,
+            "time_seconds": 32.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1047,
+            "time_seconds": 34.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1108,
+            "time_seconds": 36.9,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              6,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1139,
+            "time_seconds": 38.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1181,
+            "time_seconds": 39.4,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1262,
+            "time_seconds": 42.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1384,
+            "time_seconds": 46.1,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              7,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1420,
+            "time_seconds": 47.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              12
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1770,
+            "time_seconds": 59.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              13
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 20,
+          "total_ball_touches": 56,
+          "total_own_goals": 8,
+          "total_saves": 15,
+          "time_to_first_goal_seconds": 0.9,
+          "first_scorer": "Claude Fable 5",
+          "lead_changes": 0,
+          "largest_lead": 6
+        },
+        "players": {
+          "Claude Haiku 4.5": {
+            "model": "claude-haiku-4-5",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 13,
+            "ball_touches": 22,
+            "goals_per_touch": 0.318,
+            "saves": 11,
+            "own_goals": 4,
+            "possession_pct": 31.4,
+            "jumps": 43,
+            "distance_travelled": 17663.7,
+            "time_to_first_goal_seconds": 15.5,
+            "action_distribution": {
+              "move_left": 72,
+              "move_right": 28,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 62,
+              "idle": 12
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 861.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 158955,
+              "completion": 3608
+            },
+            "estimated_cost_usd": 0.176995
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 13,
+            "goals_against": 7,
+            "ball_touches": 34,
+            "goals_per_touch": 0.382,
+            "saves": 4,
+            "own_goals": 4,
+            "possession_pct": 68.6,
+            "jumps": 12,
+            "distance_travelled": 18459.7,
+            "time_to_first_goal_seconds": 0.9,
+            "action_distribution": {
+              "move_left": 120,
+              "move_right": 48,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 6,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8336.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204675,
+              "completion": 42792
+            },
+            "estimated_cost_usd": 4.18635
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_4o_mini__claude_fable_5",
+      "home": "gpt_4o_mini",
+      "away": "claude_fable_5",
+      "home_name": "GPT-4o mini",
+      "away_name": "Claude Fable 5",
+      "home_color": "#10A37F",
+      "away_color": "#7C3AED",
+      "score": [
+        7,
+        10
+      ],
+      "winner": "Claude Fable 5",
+      "winner_id": "claude_fable_5",
+      "log": "logs/gpt_4o_mini_v_claude_fable_5_20260707_204003.json",
+      "played_at": "2026-07-08T03:08:02.890822+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-4o mini": 7,
+          "Claude Fable 5": 10
+        },
+        "winner": "Claude Fable 5",
+        "goals": [
+          {
+            "frame": 169,
+            "time_seconds": 5.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 214,
+            "time_seconds": 7.1,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 250,
+            "time_seconds": 8.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 331,
+            "time_seconds": 11.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 609,
+            "time_seconds": 20.3,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 715,
+            "time_seconds": 23.8,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 777,
+            "time_seconds": 25.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 808,
+            "time_seconds": 26.9,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 835,
+            "time_seconds": 27.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1105,
+            "time_seconds": 36.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1239,
+            "time_seconds": 41.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              4,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1284,
+            "time_seconds": 42.8,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1320,
+            "time_seconds": 44.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1464,
+            "time_seconds": 48.8,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              6,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1500,
+            "time_seconds": 50.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1668,
+            "time_seconds": 55.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1711,
+            "time_seconds": 57.0,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              7,
+              10
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 17,
+          "total_ball_touches": 62,
+          "total_own_goals": 4,
+          "total_saves": 8,
+          "time_to_first_goal_seconds": 5.6,
+          "first_scorer": "Claude Fable 5",
+          "lead_changes": 0,
+          "largest_lead": 4
+        },
+        "players": {
+          "GPT-4o mini": {
+            "model": "gpt-4o-mini",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 10,
+            "ball_touches": 28,
+            "goals_per_touch": 0.25,
+            "saves": 4,
+            "own_goals": 2,
+            "possession_pct": 47.9,
+            "jumps": 4,
+            "distance_travelled": 14347.0,
+            "time_to_first_goal_seconds": 7.1,
+            "action_distribution": {
+              "move_left": 44,
+              "move_right": 132,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 2,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 626.8,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146529,
+              "completion": 364
+            },
+            "estimated_cost_usd": 0.022198
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 10,
+            "goals_against": 7,
+            "ball_touches": 34,
+            "goals_per_touch": 0.294,
+            "saves": 4,
+            "own_goals": 2,
+            "possession_pct": 52.1,
+            "jumps": 10,
+            "distance_travelled": 17533.1,
+            "time_to_first_goal_seconds": 5.6,
+            "action_distribution": {
+              "move_left": 110,
+              "move_right": 60,
+              "jump": 0,
+              "move_left_jump": 8,
+              "move_right_jump": 2,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8700.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204669,
+              "completion": 51217
+            },
+            "estimated_cost_usd": 4.60754
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_opus_4_8__claude_fable_5",
+      "home": "claude_opus_4_8",
+      "away": "claude_fable_5",
+      "home_name": "Claude Opus 4.8",
+      "away_name": "Claude Fable 5",
+      "home_color": "#9B59B6",
+      "away_color": "#7C3AED",
+      "score": [
+        11,
+        11
+      ],
+      "winner": "draw",
+      "winner_id": "draw",
+      "log": "logs/claude_opus_4_8_v_claude_fable_5_20260707_210802.json",
+      "played_at": "2026-07-08T03:37:39.817622+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Opus 4.8": 11,
+          "Claude Fable 5": 11
+        },
+        "winner": "draw",
+        "goals": [
+          {
+            "frame": 56,
+            "time_seconds": 1.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 177,
+            "time_seconds": 5.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 208,
+            "time_seconds": 6.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 251,
+            "time_seconds": 8.4,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 302,
+            "time_seconds": 10.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 382,
+            "time_seconds": 12.7,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 444,
+            "time_seconds": 14.8,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 480,
+            "time_seconds": 16.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 582,
+            "time_seconds": 19.4,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 647,
+            "time_seconds": 21.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 678,
+            "time_seconds": 22.6,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 756,
+            "time_seconds": 25.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 853,
+            "time_seconds": 28.4,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1000,
+            "time_seconds": 33.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1188,
+            "time_seconds": 39.6,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              9,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1215,
+            "time_seconds": 40.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              9,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1296,
+            "time_seconds": 43.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              9,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1487,
+            "time_seconds": 49.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              9,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1527,
+            "time_seconds": 50.9,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              10,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1558,
+            "time_seconds": 51.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              10,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1601,
+            "time_seconds": 53.4,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              11,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1787,
+            "time_seconds": 59.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              11,
+              11
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 22,
+          "total_ball_touches": 61,
+          "total_own_goals": 7,
+          "total_saves": 5,
+          "time_to_first_goal_seconds": 1.9,
+          "first_scorer": "Claude Opus 4.8",
+          "lead_changes": 0,
+          "largest_lead": 3
+        },
+        "players": {
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 11,
+            "ball_touches": 34,
+            "goals_per_touch": 0.324,
+            "saves": 3,
+            "own_goals": 4,
+            "possession_pct": 54.8,
+            "jumps": 17,
+            "distance_travelled": 19240.4,
+            "time_to_first_goal_seconds": 1.9,
+            "action_distribution": {
+              "move_left": 53,
+              "move_right": 103,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 13,
+              "idle": 5
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1323.4,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204673,
+              "completion": 2040
+            },
+            "estimated_cost_usd": 1.074365
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 11,
+            "ball_touches": 27,
+            "goals_per_touch": 0.407,
+            "saves": 2,
+            "own_goals": 3,
+            "possession_pct": 45.2,
+            "jumps": 9,
+            "distance_travelled": 19050.8,
+            "time_to_first_goal_seconds": 5.9,
+            "action_distribution": {
+              "move_left": 115,
+              "move_right": 55,
+              "jump": 0,
+              "move_left_jump": 4,
+              "move_right_jump": 6,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8547.8,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204673,
+              "completion": 50023
+            },
+            "estimated_cost_usd": 4.54788
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash__claude_fable_5",
+      "home": "gemini_2_5_flash",
+      "away": "claude_fable_5",
+      "home_name": "Gemini 2.5 Flash",
+      "away_name": "Claude Fable 5",
+      "home_color": "#DB4437",
+      "away_color": "#7C3AED",
+      "score": [
+        14,
+        16
+      ],
+      "winner": "Claude Fable 5",
+      "winner_id": "claude_fable_5",
+      "log": "logs/gemini_2_5_flash_v_claude_fable_5_20260707_213739.json",
+      "played_at": "2026-07-08T04:32:00.299409+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash": 14,
+          "Claude Fable 5": 16
+        },
+        "winner": "Claude Fable 5",
+        "goals": [
+          {
+            "frame": 32,
+            "time_seconds": 1.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 79,
+            "time_seconds": 2.6,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 159,
+            "time_seconds": 5.3,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 195,
+            "time_seconds": 6.5,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 226,
+            "time_seconds": 7.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 277,
+            "time_seconds": 9.2,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 308,
+            "time_seconds": 10.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 387,
+            "time_seconds": 12.9,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 418,
+            "time_seconds": 13.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 445,
+            "time_seconds": 14.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              6,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 476,
+            "time_seconds": 15.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 538,
+            "time_seconds": 17.9,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              7,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 569,
+            "time_seconds": 19.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 596,
+            "time_seconds": 19.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 766,
+            "time_seconds": 25.5,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              8,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 796,
+            "time_seconds": 26.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 905,
+            "time_seconds": 30.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1031,
+            "time_seconds": 34.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              9,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1112,
+            "time_seconds": 37.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              9,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1280,
+            "time_seconds": 42.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              10,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1345,
+            "time_seconds": 44.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              11,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1376,
+            "time_seconds": 45.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              11,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1438,
+            "time_seconds": 47.9,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              12,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1469,
+            "time_seconds": 49.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              12,
+              12
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1498,
+            "time_seconds": 49.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              12,
+              13
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1525,
+            "time_seconds": 50.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              13,
+              13
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1556,
+            "time_seconds": 51.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              13,
+              14
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1684,
+            "time_seconds": 56.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              14,
+              14
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1720,
+            "time_seconds": 57.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              14,
+              15
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1776,
+            "time_seconds": 59.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              14,
+              16
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 30,
+          "total_ball_touches": 72,
+          "total_own_goals": 9,
+          "total_saves": 5,
+          "time_to_first_goal_seconds": 1.1,
+          "first_scorer": "Claude Fable 5",
+          "lead_changes": 4,
+          "largest_lead": 2
+        },
+        "players": {
+          "Gemini 2.5 Flash": {
+            "model": "gemini-2.5-flash",
+            "policy": "model",
+            "goals_for": 14,
+            "goals_against": 16,
+            "ball_touches": 30,
+            "goals_per_touch": 0.467,
+            "saves": 3,
+            "own_goals": 3,
+            "possession_pct": 39.0,
+            "jumps": 65,
+            "distance_travelled": 17286.2,
+            "time_to_first_goal_seconds": 2.6,
+            "action_distribution": {
+              "move_left": 20,
+              "move_right": 43,
+              "jump": 1,
+              "move_left_jump": 25,
+              "move_right_jump": 80,
+              "idle": 11
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 3024.1,
+            "api_errors": 7,
+            "tokens": {
+              "prompt": 151620,
+              "completion": 720
+            },
+            "estimated_cost_usd": 0.047286
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 16,
+            "goals_against": 14,
+            "ball_touches": 42,
+            "goals_per_touch": 0.381,
+            "saves": 2,
+            "own_goals": 6,
+            "possession_pct": 61.0,
+            "jumps": 10,
+            "distance_travelled": 19242.8,
+            "time_to_first_goal_seconds": 1.1,
+            "action_distribution": {
+              "move_left": 119,
+              "move_right": 51,
+              "jump": 0,
+              "move_left_jump": 4,
+              "move_right_jump": 6,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8462.6,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204677,
+              "completion": 48053
+            },
+            "estimated_cost_usd": 4.44942
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5__claude_fable_5",
+      "home": "gpt_5",
+      "away": "claude_fable_5",
+      "home_name": "GPT-5",
+      "away_name": "Claude Fable 5",
+      "home_color": "#E8A317",
+      "away_color": "#7C3AED",
+      "score": [
+        7,
+        8
+      ],
+      "winner": "Claude Fable 5",
+      "winner_id": "claude_fable_5",
+      "log": "logs/gpt_5_v_claude_fable_5_20260707_223200.json",
+      "played_at": "2026-07-08T05:16:24.682010+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5": 7,
+          "Claude Fable 5": 8
+        },
+        "winner": "Claude Fable 5",
+        "goals": [
+          {
+            "frame": 56,
+            "time_seconds": 1.9,
+            "scorer": "GPT-5",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 132,
+            "time_seconds": 4.4,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 182,
+            "time_seconds": 6.1,
+            "scorer": "GPT-5",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 247,
+            "time_seconds": 8.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 666,
+            "time_seconds": 22.2,
+            "scorer": "GPT-5",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 983,
+            "time_seconds": 32.8,
+            "scorer": "GPT-5",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1022,
+            "time_seconds": 34.1,
+            "scorer": "GPT-5",
+            "score_after": [
+              5,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1087,
+            "time_seconds": 36.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1213,
+            "time_seconds": 40.4,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1246,
+            "time_seconds": 41.5,
+            "scorer": "GPT-5",
+            "score_after": [
+              6,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1367,
+            "time_seconds": 45.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1569,
+            "time_seconds": 52.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1610,
+            "time_seconds": 53.7,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1722,
+            "time_seconds": 57.4,
+            "scorer": "GPT-5",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1772,
+            "time_seconds": 59.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 15,
+          "total_ball_touches": 62,
+          "total_own_goals": 6,
+          "total_saves": 15,
+          "time_to_first_goal_seconds": 1.9,
+          "first_scorer": "GPT-5",
+          "lead_changes": 1,
+          "largest_lead": 3
+        },
+        "players": {
+          "GPT-5": {
+            "model": "gpt-5",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 8,
+            "ball_touches": 30,
+            "goals_per_touch": 0.233,
+            "saves": 4,
+            "own_goals": 3,
+            "possession_pct": 49.2,
+            "jumps": 36,
+            "distance_travelled": 15617.4,
+            "time_to_first_goal_seconds": 1.9,
+            "action_distribution": {
+              "move_left": 37,
+              "move_right": 96,
+              "jump": 0,
+              "move_left_jump": 12,
+              "move_right_jump": 35,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1114.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146364,
+              "completion": 2027
+            },
+            "estimated_cost_usd": 0.203225
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 7,
+            "ball_touches": 32,
+            "goals_per_touch": 0.25,
+            "saves": 11,
+            "own_goals": 3,
+            "possession_pct": 50.8,
+            "jumps": 12,
+            "distance_travelled": 19219.8,
+            "time_to_first_goal_seconds": 4.4,
+            "action_distribution": {
+              "move_left": 109,
+              "move_right": 59,
+              "jump": 0,
+              "move_left_jump": 5,
+              "move_right_jump": 7,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8425.4,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204684,
+              "completion": 49298
+            },
+            "estimated_cost_usd": 4.51174
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_sonnet_4_6__claude_fable_5",
+      "home": "claude_sonnet_4_6",
+      "away": "claude_fable_5",
+      "home_name": "Claude Sonnet 4.6",
+      "away_name": "Claude Fable 5",
+      "home_color": "#EC4899",
+      "away_color": "#7C3AED",
+      "score": [
+        9,
+        9
+      ],
+      "winner": "draw",
+      "winner_id": "draw",
+      "log": "logs/claude_sonnet_4_6_v_claude_fable_5_20260707_231624.json",
+      "played_at": "2026-07-08T06:08:47.796981+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Sonnet 4.6": 9,
+          "Claude Fable 5": 9
+        },
+        "winner": "draw",
+        "goals": [
+          {
+            "frame": 94,
+            "time_seconds": 3.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 216,
+            "time_seconds": 7.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 278,
+            "time_seconds": 9.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 355,
+            "time_seconds": 11.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 453,
+            "time_seconds": 15.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 690,
+            "time_seconds": 23.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 778,
+            "time_seconds": 25.9,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 821,
+            "time_seconds": 27.4,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 881,
+            "time_seconds": 29.4,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1120,
+            "time_seconds": 37.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1208,
+            "time_seconds": 40.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1251,
+            "time_seconds": 41.7,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1311,
+            "time_seconds": 43.7,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1449,
+            "time_seconds": 48.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1494,
+            "time_seconds": 49.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1561,
+            "time_seconds": 52.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1754,
+            "time_seconds": 58.5,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              9,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1790,
+            "time_seconds": 59.7,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              9,
+              9
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 18,
+          "total_ball_touches": 53,
+          "total_own_goals": 11,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 3.1,
+          "first_scorer": "Claude Fable 5",
+          "lead_changes": 1,
+          "largest_lead": 2
+        },
+        "players": {
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 9,
+            "ball_touches": 20,
+            "goals_per_touch": 0.45,
+            "saves": 3,
+            "own_goals": 4,
+            "possession_pct": 35.7,
+            "jumps": 2,
+            "distance_travelled": 15577.0,
+            "time_to_first_goal_seconds": 9.3,
+            "action_distribution": {
+              "move_left": 76,
+              "move_right": 94,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 2,
+              "idle": 8
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1605.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159128,
+              "completion": 4802
+            },
+            "estimated_cost_usd": 0.549414
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 9,
+            "ball_touches": 33,
+            "goals_per_touch": 0.273,
+            "saves": 4,
+            "own_goals": 7,
+            "possession_pct": 64.3,
+            "jumps": 14,
+            "distance_travelled": 18724.5,
+            "time_to_first_goal_seconds": 3.1,
+            "action_distribution": {
+              "move_left": 109,
+              "move_right": 55,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 9,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 9570.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204668,
+              "completion": 51257
+            },
+            "estimated_cost_usd": 4.60953
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5_mini__claude_fable_5",
+      "home": "gpt_5_mini",
+      "away": "claude_fable_5",
+      "home_name": "GPT-5 mini",
+      "away_name": "Claude Fable 5",
+      "home_color": "#2DD4BF",
+      "away_color": "#7C3AED",
+      "score": [
+        8,
+        12
+      ],
+      "winner": "Claude Fable 5",
+      "winner_id": "claude_fable_5",
+      "log": "logs/gpt_5_mini_v_claude_fable_5_20260708_000847.json",
+      "played_at": "2026-07-08T06:35:58.706628+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5 mini": 8,
+          "Claude Fable 5": 12
+        },
+        "winner": "Claude Fable 5",
+        "goals": [
+          {
+            "frame": 92,
+            "time_seconds": 3.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 152,
+            "time_seconds": 5.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 212,
+            "time_seconds": 7.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 259,
+            "time_seconds": 8.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 305,
+            "time_seconds": 10.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 413,
+            "time_seconds": 13.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 615,
+            "time_seconds": 20.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 723,
+            "time_seconds": 24.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 890,
+            "time_seconds": 29.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1094,
+            "time_seconds": 36.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1136,
+            "time_seconds": 37.9,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              3,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1229,
+            "time_seconds": 41.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              3,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1280,
+            "time_seconds": 42.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              4,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1419,
+            "time_seconds": 47.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              5,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1464,
+            "time_seconds": 48.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1500,
+            "time_seconds": 50.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              6,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1548,
+            "time_seconds": 51.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              7,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1591,
+            "time_seconds": 53.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1642,
+            "time_seconds": 54.7,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              8,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1738,
+            "time_seconds": 57.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              8,
+              12
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 20,
+          "total_ball_touches": 63,
+          "total_own_goals": 10,
+          "total_saves": 9,
+          "time_to_first_goal_seconds": 3.1,
+          "first_scorer": "Claude Fable 5",
+          "lead_changes": 0,
+          "largest_lead": 6
+        },
+        "players": {
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 12,
+            "ball_touches": 41,
+            "goals_per_touch": 0.195,
+            "saves": 4,
+            "own_goals": 7,
+            "possession_pct": 67.3,
+            "jumps": 32,
+            "distance_travelled": 15780.8,
+            "time_to_first_goal_seconds": 8.6,
+            "action_distribution": {
+              "move_left": 44,
+              "move_right": 84,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 45,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 983.5,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146360,
+              "completion": 2032
+            },
+            "estimated_cost_usd": 0.040654
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 12,
+            "goals_against": 8,
+            "ball_touches": 22,
+            "goals_per_touch": 0.545,
+            "saves": 5,
+            "own_goals": 3,
+            "possession_pct": 32.7,
+            "jumps": 9,
+            "distance_travelled": 17252.1,
+            "time_to_first_goal_seconds": 3.1,
+            "action_distribution": {
+              "move_left": 123,
+              "move_right": 47,
+              "jump": 0,
+              "move_left_jump": 3,
+              "move_right_jump": 7,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8076.6,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204680,
+              "completion": 41228
+            },
+            "estimated_cost_usd": 4.1082
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -13448,13 +15577,13 @@
       "color": "#2DD4BF",
       "abbrev": "G5M",
       "provider": "OpenAI",
-      "played": 9,
+      "played": 10,
       "w": 8,
       "d": 0,
-      "l": 1,
-      "gf": 81,
-      "ga": 53,
-      "gd": 28,
+      "l": 2,
+      "gf": 89,
+      "ga": 65,
+      "gd": 24,
       "points": 24,
       "rank": 1
     },
@@ -13464,14 +15593,14 @@
       "color": "#9B59B6",
       "abbrev": "OPU",
       "provider": "Anthropic",
-      "played": 9,
+      "played": 10,
       "w": 7,
-      "d": 0,
+      "d": 1,
       "l": 2,
-      "gf": 105,
-      "ga": 83,
+      "gf": 116,
+      "ga": 94,
       "gd": 22,
-      "points": 21,
+      "points": 22,
       "rank": 2
     },
     {
@@ -13480,30 +15609,30 @@
       "color": "#D97757",
       "abbrev": "HAI",
       "provider": "Anthropic",
-      "played": 9,
+      "played": 10,
       "w": 6,
       "d": 0,
-      "l": 3,
-      "gf": 85,
-      "ga": 87,
-      "gd": -2,
+      "l": 4,
+      "gf": 92,
+      "ga": 100,
+      "gd": -8,
       "points": 18,
       "rank": 3
     },
     {
-      "id": "gemini_2_5_flash",
-      "name": "Gemini 2.5 Flash",
-      "color": "#DB4437",
-      "abbrev": "GMF",
-      "provider": "Gemini",
-      "played": 9,
+      "id": "claude_fable_5",
+      "name": "Claude Fable 5",
+      "color": "#7C3AED",
+      "abbrev": "FAB",
+      "provider": "Anthropic",
+      "played": 7,
       "w": 5,
-      "d": 1,
-      "l": 3,
-      "gf": 98,
-      "ga": 90,
-      "gd": 8,
-      "points": 16,
+      "d": 2,
+      "l": 0,
+      "gf": 79,
+      "ga": 63,
+      "gd": 16,
+      "points": 17,
       "rank": 4
     },
     {
@@ -13512,15 +15641,31 @@
       "color": "#EC4899",
       "abbrev": "SON",
       "provider": "Anthropic",
-      "played": 9,
+      "played": 10,
       "w": 5,
-      "d": 0,
+      "d": 1,
       "l": 4,
-      "gf": 78,
-      "ga": 68,
+      "gf": 87,
+      "ga": 77,
       "gd": 10,
-      "points": 15,
+      "points": 16,
       "rank": 5
+    },
+    {
+      "id": "gemini_2_5_flash",
+      "name": "Gemini 2.5 Flash",
+      "color": "#DB4437",
+      "abbrev": "GMF",
+      "provider": "Gemini",
+      "played": 10,
+      "w": 5,
+      "d": 1,
+      "l": 4,
+      "gf": 112,
+      "ga": 106,
+      "gd": 6,
+      "points": 16,
+      "rank": 6
     },
     {
       "id": "gemini_3_1_pro",
@@ -13536,7 +15681,7 @@
       "ga": 86,
       "gd": -6,
       "points": 10,
-      "rank": 6
+      "rank": 7
     },
     {
       "id": "gemini_2_5_flash_lite",
@@ -13552,7 +15697,7 @@
       "ga": 100,
       "gd": 1,
       "points": 8,
-      "rank": 7
+      "rank": 8
     },
     {
       "id": "gpt_5",
@@ -13560,15 +15705,15 @@
       "color": "#E8A317",
       "abbrev": "GP5",
       "provider": "OpenAI",
-      "played": 9,
+      "played": 10,
       "w": 2,
       "d": 2,
-      "l": 5,
-      "gf": 75,
-      "ga": 87,
-      "gd": -12,
+      "l": 6,
+      "gf": 82,
+      "ga": 95,
+      "gd": -13,
       "points": 8,
-      "rank": 8
+      "rank": 9
     },
     {
       "id": "gpt_4o_mini",
@@ -13576,15 +15721,15 @@
       "color": "#10A37F",
       "abbrev": "GPT",
       "provider": "OpenAI",
-      "played": 9,
+      "played": 10,
       "w": 2,
       "d": 0,
-      "l": 7,
-      "gf": 86,
-      "ga": 109,
-      "gd": -23,
+      "l": 8,
+      "gf": 93,
+      "ga": 119,
+      "gd": -26,
       "points": 6,
-      "rank": 9
+      "rank": 10
     },
     {
       "id": "claude_sonnet_5",
@@ -13600,128 +15745,128 @@
       "ga": 121,
       "gd": -26,
       "points": 5,
-      "rank": 10
+      "rank": 11
     }
   ],
   "aggregate_stats": {
     "claude_haiku_4_5": {
-      "games": 9,
-      "goals_for": 85,
-      "goals_against": 87,
-      "goal_diff": -2,
-      "ball_touches": 203,
-      "goals_per_touch": 0.419,
-      "saves": 47,
-      "own_goals": 36,
-      "jumps": 399,
-      "distance": 143116.0,
-      "avg_possession_pct": 40.4,
-      "avg_latency_ms": 906.0,
-      "tokens_in": 1430534,
-      "tokens_out": 32139,
-      "total_cost_usd": 1.5912
+      "games": 10,
+      "goals_for": 92,
+      "goals_against": 100,
+      "goal_diff": -8,
+      "ball_touches": 225,
+      "goals_per_touch": 0.409,
+      "saves": 58,
+      "own_goals": 40,
+      "jumps": 442,
+      "distance": 160780.0,
+      "avg_possession_pct": 39.5,
+      "avg_latency_ms": 902.0,
+      "tokens_in": 1589489,
+      "tokens_out": 35747,
+      "total_cost_usd": 1.7682
     },
     "gpt_4o_mini": {
-      "games": 9,
-      "goals_for": 86,
-      "goals_against": 109,
-      "goal_diff": -23,
-      "ball_touches": 282,
-      "goals_per_touch": 0.305,
-      "saves": 23,
-      "own_goals": 54,
-      "jumps": 56,
-      "distance": 152478.0,
-      "avg_possession_pct": 54.2,
-      "avg_latency_ms": 597.0,
-      "tokens_in": 1318766,
-      "tokens_out": 3300,
-      "total_cost_usd": 0.1998
+      "games": 10,
+      "goals_for": 93,
+      "goals_against": 119,
+      "goal_diff": -26,
+      "ball_touches": 310,
+      "goals_per_touch": 0.3,
+      "saves": 27,
+      "own_goals": 56,
+      "jumps": 60,
+      "distance": 166825.0,
+      "avg_possession_pct": 53.6,
+      "avg_latency_ms": 600.0,
+      "tokens_in": 1465295,
+      "tokens_out": 3664,
+      "total_cost_usd": 0.222
     },
     "claude_opus_4_8": {
-      "games": 9,
-      "goals_for": 105,
-      "goals_against": 83,
+      "games": 10,
+      "goals_for": 116,
+      "goals_against": 94,
       "goal_diff": 22,
-      "ball_touches": 308,
-      "goals_per_touch": 0.341,
-      "saves": 34,
-      "own_goals": 46,
-      "jumps": 169,
-      "distance": 153264.0,
-      "avg_possession_pct": 58.8,
-      "avg_latency_ms": 1475.0,
-      "tokens_in": 1842039,
-      "tokens_out": 17856,
-      "total_cost_usd": 9.6566
+      "ball_touches": 342,
+      "goals_per_touch": 0.339,
+      "saves": 37,
+      "own_goals": 50,
+      "jumps": 186,
+      "distance": 172505.0,
+      "avg_possession_pct": 58.4,
+      "avg_latency_ms": 1460.0,
+      "tokens_in": 2046712,
+      "tokens_out": 19896,
+      "total_cost_usd": 10.731
     },
     "gemini_2_5_flash": {
-      "games": 9,
-      "goals_for": 98,
-      "goals_against": 90,
-      "goal_diff": 8,
-      "ball_touches": 272,
-      "goals_per_touch": 0.36,
-      "saves": 17,
-      "own_goals": 41,
-      "jumps": 564,
-      "distance": 145359.0,
-      "avg_possession_pct": 50.0,
-      "avg_latency_ms": 3036.0,
-      "tokens_in": 1368614,
-      "tokens_out": 6519,
-      "total_cost_usd": 0.4269
+      "games": 10,
+      "goals_for": 112,
+      "goals_against": 106,
+      "goal_diff": 6,
+      "ball_touches": 302,
+      "goals_per_touch": 0.371,
+      "saves": 20,
+      "own_goals": 44,
+      "jumps": 629,
+      "distance": 162645.0,
+      "avg_possession_pct": 48.9,
+      "avg_latency_ms": 3035.0,
+      "tokens_in": 1520234,
+      "tokens_out": 7239,
+      "total_cost_usd": 0.4742
     },
     "gpt_5": {
-      "games": 9,
-      "goals_for": 75,
-      "goals_against": 87,
-      "goal_diff": -12,
-      "ball_touches": 268,
-      "goals_per_touch": 0.28,
-      "saves": 58,
-      "own_goals": 36,
-      "jumps": 335,
-      "distance": 175447.0,
-      "avg_possession_pct": 56.6,
-      "avg_latency_ms": 1012.0,
-      "tokens_in": 1317160,
-      "tokens_out": 18332,
-      "total_cost_usd": 1.8298
+      "games": 10,
+      "goals_for": 82,
+      "goals_against": 95,
+      "goal_diff": -13,
+      "ball_touches": 298,
+      "goals_per_touch": 0.275,
+      "saves": 62,
+      "own_goals": 39,
+      "jumps": 371,
+      "distance": 191064.0,
+      "avg_possession_pct": 55.9,
+      "avg_latency_ms": 1022.0,
+      "tokens_in": 1463524,
+      "tokens_out": 20359,
+      "total_cost_usd": 2.033
     },
     "claude_sonnet_4_6": {
-      "games": 9,
-      "goals_for": 78,
-      "goals_against": 68,
+      "games": 10,
+      "goals_for": 87,
+      "goals_against": 77,
       "goal_diff": 10,
-      "ball_touches": 191,
-      "goals_per_touch": 0.408,
-      "saves": 63,
-      "own_goals": 35,
-      "jumps": 18,
-      "distance": 133803.0,
-      "avg_possession_pct": 46.1,
-      "avg_latency_ms": 1536.0,
-      "tokens_in": 1432140,
-      "tokens_out": 44310,
-      "total_cost_usd": 4.9611
+      "ball_touches": 211,
+      "goals_per_touch": 0.412,
+      "saves": 66,
+      "own_goals": 39,
+      "jumps": 20,
+      "distance": 149380.0,
+      "avg_possession_pct": 45.0,
+      "avg_latency_ms": 1543.0,
+      "tokens_in": 1591268,
+      "tokens_out": 49112,
+      "total_cost_usd": 5.5105
     },
     "gpt_5_mini": {
-      "games": 9,
-      "goals_for": 81,
-      "goals_against": 53,
-      "goal_diff": 28,
-      "ball_touches": 170,
-      "goals_per_touch": 0.476,
-      "saves": 65,
-      "own_goals": 12,
-      "jumps": 221,
-      "distance": 186514.0,
-      "avg_possession_pct": 38.6,
-      "avg_latency_ms": 862.0,
-      "tokens_in": 1317126,
-      "tokens_out": 18158,
-      "total_cost_usd": 0.3656
+      "games": 10,
+      "goals_for": 89,
+      "goals_against": 65,
+      "goal_diff": 24,
+      "ball_touches": 211,
+      "goals_per_touch": 0.422,
+      "saves": 69,
+      "own_goals": 19,
+      "jumps": 253,
+      "distance": 202295.0,
+      "avg_possession_pct": 41.5,
+      "avg_latency_ms": 874.0,
+      "tokens_in": 1463486,
+      "tokens_out": 20190,
+      "total_cost_usd": 0.4063
     },
     "gemini_3_1_pro": {
       "games": 9,
@@ -13773,6 +15918,23 @@
       "tokens_in": 1839751,
       "tokens_out": 18916,
       "total_cost_usd": 3.8687
+    },
+    "claude_fable_5": {
+      "games": 7,
+      "goals_for": 79,
+      "goals_against": 63,
+      "goal_diff": 16,
+      "ball_touches": 224,
+      "goals_per_touch": 0.353,
+      "saves": 32,
+      "own_goals": 28,
+      "jumps": 76,
+      "distance": 129483.0,
+      "avg_possession_pct": 53.5,
+      "avg_latency_ms": 8589.0,
+      "tokens_in": 1432726,
+      "tokens_out": 333868,
+      "total_cost_usd": 31.0207
     }
   }
 }
