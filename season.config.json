@@ -141,6 +141,20 @@
         }
       },
       "released": "2026-06-24"
+    },
+    {
+      "name": "Claude Fable 5",
+      "abbrev": "FAB",
+      "model": "claude-fable-5",
+      "base_url": "https://api.anthropic.com/v1/",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "color": "#7C3AED",
+      "input_cost_per_1m": 10.0,
+      "output_cost_per_1m": 50.0,
+      "request_timeout_seconds": 120,
+      "max_completion_tokens": 4096,
+      "reasoning_effort": "low",
+      "released": "2026-06-01"
     }
   ]
 }
