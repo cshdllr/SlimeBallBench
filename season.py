@@ -273,6 +273,9 @@ def main() -> None:
     ap.add_argument("--out", default="season.json")
     ap.add_argument("--no-verify", action="store_true", help="skip the pre-season model probe")
     ap.add_argument("--fresh", action="store_true", help="ignore any existing season.json and start over")
+    ap.add_argument("--skip-model", action="append", default=[], metavar="ID",
+                    help="model id to skip this run (kept in standings, just not played); "
+                         "repeatable, e.g. --skip-model gemini_3_1_pro")
     args = ap.parse_args()
 
     with open(args.config) as f:
@@ -310,6 +313,11 @@ def main() -> None:
             return True
         return fmt != "home_and_away" and f"{a['id']}__{h['id']}" in done_ids
     to_play = [(h, a) for (h, a) in fixtures if not already_played(h, a)]
+    skip = set(args.skip_model)
+    if skip:
+        before = len(to_play)
+        to_play = [(h, a) for (h, a) in to_play if h["id"] not in skip and a["id"] not in skip]
+        print(f"Skipping {before - len(to_play)} fixture(s) involving: {', '.join(sorted(skip))}")
     print(f"\nSeason: {cfg.get('season_name', 'League')}  |  {len(models)} models  |  "
           f"{len(fixtures)} fixtures ({fmt})  |  {len(to_play)} to play  |  "
           f"{cfg['match_duration_seconds']}s games\n")
@@ -326,10 +334,10 @@ def main() -> None:
             os.remove(record["log"]) if os.path.exists(record["log"]) else None
             print(f"\n  ✗ MATCH FAILED — {reason}", file=sys.stderr)
             print(f"  This usually means an API budget cap or rate limit was hit. "
-                  f"The match was NOT recorded.\n  Fix the provider (billing/quota), then re-run "
-                  f"`python season.py` — it resumes: completed matches are skipped and this one "
-                  f"(plus any remaining) will play.", file=sys.stderr)
-            break
+                  f"The match was NOT recorded; skipping it and continuing.\n  Fix the provider "
+                  f"(billing/quota), then re-run `python season.py` — completed matches are "
+                  f"skipped and any unplayed fixtures (including this one) will play.", file=sys.stderr)
+            continue
 
         matches.append(record)
         write_season(args.out, cfg, models, matches)  # incremental save -> resumable
