@@ -73,8 +73,8 @@ h1 .crest { margin-right: 11px; vertical-align: -5px; border-radius: 7px; }
 .team-stack .meta .plogo svg { width: 11px; height: 11px; }
 /* left-justify the Team / GD / Pts columns so labels hug their content */
 .standings-scroll th.lft { text-align: left; }
-.standings-scroll .divwrap { margin: 0; }             /* GD bar hugs the left */
-.standings-scroll td.barcell .barwrap { margin: 0; min-width: 0; width: 92px; }
+.standings-scroll .divwrap { margin: 0; grid-template-columns: 74px 26px; } /* GD bar hugs the left */
+.standings-scroll td.barcell .barwrap { margin: 0; min-width: 0; width: 82px; }
 .team-cell .name { font-weight: 600; }
 /* model names in tables read as plain text, not blue underlined links */
 .team-cell a { color: var(--text); font-weight: 600; text-decoration: none; }
@@ -328,10 +328,14 @@ pre.code { background: var(--panel); border: 1px solid var(--line); border-radiu
   background: linear-gradient(rgba(63,185,80,0.07),rgba(63,185,80,0.07)), var(--scroll-bg, var(--panel)); }
 
 /* Standings: the useful label is the team, so pin the rank + team pair. */
+/* trimmed widths + padding so the full table fits ~800px without scrolling */
+.standings-scroll th, .standings-scroll td { padding-left: 8px; padding-right: 8px; }
 .standings-scroll th:nth-child(1), .standings-scroll td:nth-child(1) {
-  width: 42px; min-width: 42px; }
+  width: 28px; min-width: 28px; padding-left: 10px; }
 .standings-scroll th:nth-child(2), .standings-scroll td:nth-child(2) {
-  position: sticky; left: 42px; z-index: 1; background: var(--panel); }
+  position: sticky; left: 28px; z-index: 1; background: var(--panel); }
+.standings-scroll .logo-cell { padding-left: 6px; padding-right: 2px; }
+.standings-scroll .team-cell { padding-left: 6px; }
 .standings-scroll thead th:nth-child(2) { z-index: 3; }
 .standings-scroll tbody td:nth-child(2) { z-index: 2; }
 /* move the divider + row-state tint onto the team cell (the last pinned one) */
