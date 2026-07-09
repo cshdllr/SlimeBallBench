@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-07-08T16:58:07.808460+00:00",
+  "generated_at": "2026-07-09T14:25:41.081836+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -16108,6 +16108,246 @@
           }
         }
       }
+    },
+    {
+      "id": "gemini_3_1_pro__claude_fable_5",
+      "home": "gemini_3_1_pro",
+      "away": "claude_fable_5",
+      "home_name": "Gemini 3.1 Pro",
+      "away_name": "Claude Fable 5",
+      "home_color": "#34A853",
+      "away_color": "#7C3AED",
+      "score": [
+        8,
+        6
+      ],
+      "winner": "Gemini 3.1 Pro",
+      "winner_id": "gemini_3_1_pro",
+      "log": "logs/gemini_3_1_pro_v_claude_fable_5_20260709_063945.json",
+      "played_at": "2026-07-09T14:25:41.065100+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 3.1 Pro": 8,
+          "Claude Fable 5": 6
+        },
+        "winner": "Gemini 3.1 Pro",
+        "goals": [
+          {
+            "frame": 298,
+            "time_seconds": 9.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 325,
+            "time_seconds": 10.8,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 465,
+            "time_seconds": 15.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 610,
+            "time_seconds": 20.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 693,
+            "time_seconds": 23.1,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1011,
+            "time_seconds": 33.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1157,
+            "time_seconds": 38.6,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              5,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1188,
+            "time_seconds": 39.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1215,
+            "time_seconds": 40.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              6,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1372,
+            "time_seconds": 45.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              7,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1508,
+            "time_seconds": 50.3,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              8,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1539,
+            "time_seconds": 51.3,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              8,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1686,
+            "time_seconds": 56.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              8,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1737,
+            "time_seconds": 57.9,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              8,
+              6
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 14,
+          "total_ball_touches": 63,
+          "total_own_goals": 7,
+          "total_saves": 5,
+          "time_to_first_goal_seconds": 9.9,
+          "first_scorer": "Claude Fable 5",
+          "lead_changes": 1,
+          "largest_lead": 5
+        },
+        "players": {
+          "Gemini 3.1 Pro": {
+            "model": "gemini-3.1-pro-preview",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 6,
+            "ball_touches": 37,
+            "goals_per_touch": 0.216,
+            "saves": 3,
+            "own_goals": 5,
+            "possession_pct": 70.4,
+            "jumps": 24,
+            "distance_travelled": 19448.6,
+            "time_to_first_goal_seconds": 10.8,
+            "action_distribution": {
+              "move_left": 55,
+              "move_right": 99,
+              "jump": 3,
+              "move_left_jump": 5,
+              "move_right_jump": 16,
+              "idle": 2
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 5314.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157492,
+              "completion": 563
+            },
+            "estimated_cost_usd": 0.32174
+          },
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 6,
+            "goals_against": 8,
+            "ball_touches": 26,
+            "goals_per_touch": 0.231,
+            "saves": 2,
+            "own_goals": 2,
+            "possession_pct": 29.6,
+            "jumps": 10,
+            "distance_travelled": 18556.5,
+            "time_to_first_goal_seconds": 9.9,
+            "action_distribution": {
+              "move_left": 111,
+              "move_right": 59,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 3,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 11161.8,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204674,
+              "completion": 49981
+            },
+            "estimated_cost_usd": 4.54579
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -16133,13 +16373,13 @@
       "color": "#7C3AED",
       "abbrev": "FAB",
       "provider": "Anthropic",
-      "played": 9,
+      "played": 10,
       "w": 7,
       "d": 2,
-      "l": 0,
-      "gf": 99,
-      "ga": 77,
-      "gd": 22,
+      "l": 1,
+      "gf": 105,
+      "ga": 85,
+      "gd": 20,
       "points": 23,
       "rank": 2
     },
@@ -16213,14 +16453,14 @@
       "color": "#34A853",
       "abbrev": "G31",
       "provider": "Gemini",
-      "played": 9,
-      "w": 3,
+      "played": 10,
+      "w": 4,
       "d": 1,
       "l": 5,
-      "gf": 80,
-      "ga": 86,
-      "gd": -6,
-      "points": 10,
+      "gf": 88,
+      "ga": 92,
+      "gd": -4,
+      "points": 13,
       "rank": 7
     },
     {
@@ -16409,21 +16649,21 @@
       "total_cost_usd": 0.4063
     },
     "gemini_3_1_pro": {
-      "games": 9,
-      "goals_for": 80,
-      "goals_against": 86,
-      "goal_diff": -6,
-      "ball_touches": 316,
-      "goals_per_touch": 0.253,
-      "saves": 28,
-      "own_goals": 47,
-      "jumps": 214,
-      "distance": 158256.0,
-      "avg_possession_pct": 60.4,
-      "avg_latency_ms": 4965.0,
-      "tokens_in": 1418033,
-      "tokens_out": 5144,
-      "total_cost_usd": 2.8978
+      "games": 10,
+      "goals_for": 88,
+      "goals_against": 92,
+      "goal_diff": -4,
+      "ball_touches": 353,
+      "goals_per_touch": 0.249,
+      "saves": 31,
+      "own_goals": 52,
+      "jumps": 238,
+      "distance": 177704.0,
+      "avg_possession_pct": 61.4,
+      "avg_latency_ms": 5000.0,
+      "tokens_in": 1575525,
+      "tokens_out": 5707,
+      "total_cost_usd": 3.2195
     },
     "gemini_2_5_flash_lite": {
       "games": 10,
@@ -16460,21 +16700,21 @@
       "total_cost_usd": 4.2895
     },
     "claude_fable_5": {
-      "games": 9,
-      "goals_for": 99,
-      "goals_against": 77,
-      "goal_diff": 22,
-      "ball_touches": 286,
-      "goals_per_touch": 0.346,
-      "saves": 38,
-      "own_goals": 32,
-      "jumps": 98,
-      "distance": 166615.0,
-      "avg_possession_pct": 53.1,
-      "avg_latency_ms": 8634.0,
-      "tokens_in": 1842092,
-      "tokens_out": 432434,
-      "total_cost_usd": 40.0426
+      "games": 10,
+      "goals_for": 105,
+      "goals_against": 85,
+      "goal_diff": 20,
+      "ball_touches": 312,
+      "goals_per_touch": 0.337,
+      "saves": 40,
+      "own_goals": 34,
+      "jumps": 108,
+      "distance": 185172.0,
+      "avg_possession_pct": 50.8,
+      "avg_latency_ms": 8887.0,
+      "tokens_in": 2046766,
+      "tokens_out": 482415,
+      "total_cost_usd": 44.5884
     }
   }
 }
