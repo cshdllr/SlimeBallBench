@@ -9,3 +9,5 @@ __pycache__/
 logs/scratch/
 .DS_Store
 fable5_run.log
+
+sol_run.log

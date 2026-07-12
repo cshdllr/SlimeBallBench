@@ -68,5 +68,26 @@
     "color": "#34A853",
     "file": "crests/gemini_3_1_pro.svg",
     "bytes": 1120
+  },
+  {
+    "id": "gpt_5_6_sol",
+    "name": "GPT-5.6 Sol",
+    "color": "#F97316",
+    "file": "crests/gpt_5_6_sol.svg",
+    "bytes": 1190
+  },
+  {
+    "id": "gpt_5_6_terra",
+    "name": "GPT-5.6 Terra",
+    "color": "#0D9488",
+    "file": "crests/gpt_5_6_terra.svg",
+    "bytes": 917
+  },
+  {
+    "id": "gpt_5_6_luna",
+    "name": "GPT-5.6 Luna",
+    "color": "#64748B",
+    "file": "crests/gpt_5_6_luna.svg",
+    "bytes": 944
   }
 ]
