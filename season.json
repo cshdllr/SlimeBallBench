@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-07-13T13:30:45.160657+00:00",
+  "generated_at": "2026-07-13T14:27:19.085689+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -26445,6 +26445,286 @@
           }
         }
       }
+    },
+    {
+      "id": "claude_sonnet_5__gpt_5_6_terra",
+      "home": "claude_sonnet_5",
+      "away": "gpt_5_6_terra",
+      "home_name": "Claude Sonnet 5",
+      "away_name": "GPT-5.6 Terra",
+      "home_color": "#6366F1",
+      "away_color": "#0D9488",
+      "score": [
+        9,
+        9
+      ],
+      "winner": "draw",
+      "winner_id": "draw",
+      "log": "logs/claude_sonnet_5_v_gpt_5_6_terra_20260713_073045.json",
+      "played_at": "2026-07-13T14:27:19.070977+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Sonnet 5": 9,
+          "GPT-5.6 Terra": 9
+        },
+        "winner": "draw",
+        "goals": [
+          {
+            "frame": 147,
+            "time_seconds": 4.9,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 178,
+            "time_seconds": 5.9,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 221,
+            "time_seconds": 7.4,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 317,
+            "time_seconds": 10.6,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 348,
+            "time_seconds": 11.6,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 422,
+            "time_seconds": 14.1,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 519,
+            "time_seconds": 17.3,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 564,
+            "time_seconds": 18.8,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 600,
+            "time_seconds": 20.0,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 681,
+            "time_seconds": 22.7,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              6,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 768,
+            "time_seconds": 25.6,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 811,
+            "time_seconds": 27.0,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              7,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 926,
+            "time_seconds": 30.9,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1055,
+            "time_seconds": 35.2,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1136,
+            "time_seconds": 37.9,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1354,
+            "time_seconds": 45.1,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1390,
+            "time_seconds": 46.3,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1705,
+            "time_seconds": 56.8,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              9,
+              9
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 18,
+          "total_ball_touches": 69,
+          "total_own_goals": 8,
+          "total_saves": 6,
+          "time_to_first_goal_seconds": 4.9,
+          "first_scorer": "GPT-5.6 Terra",
+          "lead_changes": 2,
+          "largest_lead": 2
+        },
+        "players": {
+          "Claude Sonnet 5": {
+            "model": "claude-sonnet-5",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 9,
+            "ball_touches": 38,
+            "goals_per_touch": 0.237,
+            "saves": 5,
+            "own_goals": 4,
+            "possession_pct": 49.9,
+            "jumps": 1,
+            "distance_travelled": 17857.7,
+            "time_to_first_goal_seconds": 5.9,
+            "action_distribution": {
+              "move_left": 64,
+              "move_right": 110,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 1,
+              "idle": 5
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 2183.5,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204668,
+              "completion": 1143
+            },
+            "estimated_cost_usd": 0.420766
+          },
+          "GPT-5.6 Terra": {
+            "model": "gpt-5.6-terra",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 9,
+            "ball_touches": 31,
+            "goals_per_touch": 0.29,
+            "saves": 1,
+            "own_goals": 4,
+            "possession_pct": 50.1,
+            "jumps": 20,
+            "distance_travelled": 14913.2,
+            "time_to_first_goal_seconds": 4.9,
+            "action_distribution": {
+              "move_left": 121,
+              "move_right": 39,
+              "jump": 0,
+              "move_left_jump": 14,
+              "move_right_jump": 6,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 3475.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146348,
+              "completion": 16245
+            },
+            "estimated_cost_usd": 0.609545
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -26545,6 +26825,22 @@
       "rank": 6
     },
     {
+      "id": "gpt_5_6_terra",
+      "name": "GPT-5.6 Terra",
+      "color": "#0D9488",
+      "abbrev": "TER",
+      "provider": "OpenAI",
+      "played": 11,
+      "w": 5,
+      "d": 5,
+      "l": 1,
+      "gf": 132,
+      "ga": 106,
+      "gd": 26,
+      "points": 20,
+      "rank": 7
+    },
+    {
       "id": "gpt_5_6_luna",
       "name": "GPT-5.6 Luna",
       "color": "#64748B",
@@ -26558,22 +26854,6 @@
       "ga": 119,
       "gd": 20,
       "points": 20,
-      "rank": 7
-    },
-    {
-      "id": "gpt_5_6_terra",
-      "name": "GPT-5.6 Terra",
-      "color": "#0D9488",
-      "abbrev": "TER",
-      "provider": "OpenAI",
-      "played": 10,
-      "w": 5,
-      "d": 4,
-      "l": 1,
-      "gf": 123,
-      "ga": 97,
-      "gd": 26,
-      "points": 19,
       "rank": 8
     },
     {
@@ -26614,14 +26894,14 @@
       "color": "#6366F1",
       "abbrev": "SN5",
       "provider": "Anthropic",
-      "played": 12,
+      "played": 13,
       "w": 3,
-      "d": 2,
+      "d": 3,
       "l": 7,
-      "gf": 131,
-      "ga": 157,
+      "gf": 140,
+      "ga": 166,
       "gd": -26,
-      "points": 11,
+      "points": 12,
       "rank": 11
     },
     {
@@ -26828,21 +27108,21 @@
       "total_cost_usd": 0.2071
     },
     "claude_sonnet_5": {
-      "games": 12,
-      "goals_for": 131,
-      "goals_against": 157,
+      "games": 13,
+      "goals_for": 140,
+      "goals_against": 166,
       "goal_diff": -26,
-      "ball_touches": 419,
-      "goals_per_touch": 0.313,
-      "saves": 44,
-      "own_goals": 72,
-      "jumps": 5,
-      "distance": 190338.0,
-      "avg_possession_pct": 51.0,
-      "avg_latency_ms": 1765.0,
-      "tokens_in": 2453766,
-      "tokens_out": 22188,
-      "total_cost_usd": 5.1294
+      "ball_touches": 457,
+      "goals_per_touch": 0.306,
+      "saves": 49,
+      "own_goals": 76,
+      "jumps": 6,
+      "distance": 208196.0,
+      "avg_possession_pct": 50.9,
+      "avg_latency_ms": 1797.0,
+      "tokens_in": 2658434,
+      "tokens_out": 23331,
+      "total_cost_usd": 5.5502
     },
     "claude_fable_5": {
       "games": 10,
@@ -26879,21 +27159,21 @@
       "total_cost_usd": 12.427
     },
     "gpt_5_6_terra": {
-      "games": 10,
-      "goals_for": 123,
-      "goals_against": 97,
+      "games": 11,
+      "goals_for": 132,
+      "goals_against": 106,
       "goal_diff": 26,
-      "ball_touches": 328,
-      "goals_per_touch": 0.375,
-      "saves": 48,
-      "own_goals": 39,
-      "jumps": 255,
-      "distance": 177629.0,
-      "avg_possession_pct": 54.0,
-      "avg_latency_ms": 1724.0,
-      "tokens_in": 1463528,
-      "tokens_out": 150764,
-      "total_cost_usd": 5.9203
+      "ball_touches": 359,
+      "goals_per_touch": 0.368,
+      "saves": 49,
+      "own_goals": 43,
+      "jumps": 275,
+      "distance": 192542.0,
+      "avg_possession_pct": 53.7,
+      "avg_latency_ms": 1884.0,
+      "tokens_in": 1609876,
+      "tokens_out": 167009,
+      "total_cost_usd": 6.5298
     },
     "gpt_5_6_luna": {
       "games": 11,
