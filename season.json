@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-07-13T18:58:11.129105+00:00",
+  "generated_at": "2026-07-14T13:42:32.928507+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -27845,6 +27845,286 @@
           }
         }
       }
+    },
+    {
+      "id": "gemini_3_1_pro__gpt_5_6_luna",
+      "home": "gemini_3_1_pro",
+      "away": "gpt_5_6_luna",
+      "home_name": "Gemini 3.1 Pro",
+      "away_name": "GPT-5.6 Luna",
+      "home_color": "#34A853",
+      "away_color": "#64748B",
+      "score": [
+        7,
+        11
+      ],
+      "winner": "GPT-5.6 Luna",
+      "winner_id": "gpt_5_6_luna",
+      "log": "logs/gemini_3_1_pro_v_gpt_5_6_luna_20260714_062253.json",
+      "played_at": "2026-07-14T13:42:32.906389+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 3.1 Pro": 7,
+          "GPT-5.6 Luna": 11
+        },
+        "winner": "GPT-5.6 Luna",
+        "goals": [
+          {
+            "frame": 43,
+            "time_seconds": 1.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 275,
+            "time_seconds": 9.2,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 344,
+            "time_seconds": 11.5,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 380,
+            "time_seconds": 12.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 455,
+            "time_seconds": 15.2,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              1,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 510,
+            "time_seconds": 17.0,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              1,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 616,
+            "time_seconds": 20.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 733,
+            "time_seconds": 24.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              2,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 816,
+            "time_seconds": 27.2,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              2,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 846,
+            "time_seconds": 28.2,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              3,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 960,
+            "time_seconds": 32.0,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              4,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1073,
+            "time_seconds": 35.8,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1285,
+            "time_seconds": 42.8,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              5,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1340,
+            "time_seconds": 44.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              5,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1442,
+            "time_seconds": 48.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              5,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1563,
+            "time_seconds": 52.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              5,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1596,
+            "time_seconds": 53.2,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              6,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1674,
+            "time_seconds": 55.8,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              7,
+              11
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 18,
+          "total_ball_touches": 63,
+          "total_own_goals": 6,
+          "total_saves": 9,
+          "time_to_first_goal_seconds": 1.4,
+          "first_scorer": "GPT-5.6 Luna",
+          "lead_changes": 0,
+          "largest_lead": 6
+        },
+        "players": {
+          "Gemini 3.1 Pro": {
+            "model": "gemini-3.1-pro-preview",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 11,
+            "ball_touches": 30,
+            "goals_per_touch": 0.233,
+            "saves": 7,
+            "own_goals": 4,
+            "possession_pct": 47.9,
+            "jumps": 24,
+            "distance_travelled": 17418.2,
+            "time_to_first_goal_seconds": 12.7,
+            "action_distribution": {
+              "move_left": 54,
+              "move_right": 101,
+              "jump": 0,
+              "move_left_jump": 10,
+              "move_right_jump": 14,
+              "idle": 1
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7196.8,
+            "api_errors": 1,
+            "tokens": {
+              "prompt": 156904,
+              "completion": 576
+            },
+            "estimated_cost_usd": 0.32072
+          },
+          "GPT-5.6 Luna": {
+            "model": "gpt-5.6-luna",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 7,
+            "ball_touches": 33,
+            "goals_per_touch": 0.333,
+            "saves": 2,
+            "own_goals": 2,
+            "possession_pct": 52.1,
+            "jumps": 67,
+            "distance_travelled": 13839.5,
+            "time_to_first_goal_seconds": 1.4,
+            "action_distribution": {
+              "move_left": 64,
+              "move_right": 14,
+              "jump": 2,
+              "move_left_jump": 78,
+              "move_right_jump": 22,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 2026.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146355,
+              "completion": 16192
+            },
+            "estimated_cost_usd": 0.243507
+          }
+        }
+      }
     }
   ],
   "standings": [
@@ -27865,6 +28145,22 @@
       "rank": 1
     },
     {
+      "id": "gpt_5_6_luna",
+      "name": "GPT-5.6 Luna",
+      "color": "#64748B",
+      "abbrev": "LUN",
+      "provider": "OpenAI",
+      "played": 13,
+      "w": 8,
+      "d": 2,
+      "l": 3,
+      "gf": 160,
+      "ga": 131,
+      "gd": 29,
+      "points": 26,
+      "rank": 2
+    },
+    {
       "id": "claude_opus_4_8",
       "name": "Claude Opus 4.8",
       "color": "#9B59B6",
@@ -27878,7 +28174,7 @@
       "ga": 133,
       "gd": 20,
       "points": 25,
-      "rank": 2
+      "rank": 3
     },
     {
       "id": "gpt_5_mini",
@@ -27894,7 +28190,7 @@
       "ga": 108,
       "gd": 20,
       "points": 25,
-      "rank": 3
+      "rank": 4
     },
     {
       "id": "claude_haiku_4_5",
@@ -27910,22 +28206,6 @@
       "ga": 132,
       "gd": -8,
       "points": 24,
-      "rank": 4
-    },
-    {
-      "id": "gpt_5_6_luna",
-      "name": "GPT-5.6 Luna",
-      "color": "#64748B",
-      "abbrev": "LUN",
-      "provider": "OpenAI",
-      "played": 12,
-      "w": 7,
-      "d": 2,
-      "l": 3,
-      "gf": 149,
-      "ga": 124,
-      "gd": 25,
-      "points": 23,
       "rank": 5
     },
     {
@@ -27982,13 +28262,13 @@
       "color": "#34A853",
       "abbrev": "G31",
       "provider": "Gemini",
-      "played": 12,
+      "played": 13,
       "w": 6,
       "d": 1,
-      "l": 5,
-      "gf": 108,
-      "ga": 107,
-      "gd": 1,
+      "l": 6,
+      "gf": 115,
+      "ga": 118,
+      "gd": -3,
       "points": 19,
       "rank": 9
     },
@@ -28194,21 +28474,21 @@
       "total_cost_usd": 0.5281
     },
     "gemini_3_1_pro": {
-      "games": 12,
-      "goals_for": 108,
-      "goals_against": 107,
-      "goal_diff": 1,
-      "ball_touches": 422,
-      "goals_per_touch": 0.256,
-      "saves": 38,
-      "own_goals": 60,
-      "jumps": 292,
-      "distance": 210765.0,
-      "avg_possession_pct": 60.1,
-      "avg_latency_ms": 5369.0,
-      "tokens_in": 1890778,
-      "tokens_out": 6877,
-      "total_cost_usd": 3.8641
+      "games": 13,
+      "goals_for": 115,
+      "goals_against": 118,
+      "goal_diff": -3,
+      "ball_touches": 452,
+      "goals_per_touch": 0.254,
+      "saves": 45,
+      "own_goals": 64,
+      "jumps": 316,
+      "distance": 228183.0,
+      "avg_possession_pct": 59.2,
+      "avg_latency_ms": 5510.0,
+      "tokens_in": 2047682,
+      "tokens_out": 7453,
+      "total_cost_usd": 4.1848
     },
     "gemini_2_5_flash_lite": {
       "games": 13,
@@ -28296,21 +28576,21 @@
       "total_cost_usd": 7.7265
     },
     "gpt_5_6_luna": {
-      "games": 12,
-      "goals_for": 149,
-      "goals_against": 124,
-      "goal_diff": 25,
-      "ball_touches": 452,
+      "games": 13,
+      "goals_for": 160,
+      "goals_against": 131,
+      "goal_diff": 29,
+      "ball_touches": 485,
       "goals_per_touch": 0.33,
-      "saves": 30,
-      "own_goals": 50,
-      "jumps": 840,
-      "distance": 192680.0,
-      "avg_possession_pct": 57.1,
-      "avg_latency_ms": 1476.0,
-      "tokens_in": 1756222,
-      "tokens_out": 191132,
-      "total_cost_usd": 2.903
+      "saves": 32,
+      "own_goals": 52,
+      "jumps": 907,
+      "distance": 206519.0,
+      "avg_possession_pct": 56.8,
+      "avg_latency_ms": 1518.0,
+      "tokens_in": 1902577,
+      "tokens_out": 207324,
+      "total_cost_usd": 3.1465
     }
   }
 }
