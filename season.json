@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-07-15T16:31:44.785152+00:00",
+  "generated_at": "2026-07-15T20:31:32.274841+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -32274,9 +32274,585 @@
           }
         }
       }
+    },
+    {
+      "id": "gemini_3_1_pro__muse_spark_1_1",
+      "home": "gemini_3_1_pro",
+      "away": "muse_spark_1_1",
+      "home_name": "Gemini 3.1 Pro",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#34A853",
+      "away_color": "#0064E0",
+      "score": [
+        13,
+        5
+      ],
+      "winner": "Gemini 3.1 Pro",
+      "winner_id": "gemini_3_1_pro",
+      "log": "logs/gemini_3_1_pro_v_muse_spark_1_1_20260715_130633.json",
+      "played_at": "2026-07-15T19:46:23.471750+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 3.1 Pro": 13,
+          "Muse Spark 1.1": 5
+        },
+        "winner": "Gemini 3.1 Pro",
+        "goals": [
+          {
+            "frame": 29,
+            "time_seconds": 1.0,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 63,
+            "time_seconds": 2.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 172,
+            "time_seconds": 5.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 313,
+            "time_seconds": 10.4,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 381,
+            "time_seconds": 12.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 592,
+            "time_seconds": 19.7,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 649,
+            "time_seconds": 21.6,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              5,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 690,
+            "time_seconds": 23.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 753,
+            "time_seconds": 25.1,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              6,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 835,
+            "time_seconds": 27.8,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              7,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 916,
+            "time_seconds": 30.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              8,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1129,
+            "time_seconds": 37.6,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              9,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1298,
+            "time_seconds": 43.3,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              10,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1394,
+            "time_seconds": 46.5,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              11,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1508,
+            "time_seconds": 50.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              11,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1535,
+            "time_seconds": 51.2,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              12,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1595,
+            "time_seconds": 53.2,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              12,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1646,
+            "time_seconds": 54.9,
+            "scorer": "Gemini 3.1 Pro",
+            "score_after": [
+              13,
+              5
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 18,
+          "total_ball_touches": 49,
+          "total_own_goals": 6,
+          "total_saves": 2,
+          "time_to_first_goal_seconds": 1.0,
+          "first_scorer": "Gemini 3.1 Pro",
+          "lead_changes": 0,
+          "largest_lead": 8
+        },
+        "players": {
+          "Gemini 3.1 Pro": {
+            "model": "gemini-3.1-pro-preview",
+            "policy": "model",
+            "goals_for": 13,
+            "goals_against": 5,
+            "ball_touches": 36,
+            "goals_per_touch": 0.361,
+            "saves": 0,
+            "own_goals": 3,
+            "possession_pct": 83.5,
+            "jumps": 21,
+            "distance_travelled": 17318.9,
+            "time_to_first_goal_seconds": 1.0,
+            "action_distribution": {
+              "move_left": 38,
+              "move_right": 121,
+              "jump": 0,
+              "move_left_jump": 8,
+              "move_right_jump": 13,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 6158.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157236,
+              "completion": 573
+            },
+            "estimated_cost_usd": 0.321348
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 5,
+            "goals_against": 13,
+            "ball_touches": 13,
+            "goals_per_touch": 0.385,
+            "saves": 2,
+            "own_goals": 3,
+            "possession_pct": 16.5,
+            "jumps": 9,
+            "distance_travelled": 7564.9,
+            "time_to_first_goal_seconds": 2.1,
+            "action_distribution": {
+              "move_left": 38,
+              "move_right": 7,
+              "jump": 0,
+              "move_left_jump": 5,
+              "move_right_jump": 4,
+              "idle": 126
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7115.5,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146530,
+              "completion": 170700
+            },
+            "estimated_cost_usd": 0.908637
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_fable_5__muse_spark_1_1",
+      "home": "claude_fable_5",
+      "away": "muse_spark_1_1",
+      "home_name": "Claude Fable 5",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#7C3AED",
+      "away_color": "#0064E0",
+      "score": [
+        11,
+        7
+      ],
+      "winner": "Claude Fable 5",
+      "winner_id": "claude_fable_5",
+      "log": "logs/claude_fable_5_v_muse_spark_1_1_20260715_134623.json",
+      "played_at": "2026-07-15T20:31:32.242232+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Fable 5": 11,
+          "Muse Spark 1.1": 7
+        },
+        "winner": "Claude Fable 5",
+        "goals": [
+          {
+            "frame": 76,
+            "time_seconds": 2.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 198,
+            "time_seconds": 6.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              2,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 297,
+            "time_seconds": 9.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 337,
+            "time_seconds": 11.2,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 454,
+            "time_seconds": 15.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              4,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 490,
+            "time_seconds": 16.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 553,
+            "time_seconds": 18.4,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              5,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 621,
+            "time_seconds": 20.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 690,
+            "time_seconds": 23.0,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              6,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 764,
+            "time_seconds": 25.5,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              7,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1162,
+            "time_seconds": 38.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1225,
+            "time_seconds": 40.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              8,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1312,
+            "time_seconds": 43.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              8,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1398,
+            "time_seconds": 46.6,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              9,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1551,
+            "time_seconds": 51.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              9,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1624,
+            "time_seconds": 54.1,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              10,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1691,
+            "time_seconds": 56.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              10,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1764,
+            "time_seconds": 58.8,
+            "scorer": "Claude Fable 5",
+            "score_after": [
+              11,
+              7
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 18,
+          "total_ball_touches": 45,
+          "total_own_goals": 8,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 2.5,
+          "first_scorer": "Claude Fable 5",
+          "lead_changes": 0,
+          "largest_lead": 4
+        },
+        "players": {
+          "Claude Fable 5": {
+            "model": "claude-fable-5",
+            "policy": "model",
+            "goals_for": 11,
+            "goals_against": 7,
+            "ball_touches": 27,
+            "goals_per_touch": 0.407,
+            "saves": 2,
+            "own_goals": 4,
+            "possession_pct": 59.8,
+            "jumps": 19,
+            "distance_travelled": 16884.9,
+            "time_to_first_goal_seconds": 2.5,
+            "action_distribution": {
+              "move_left": 48,
+              "move_right": 112,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 18,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8014.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204666,
+              "completion": 39878
+            },
+            "estimated_cost_usd": 4.04056
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 11,
+            "ball_touches": 18,
+            "goals_per_touch": 0.389,
+            "saves": 5,
+            "own_goals": 4,
+            "possession_pct": 40.2,
+            "jumps": 5,
+            "distance_travelled": 8062.2,
+            "time_to_first_goal_seconds": 9.9,
+            "action_distribution": {
+              "move_left": 36,
+              "move_right": 8,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 3,
+              "idle": 131
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7034.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146526,
+              "completion": 167697
+            },
+            "estimated_cost_usd": 0.89587
+          }
+        }
+      }
     }
   ],
   "standings": [
+    {
+      "id": "claude_fable_5",
+      "name": "Claude Fable 5",
+      "color": "#7C3AED",
+      "abbrev": "FAB",
+      "provider": "Anthropic",
+      "played": 14,
+      "w": 9,
+      "d": 3,
+      "l": 2,
+      "gf": 142,
+      "ga": 121,
+      "gd": 21,
+      "points": 30,
+      "rank": 1
+    },
     {
       "id": "gpt_5_6_luna",
       "name": "GPT-5.6 Luna",
@@ -32291,7 +32867,7 @@
       "ga": 134,
       "gd": 61,
       "points": 29,
-      "rank": 1
+      "rank": 2
     },
     {
       "id": "claude_opus_4_8",
@@ -32307,22 +32883,6 @@
       "ga": 142,
       "gd": 21,
       "points": 28,
-      "rank": 2
-    },
-    {
-      "id": "claude_fable_5",
-      "name": "Claude Fable 5",
-      "color": "#7C3AED",
-      "abbrev": "FAB",
-      "provider": "Anthropic",
-      "played": 13,
-      "w": 8,
-      "d": 3,
-      "l": 2,
-      "gf": 131,
-      "ga": 114,
-      "gd": 17,
-      "points": 27,
       "rank": 3
     },
     {
@@ -32411,14 +32971,14 @@
       "color": "#34A853",
       "abbrev": "G31",
       "provider": "Gemini",
-      "played": 13,
-      "w": 6,
+      "played": 14,
+      "w": 7,
       "d": 1,
       "l": 6,
-      "gf": 115,
-      "ga": 118,
-      "gd": -3,
-      "points": 19,
+      "gf": 128,
+      "ga": 123,
+      "gd": 5,
+      "points": 22,
       "rank": 9
     },
     {
@@ -32491,13 +33051,13 @@
       "color": "#0064E0",
       "abbrev": "MUS",
       "provider": "Meta",
-      "played": 12,
+      "played": 14,
       "w": 3,
       "d": 1,
-      "l": 8,
-      "gf": 88,
-      "ga": 206,
-      "gd": -118,
+      "l": 10,
+      "gf": 100,
+      "ga": 230,
+      "gd": -130,
       "points": 10,
       "rank": 14
     },
@@ -32639,21 +33199,21 @@
       "total_cost_usd": 0.5687
     },
     "gemini_3_1_pro": {
-      "games": 13,
-      "goals_for": 115,
-      "goals_against": 118,
-      "goal_diff": -3,
-      "ball_touches": 452,
-      "goals_per_touch": 0.254,
+      "games": 14,
+      "goals_for": 128,
+      "goals_against": 123,
+      "goal_diff": 5,
+      "ball_touches": 488,
+      "goals_per_touch": 0.262,
       "saves": 45,
-      "own_goals": 64,
-      "jumps": 316,
-      "distance": 228183.0,
-      "avg_possession_pct": 59.2,
-      "avg_latency_ms": 5510.0,
-      "tokens_in": 2047682,
-      "tokens_out": 7453,
-      "total_cost_usd": 4.1848
+      "own_goals": 67,
+      "jumps": 337,
+      "distance": 245502.0,
+      "avg_possession_pct": 60.9,
+      "avg_latency_ms": 5556.0,
+      "tokens_in": 2204918,
+      "tokens_out": 8026,
+      "total_cost_usd": 4.5061
     },
     "gemini_2_5_flash_lite": {
       "games": 14,
@@ -32690,21 +33250,21 @@
       "total_cost_usd": 5.9701
     },
     "claude_fable_5": {
-      "games": 13,
-      "goals_for": 131,
-      "goals_against": 114,
-      "goal_diff": 17,
-      "ball_touches": 397,
-      "goals_per_touch": 0.33,
-      "saves": 50,
-      "own_goals": 44,
-      "jumps": 173,
-      "distance": 238948.0,
-      "avg_possession_pct": 49.4,
-      "avg_latency_ms": 8797.0,
-      "tokens_in": 2660800,
-      "tokens_out": 623487,
-      "total_cost_usd": 57.7823
+      "games": 14,
+      "goals_for": 142,
+      "goals_against": 121,
+      "goal_diff": 21,
+      "ball_touches": 424,
+      "goals_per_touch": 0.335,
+      "saves": 52,
+      "own_goals": 48,
+      "jumps": 192,
+      "distance": 255832.0,
+      "avg_possession_pct": 50.1,
+      "avg_latency_ms": 8741.0,
+      "tokens_in": 2865466,
+      "tokens_out": 663365,
+      "total_cost_usd": 61.8229
     },
     "gpt_5_6_sol": {
       "games": 14,
@@ -32758,21 +33318,21 @@
       "total_cost_usd": 3.3659
     },
     "muse_spark_1_1": {
-      "games": 12,
-      "goals_for": 88,
-      "goals_against": 206,
-      "goal_diff": -118,
-      "ball_touches": 182,
-      "goals_per_touch": 0.484,
-      "saves": 25,
-      "own_goals": 27,
-      "jumps": 94,
-      "distance": 91976.0,
-      "avg_possession_pct": 26.4,
-      "avg_latency_ms": 8664.0,
-      "tokens_in": 1752621,
-      "tokens_out": 2026526,
-      "total_cost_usd": 10.8035
+      "games": 14,
+      "goals_for": 100,
+      "goals_against": 230,
+      "goal_diff": -130,
+      "ball_touches": 213,
+      "goals_per_touch": 0.469,
+      "saves": 32,
+      "own_goals": 34,
+      "jumps": 108,
+      "distance": 107603.0,
+      "avg_possession_pct": 26.7,
+      "avg_latency_ms": 8437.0,
+      "tokens_in": 2045677,
+      "tokens_out": 2364923,
+      "total_cost_usd": 12.608
     }
   }
 }
