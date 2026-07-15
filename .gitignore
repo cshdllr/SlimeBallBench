@@ -12,3 +12,5 @@ fable5_run.log
 
 sol_run.log
 retry_run.log
+muse_run.log
+*_run.log
