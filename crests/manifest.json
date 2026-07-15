@@ -89,5 +89,12 @@
     "color": "#64748B",
     "file": "crests/gpt_5_6_luna.svg",
     "bytes": 944
+  },
+  {
+    "id": "muse_spark_1_1",
+    "name": "Muse Spark 1.1",
+    "color": "#0064E0",
+    "file": "crests/muse_spark_1_1.svg",
+    "bytes": 984
   }
 ]

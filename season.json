@@ -1,6 +1,6 @@
 {
   "season_name": "SlimeBallBench League \u2014 Season 1",
-  "generated_at": "2026-07-14T13:42:32.928507+00:00",
+  "generated_at": "2026-07-15T16:31:44.785152+00:00",
   "settings": {
     "match_duration_seconds": 60,
     "decision_every_n_frames": 10,
@@ -132,6 +132,15 @@
       "abbrev": "LUN",
       "provider": "OpenAI",
       "model": "gpt-5.6-luna",
+      "released": "2026-07-09"
+    },
+    {
+      "id": "muse_spark_1_1",
+      "name": "Muse Spark 1.1",
+      "color": "#0064E0",
+      "abbrev": "MUS",
+      "provider": "Meta",
+      "model": "muse-spark-1.1",
       "released": "2026-07-09"
     }
   ],
@@ -28125,9 +28134,4181 @@
           }
         }
       }
+    },
+    {
+      "id": "claude_haiku_4_5__muse_spark_1_1",
+      "home": "claude_haiku_4_5",
+      "away": "muse_spark_1_1",
+      "home_name": "Claude Haiku 4.5",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#D97757",
+      "away_color": "#0064E0",
+      "score": [
+        10,
+        7
+      ],
+      "winner": "Claude Haiku 4.5",
+      "winner_id": "claude_haiku_4_5",
+      "log": "logs/claude_haiku_4_5_v_muse_spark_1_1_20260714_152124.json",
+      "played_at": "2026-07-14T21:47:05.908326+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Haiku 4.5": 10,
+          "Muse Spark 1.1": 7
+        },
+        "winner": "Claude Haiku 4.5",
+        "goals": [
+          {
+            "frame": 42,
+            "time_seconds": 1.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 138,
+            "time_seconds": 4.6,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 181,
+            "time_seconds": 6.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 238,
+            "time_seconds": 7.9,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 280,
+            "time_seconds": 9.3,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 406,
+            "time_seconds": 13.5,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 442,
+            "time_seconds": 14.7,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 603,
+            "time_seconds": 20.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 652,
+            "time_seconds": 21.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 794,
+            "time_seconds": 26.5,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              5,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 858,
+            "time_seconds": 28.6,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 997,
+            "time_seconds": 33.2,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              7,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1203,
+            "time_seconds": 40.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1493,
+            "time_seconds": 49.8,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1687,
+            "time_seconds": 56.2,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              8,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1729,
+            "time_seconds": 57.6,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              9,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1765,
+            "time_seconds": 58.8,
+            "scorer": "Claude Haiku 4.5",
+            "score_after": [
+              10,
+              7
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 17,
+          "total_ball_touches": 62,
+          "total_own_goals": 7,
+          "total_saves": 12,
+          "time_to_first_goal_seconds": 1.4,
+          "first_scorer": "Muse Spark 1.1",
+          "lead_changes": 3,
+          "largest_lead": 3
+        },
+        "players": {
+          "Claude Haiku 4.5": {
+            "model": "claude-haiku-4-5",
+            "policy": "model",
+            "goals_for": 10,
+            "goals_against": 7,
+            "ball_touches": 32,
+            "goals_per_touch": 0.312,
+            "saves": 9,
+            "own_goals": 4,
+            "possession_pct": 47.9,
+            "jumps": 46,
+            "distance_travelled": 15926.1,
+            "time_to_first_goal_seconds": 7.9,
+            "action_distribution": {
+              "move_left": 61,
+              "move_right": 32,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 62,
+              "idle": 18
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1076.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 158941,
+              "completion": 3712
+            },
+            "estimated_cost_usd": 0.177501
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 10,
+            "ball_touches": 30,
+            "goals_per_touch": 0.233,
+            "saves": 3,
+            "own_goals": 3,
+            "possession_pct": 52.1,
+            "jumps": 10,
+            "distance_travelled": 7705.2,
+            "time_to_first_goal_seconds": 1.4,
+            "action_distribution": {
+              "move_left": 36,
+              "move_right": 8,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 3,
+              "idle": 126
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7485.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146521,
+              "completion": 168768
+            },
+            "estimated_cost_usd": 0.900415
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_4o_mini__muse_spark_1_1",
+      "home": "gpt_4o_mini",
+      "away": "muse_spark_1_1",
+      "home_name": "GPT-4o mini",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#10A37F",
+      "away_color": "#0064E0",
+      "score": [
+        9,
+        13
+      ],
+      "winner": "Muse Spark 1.1",
+      "winner_id": "muse_spark_1_1",
+      "log": "logs/gpt_4o_mini_v_muse_spark_1_1_20260714_154705.json",
+      "played_at": "2026-07-14T22:10:55.581549+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-4o mini": 9,
+          "Muse Spark 1.1": 13
+        },
+        "winner": "Muse Spark 1.1",
+        "goals": [
+          {
+            "frame": 61,
+            "time_seconds": 2.0,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 121,
+            "time_seconds": 4.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 182,
+            "time_seconds": 6.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 291,
+            "time_seconds": 9.7,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 403,
+            "time_seconds": 13.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 493,
+            "time_seconds": 16.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 641,
+            "time_seconds": 21.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 710,
+            "time_seconds": 23.7,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 771,
+            "time_seconds": 25.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              3,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 840,
+            "time_seconds": 28.0,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 916,
+            "time_seconds": 30.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 946,
+            "time_seconds": 31.5,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1050,
+            "time_seconds": 35.0,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1126,
+            "time_seconds": 37.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              6,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1156,
+            "time_seconds": 38.5,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1242,
+            "time_seconds": 41.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1367,
+            "time_seconds": 45.6,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              8,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1497,
+            "time_seconds": 49.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              8,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1528,
+            "time_seconds": 50.9,
+            "scorer": "GPT-4o mini",
+            "score_after": [
+              9,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1593,
+            "time_seconds": 53.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              9,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1698,
+            "time_seconds": 56.6,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              9,
+              12
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1772,
+            "time_seconds": 59.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              9,
+              13
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 22,
+          "total_ball_touches": 47,
+          "total_own_goals": 15,
+          "total_saves": 9,
+          "time_to_first_goal_seconds": 2.0,
+          "first_scorer": "GPT-4o mini",
+          "lead_changes": 1,
+          "largest_lead": 4
+        },
+        "players": {
+          "GPT-4o mini": {
+            "model": "gpt-4o-mini",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 13,
+            "ball_touches": 36,
+            "goals_per_touch": 0.25,
+            "saves": 5,
+            "own_goals": 12,
+            "possession_pct": 72.7,
+            "jumps": 2,
+            "distance_travelled": 18379.2,
+            "time_to_first_goal_seconds": 2.0,
+            "action_distribution": {
+              "move_left": 59,
+              "move_right": 119,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 0,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 637.4,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146522,
+              "completion": 362
+            },
+            "estimated_cost_usd": 0.022195
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 13,
+            "goals_against": 9,
+            "ball_touches": 11,
+            "goals_per_touch": 1.182,
+            "saves": 4,
+            "own_goals": 3,
+            "possession_pct": 27.3,
+            "jumps": 3,
+            "distance_travelled": 6101.2,
+            "time_to_first_goal_seconds": 4.0,
+            "action_distribution": {
+              "move_left": 31,
+              "move_right": 6,
+              "jump": 0,
+              "move_left_jump": 3,
+              "move_right_jump": 0,
+              "idle": 140
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7304.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146522,
+              "completion": 172124
+            },
+            "estimated_cost_usd": 0.914679
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_opus_4_8__muse_spark_1_1",
+      "home": "claude_opus_4_8",
+      "away": "muse_spark_1_1",
+      "home_name": "Claude Opus 4.8",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#9B59B6",
+      "away_color": "#0064E0",
+      "score": [
+        10,
+        9
+      ],
+      "winner": "Claude Opus 4.8",
+      "winner_id": "claude_opus_4_8",
+      "log": "logs/claude_opus_4_8_v_muse_spark_1_1_20260714_161055.json",
+      "played_at": "2026-07-14T23:22:20.485647+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Opus 4.8": 10,
+          "Muse Spark 1.1": 9
+        },
+        "winner": "Claude Opus 4.8",
+        "goals": [
+          {
+            "frame": 61,
+            "time_seconds": 2.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 354,
+            "time_seconds": 11.8,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              2,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 415,
+            "time_seconds": 13.8,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 451,
+            "time_seconds": 15.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 502,
+            "time_seconds": 16.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 640,
+            "time_seconds": 21.3,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 701,
+            "time_seconds": 23.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 783,
+            "time_seconds": 26.1,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 933,
+            "time_seconds": 31.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1193,
+            "time_seconds": 39.8,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              6,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1255,
+            "time_seconds": 41.8,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              6,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1344,
+            "time_seconds": 44.8,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              6,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1380,
+            "time_seconds": 46.0,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              7,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1462,
+            "time_seconds": 48.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1544,
+            "time_seconds": 51.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1580,
+            "time_seconds": 52.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              8,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1656,
+            "time_seconds": 55.2,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              9,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1701,
+            "time_seconds": 56.7,
+            "scorer": "Claude Opus 4.8",
+            "score_after": [
+              10,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1785,
+            "time_seconds": 59.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              10,
+              9
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 19,
+          "total_ball_touches": 57,
+          "total_own_goals": 9,
+          "total_saves": 3,
+          "time_to_first_goal_seconds": 2.0,
+          "first_scorer": "Claude Opus 4.8",
+          "lead_changes": 2,
+          "largest_lead": 2
+        },
+        "players": {
+          "Claude Opus 4.8": {
+            "model": "claude-opus-4-8",
+            "policy": "model",
+            "goals_for": 10,
+            "goals_against": 9,
+            "ball_touches": 35,
+            "goals_per_touch": 0.286,
+            "saves": 0,
+            "own_goals": 4,
+            "possession_pct": 60.1,
+            "jumps": 23,
+            "distance_travelled": 15244.4,
+            "time_to_first_goal_seconds": 2.0,
+            "action_distribution": {
+              "move_left": 41,
+              "move_right": 105,
+              "jump": 0,
+              "move_left_jump": 4,
+              "move_right_jump": 26,
+              "idle": 4
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1675.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204675,
+              "completion": 1624
+            },
+            "estimated_cost_usd": 1.063975
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 9,
+            "goals_against": 10,
+            "ball_touches": 22,
+            "goals_per_touch": 0.409,
+            "saves": 3,
+            "own_goals": 5,
+            "possession_pct": 39.9,
+            "jumps": 10,
+            "distance_travelled": 7322.9,
+            "time_to_first_goal_seconds": 13.8,
+            "action_distribution": {
+              "move_left": 33,
+              "move_right": 9,
+              "jump": 0,
+              "move_left_jump": 5,
+              "move_right_jump": 5,
+              "idle": 128
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 9375.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146535,
+              "completion": 171311
+            },
+            "estimated_cost_usd": 0.911241
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash__muse_spark_1_1",
+      "home": "gemini_2_5_flash",
+      "away": "muse_spark_1_1",
+      "home_name": "Gemini 2.5 Flash",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#DB4437",
+      "away_color": "#0064E0",
+      "score": [
+        32,
+        2
+      ],
+      "winner": "Gemini 2.5 Flash",
+      "winner_id": "gemini_2_5_flash",
+      "log": "logs/gemini_2_5_flash_v_muse_spark_1_1_20260714_172220.json",
+      "played_at": "2026-07-14T23:52:42.961956+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash": 32,
+          "Muse Spark 1.1": 2
+        },
+        "winner": "Gemini 2.5 Flash",
+        "goals": [
+          {
+            "frame": 42,
+            "time_seconds": 1.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 110,
+            "time_seconds": 3.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 162,
+            "time_seconds": 5.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 202,
+            "time_seconds": 6.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 243,
+            "time_seconds": 8.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              4,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 282,
+            "time_seconds": 9.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              5,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 322,
+            "time_seconds": 10.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              6,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 363,
+            "time_seconds": 12.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              7,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 402,
+            "time_seconds": 13.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              8,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 442,
+            "time_seconds": 14.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              9,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 483,
+            "time_seconds": 16.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              10,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 522,
+            "time_seconds": 17.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              11,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 563,
+            "time_seconds": 18.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              12,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 602,
+            "time_seconds": 20.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              13,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 642,
+            "time_seconds": 21.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              14,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 682,
+            "time_seconds": 22.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              15,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 723,
+            "time_seconds": 24.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              16,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 762,
+            "time_seconds": 25.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              17,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 802,
+            "time_seconds": 26.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              18,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 842,
+            "time_seconds": 28.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              19,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 883,
+            "time_seconds": 29.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              20,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 922,
+            "time_seconds": 30.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              21,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 962,
+            "time_seconds": 32.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              22,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1015,
+            "time_seconds": 33.8,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              23,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1052,
+            "time_seconds": 35.1,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              24,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1092,
+            "time_seconds": 36.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              25,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1151,
+            "time_seconds": 38.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              26,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1346,
+            "time_seconds": 44.9,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              27,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1376,
+            "time_seconds": 45.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              27,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1448,
+            "time_seconds": 48.3,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              28,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1512,
+            "time_seconds": 50.4,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              29,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1552,
+            "time_seconds": 51.7,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              30,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1605,
+            "time_seconds": 53.5,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              31,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1757,
+            "time_seconds": 58.6,
+            "scorer": "Gemini 2.5 Flash",
+            "score_after": [
+              32,
+              2
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 34,
+          "total_ball_touches": 52,
+          "total_own_goals": 4,
+          "total_saves": 2,
+          "time_to_first_goal_seconds": 1.4,
+          "first_scorer": "Muse Spark 1.1",
+          "lead_changes": 1,
+          "largest_lead": 30
+        },
+        "players": {
+          "Gemini 2.5 Flash": {
+            "model": "gemini-2.5-flash",
+            "policy": "model",
+            "goals_for": 32,
+            "goals_against": 2,
+            "ball_touches": 41,
+            "goals_per_touch": 0.78,
+            "saves": 1,
+            "own_goals": 1,
+            "possession_pct": 88.2,
+            "jumps": 62,
+            "distance_travelled": 16458.0,
+            "time_to_first_goal_seconds": 3.7,
+            "action_distribution": {
+              "move_left": 8,
+              "move_right": 54,
+              "jump": 1,
+              "move_left_jump": 9,
+              "move_right_jump": 90,
+              "idle": 18
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 2767.3,
+            "api_errors": 1,
+            "tokens": {
+              "prompt": 156681,
+              "completion": 699
+            },
+            "estimated_cost_usd": 0.048752
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 2,
+            "goals_against": 32,
+            "ball_touches": 11,
+            "goals_per_touch": 0.182,
+            "saves": 1,
+            "own_goals": 3,
+            "possession_pct": 11.8,
+            "jumps": 9,
+            "distance_travelled": 7808.6,
+            "time_to_first_goal_seconds": 1.4,
+            "action_distribution": {
+              "move_left": 33,
+              "move_right": 12,
+              "jump": 0,
+              "move_left_jump": 6,
+              "move_right_jump": 3,
+              "idle": 126
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7356.6,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146525,
+              "completion": 168995
+            },
+            "estimated_cost_usd": 0.901385
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5__muse_spark_1_1",
+      "home": "gpt_5",
+      "away": "muse_spark_1_1",
+      "home_name": "GPT-5",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#E8A317",
+      "away_color": "#0064E0",
+      "score": [
+        12,
+        8
+      ],
+      "winner": "GPT-5",
+      "winner_id": "gpt_5",
+      "log": "logs/gpt_5_v_muse_spark_1_1_20260714_175242.json",
+      "played_at": "2026-07-15T01:53:29.416867+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5": 12,
+          "Muse Spark 1.1": 8
+        },
+        "winner": "GPT-5",
+        "goals": [
+          {
+            "frame": 29,
+            "time_seconds": 1.0,
+            "scorer": "GPT-5",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 97,
+            "time_seconds": 3.2,
+            "scorer": "GPT-5",
+            "score_after": [
+              2,
+              0
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 182,
+            "time_seconds": 6.1,
+            "scorer": "GPT-5",
+            "score_after": [
+              3,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 269,
+            "time_seconds": 9.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              3,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 313,
+            "time_seconds": 10.4,
+            "scorer": "GPT-5",
+            "score_after": [
+              4,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 448,
+            "time_seconds": 14.9,
+            "scorer": "GPT-5",
+            "score_after": [
+              5,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 570,
+            "time_seconds": 19.0,
+            "scorer": "GPT-5",
+            "score_after": [
+              6,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 681,
+            "time_seconds": 22.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              6,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 732,
+            "time_seconds": 24.4,
+            "scorer": "GPT-5",
+            "score_after": [
+              7,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 829,
+            "time_seconds": 27.6,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 879,
+            "time_seconds": 29.3,
+            "scorer": "GPT-5",
+            "score_after": [
+              8,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 926,
+            "time_seconds": 30.9,
+            "scorer": "GPT-5",
+            "score_after": [
+              9,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1006,
+            "time_seconds": 33.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              9,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1036,
+            "time_seconds": 34.5,
+            "scorer": "GPT-5",
+            "score_after": [
+              10,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1240,
+            "time_seconds": 41.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              10,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1299,
+            "time_seconds": 43.3,
+            "scorer": "GPT-5",
+            "score_after": [
+              11,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1366,
+            "time_seconds": 45.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              11,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1468,
+            "time_seconds": 48.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              11,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1671,
+            "time_seconds": 55.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              11,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1722,
+            "time_seconds": 57.4,
+            "scorer": "GPT-5",
+            "score_after": [
+              12,
+              8
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 20,
+          "total_ball_touches": 52,
+          "total_own_goals": 8,
+          "total_saves": 5,
+          "time_to_first_goal_seconds": 1.0,
+          "first_scorer": "GPT-5",
+          "lead_changes": 0,
+          "largest_lead": 6
+        },
+        "players": {
+          "GPT-5": {
+            "model": "gpt-5",
+            "policy": "model",
+            "goals_for": 12,
+            "goals_against": 8,
+            "ball_touches": 39,
+            "goals_per_touch": 0.308,
+            "saves": 2,
+            "own_goals": 5,
+            "possession_pct": 77.2,
+            "jumps": 33,
+            "distance_travelled": 17155.0,
+            "time_to_first_goal_seconds": 1.0,
+            "action_distribution": {
+              "move_left": 35,
+              "move_right": 98,
+              "jump": 1,
+              "move_left_jump": 14,
+              "move_right_jump": 32,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1430.4,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146348,
+              "completion": 2025
+            },
+            "estimated_cost_usd": 0.203185
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 12,
+            "ball_touches": 13,
+            "goals_per_touch": 0.615,
+            "saves": 3,
+            "own_goals": 3,
+            "possession_pct": 22.8,
+            "jumps": 11,
+            "distance_travelled": 7874.2,
+            "time_to_first_goal_seconds": 9.0,
+            "action_distribution": {
+              "move_left": 34,
+              "move_right": 9,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 4,
+              "idle": 126
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 10052.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146528,
+              "completion": 168640
+            },
+            "estimated_cost_usd": 0.89988
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_sonnet_4_6__muse_spark_1_1",
+      "home": "claude_sonnet_4_6",
+      "away": "muse_spark_1_1",
+      "home_name": "Claude Sonnet 4.6",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#EC4899",
+      "away_color": "#0064E0",
+      "score": [
+        7,
+        7
+      ],
+      "winner": "draw",
+      "winner_id": "draw",
+      "log": "logs/claude_sonnet_4_6_v_muse_spark_1_1_20260714_195329.json",
+      "played_at": "2026-07-15T04:04:35.703064+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Sonnet 4.6": 7,
+          "Muse Spark 1.1": 7
+        },
+        "winner": "draw",
+        "goals": [
+          {
+            "frame": 29,
+            "time_seconds": 1.0,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 70,
+            "time_seconds": 2.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 261,
+            "time_seconds": 8.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 365,
+            "time_seconds": 12.2,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 551,
+            "time_seconds": 18.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 794,
+            "time_seconds": 26.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 950,
+            "time_seconds": 31.7,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1077,
+            "time_seconds": 35.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              3,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1124,
+            "time_seconds": 37.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              3,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1271,
+            "time_seconds": 42.4,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1414,
+            "time_seconds": 47.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1450,
+            "time_seconds": 48.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1568,
+            "time_seconds": 52.3,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              6,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1743,
+            "time_seconds": 58.1,
+            "scorer": "Claude Sonnet 4.6",
+            "score_after": [
+              7,
+              7
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 14,
+          "total_ball_touches": 55,
+          "total_own_goals": 6,
+          "total_saves": 17,
+          "time_to_first_goal_seconds": 1.0,
+          "first_scorer": "Claude Sonnet 4.6",
+          "lead_changes": 1,
+          "largest_lead": 3
+        },
+        "players": {
+          "Claude Sonnet 4.6": {
+            "model": "claude-sonnet-4-6",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 7,
+            "ball_touches": 29,
+            "goals_per_touch": 0.241,
+            "saves": 16,
+            "own_goals": 4,
+            "possession_pct": 63.4,
+            "jumps": 3,
+            "distance_travelled": 14322.5,
+            "time_to_first_goal_seconds": 1.0,
+            "action_distribution": {
+              "move_left": 80,
+              "move_right": 93,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 3,
+              "idle": 4
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 2074.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 159127,
+              "completion": 4908
+            },
+            "estimated_cost_usd": 0.551001
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 7,
+            "goals_against": 7,
+            "ball_touches": 26,
+            "goals_per_touch": 0.269,
+            "saves": 1,
+            "own_goals": 2,
+            "possession_pct": 36.6,
+            "jumps": 10,
+            "distance_travelled": 7874.5,
+            "time_to_first_goal_seconds": 2.3,
+            "action_distribution": {
+              "move_left": 40,
+              "move_right": 4,
+              "jump": 0,
+              "move_left_jump": 8,
+              "move_right_jump": 2,
+              "idle": 126
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 10326.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146527,
+              "completion": 169631
+            },
+            "estimated_cost_usd": 0.904091
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5_mini__muse_spark_1_1",
+      "home": "gpt_5_mini",
+      "away": "muse_spark_1_1",
+      "home_name": "GPT-5 mini",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#2DD4BF",
+      "away_color": "#0064E0",
+      "score": [
+        10,
+        14
+      ],
+      "winner": "Muse Spark 1.1",
+      "winner_id": "muse_spark_1_1",
+      "log": "logs/gpt_5_mini_v_muse_spark_1_1_20260714_220435.json",
+      "played_at": "2026-07-15T06:15:58.058604+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5 mini": 10,
+          "Muse Spark 1.1": 14
+        },
+        "winner": "Muse Spark 1.1",
+        "goals": [
+          {
+            "frame": 43,
+            "time_seconds": 1.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 142,
+            "time_seconds": 4.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 234,
+            "time_seconds": 7.8,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 282,
+            "time_seconds": 9.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 429,
+            "time_seconds": 14.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 463,
+            "time_seconds": 15.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 520,
+            "time_seconds": 17.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 645,
+            "time_seconds": 21.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 681,
+            "time_seconds": 22.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 855,
+            "time_seconds": 28.5,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              3,
+              7
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 958,
+            "time_seconds": 31.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              3,
+              8
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1000,
+            "time_seconds": 33.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              3,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1059,
+            "time_seconds": 35.3,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              4,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1093,
+            "time_seconds": 36.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1149,
+            "time_seconds": 38.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1262,
+            "time_seconds": 42.1,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              5,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1302,
+            "time_seconds": 43.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              6,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1464,
+            "time_seconds": 48.8,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              7,
+              11
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1500,
+            "time_seconds": 50.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              12
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1548,
+            "time_seconds": 51.6,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              8,
+              12
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1590,
+            "time_seconds": 53.0,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              9,
+              12
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1662,
+            "time_seconds": 55.4,
+            "scorer": "GPT-5 mini",
+            "score_after": [
+              10,
+              12
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1727,
+            "time_seconds": 57.6,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              10,
+              13
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1786,
+            "time_seconds": 59.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              10,
+              14
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 24,
+          "total_ball_touches": 59,
+          "total_own_goals": 11,
+          "total_saves": 6,
+          "time_to_first_goal_seconds": 1.4,
+          "first_scorer": "Muse Spark 1.1",
+          "lead_changes": 0,
+          "largest_lead": 7
+        },
+        "players": {
+          "GPT-5 mini": {
+            "model": "gpt-5-mini",
+            "policy": "model",
+            "goals_for": 10,
+            "goals_against": 14,
+            "ball_touches": 43,
+            "goals_per_touch": 0.233,
+            "saves": 5,
+            "own_goals": 9,
+            "possession_pct": 74.2,
+            "jumps": 27,
+            "distance_travelled": 17472.2,
+            "time_to_first_goal_seconds": 9.4,
+            "action_distribution": {
+              "move_left": 58,
+              "move_right": 79,
+              "jump": 0,
+              "move_left_jump": 1,
+              "move_right_jump": 42,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1186.1,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146351,
+              "completion": 2023
+            },
+            "estimated_cost_usd": 0.040634
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 14,
+            "goals_against": 10,
+            "ball_touches": 16,
+            "goals_per_touch": 0.875,
+            "saves": 1,
+            "own_goals": 2,
+            "possession_pct": 25.8,
+            "jumps": 5,
+            "distance_travelled": 7821.2,
+            "time_to_first_goal_seconds": 1.4,
+            "action_distribution": {
+              "move_left": 41,
+              "move_right": 7,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 3,
+              "idle": 127
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 10259.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146531,
+              "completion": 167113
+            },
+            "estimated_cost_usd": 0.893394
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini_2_5_flash_lite__muse_spark_1_1",
+      "home": "gemini_2_5_flash_lite",
+      "away": "muse_spark_1_1",
+      "home_name": "Gemini 2.5 Flash-Lite",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#4285F4",
+      "away_color": "#0064E0",
+      "score": [
+        19,
+        5
+      ],
+      "winner": "Gemini 2.5 Flash-Lite",
+      "winner_id": "gemini_2_5_flash_lite",
+      "log": "logs/gemini_2_5_flash_lite_v_muse_spark_1_1_20260715_001558.json",
+      "played_at": "2026-07-15T06:42:19.746753+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Gemini 2.5 Flash-Lite": 19,
+          "Muse Spark 1.1": 5
+        },
+        "winner": "Gemini 2.5 Flash-Lite",
+        "goals": [
+          {
+            "frame": 277,
+            "time_seconds": 9.2,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 337,
+            "time_seconds": 11.2,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 399,
+            "time_seconds": 13.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 450,
+            "time_seconds": 15.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 902,
+            "time_seconds": 30.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              1,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 942,
+            "time_seconds": 31.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              2,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 982,
+            "time_seconds": 32.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              3,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1022,
+            "time_seconds": 34.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1062,
+            "time_seconds": 35.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              5,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1102,
+            "time_seconds": 36.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              6,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1142,
+            "time_seconds": 38.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              7,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1182,
+            "time_seconds": 39.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              8,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1222,
+            "time_seconds": 40.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              9,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1262,
+            "time_seconds": 42.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              10,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1302,
+            "time_seconds": 43.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              11,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1342,
+            "time_seconds": 44.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              12,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1382,
+            "time_seconds": 46.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              13,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1422,
+            "time_seconds": 47.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              14,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1462,
+            "time_seconds": 48.7,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              15,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1502,
+            "time_seconds": 50.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              16,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1614,
+            "time_seconds": 53.8,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              17,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1652,
+            "time_seconds": 55.1,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              18,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1692,
+            "time_seconds": 56.4,
+            "scorer": "Gemini 2.5 Flash-Lite",
+            "score_after": [
+              19,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1760,
+            "time_seconds": 58.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              19,
+              5
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 24,
+          "total_ball_touches": 47,
+          "total_own_goals": 3,
+          "total_saves": 2,
+          "time_to_first_goal_seconds": 9.2,
+          "first_scorer": "Muse Spark 1.1",
+          "lead_changes": 1,
+          "largest_lead": 15
+        },
+        "players": {
+          "Gemini 2.5 Flash-Lite": {
+            "model": "gemini-2.5-flash-lite",
+            "policy": "model",
+            "goals_for": 19,
+            "goals_against": 5,
+            "ball_touches": 33,
+            "goals_per_touch": 0.576,
+            "saves": 1,
+            "own_goals": 2,
+            "possession_pct": 65.9,
+            "jumps": 83,
+            "distance_travelled": 19156.7,
+            "time_to_first_goal_seconds": 30.1,
+            "action_distribution": {
+              "move_left": 1,
+              "move_right": 0,
+              "jump": 4,
+              "move_left_jump": 58,
+              "move_right_jump": 117,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 488.4,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 157695,
+              "completion": 882
+            },
+            "estimated_cost_usd": 0.016122
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 5,
+            "goals_against": 19,
+            "ball_touches": 14,
+            "goals_per_touch": 0.357,
+            "saves": 1,
+            "own_goals": 1,
+            "possession_pct": 34.1,
+            "jumps": 10,
+            "distance_travelled": 8771.7,
+            "time_to_first_goal_seconds": 9.2,
+            "action_distribution": {
+              "move_left": 40,
+              "move_right": 12,
+              "jump": 0,
+              "move_left_jump": 7,
+              "move_right_jump": 3,
+              "idle": 118
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 8297.7,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146528,
+              "completion": 168506
+            },
+            "estimated_cost_usd": 0.899311
+          }
+        }
+      }
+    },
+    {
+      "id": "claude_sonnet_5__muse_spark_1_1",
+      "home": "claude_sonnet_5",
+      "away": "muse_spark_1_1",
+      "home_name": "Claude Sonnet 5",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#6366F1",
+      "away_color": "#0064E0",
+      "score": [
+        8,
+        12
+      ],
+      "winner": "Muse Spark 1.1",
+      "winner_id": "muse_spark_1_1",
+      "log": "logs/claude_sonnet_5_v_muse_spark_1_1_20260715_004219.json",
+      "played_at": "2026-07-15T11:34:08.852001+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "Claude Sonnet 5": 8,
+          "Muse Spark 1.1": 12
+        },
+        "winner": "Muse Spark 1.1",
+        "goals": [
+          {
+            "frame": 29,
+            "time_seconds": 1.0,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              1,
+              0
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 63,
+            "time_seconds": 2.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 304,
+            "time_seconds": 10.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 340,
+            "time_seconds": 11.3,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 481,
+            "time_seconds": 16.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 576,
+            "time_seconds": 19.2,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 652,
+            "time_seconds": 21.7,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 735,
+            "time_seconds": 24.5,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              4
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 840,
+            "time_seconds": 28.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 939,
+            "time_seconds": 31.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              4,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 983,
+            "time_seconds": 32.8,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              5,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1052,
+            "time_seconds": 35.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              5,
+              7
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1115,
+            "time_seconds": 37.2,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              5,
+              8
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1386,
+            "time_seconds": 46.2,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              5,
+              9
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1416,
+            "time_seconds": 47.2,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              6,
+              9
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1507,
+            "time_seconds": 50.2,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              6,
+              10
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1538,
+            "time_seconds": 51.3,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              7,
+              10
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1639,
+            "time_seconds": 54.6,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              7,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1683,
+            "time_seconds": 56.1,
+            "scorer": "Claude Sonnet 5",
+            "score_after": [
+              8,
+              11
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1751,
+            "time_seconds": 58.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              8,
+              12
+            ],
+            "own_goal": true
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 20,
+          "total_ball_touches": 51,
+          "total_own_goals": 8,
+          "total_saves": 7,
+          "time_to_first_goal_seconds": 1.0,
+          "first_scorer": "Claude Sonnet 5",
+          "lead_changes": 3,
+          "largest_lead": 4
+        },
+        "players": {
+          "Claude Sonnet 5": {
+            "model": "claude-sonnet-5",
+            "policy": "model",
+            "goals_for": 8,
+            "goals_against": 12,
+            "ball_touches": 41,
+            "goals_per_touch": 0.195,
+            "saves": 6,
+            "own_goals": 8,
+            "possession_pct": 81.3,
+            "jumps": 0,
+            "distance_travelled": 18653.8,
+            "time_to_first_goal_seconds": 1.0,
+            "action_distribution": {
+              "move_left": 64,
+              "move_right": 114,
+              "jump": 0,
+              "move_left_jump": 0,
+              "move_right_jump": 0,
+              "idle": 2
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1830.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 204672,
+              "completion": 1058
+            },
+            "estimated_cost_usd": 0.419924
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 12,
+            "goals_against": 8,
+            "ball_touches": 10,
+            "goals_per_touch": 1.2,
+            "saves": 1,
+            "own_goals": 0,
+            "possession_pct": 18.7,
+            "jumps": 7,
+            "distance_travelled": 7961.8,
+            "time_to_first_goal_seconds": 2.1,
+            "action_distribution": {
+              "move_left": 46,
+              "move_right": 6,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 5,
+              "idle": 121
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 11252.2,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146532,
+              "completion": 165839
+            },
+            "estimated_cost_usd": 0.887981
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5_6_sol__muse_spark_1_1",
+      "home": "gpt_5_6_sol",
+      "away": "muse_spark_1_1",
+      "home_name": "GPT-5.6 Sol",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#F97316",
+      "away_color": "#0064E0",
+      "score": [
+        38,
+        2
+      ],
+      "winner": "GPT-5.6 Sol",
+      "winner_id": "gpt_5_6_sol",
+      "log": "logs/gpt_5_6_sol_v_muse_spark_1_1_20260715_085244.json",
+      "played_at": "2026-07-15T15:22:07.946937+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5.6 Sol": 38,
+          "Muse Spark 1.1": 2
+        },
+        "winner": "GPT-5.6 Sol",
+        "goals": [
+          {
+            "frame": 32,
+            "time_seconds": 1.1,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 89,
+            "time_seconds": 3.0,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 174,
+            "time_seconds": 5.8,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              1,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 212,
+            "time_seconds": 7.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 253,
+            "time_seconds": 8.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              3,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 292,
+            "time_seconds": 9.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              4,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 332,
+            "time_seconds": 11.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              5,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 372,
+            "time_seconds": 12.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              6,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 412,
+            "time_seconds": 13.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              7,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 452,
+            "time_seconds": 15.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              8,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 493,
+            "time_seconds": 16.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              9,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 532,
+            "time_seconds": 17.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              10,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 573,
+            "time_seconds": 19.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              11,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 612,
+            "time_seconds": 20.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              12,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 652,
+            "time_seconds": 21.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              13,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 693,
+            "time_seconds": 23.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              14,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 732,
+            "time_seconds": 24.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              15,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 772,
+            "time_seconds": 25.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              16,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 812,
+            "time_seconds": 27.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              17,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 853,
+            "time_seconds": 28.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              18,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 892,
+            "time_seconds": 29.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              19,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 932,
+            "time_seconds": 31.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              20,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 972,
+            "time_seconds": 32.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              21,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1013,
+            "time_seconds": 33.8,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              22,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1052,
+            "time_seconds": 35.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              23,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1092,
+            "time_seconds": 36.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              24,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1132,
+            "time_seconds": 37.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              25,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1173,
+            "time_seconds": 39.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              26,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1212,
+            "time_seconds": 40.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              27,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1252,
+            "time_seconds": 41.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              28,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1293,
+            "time_seconds": 43.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              29,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1332,
+            "time_seconds": 44.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              30,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1372,
+            "time_seconds": 45.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              31,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1412,
+            "time_seconds": 47.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              32,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1452,
+            "time_seconds": 48.4,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              33,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1492,
+            "time_seconds": 49.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              34,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1532,
+            "time_seconds": 51.1,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              35,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1719,
+            "time_seconds": 57.3,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              36,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1755,
+            "time_seconds": 58.5,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              37,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1792,
+            "time_seconds": 59.7,
+            "scorer": "GPT-5.6 Sol",
+            "score_after": [
+              38,
+              2
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 40,
+          "total_ball_touches": 49,
+          "total_own_goals": 2,
+          "total_saves": 2,
+          "time_to_first_goal_seconds": 1.1,
+          "first_scorer": "Muse Spark 1.1",
+          "lead_changes": 1,
+          "largest_lead": 36
+        },
+        "players": {
+          "GPT-5.6 Sol": {
+            "model": "gpt-5.6-sol",
+            "policy": "model",
+            "goals_for": 38,
+            "goals_against": 2,
+            "ball_touches": 43,
+            "goals_per_touch": 0.884,
+            "saves": 0,
+            "own_goals": 1,
+            "possession_pct": 88.3,
+            "jumps": 78,
+            "distance_travelled": 17353.0,
+            "time_to_first_goal_seconds": 5.8,
+            "action_distribution": {
+              "move_left": 7,
+              "move_right": 88,
+              "jump": 1,
+              "move_left_jump": 4,
+              "move_right_jump": 80,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 2498.0,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146345,
+              "completion": 7830
+            },
+            "estimated_cost_usd": 0.966625
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 2,
+            "goals_against": 38,
+            "ball_touches": 6,
+            "goals_per_touch": 0.333,
+            "saves": 2,
+            "own_goals": 1,
+            "possession_pct": 11.7,
+            "jumps": 10,
+            "distance_travelled": 7995.0,
+            "time_to_first_goal_seconds": 1.1,
+            "action_distribution": {
+              "move_left": 32,
+              "move_right": 13,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 8,
+              "idle": 125
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7298.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146525,
+              "completion": 170270
+            },
+            "estimated_cost_usd": 0.906804
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5_6_terra__muse_spark_1_1",
+      "home": "gpt_5_6_terra",
+      "away": "muse_spark_1_1",
+      "home_name": "GPT-5.6 Terra",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#0D9488",
+      "away_color": "#0064E0",
+      "score": [
+        16,
+        6
+      ],
+      "winner": "GPT-5.6 Terra",
+      "winner_id": "gpt_5_6_terra",
+      "log": "logs/gpt_5_6_terra_v_muse_spark_1_1_20260715_092207.json",
+      "played_at": "2026-07-15T16:04:55.207561+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5.6 Terra": 16,
+          "Muse Spark 1.1": 6
+        },
+        "winner": "GPT-5.6 Terra",
+        "goals": [
+          {
+            "frame": 42,
+            "time_seconds": 1.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 121,
+            "time_seconds": 4.0,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              1,
+              1
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 235,
+            "time_seconds": 7.8,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              2,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 506,
+            "time_seconds": 16.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              2
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 566,
+            "time_seconds": 18.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 596,
+            "time_seconds": 19.9,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 641,
+            "time_seconds": 21.4,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 712,
+            "time_seconds": 23.7,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 753,
+            "time_seconds": 25.1,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              6,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 835,
+            "time_seconds": 27.8,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              7,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 916,
+            "time_seconds": 30.5,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              8,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 955,
+            "time_seconds": 31.8,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              9,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 986,
+            "time_seconds": 32.9,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              9,
+              4
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1025,
+            "time_seconds": 34.2,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              9,
+              5
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1076,
+            "time_seconds": 35.9,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              10,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1188,
+            "time_seconds": 39.6,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              11,
+              5
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1253,
+            "time_seconds": 41.8,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              11,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1320,
+            "time_seconds": 44.0,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              12,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1426,
+            "time_seconds": 47.5,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              13,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1575,
+            "time_seconds": 52.5,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              14,
+              6
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 1703,
+            "time_seconds": 56.8,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              15,
+              6
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1742,
+            "time_seconds": 58.1,
+            "scorer": "GPT-5.6 Terra",
+            "score_after": [
+              16,
+              6
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 22,
+          "total_ball_touches": 48,
+          "total_own_goals": 8,
+          "total_saves": 3,
+          "time_to_first_goal_seconds": 1.4,
+          "first_scorer": "Muse Spark 1.1",
+          "lead_changes": 3,
+          "largest_lead": 10
+        },
+        "players": {
+          "GPT-5.6 Terra": {
+            "model": "gpt-5.6-terra",
+            "policy": "model",
+            "goals_for": 16,
+            "goals_against": 6,
+            "ball_touches": 35,
+            "goals_per_touch": 0.457,
+            "saves": 0,
+            "own_goals": 4,
+            "possession_pct": 76.7,
+            "jumps": 34,
+            "distance_travelled": 18302.3,
+            "time_to_first_goal_seconds": 4.0,
+            "action_distribution": {
+              "move_left": 42,
+              "move_right": 97,
+              "jump": 0,
+              "move_left_jump": 3,
+              "move_right_jump": 31,
+              "idle": 7
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1793.1,
+            "api_errors": 7,
+            "tokens": {
+              "prompt": 140652,
+              "completion": 12310
+            },
+            "estimated_cost_usd": 0.53628
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 6,
+            "goals_against": 16,
+            "ball_touches": 13,
+            "goals_per_touch": 0.462,
+            "saves": 3,
+            "own_goals": 4,
+            "possession_pct": 23.3,
+            "jumps": 5,
+            "distance_travelled": 7521.9,
+            "time_to_first_goal_seconds": 1.4,
+            "action_distribution": {
+              "move_left": 33,
+              "move_right": 9,
+              "jump": 0,
+              "move_left_jump": 3,
+              "move_right_jump": 2,
+              "idle": 133
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7426.3,
+            "api_errors": 7,
+            "tokens": {
+              "prompt": 140825,
+              "completion": 163294
+            },
+            "estimated_cost_usd": 0.870031
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt_5_6_luna__muse_spark_1_1",
+      "home": "gpt_5_6_luna",
+      "away": "muse_spark_1_1",
+      "home_name": "GPT-5.6 Luna",
+      "away_name": "Muse Spark 1.1",
+      "home_color": "#64748B",
+      "away_color": "#0064E0",
+      "score": [
+        35,
+        3
+      ],
+      "winner": "GPT-5.6 Luna",
+      "winner_id": "gpt_5_6_luna",
+      "log": "logs/gpt_5_6_luna_v_muse_spark_1_1_20260715_100455.json",
+      "played_at": "2026-07-15T16:31:44.758032+00:00",
+      "summary": {
+        "duration_seconds": 60.0,
+        "fps": 30,
+        "final_score": {
+          "GPT-5.6 Luna": 35,
+          "Muse Spark 1.1": 3
+        },
+        "winner": "GPT-5.6 Luna",
+        "goals": [
+          {
+            "frame": 42,
+            "time_seconds": 1.4,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              1
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 99,
+            "time_seconds": 3.3,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              2
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 141,
+            "time_seconds": 4.7,
+            "scorer": "Muse Spark 1.1",
+            "score_after": [
+              0,
+              3
+            ],
+            "own_goal": true
+          },
+          {
+            "frame": 407,
+            "time_seconds": 13.6,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              1,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 443,
+            "time_seconds": 14.8,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              2,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 482,
+            "time_seconds": 16.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              3,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 522,
+            "time_seconds": 17.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              4,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 562,
+            "time_seconds": 18.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              5,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 602,
+            "time_seconds": 20.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              6,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 642,
+            "time_seconds": 21.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              7,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 682,
+            "time_seconds": 22.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              8,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 722,
+            "time_seconds": 24.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              9,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 762,
+            "time_seconds": 25.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              10,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 802,
+            "time_seconds": 26.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              11,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 842,
+            "time_seconds": 28.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              12,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 882,
+            "time_seconds": 29.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              13,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 922,
+            "time_seconds": 30.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              14,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 962,
+            "time_seconds": 32.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              15,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1002,
+            "time_seconds": 33.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              16,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1042,
+            "time_seconds": 34.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              17,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1082,
+            "time_seconds": 36.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              18,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1122,
+            "time_seconds": 37.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              19,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1162,
+            "time_seconds": 38.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              20,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1202,
+            "time_seconds": 40.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              21,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1242,
+            "time_seconds": 41.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              22,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1283,
+            "time_seconds": 42.8,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              23,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1322,
+            "time_seconds": 44.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              24,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1362,
+            "time_seconds": 45.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              25,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1402,
+            "time_seconds": 46.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              26,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1442,
+            "time_seconds": 48.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              27,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1482,
+            "time_seconds": 49.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              28,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1522,
+            "time_seconds": 50.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              29,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1562,
+            "time_seconds": 52.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              30,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1602,
+            "time_seconds": 53.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              31,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1642,
+            "time_seconds": 54.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              32,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1682,
+            "time_seconds": 56.1,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              33,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1722,
+            "time_seconds": 57.4,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              34,
+              3
+            ],
+            "own_goal": false
+          },
+          {
+            "frame": 1762,
+            "time_seconds": 58.7,
+            "scorer": "GPT-5.6 Luna",
+            "score_after": [
+              35,
+              3
+            ],
+            "own_goal": false
+          }
+        ],
+        "match_metrics": {
+          "total_goals": 38,
+          "total_ball_touches": 55,
+          "total_own_goals": 3,
+          "total_saves": 2,
+          "time_to_first_goal_seconds": 1.4,
+          "first_scorer": "Muse Spark 1.1",
+          "lead_changes": 1,
+          "largest_lead": 32
+        },
+        "players": {
+          "GPT-5.6 Luna": {
+            "model": "gpt-5.6-luna",
+            "policy": "model",
+            "goals_for": 35,
+            "goals_against": 3,
+            "ball_touches": 45,
+            "goals_per_touch": 0.778,
+            "saves": 0,
+            "own_goals": 3,
+            "possession_pct": 87.3,
+            "jumps": 79,
+            "distance_travelled": 16147.4,
+            "time_to_first_goal_seconds": 13.6,
+            "action_distribution": {
+              "move_left": 9,
+              "move_right": 29,
+              "jump": 0,
+              "move_left_jump": 2,
+              "move_right_jump": 140,
+              "idle": 0
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 1406.9,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146342,
+              "completion": 12177
+            },
+            "estimated_cost_usd": 0.219404
+          },
+          "Muse Spark 1.1": {
+            "model": "muse-spark-1.1",
+            "policy": "model",
+            "goals_for": 3,
+            "goals_against": 35,
+            "ball_touches": 10,
+            "goals_per_touch": 0.3,
+            "saves": 2,
+            "own_goals": 0,
+            "possession_pct": 12.7,
+            "jumps": 4,
+            "distance_travelled": 7217.4,
+            "time_to_first_goal_seconds": 1.4,
+            "action_distribution": {
+              "move_left": 31,
+              "move_right": 10,
+              "jump": 0,
+              "move_left_jump": 1,
+              "move_right_jump": 3,
+              "idle": 135
+            },
+            "decisions": 180,
+            "avg_decision_latency_ms": 7534.5,
+            "api_errors": 0,
+            "tokens": {
+              "prompt": 146522,
+              "completion": 172035
+            },
+            "estimated_cost_usd": 0.914301
+          }
+        }
+      }
     }
   ],
   "standings": [
+    {
+      "id": "gpt_5_6_luna",
+      "name": "GPT-5.6 Luna",
+      "color": "#64748B",
+      "abbrev": "LUN",
+      "provider": "OpenAI",
+      "played": 14,
+      "w": 9,
+      "d": 2,
+      "l": 3,
+      "gf": 195,
+      "ga": 134,
+      "gd": 61,
+      "points": 29,
+      "rank": 1
+    },
+    {
+      "id": "claude_opus_4_8",
+      "name": "Claude Opus 4.8",
+      "color": "#9B59B6",
+      "abbrev": "OPU",
+      "provider": "Anthropic",
+      "played": 14,
+      "w": 9,
+      "d": 1,
+      "l": 4,
+      "gf": 163,
+      "ga": 142,
+      "gd": 21,
+      "points": 28,
+      "rank": 2
+    },
     {
       "id": "claude_fable_5",
       "name": "Claude Fable 5",
@@ -28142,55 +32323,7 @@
       "ga": 114,
       "gd": 17,
       "points": 27,
-      "rank": 1
-    },
-    {
-      "id": "gpt_5_6_luna",
-      "name": "GPT-5.6 Luna",
-      "color": "#64748B",
-      "abbrev": "LUN",
-      "provider": "OpenAI",
-      "played": 13,
-      "w": 8,
-      "d": 2,
-      "l": 3,
-      "gf": 160,
-      "ga": 131,
-      "gd": 29,
-      "points": 26,
-      "rank": 2
-    },
-    {
-      "id": "claude_opus_4_8",
-      "name": "Claude Opus 4.8",
-      "color": "#9B59B6",
-      "abbrev": "OPU",
-      "provider": "Anthropic",
-      "played": 13,
-      "w": 8,
-      "d": 1,
-      "l": 4,
-      "gf": 153,
-      "ga": 133,
-      "gd": 20,
-      "points": 25,
       "rank": 3
-    },
-    {
-      "id": "gpt_5_mini",
-      "name": "GPT-5 mini",
-      "color": "#2DD4BF",
-      "abbrev": "G5M",
-      "provider": "OpenAI",
-      "played": 13,
-      "w": 8,
-      "d": 1,
-      "l": 4,
-      "gf": 128,
-      "ga": 108,
-      "gd": 20,
-      "points": 25,
-      "rank": 4
     },
     {
       "id": "claude_haiku_4_5",
@@ -28198,31 +32331,31 @@
       "color": "#D97757",
       "abbrev": "HAI",
       "provider": "Anthropic",
-      "played": 13,
-      "w": 8,
+      "played": 14,
+      "w": 9,
       "d": 0,
       "l": 5,
-      "gf": 124,
-      "ga": 132,
-      "gd": -8,
-      "points": 24,
-      "rank": 5
+      "gf": 134,
+      "ga": 139,
+      "gd": -5,
+      "points": 27,
+      "rank": 4
     },
     {
-      "id": "claude_sonnet_4_6",
-      "name": "Claude Sonnet 4.6",
-      "color": "#EC4899",
-      "abbrev": "SON",
-      "provider": "Anthropic",
-      "played": 13,
-      "w": 7,
+      "id": "gpt_5_mini",
+      "name": "GPT-5 mini",
+      "color": "#2DD4BF",
+      "abbrev": "G5M",
+      "provider": "OpenAI",
+      "played": 14,
+      "w": 8,
       "d": 1,
       "l": 5,
-      "gf": 119,
-      "ga": 112,
-      "gd": 7,
-      "points": 22,
-      "rank": 6
+      "gf": 138,
+      "ga": 122,
+      "gd": 16,
+      "points": 25,
+      "rank": 5
     },
     {
       "id": "gemini_2_5_flash",
@@ -28230,15 +32363,15 @@
       "color": "#DB4437",
       "abbrev": "GMF",
       "provider": "Gemini",
-      "played": 13,
-      "w": 6,
+      "played": 14,
+      "w": 7,
       "d": 3,
       "l": 4,
-      "gf": 147,
-      "ga": 134,
-      "gd": 13,
-      "points": 21,
-      "rank": 7
+      "gf": 179,
+      "ga": 136,
+      "gd": 43,
+      "points": 24,
+      "rank": 6
     },
     {
       "id": "gpt_5_6_terra",
@@ -28246,14 +32379,30 @@
       "color": "#0D9488",
       "abbrev": "TER",
       "provider": "OpenAI",
-      "played": 13,
-      "w": 5,
+      "played": 14,
+      "w": 6,
       "d": 5,
       "l": 3,
-      "gf": 149,
-      "ga": 126,
-      "gd": 23,
-      "points": 20,
+      "gf": 165,
+      "ga": 132,
+      "gd": 33,
+      "points": 23,
+      "rank": 7
+    },
+    {
+      "id": "claude_sonnet_4_6",
+      "name": "Claude Sonnet 4.6",
+      "color": "#EC4899",
+      "abbrev": "SON",
+      "provider": "Anthropic",
+      "played": 14,
+      "w": 7,
+      "d": 2,
+      "l": 5,
+      "gf": 126,
+      "ga": 119,
+      "gd": 7,
+      "points": 23,
       "rank": 8
     },
     {
@@ -28278,31 +32427,15 @@
       "color": "#E8A317",
       "abbrev": "GP5",
       "provider": "OpenAI",
-      "played": 13,
-      "w": 3,
+      "played": 14,
+      "w": 4,
       "d": 3,
       "l": 7,
-      "gf": 114,
-      "ga": 124,
-      "gd": -10,
-      "points": 12,
+      "gf": 126,
+      "ga": 132,
+      "gd": -6,
+      "points": 15,
       "rank": 10
-    },
-    {
-      "id": "claude_sonnet_5",
-      "name": "Claude Sonnet 5",
-      "color": "#6366F1",
-      "abbrev": "SN5",
-      "provider": "Anthropic",
-      "played": 13,
-      "w": 3,
-      "d": 3,
-      "l": 7,
-      "gf": 140,
-      "ga": 166,
-      "gd": -26,
-      "points": 12,
-      "rank": 11
     },
     {
       "id": "gpt_5_6_sol",
@@ -28310,31 +32443,31 @@
       "color": "#F97316",
       "abbrev": "SOL",
       "provider": "OpenAI",
-      "played": 13,
-      "w": 2,
+      "played": 14,
+      "w": 3,
       "d": 3,
       "l": 8,
-      "gf": 151,
-      "ga": 170,
-      "gd": -19,
-      "points": 9,
-      "rank": 12
+      "gf": 189,
+      "ga": 172,
+      "gd": 17,
+      "points": 12,
+      "rank": 11
     },
     {
-      "id": "gpt_4o_mini",
-      "name": "GPT-4o mini",
-      "color": "#10A37F",
-      "abbrev": "GPT",
-      "provider": "OpenAI",
-      "played": 13,
+      "id": "claude_sonnet_5",
+      "name": "Claude Sonnet 5",
+      "color": "#6366F1",
+      "abbrev": "SN5",
+      "provider": "Anthropic",
+      "played": 14,
       "w": 3,
-      "d": 0,
-      "l": 10,
-      "gf": 133,
-      "ga": 168,
-      "gd": -35,
-      "points": 9,
-      "rank": 13
+      "d": 3,
+      "l": 8,
+      "gf": 148,
+      "ga": 178,
+      "gd": -30,
+      "points": 12,
+      "rank": 12
     },
     {
       "id": "gemini_2_5_flash_lite",
@@ -28342,136 +32475,168 @@
       "color": "#4285F4",
       "abbrev": "GEM",
       "provider": "Gemini",
-      "played": 13,
-      "w": 2,
+      "played": 14,
+      "w": 3,
       "d": 2,
       "l": 9,
-      "gf": 125,
-      "ga": 153,
-      "gd": -28,
-      "points": 8,
+      "gf": 144,
+      "ga": 158,
+      "gd": -14,
+      "points": 11,
+      "rank": 13
+    },
+    {
+      "id": "muse_spark_1_1",
+      "name": "Muse Spark 1.1",
+      "color": "#0064E0",
+      "abbrev": "MUS",
+      "provider": "Meta",
+      "played": 12,
+      "w": 3,
+      "d": 1,
+      "l": 8,
+      "gf": 88,
+      "ga": 206,
+      "gd": -118,
+      "points": 10,
       "rank": 14
+    },
+    {
+      "id": "gpt_4o_mini",
+      "name": "GPT-4o mini",
+      "color": "#10A37F",
+      "abbrev": "GPT",
+      "provider": "OpenAI",
+      "played": 14,
+      "w": 3,
+      "d": 0,
+      "l": 11,
+      "gf": 142,
+      "ga": 181,
+      "gd": -39,
+      "points": 9,
+      "rank": 15
     }
   ],
   "aggregate_stats": {
     "claude_haiku_4_5": {
-      "games": 13,
-      "goals_for": 124,
-      "goals_against": 132,
-      "goal_diff": -8,
-      "ball_touches": 323,
-      "goals_per_touch": 0.384,
-      "saves": 96,
-      "own_goals": 53,
-      "jumps": 555,
-      "distance": 206626.0,
-      "avg_possession_pct": 41.3,
-      "avg_latency_ms": 890.0,
-      "tokens_in": 2066325,
-      "tokens_out": 47785,
-      "total_cost_usd": 2.3053
+      "games": 14,
+      "goals_for": 134,
+      "goals_against": 139,
+      "goal_diff": -5,
+      "ball_touches": 355,
+      "goals_per_touch": 0.377,
+      "saves": 105,
+      "own_goals": 57,
+      "jumps": 601,
+      "distance": 222552.0,
+      "avg_possession_pct": 41.8,
+      "avg_latency_ms": 903.0,
+      "tokens_in": 2225266,
+      "tokens_out": 51497,
+      "total_cost_usd": 2.4828
     },
     "gpt_4o_mini": {
-      "games": 13,
-      "goals_for": 133,
-      "goals_against": 168,
-      "goal_diff": -35,
-      "ball_touches": 401,
-      "goals_per_touch": 0.332,
-      "saves": 36,
-      "own_goals": 70,
-      "jumps": 73,
-      "distance": 215650.0,
-      "avg_possession_pct": 52.8,
-      "avg_latency_ms": 596.0,
-      "tokens_in": 1904886,
-      "tokens_out": 4757,
-      "total_cost_usd": 0.2886
+      "games": 14,
+      "goals_for": 142,
+      "goals_against": 181,
+      "goal_diff": -39,
+      "ball_touches": 437,
+      "goals_per_touch": 0.325,
+      "saves": 41,
+      "own_goals": 82,
+      "jumps": 75,
+      "distance": 234029.0,
+      "avg_possession_pct": 54.2,
+      "avg_latency_ms": 599.0,
+      "tokens_in": 2051408,
+      "tokens_out": 5119,
+      "total_cost_usd": 0.3108
     },
     "claude_opus_4_8": {
-      "games": 13,
-      "goals_for": 153,
-      "goals_against": 133,
-      "goal_diff": 20,
-      "ball_touches": 444,
-      "goals_per_touch": 0.345,
+      "games": 14,
+      "goals_for": 163,
+      "goals_against": 142,
+      "goal_diff": 21,
+      "ball_touches": 479,
+      "goals_per_touch": 0.34,
       "saves": 50,
-      "own_goals": 64,
-      "jumps": 233,
-      "distance": 225533.0,
-      "avg_possession_pct": 56.5,
-      "avg_latency_ms": 1436.0,
-      "tokens_in": 2660756,
-      "tokens_out": 26933,
-      "total_cost_usd": 13.9771
+      "own_goals": 68,
+      "jumps": 256,
+      "distance": 240778.0,
+      "avg_possession_pct": 56.7,
+      "avg_latency_ms": 1453.0,
+      "tokens_in": 2865431,
+      "tokens_out": 28557,
+      "total_cost_usd": 15.0411
     },
     "gemini_2_5_flash": {
-      "games": 13,
-      "goals_for": 147,
-      "goals_against": 134,
-      "goal_diff": 13,
-      "ball_touches": 403,
-      "goals_per_touch": 0.365,
-      "saves": 38,
-      "own_goals": 56,
-      "jumps": 814,
-      "distance": 212835.0,
-      "avg_possession_pct": 47.9,
-      "avg_latency_ms": 3237.0,
-      "tokens_in": 1990646,
-      "tokens_out": 9433,
-      "total_cost_usd": 0.6208
+      "games": 14,
+      "goals_for": 179,
+      "goals_against": 136,
+      "goal_diff": 43,
+      "ball_touches": 444,
+      "goals_per_touch": 0.403,
+      "saves": 39,
+      "own_goals": 57,
+      "jumps": 876,
+      "distance": 229293.0,
+      "avg_possession_pct": 50.8,
+      "avg_latency_ms": 3204.0,
+      "tokens_in": 2147327,
+      "tokens_out": 10132,
+      "total_cost_usd": 0.6695
     },
     "gpt_5": {
-      "games": 13,
-      "goals_for": 114,
-      "goals_against": 124,
-      "goal_diff": -10,
-      "ball_touches": 393,
-      "goals_per_touch": 0.29,
-      "saves": 73,
-      "own_goals": 50,
-      "jumps": 487,
-      "distance": 239331.0,
-      "avg_possession_pct": 50.9,
-      "avg_latency_ms": 1001.0,
-      "tokens_in": 1902585,
-      "tokens_out": 26459,
-      "total_cost_usd": 2.6428
+      "games": 14,
+      "goals_for": 126,
+      "goals_against": 132,
+      "goal_diff": -6,
+      "ball_touches": 432,
+      "goals_per_touch": 0.292,
+      "saves": 75,
+      "own_goals": 55,
+      "jumps": 520,
+      "distance": 256486.0,
+      "avg_possession_pct": 52.8,
+      "avg_latency_ms": 1031.0,
+      "tokens_in": 2048933,
+      "tokens_out": 28484,
+      "total_cost_usd": 2.846
     },
     "claude_sonnet_4_6": {
-      "games": 13,
-      "goals_for": 119,
-      "goals_against": 112,
+      "games": 14,
+      "goals_for": 126,
+      "goals_against": 119,
       "goal_diff": 7,
-      "ball_touches": 273,
-      "goals_per_touch": 0.436,
-      "saves": 94,
-      "own_goals": 49,
-      "jumps": 24,
-      "distance": 197621.0,
-      "avg_possession_pct": 42.6,
-      "avg_latency_ms": 1505.0,
-      "tokens_in": 2068642,
-      "tokens_out": 61434,
-      "total_cost_usd": 7.1274
+      "ball_touches": 302,
+      "goals_per_touch": 0.417,
+      "saves": 110,
+      "own_goals": 53,
+      "jumps": 27,
+      "distance": 211943.0,
+      "avg_possession_pct": 44.1,
+      "avg_latency_ms": 1545.0,
+      "tokens_in": 2227769,
+      "tokens_out": 66342,
+      "total_cost_usd": 7.6784
     },
     "gpt_5_mini": {
-      "games": 13,
-      "goals_for": 128,
-      "goals_against": 108,
-      "goal_diff": 20,
-      "ball_touches": 326,
-      "goals_per_touch": 0.393,
-      "saves": 80,
-      "own_goals": 38,
-      "jumps": 322,
-      "distance": 248924.0,
-      "avg_possession_pct": 43.5,
-      "avg_latency_ms": 886.0,
-      "tokens_in": 1902538,
-      "tokens_out": 26228,
-      "total_cost_usd": 0.5281
+      "games": 14,
+      "goals_for": 138,
+      "goals_against": 122,
+      "goal_diff": 16,
+      "ball_touches": 369,
+      "goals_per_touch": 0.374,
+      "saves": 85,
+      "own_goals": 47,
+      "jumps": 349,
+      "distance": 266396.0,
+      "avg_possession_pct": 45.7,
+      "avg_latency_ms": 907.0,
+      "tokens_in": 2048889,
+      "tokens_out": 28251,
+      "total_cost_usd": 0.5687
     },
     "gemini_3_1_pro": {
       "games": 13,
@@ -28491,38 +32656,38 @@
       "total_cost_usd": 4.1848
     },
     "gemini_2_5_flash_lite": {
-      "games": 13,
-      "goals_for": 125,
-      "goals_against": 153,
-      "goal_diff": -28,
-      "ball_touches": 300,
-      "goals_per_touch": 0.417,
-      "saves": 43,
-      "own_goals": 39,
-      "jumps": 1015,
-      "distance": 227844.0,
-      "avg_possession_pct": 38.3,
-      "avg_latency_ms": 1896.0,
-      "tokens_in": 2026531,
-      "tokens_out": 11092,
-      "total_cost_usd": 0.2071
+      "games": 14,
+      "goals_for": 144,
+      "goals_against": 158,
+      "goal_diff": -14,
+      "ball_touches": 333,
+      "goals_per_touch": 0.432,
+      "saves": 44,
+      "own_goals": 41,
+      "jumps": 1098,
+      "distance": 247001.0,
+      "avg_possession_pct": 40.2,
+      "avg_latency_ms": 1796.0,
+      "tokens_in": 2184226,
+      "tokens_out": 11974,
+      "total_cost_usd": 0.2232
     },
     "claude_sonnet_5": {
-      "games": 13,
-      "goals_for": 140,
-      "goals_against": 166,
-      "goal_diff": -26,
-      "ball_touches": 457,
-      "goals_per_touch": 0.306,
-      "saves": 49,
-      "own_goals": 76,
+      "games": 14,
+      "goals_for": 148,
+      "goals_against": 178,
+      "goal_diff": -30,
+      "ball_touches": 498,
+      "goals_per_touch": 0.297,
+      "saves": 55,
+      "own_goals": 84,
       "jumps": 6,
-      "distance": 208196.0,
-      "avg_possession_pct": 50.9,
-      "avg_latency_ms": 1797.0,
-      "tokens_in": 2658434,
-      "tokens_out": 23331,
-      "total_cost_usd": 5.5502
+      "distance": 226850.0,
+      "avg_possession_pct": 53.1,
+      "avg_latency_ms": 1799.0,
+      "tokens_in": 2863106,
+      "tokens_out": 24389,
+      "total_cost_usd": 5.9701
     },
     "claude_fable_5": {
       "games": 13,
@@ -28542,55 +32707,72 @@
       "total_cost_usd": 57.7823
     },
     "gpt_5_6_sol": {
-      "games": 13,
-      "goals_for": 151,
-      "goals_against": 170,
-      "goal_diff": -19,
-      "ball_touches": 553,
-      "goals_per_touch": 0.273,
+      "games": 14,
+      "goals_for": 189,
+      "goals_against": 172,
+      "goal_diff": 17,
+      "ball_touches": 596,
+      "goals_per_touch": 0.317,
       "saves": 36,
-      "own_goals": 80,
-      "jumps": 788,
-      "distance": 199689.0,
-      "avg_possession_pct": 57.5,
-      "avg_latency_ms": 2426.0,
-      "tokens_in": 1902598,
-      "tokens_out": 133363,
-      "total_cost_usd": 13.5139
+      "own_goals": 81,
+      "jumps": 866,
+      "distance": 217042.0,
+      "avg_possession_pct": 59.7,
+      "avg_latency_ms": 2431.0,
+      "tokens_in": 2048943,
+      "tokens_out": 141193,
+      "total_cost_usd": 14.4805
     },
     "gpt_5_6_terra": {
-      "games": 13,
-      "goals_for": 149,
-      "goals_against": 126,
-      "goal_diff": 23,
-      "ball_touches": 421,
-      "goals_per_touch": 0.354,
+      "games": 14,
+      "goals_for": 165,
+      "goals_against": 132,
+      "goal_diff": 33,
+      "ball_touches": 456,
+      "goals_per_touch": 0.362,
       "saves": 58,
-      "own_goals": 51,
-      "jumps": 317,
-      "distance": 226952.0,
-      "avg_possession_pct": 52.5,
-      "avg_latency_ms": 1900.0,
-      "tokens_in": 1902600,
-      "tokens_out": 198000,
-      "total_cost_usd": 7.7265
+      "own_goals": 55,
+      "jumps": 351,
+      "distance": 245254.0,
+      "avg_possession_pct": 54.2,
+      "avg_latency_ms": 1892.0,
+      "tokens_in": 2043252,
+      "tokens_out": 210310,
+      "total_cost_usd": 8.2628
     },
     "gpt_5_6_luna": {
-      "games": 13,
-      "goals_for": 160,
-      "goals_against": 131,
-      "goal_diff": 29,
-      "ball_touches": 485,
-      "goals_per_touch": 0.33,
+      "games": 14,
+      "goals_for": 195,
+      "goals_against": 134,
+      "goal_diff": 61,
+      "ball_touches": 530,
+      "goals_per_touch": 0.368,
       "saves": 32,
-      "own_goals": 52,
-      "jumps": 907,
-      "distance": 206519.0,
-      "avg_possession_pct": 56.8,
-      "avg_latency_ms": 1518.0,
-      "tokens_in": 1902577,
-      "tokens_out": 207324,
-      "total_cost_usd": 3.1465
+      "own_goals": 55,
+      "jumps": 986,
+      "distance": 222666.0,
+      "avg_possession_pct": 58.9,
+      "avg_latency_ms": 1510.0,
+      "tokens_in": 2048919,
+      "tokens_out": 219501,
+      "total_cost_usd": 3.3659
+    },
+    "muse_spark_1_1": {
+      "games": 12,
+      "goals_for": 88,
+      "goals_against": 206,
+      "goal_diff": -118,
+      "ball_touches": 182,
+      "goals_per_touch": 0.484,
+      "saves": 25,
+      "own_goals": 27,
+      "jumps": 94,
+      "distance": 91976.0,
+      "avg_possession_pct": 26.4,
+      "avg_latency_ms": 8664.0,
+      "tokens_in": 1752621,
+      "tokens_out": 2026526,
+      "total_cost_usd": 10.8035
     }
   }
 }

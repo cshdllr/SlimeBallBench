@@ -197,6 +197,20 @@
       "max_completion_tokens": 1024,
       "reasoning_effort": "low",
       "released": "2026-07-09"
+    },
+    {
+      "name": "Muse Spark 1.1",
+      "abbrev": "MUS",
+      "model": "muse-spark-1.1",
+      "provider": "Meta",
+      "base_url": "https://api.meta.ai/v1",
+      "api_key_env": "META_API_KEY",
+      "color": "#0064E0",
+      "input_cost_per_1m": 1.25,
+      "output_cost_per_1m": 4.25,
+      "request_timeout_seconds": 60,
+      "max_tokens": 1024,
+      "released": "2026-07-09"
     }
   ]
 }
