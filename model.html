@@ -113,17 +113,20 @@ async function load() {
   };
   // mini-viz: a bar centred on the league average, filling green (above) or red
   // (below), with the signed % difference beneath it
-  const card = (label, display, key) => {
+  // invert = true for metrics where higher is worse (e.g. latency): above-average
+  // fills red, below-average fills green — the reverse of the default colouring.
+  const card = (label, display, key, invert = false) => {
     let viz = "";
     if (key && agg && agg[key] != null) {
       const avg = leagueAvg(key);
       if (avg != null && Math.abs(avg) > 1e-9) {   // skip metrics whose avg is ~0 (goal diff)
         const pct = Math.round((agg[key] - avg) / Math.abs(avg) * 100);
-        const pos = pct >= 0, w = Math.min(Math.abs(pct), 100) / 100 * 50;
+        const w = Math.min(Math.abs(pct), 100) / 100 * 50;
+        const good = invert ? pct < 0 : pct >= 0;   // green when good, red when bad
         viz = `<div class="avgbar"><span class="lab">avg</span>
             <div class="track"><div class="axis"></div>
-              <div class="fill ${pos ? "pos" : "neg"}" style="width:${w}%"></div></div></div>
-          <div class="pct ${pos ? "pos" : "neg"}">${pct > 0 ? "+" : ""}${pct}%</div>`;
+              <div class="fill ${good ? "pos" : "neg"}" style="width:${w}%"></div></div></div>
+          <div class="pct ${good ? "pos" : "neg"}">${pct > 0 ? "+" : ""}${pct}%</div>`;
       }
     }
     return `<div class="card"><div class="k">${label}</div><div class="v">${display}</div>${viz}</div>`;
@@ -139,7 +142,7 @@ async function load() {
       ${card("Own goals", agg.own_goals, "own_goals")}
       ${card("Jumps", agg.jumps, "jumps")}
       ${card("Possession", agg.avg_possession_pct + "%", "avg_possession_pct")}
-      ${card("Avg latency", agg.avg_latency_ms != null ? agg.avg_latency_ms + " ms" : "—", "avg_latency_ms")}
+      ${card("Avg latency", agg.avg_latency_ms != null ? agg.avg_latency_ms + " ms" : "—", "avg_latency_ms", true)}
       ${card("Total cost", "$" + (agg.total_cost_usd ?? 0).toFixed(2), "total_cost_usd")}
     </div>` : "";
 
