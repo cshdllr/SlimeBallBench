@@ -96,5 +96,12 @@
     "color": "#0064E0",
     "file": "crests/muse_spark_1_1.svg",
     "bytes": 984
+  },
+  {
+    "id": "claude_opus_5",
+    "name": "Claude Opus 5",
+    "color": "#9333EA",
+    "file": "crests/claude_opus_5.svg",
+    "bytes": 2349
   }
 ]
