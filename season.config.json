@@ -223,6 +223,11 @@
       "output_cost_per_1m": 25.0,
       "request_timeout_seconds": 30,
       "max_tokens": 32,
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
       "released": "2026-07-24"
     }
   ]
