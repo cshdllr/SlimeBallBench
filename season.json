@@ -146,7 +146,7 @@
     {
       "id": "claude_opus_5",
       "name": "Claude Opus 5",
-      "color": "#9333EA",
+      "color": "#C026D3",
       "abbrev": "OP5",
       "provider": "Anthropic",
       "model": "claude-opus-5",
@@ -32851,7 +32851,7 @@
       "home_name": "Claude Haiku 4.5",
       "away_name": "Claude Opus 5",
       "home_color": "#D97757",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         10,
         12
@@ -33171,7 +33171,7 @@
       "home_name": "GPT-4o mini",
       "away_name": "Claude Opus 5",
       "home_color": "#10A37F",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         5,
         14
@@ -33461,7 +33461,7 @@
       "home_name": "Claude Opus 4.8",
       "away_name": "Claude Opus 5",
       "home_color": "#9B59B6",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         12,
         9
@@ -33771,7 +33771,7 @@
       "home_name": "Gemini 2.5 Flash",
       "away_name": "Claude Opus 5",
       "home_color": "#DB4437",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         11,
         15
@@ -34131,7 +34131,7 @@
       "home_name": "GPT-5",
       "away_name": "Claude Opus 5",
       "home_color": "#E8A317",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         14,
         8
@@ -34451,7 +34451,7 @@
       "home_name": "Claude Sonnet 4.6",
       "away_name": "Claude Opus 5",
       "home_color": "#EC4899",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         8,
         11
@@ -34741,7 +34741,7 @@
       "home_name": "GPT-5 mini",
       "away_name": "Claude Opus 5",
       "home_color": "#2DD4BF",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         15,
         14
@@ -35131,7 +35131,7 @@
       "home_name": "Gemini 2.5 Flash-Lite",
       "away_name": "Claude Opus 5",
       "home_color": "#4285F4",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         11,
         12
@@ -35461,7 +35461,7 @@
       "home_name": "Claude Sonnet 5",
       "away_name": "Claude Opus 5",
       "home_color": "#6366F1",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         7,
         8
@@ -35711,7 +35711,7 @@
       "home_name": "Claude Fable 5",
       "away_name": "Claude Opus 5",
       "home_color": "#7C3AED",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         12,
         8
@@ -36011,7 +36011,7 @@
       "home_name": "GPT-5.6 Sol",
       "away_name": "Claude Opus 5",
       "home_color": "#F97316",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         15,
         12
@@ -36381,7 +36381,7 @@
       "home_name": "GPT-5.6 Terra",
       "away_name": "Claude Opus 5",
       "home_color": "#0D9488",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         11,
         12
@@ -36711,7 +36711,7 @@
       "home_name": "GPT-5.6 Luna",
       "away_name": "Claude Opus 5",
       "home_color": "#64748B",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         17,
         17
@@ -37151,7 +37151,7 @@
       "home_name": "Muse Spark 1.1",
       "away_name": "Claude Opus 5",
       "home_color": "#0064E0",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         8,
         13
@@ -37461,7 +37461,7 @@
       "home_name": "Gemini 3.1 Pro",
       "away_name": "Claude Opus 5",
       "home_color": "#34A853",
-      "away_color": "#9333EA",
+      "away_color": "#C026D3",
       "score": [
         11,
         9
@@ -37839,7 +37839,7 @@
     {
       "id": "claude_opus_5",
       "name": "Claude Opus 5",
-      "color": "#9333EA",
+      "color": "#C026D3",
       "abbrev": "OP5",
       "provider": "Anthropic",
       "played": 15,

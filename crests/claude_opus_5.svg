@@ -9,11 +9,11 @@
   </defs>
 
   <!-- shield field -->
-  <path d="M50 3 L93 15 V52 C93 77 72 92 50 97 C28 92 7 77 7 52 V15 Z" fill="#9333EA"/>
+  <path d="M50 3 L93 15 V52 C93 77 72 92 50 97 C28 92 7 77 7 52 V15 Z" fill="#C026D3"/>
 
   <!-- lower dark band -->
   <g clip-path="url(#shield)">
-    <path d="M7 40 Q50 52 93 40 V100 H7 Z" fill="#5B1A9E"/>
+    <path d="M7 40 Q50 52 93 40 V100 H7 Z" fill="#86198F"/>
     <path d="M7 40 Q50 52 93 40" fill="none" stroke="#FACC15" stroke-width="2.6"/>
   </g>
 
@@ -28,15 +28,15 @@
   <circle cx="50" cy="58" r="21.5" fill="#FACC15"/>
   <circle cx="50" cy="58" r="20" fill="#FFFFFF"/>
   <g clip-path="url(#ball)">
-    <polygon points="50,50 57.61,55.53 54.7,64.47 45.3,64.47 42.39,55.53" fill="#9333EA"/>
-    <g stroke="#9333EA" stroke-width="3.6" stroke-linecap="round">
+    <polygon points="50,50 57.61,55.53 54.7,64.47 45.3,64.47 42.39,55.53" fill="#C026D3"/>
+    <g stroke="#C026D3" stroke-width="3.6" stroke-linecap="round">
       <line x1="50" y1="50" x2="50" y2="37"/>
       <line x1="57.61" y1="55.53" x2="69.6" y2="51.6"/>
       <line x1="54.7" y1="64.47" x2="62.3" y2="74.9"/>
       <line x1="45.3" y1="64.47" x2="37.7" y2="74.9"/>
       <line x1="42.39" y1="55.53" x2="30.4" y2="51.6"/>
     </g>
-    <g fill="#9333EA">
+    <g fill="#C026D3">
       <polygon points="50,36 44,31.5 50,26.5 56,31.5"/>
       <polygon points="71.5,50.5 74.5,44 80,49 77,55.5"/>
       <polygon points="63.5,76.5 70,79 66,84.5 60,82"/>
